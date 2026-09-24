@@ -544,6 +544,9 @@ function renderMe() {
         <option value="claude-haiku-4-5" ${s.model === 'claude-haiku-4-5' ? 'selected' : ''}>Claude Haiku 4.5: fastest, cheapest (~1¢)</option>
       </select>
       <button class="btn primary" id="save-key">Save</button>
+      ${s.apiKey
+        ? `<p class="small" style="color:var(--good)"><strong>✓ Key saved</strong> (ends in …${esc(s.apiKey.slice(-4))}). Decode is ready: <a href="#/decode">try it</a>.</p>`
+        : '<p class="small muted">No key saved yet.</p>'}
       <p class="muted small" style="margin:0">Your key is stored only on this phone. It is never part of the app's code and is left out of backups. Set a monthly spend limit in your Anthropic Console as a safety net.</p>
     </div>
 
@@ -575,6 +578,7 @@ function renderMe() {
     s.model = document.getElementById('model').value;
     save();
     toast(s.apiKey ? 'Saved on this phone' : 'Key removed');
+    renderMe(); // redraw so the "✓ Key saved" line appears
   };
   document.getElementById('export').onclick = () => {
     const blob = new Blob([exportJSON()], { type: 'application/json' });
