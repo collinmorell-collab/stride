@@ -17,7 +17,7 @@ import {
 } from './content.js';
 import { runSession } from './session.js';
 import { screen, esc, fmt, toast, shuffle } from './ui.js';
-import { speak, stop, voices, allVoices, voiceTier, onVoicesReady } from './speech.js';
+import { speak, stop, voices, voiceTier, onVoicesReady } from './speech.js';
 import { renderDecode } from './decode.js';
 
 const PASS_MARK = 0.7;       // 70% to pass a level
@@ -530,8 +530,7 @@ function renderMe() {
       <label for="voice">Voice</label>
       <select id="voice"></select>
       <button class="btn" id="test-voice">Test voice</button>
-      <p class="muted small">Tip: for a much better voice, go to iPhone Settings → Accessibility → Read &amp; Speak → Voices → English, and download an "Enhanced" voice (not a Siri voice). Then fully close and reopen Stride and pick it here.</p>
-      <details><summary class="small">Show all voices iOS shares with Stride</summary><pre class="code" id="voice-debug" style="margin-top:10px"></pre></details>
+      <p class="small" id="voice-summary" style="margin:0"></p>
     </div>
 
     <h2>🔑 Decode settings</h2>
@@ -568,9 +567,9 @@ function renderMe() {
         const tier = voiceTier(v);
         return `<option value="${esc(v.voiceURI)}" ${v.voiceURI === s.voice ? 'selected' : ''}>${esc(v.name)}${tier ? ` · ${tier}` : ''} (${esc(v.lang)})</option>`;
       }).join('');
-    const all = allVoices();
-    document.getElementById('voice-debug').textContent = `${all.length} voices total\n\n` +
-      all.map((v) => `${v.name} | ${v.lang} | ${v.voiceURI}`).join('\n');
+    const good = list.filter((v) => ['Premium', 'Enhanced'].includes(voiceTier(v))).length;
+    document.getElementById('voice-summary').innerHTML = `<strong>Your iPhone shares ${list.length} English voices with Stride, ${good} of them Enhanced or Premium.</strong>` +
+      (good ? '' : ' iOS keeps downloaded Enhanced voices for its own apps, so try a few below and keep the one you like best.');
   };
   fillVoices();
   onVoicesReady(fillVoices);

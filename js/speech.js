@@ -19,10 +19,11 @@ export function voiceTier(v) {
   if (/premium/i.test(id)) return 'Premium';
   if (/enhanced/i.test(id)) return 'Enhanced';
   if (/siri/i.test(id)) return 'Siri';
+  if (/compact/i.test(id)) return 'Basic';
   return '';
 }
 
-const TIER_RANK = { Premium: 0, Enhanced: 1, Siri: 2, '': 3 };
+const TIER_RANK = { Premium: 0, Enhanced: 1, Siri: 2, '': 3, Basic: 4 };
 
 // English voices, best quality first.
 export function voices() {
@@ -32,10 +33,6 @@ export function voices() {
     .sort((a, b) => TIER_RANK[voiceTier(a)] - TIER_RANK[voiceTier(b)] || a.name.localeCompare(b.name));
 }
 
-// Every voice iOS shares with the app, unfiltered (for troubleshooting).
-export function allVoices() {
-  return synth ? synth.getVoices() : [];
-}
 
 // Pick the voice you chose in Settings, or the best-sounding English one.
 function pickVoice() {

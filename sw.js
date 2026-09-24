@@ -9,7 +9,7 @@
 // then quietly fetch a fresh copy for next time.
 // ============================================================
 
-const CACHE = 'stride-v3';
+const CACHE = 'stride-v4';
 
 const CORE = [
   './',
