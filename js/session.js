@@ -8,7 +8,7 @@
 
 import { screen, esc, fmt, shuffle, progressBar } from './ui.js';
 import { record, addXP, XP } from './store.js';
-import { autoSpeak, speak, stop } from './speech.js';
+import { autoSpeak, toggleSpeak, stop } from './speech.js';
 
 const LETTERS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -70,7 +70,7 @@ export function runSession({ title, steps, hearts = null, onFinish, exitTo = '#/
       <button class="btn primary" id="next">Next</button>`;
     const parts = [page.title, page.body, page.pm ? 'Why a PM cares. ' + page.pm : ''];
     autoSpeak(parts);
-    document.getElementById('say').onclick = () => speak(parts);
+    document.getElementById('say').onclick = () => toggleSpeak(parts);
     document.getElementById('next').onclick = () => { addXP(XP.lesson); next(); };
   }
 
@@ -117,16 +117,20 @@ export function runSession({ title, steps, hearts = null, onFinish, exitTo = '#/
           <button class="btn option" data-opt="${opt}">
             <span class="letter">${LETTERS[pos]}</span><span>${fmt(item.options[opt]).replace(/^<p>|<\/p>$/g, '')}</span>
           </button>`).join('')}
+        <button class="btn ghost" id="idk">🤷 I don't know</button>
       </div>
       <div id="after"></div>`;
 
     const spoken = [item.q, ...order.map((opt, pos) => `${LETTERS[pos]}: ${item.options[opt]}`)];
     autoSpeak(spoken);
-    document.getElementById('say').onclick = () => speak(spoken);
+    document.getElementById('say').onclick = () => toggleSpeak(spoken);
 
     document.querySelectorAll('.option').forEach((btn) => {
       btn.onclick = () => answer(Number(btn.dataset.opt));
     });
+    // Honest "I don't know" counts as a miss (so it comes back in Review)
+    // but never rewards a lucky guess.
+    document.getElementById('idk').onclick = () => answer(-1);
 
     function answer(chosen) {
       const correct = chosen === item.answer;
@@ -136,6 +140,7 @@ export function runSession({ title, steps, hearts = null, onFinish, exitTo = '#/
         else if (opt === chosen) btn.classList.add('wrong');
         btn.onclick = null;
       });
+      document.getElementById('idk').remove();
       results.answered++;
       record(item.id, correct);
       if (correct) { results.correct++; addXP(XP.correct); }
@@ -144,13 +149,14 @@ export function runSession({ title, steps, hearts = null, onFinish, exitTo = '#/
         if (hearts) heartsLeft--;
       }
       const rightLetter = LETTERS[order.indexOf(item.answer)];
+      const verdict = correct ? '✅ Correct!' : chosen === -1 ? `👍 Good call not guessing. The answer is ${rightLetter}.` : `❌ Not quite. The answer is ${rightLetter}.`;
       document.getElementById('after').innerHTML = `
         <div class="card feedback ${correct ? 'good' : 'bad'}">
-          <strong>${correct ? '✅ Correct!' : `❌ Not quite. The answer is ${rightLetter}.`}</strong>
+          <strong>${verdict}</strong>
           ${fmt(item.why)}
         </div>
         <button class="btn primary" id="next">${hearts && heartsLeft <= 0 ? 'See result' : 'Next'}</button>`;
-      autoSpeak([correct ? 'Correct!' : `Not quite. The answer is ${rightLetter}.`, item.why]);
+      autoSpeak([verdict.replace(/^\S+ /, ''), item.why]);
       document.getElementById('next').onclick = next;
       if (hearts) document.querySelector('.hearts').innerHTML = '❤️'.repeat(Math.max(heartsLeft, 0)) + '🤍'.repeat(hearts - Math.max(heartsLeft, 0));
       document.getElementById('after').scrollIntoView({ behavior: 'smooth', block: 'start' });

@@ -64,7 +64,18 @@ export function renderTopbar() {
     <span class="brand">Stride</span>
     <span class="pill" title="Day streak">🔥 ${currentStreak()}</span>
     <span class="pill" title="Today's XP">⚡ ${xpToday()}/${DAILY_GOAL}</span>
-    <span class="pill" title="Player level">⭐ ${lvl.level}</span>`;
+    <span class="pill" title="Player level">⭐ ${lvl.level}</span>
+    <button class="pill" id="audio-toggle" aria-label="Read aloud on or off" style="border:none;color:inherit;font:inherit;cursor:pointer">${state.settings.autoRead ? '🔊' : '🔇'}</button>`;
+  // One tap: silence everything now, and switch automatic read-aloud on/off.
+  document.getElementById('audio-toggle').onclick = () => {
+    stop();
+    state.settings.autoRead = !state.settings.autoRead;
+    save();
+    toast(state.settings.autoRead ? 'Read aloud: on' : 'Read aloud: off');
+    renderTopbar();
+    const box = document.getElementById('autoRead');
+    if (box) box.checked = state.settings.autoRead;
+  };
 }
 
 // ---------- Learn tab: the skill map ----------
@@ -94,7 +105,7 @@ function renderLearn() {
   const welcome = !state.placementDone ? `
     <div class="card">
       <h2 style="margin-top:0">👋 Welcome to Stride</h2>
-      <p>Take a 3-minute placement quiz and I'll unlock the levels you already know.</p>
+      <p>Take a 3-minute placement quiz and I'll unlock the levels you already know. Tap <strong>I don't know</strong> instead of guessing: guesses unlock levels you haven't learned yet.</p>
       <a class="btn primary" href="#/placement">Take placement quiz</a>
       <button class="btn ghost" id="skip-placement">Skip, start from the beginning</button>
     </div>` : '';
@@ -263,7 +274,7 @@ function showResult({ emoji, title, body, wrongIds = [], buttons }) {
           ${it.kind === 'card' ? `<strong>${fmt(it.front)}</strong>${fmt(it.back)}` : `${fmt(it.q)}<p><strong>Answer:</strong> ${fmt(it.options[it.answer]).replace(/^<p>|<\/p>$/g, '')}</p><div class="muted small">${fmt(it.why)}</div>`}
         </div>`).join('')}` : ''}
     ${buttons.map(([href, label, primary]) => `<a class="btn ${primary ? 'primary' : ''}" href="${href}">${esc(label)}</a>`).join('')}`;
-  speak([title, body]);
+  if (state.settings.autoRead) speak([title, body]);
   renderTopbar();
 }
 
@@ -580,6 +591,7 @@ function renderMe() {
       <button class="btn" id="export">Export backup file</button>
       <label class="btn" for="import-file" style="font-weight:600">Import backup file</label>
       <input type="file" id="import-file" accept="application/json,.json" hidden>
+      <button class="btn" id="redo-placement">Redo placement quiz</button>
       <button class="btn bad" id="reset">Reset all progress</button>
     </div>
     <p class="muted small center">Stride · Layers 1–4</p>`;
@@ -601,7 +613,7 @@ function renderMe() {
   onVoicesReady(fillVoices);
 
   const bind = (id, fn) => { document.getElementById(id).onchange = fn; };
-  bind('autoRead', (e) => { s.autoRead = e.target.checked; save(); });
+  bind('autoRead', (e) => { s.autoRead = e.target.checked; if (!s.autoRead) stop(); save(); renderTopbar(); });
   bind('rate', (e) => { s.rate = Number(e.target.value); save(); });
   bind('voice', (e) => { s.voice = e.target.value; save(); });
   document.getElementById('test-voice').onclick = () => speak('Hi! This is how I will sound on your walk.');
@@ -624,6 +636,15 @@ function renderMe() {
     if (!file) return;
     try { importJSON(await file.text()); toast('Backup restored'); route(); }
     catch (err) { toast(err.message); }
+  };
+  document.getElementById('redo-placement').onclick = () => {
+    if (!confirm('Redo the placement quiz? Levels you tested out of will be locked again. Your XP, streak and answer history stay.')) return;
+    for (const u of Object.values(state.units)) { u.levelsDone = []; u.bossBeaten = false; }
+    // Remove the "already known" marks placement gave, keep real answer history.
+    for (const [id, it] of Object.entries(state.items)) if (it.seen === 0 && it.box === 3) delete state.items[id];
+    state.placementDone = false;
+    save();
+    location.hash = '#/placement';
   };
   document.getElementById('reset').onclick = () => {
     if (confirm('Erase all XP, streaks and progress on this phone? This cannot be undone.')) { resetAll(); route(); }

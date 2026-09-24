@@ -17,43 +17,86 @@
         }
       ],
       "cards": [
-        { "front": "LLM", "back": "Large language model: an AI trained on huge amounts of text to predict the next token, which lets it write, answer and code." },
-        { "front": "Token", "back": "A chunk of text (about ¾ of a word). Models read and write in tokens, and you pay per token." },
-        { "front": "Training", "back": "The expensive, one-time process where a lab teaches a model from huge amounts of data." },
-        { "front": "Inference", "back": "Using a trained model, i.e. every request you send. Billed per token." },
-        { "front": "Hallucination", "back": "When a model confidently states something false, because it generates plausible text rather than looking up facts." },
-        { "front": "Knowledge cutoff", "back": "The date a model's training data ends. It doesn't know later events unless you tell it." }
+        {
+          "front": "LLM",
+          "back": "Large language model: an AI trained on huge amounts of text to predict the next token, which lets it write, answer and code."
+        },
+        {
+          "front": "Token",
+          "back": "A chunk of text (about ¾ of a word). Models read and write in tokens, and you pay per token."
+        },
+        {
+          "front": "Training",
+          "back": "The expensive, one-time process where a lab teaches a model from huge amounts of data."
+        },
+        {
+          "front": "Inference",
+          "back": "Using a trained model, i.e. every request you send. Billed per token."
+        },
+        {
+          "front": "Hallucination",
+          "back": "When a model confidently states something false, because it generates plausible text rather than looking up facts."
+        },
+        {
+          "front": "Knowledge cutoff",
+          "back": "The date a model's training data ends. It doesn't know later events unless you tell it."
+        }
       ],
       "quiz": [
         {
-          "q": "At its core, what is an LLM trained to do?",
-          "options": ["Predict the next token of text", "Search a database of facts", "Copy answers from the internet in real time", "Run code"],
+          "q": "What is an LLM trained to do?",
+          "options": [
+            "Predict the next token",
+            "Look up facts in a database",
+            "Search the internet live",
+            "Run code step by step"
+          ],
           "answer": 0,
           "why": "Everything an LLM does comes from repeatedly predicting the next token."
         },
         {
-          "q": "Your team's AI feature costs rise every time users send longer messages. That's because you pay for…",
-          "options": ["Inference, billed per token", "Training, billed per user", "A flat monthly fee", "Storage"],
+          "q": "What is inference?",
+          "options": [
+            "Using a trained model to answer a request",
+            "Teaching a model from large amounts of text",
+            "Checking a model's answers for mistakes",
+            "Shrinking a model so it runs faster"
+          ],
           "answer": 0,
-          "why": "Every request is inference, and it's priced by input and output tokens."
+          "why": "Inference = using the model. Training = building it. You pay per token for inference."
         },
         {
-          "q": "A model confidently cites a research paper that doesn't exist. What's that called?",
-          "options": ["A hallucination", "A knowledge cutoff", "Fine-tuning", "A token"],
+          "q": "A model confidently cites a paper that doesn't exist. What's that called?",
+          "options": [
+            "A hallucination",
+            "A knowledge cutoff",
+            "Overfitting",
+            "A prompt injection"
+          ],
           "answer": 0,
           "why": "Confident but false output is a hallucination."
         },
         {
-          "q": "Best way to get accurate answers about your company's refund policy?",
-          "options": ["Put the actual policy text in the prompt (or let it retrieve it)", "Ask it to try harder", "Use a bigger font", "Ask the same question 5 times"],
+          "q": "What is a knowledge cutoff?",
+          "options": [
+            "When a model's training data ends",
+            "The most text a model can read at once",
+            "The point where a model stops replying",
+            "A limit on how many requests you can send"
+          ],
           "answer": 0,
-          "why": "Grounding the model in real source material is the most reliable fix for hallucination."
+          "why": "The model knows nothing after its training data ends, unless you tell it."
         },
         {
-          "q": "Do models learn from your conversations as you chat?",
-          "options": ["No. A model version is frozen after training; within a chat it only uses the context you give it", "Yes, instantly", "Only on weekends", "Only if you say please"],
+          "q": "Most reliable way to get accurate answers about your company's refund policy?",
+          "options": [
+            "Include the policy text in the prompt",
+            "Ask the model to double-check itself",
+            "Tell the model to be more careful",
+            "Ask the same question several times"
+          ],
           "answer": 0,
-          "why": "The model's knowledge is fixed at training time. Apps can *remember* things by re-sending them as context, but the model itself doesn't change."
+          "why": "Grounding the model in the real source beats every kind of asking nicely."
         }
       ]
     },
@@ -72,49 +115,104 @@
         }
       ],
       "cards": [
-        { "front": "System prompt", "back": "Standing instructions from the app builder that shape the model's behavior, usually hidden from end users." },
-        { "front": "Post-training / RLHF", "back": "Training after pre-training that makes a model a helpful assistant, e.g. by learning from ratings of its answers." },
-        { "front": "Fine-tuning", "back": "Extra training on your own examples to specialize a model. Try prompting and better context first." },
-        { "front": "Reasoning / thinking", "back": "The model generating hidden scratch work before answering: better on hard problems, slower and pricier." },
-        { "front": "Stateless", "back": "The model remembers nothing between requests. Apps re-send the conversation each time." },
-        { "front": "Multimodal", "back": "Able to take in more than text, like images, PDFs or audio." }
+        {
+          "front": "System prompt",
+          "back": "Standing instructions from the app builder that shape the model's behavior, usually hidden from end users."
+        },
+        {
+          "front": "Post-training / RLHF",
+          "back": "Training after pre-training that makes a model a helpful assistant, e.g. by learning from ratings of its answers."
+        },
+        {
+          "front": "Fine-tuning",
+          "back": "Extra training on your own examples to specialize a model. Try prompting and better context first."
+        },
+        {
+          "front": "Reasoning / thinking",
+          "back": "The model generating hidden scratch work before answering: better on hard problems, slower and pricier."
+        },
+        {
+          "front": "Stateless",
+          "back": "The model remembers nothing between requests. Apps re-send the conversation each time."
+        },
+        {
+          "front": "Multimodal",
+          "back": "Able to take in more than text, like images, PDFs or audio."
+        }
       ],
       "quiz": [
         {
-          "q": "Your support bot keeps being too formal. What should you try first?",
-          "options": ["Adjust the system prompt", "Fine-tune a custom model", "Train a new model from scratch", "Switch to a different language"],
+          "q": "What is a system prompt?",
+          "options": [
+            "The app builder's standing instructions",
+            "The first message a user sends in a chat",
+            "Operating-system settings the model runs on",
+            "A warning the model shows before refusing"
+          ],
           "answer": 0,
-          "why": "Tone and behavior are usually quick system prompt changes. Fine-tuning is heavier and rarely the first move."
+          "why": "It's the app builder's standing instructions, usually hidden from users."
         },
         {
-          "q": "Why do long chat conversations get slower and more expensive?",
-          "options": ["The app re-sends the whole conversation on each turn because models are stateless", "The model gets tired", "Servers slow down at night", "Longer chats use a bigger model"],
+          "q": "Why do long chats get more expensive per message?",
+          "options": [
+            "The whole conversation is re-sent each turn",
+            "The model charges extra after an hour",
+            "Longer chats switch to a bigger model",
+            "Each message is stored on a paid server"
+          ],
           "answer": 0,
-          "why": "Every turn includes all previous turns as input tokens."
+          "why": "Models are stateless, so every turn resends all earlier turns as input tokens."
         },
         {
-          "q": "When is turning up reasoning/thinking effort worth the cost?",
-          "options": ["For hard, multi-step problems like tricky debugging or planning", "For simple yes/no classification", "Always, for everything", "Never"],
+          "q": "What is fine-tuning?",
+          "options": [
+            "Extra training on your own examples",
+            "Rewriting the prompt until it works",
+            "Lowering the cost per token",
+            "Adding tools the model can call"
+          ],
           "answer": 0,
-          "why": "Extra thinking pays off on hard tasks. On simple ones it mostly adds cost and delay."
+          "why": "Fine-tuning further trains a model on your data. Try better prompts and context first."
         },
         {
-          "q": "What does RLHF mainly do?",
-          "options": ["Teaches a pre-trained model to give the kinds of answers people rate as helpful", "Adds internet access", "Makes the model smaller", "Encrypts the model"],
+          "q": "What does RLHF mainly change?",
+          "options": [
+            "How helpful and well-behaved answers are",
+            "How much text the model can read at once",
+            "How fast the model generates each token",
+            "Which languages the model understands"
+          ],
           "answer": 0,
           "why": "Reinforcement learning from human feedback shapes behavior using ratings of answers."
         },
         {
-          "q": "You paste a screenshot of an error into Claude and it reads it. That's because the model is…",
-          "options": ["Multimodal", "Stateless", "Fine-tuned", "Open weights"],
+          "q": "What does \"multimodal\" mean for a model?",
+          "options": [
+            "It accepts images and other inputs, not just text",
+            "It runs on several computers at the same time",
+            "It offers several pricing plans to choose from",
+            "It can switch between several models mid-chat"
+          ],
           "answer": 0,
-          "why": "Multimodal models accept images and other inputs, not just text."
+          "why": "Multimodal models read images, PDFs, screenshots and sometimes audio."
         }
       ]
     }
   },
   "links": [
-    { "title": "Intro to Large Language Models (Andrej Karpathy)", "source": "YouTube", "type": "video", "minutes": 60, "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g" },
-    { "title": "But what is a GPT? Visual intro to transformers", "source": "3Blue1Brown · YouTube", "type": "video", "minutes": 27, "url": "https://www.youtube.com/watch?v=wjZofJX0v4M" }
+    {
+      "title": "Intro to Large Language Models (Andrej Karpathy)",
+      "source": "YouTube",
+      "type": "video",
+      "minutes": 60,
+      "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g"
+    },
+    {
+      "title": "But what is a GPT? Visual intro to transformers",
+      "source": "3Blue1Brown · YouTube",
+      "type": "video",
+      "minutes": 27,
+      "url": "https://www.youtube.com/watch?v=wjZofJX0v4M"
+    }
   ]
 }

@@ -17,44 +17,87 @@
         }
       ],
       "cards": [
-        { "front": "Terminal", "back": "An app window where you control the computer by typing commands." },
-        { "front": "Shell", "back": "The program inside the terminal that reads and runs your commands. zsh and bash are common ones." },
-        { "front": "`pwd`", "back": "Print working directory: shows which folder you're in." },
-        { "front": "`ls`", "back": "Lists the files and folders in the current folder." },
-        { "front": "`cd`", "back": "Change directory: moves you into another folder, e.g. `cd src`." },
-        { "front": "Flag", "back": "An option added to a command, usually starting with `-` or `--`, e.g. `ls -la` or `npm install --save`." }
+        {
+          "front": "Terminal",
+          "back": "An app window where you control the computer by typing commands."
+        },
+        {
+          "front": "Shell",
+          "back": "The program inside the terminal that reads and runs your commands. zsh and bash are common ones."
+        },
+        {
+          "front": "`pwd`",
+          "back": "Print working directory: shows which folder you're in."
+        },
+        {
+          "front": "`ls`",
+          "back": "Lists the files and folders in the current folder."
+        },
+        {
+          "front": "`cd`",
+          "back": "Change directory: moves you into another folder, e.g. `cd src`."
+        },
+        {
+          "front": "Flag",
+          "back": "An option added to a command, usually starting with `-` or `--`, e.g. `ls -la` or `npm install --save`."
+        }
       ],
       "quiz": [
         {
           "q": "In `ls -la ~/Dev`, what is `-la`?",
-          "options": ["Flags (options) changing how ls behaves", "The folder being listed", "The name of the shell", "An error code"],
+          "options": [
+            "Flags",
+            "The argument",
+            "The shell",
+            "The prompt"
+          ],
           "answer": 0,
-          "why": "Flags start with a dash and tweak the command. `~/Dev` is the argument."
+          "why": "Options starting with a dash are flags. `~/Dev` is the argument."
         },
         {
-          "q": "You're lost in the terminal. Which command tells you which folder you're in?",
-          "options": ["`pwd`", "`ls`", "`cd`", "`cat`"],
+          "q": "Which command shows the folder you're currently in?",
+          "options": [
+            "`pwd`",
+            "`ls`",
+            "`cd`",
+            "`cat`"
+          ],
           "answer": 0,
-          "why": "pwd = print working directory."
+          "why": "pwd = print working directory. ls lists, cd moves, cat prints a file."
         },
         {
           "q": "What's the difference between the terminal and the shell?",
-          "options": ["The terminal is the window; the shell is the program inside that runs commands", "They're competitors", "The shell is only for servers", "The terminal is a programming language"],
+          "options": [
+            "Terminal is the window; shell runs commands",
+            "Terminal runs commands; shell is the window",
+            "Terminal is for Macs; shell is for Windows",
+            "They're two names for the same program"
+          ],
           "answer": 0,
-          "why": "Terminal = the window/app. Shell (zsh, bash) = the command interpreter running inside it."
+          "why": "The terminal is the app window. The shell (zsh, bash) reads and runs what you type."
         },
         {
           "q": "What will this do?",
-          "code": "cd src",
-          "options": ["Move into the folder named src", "Delete the src folder", "Create a folder called src", "Show the contents of a file named src"],
+          "options": [
+            "Print the file's contents",
+            "Create a new empty file",
+            "Delete the file for good",
+            "Open the file for editing"
+          ],
           "answer": 0,
-          "why": "cd = change directory."
+          "why": "`cat` prints a file's contents to the screen.",
+          "code": "cat notes.txt"
         },
         {
-          "q": "Why is Claude Code's command-running tool called \"Bash\"?",
-          "options": ["bash is a common shell, and the tool runs shell commands", "It bashes bugs", "It only works on Windows", "It's the name of the model"],
+          "q": "What is zsh?",
+          "options": [
+            "A shell",
+            "A terminal app",
+            "A programming language",
+            "A file format"
+          ],
           "answer": 0,
-          "why": "The tool sends commands to a shell. bash is one of the most common shells."
+          "why": "zsh is the Mac's default shell; bash is another common one."
         }
       ]
     },
@@ -73,50 +116,102 @@
         }
       ],
       "cards": [
-        { "front": "`grep`", "back": "Searches inside files for text. `-r` = search all subfolders, `-n` = show line numbers." },
-        { "front": "Pipe `|`", "back": "Sends one command's output into the next command, like an assembly line." },
-        { "front": "`&&`", "back": "Runs the next command only if the previous one succeeded." },
-        { "front": "`rm -rf`", "back": "Permanently deletes a folder and everything in it, without asking. No Trash." },
-        { "front": "`sudo`", "back": "Runs a command with administrator powers. Use with care." },
-        { "front": "Environment variable", "back": "A named setting (like `$HOME` or `API_KEY`) the shell passes to programs." },
-        { "front": "Ctrl+C", "back": "Stops the command that's currently running in the terminal." }
+        {
+          "front": "`grep`",
+          "back": "Searches inside files for text. `-r` = search all subfolders, `-n` = show line numbers."
+        },
+        {
+          "front": "Pipe `|`",
+          "back": "Sends one command's output into the next command, like an assembly line."
+        },
+        {
+          "front": "`&&`",
+          "back": "Runs the next command only if the previous one succeeded."
+        },
+        {
+          "front": "`rm -rf`",
+          "back": "Permanently deletes a folder and everything in it, without asking. No Trash."
+        },
+        {
+          "front": "`sudo`",
+          "back": "Runs a command with administrator powers. Use with care."
+        },
+        {
+          "front": "Environment variable",
+          "back": "A named setting (like `$HOME` or `API_KEY`) the shell passes to programs."
+        },
+        {
+          "front": "Ctrl+C",
+          "back": "Stops the command that's currently running in the terminal."
+        }
       ],
       "quiz": [
         {
           "q": "What does this command output?",
-          "code": "grep -rn \"TODO\" src/ | wc -l",
-          "options": ["The number of lines containing TODO in src and its subfolders", "A list of files named TODO", "It deletes every TODO", "It creates a TODO list"],
+          "options": [
+            "A count of lines containing TODO",
+            "A list of files named TODO",
+            "Every line with TODO removed",
+            "A new file listing all TODOs"
+          ],
           "answer": 0,
-          "why": "grep finds the matching lines, the pipe passes them on, and `wc -l` counts them."
+          "why": "grep finds matching lines, the pipe passes them on, `wc -l` counts them.",
+          "code": "grep -rn \"TODO\" src/ | wc -l"
         },
         {
           "q": "In `npm install && npm run build`, when does the build run?",
-          "options": ["Only if the install succeeded", "Always, at the same time", "Only if the install failed", "Never"],
+          "options": [
+            "Only if the install succeeds",
+            "Only if the install fails",
+            "At the same time as the install",
+            "Whether or not the install works"
+          ],
           "answer": 0,
-          "why": "`&&` means run the next command only if the previous one worked."
+          "why": "`&&` runs the next command only if the previous one succeeded."
         },
         {
-          "q": "Claude Code asks permission to run `rm -rf dist/`. What will it do?",
-          "options": ["Permanently delete the dist folder and everything in it", "Move dist to the Trash", "Rename dist", "List what's in dist"],
+          "q": "What will `rm -rf dist/` do?",
+          "options": [
+            "Permanently delete dist and its contents",
+            "Move dist and its contents to the Trash",
+            "Rename dist to a backup folder",
+            "List everything inside dist"
+          ],
           "answer": 0,
-          "why": "rm = remove, -r = everything inside, -f = don't ask. `dist/` is usually a generated build folder, so this is often fine, but it's always permanent."
+          "why": "rm deletes with no Trash; -r includes everything inside; -f skips confirmation."
         },
         {
-          "q": "A dev server is running in your terminal and you want it to stop. What do you press?",
-          "options": ["Ctrl+C", "Cmd+S", "Delete", "Esc Esc"],
+          "q": "Which keys stop a command that's running in the terminal?",
+          "options": [
+            "Ctrl+C",
+            "Cmd+W",
+            "Esc",
+            "Ctrl+S"
+          ],
           "answer": 0,
           "why": "Ctrl+C interrupts the running command."
         },
         {
-          "q": "What does the `|` symbol do in the terminal?",
-          "options": ["Passes one command's output into the next command", "Means \"or\"", "Comments out the line", "Separates folders in a path"],
+          "q": "What does `sudo` do?",
+          "options": [
+            "Runs a command with admin powers",
+            "Runs a command in the background",
+            "Runs a command on a remote server",
+            "Runs a command without any output"
+          ],
           "answer": 0,
-          "why": "It's called a pipe and it chains commands together like an assembly line."
+          "why": "sudo = run as the administrator (\"superuser\"). Worth a pause before approving."
         }
       ]
     }
   },
   "links": [
-    { "title": "Command line crash course", "source": "MDN Web Docs", "type": "docs", "minutes": 30, "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Command_line" }
+    {
+      "title": "Command line crash course",
+      "source": "MDN Web Docs",
+      "type": "docs",
+      "minutes": 30,
+      "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Command_line"
+    }
   ]
 }

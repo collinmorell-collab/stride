@@ -17,43 +17,86 @@
         }
       ],
       "cards": [
-        { "front": "Model", "back": "The AI brain (e.g. Claude Opus). It reads text and writes text. It can't act on its own." },
-        { "front": "Harness", "back": "The program around a model that gives it tools, rules and memory so it can do real work. Claude Code is a harness." },
-        { "front": "CLI", "back": "Command-line interface: an app you use by typing commands in a terminal instead of clicking." },
-        { "front": "Session", "back": "One continuous conversation with Claude Code, including everything it read and did." },
-        { "front": "Context window", "back": "The model's working memory: the maximum amount of text it can consider at once." },
-        { "front": "Tool (in AI)", "back": "An action the harness lets the model take, like reading a file or running a command." }
+        {
+          "front": "Model",
+          "back": "The AI brain (e.g. Claude Opus). It reads text and writes text. It can't act on its own."
+        },
+        {
+          "front": "Harness",
+          "back": "The program around a model that gives it tools, rules and memory so it can do real work. Claude Code is a harness."
+        },
+        {
+          "front": "CLI",
+          "back": "Command-line interface: an app you use by typing commands in a terminal instead of clicking."
+        },
+        {
+          "front": "Session",
+          "back": "One continuous conversation with Claude Code, including everything it read and did."
+        },
+        {
+          "front": "Context window",
+          "back": "The model's working memory: the maximum amount of text it can consider at once."
+        },
+        {
+          "front": "Tool (in AI)",
+          "back": "An action the harness lets the model take, like reading a file or running a command."
+        }
       ],
       "quiz": [
         {
-          "q": "Cursor and Claude Code can both use Claude Sonnet. So what's actually different between them?",
-          "options": ["The harness: tools, rules, prompts and workflow around the model", "Nothing, they're identical", "Only the color scheme", "The model's training data"],
+          "q": "In AI tools, what is the harness?",
+          "options": [
+            "The program that gives a model tools and rules",
+            "The data the model was originally trained on",
+            "The chip that the model physically runs on",
+            "The company that builds and trains the model"
+          ],
           "answer": 0,
-          "why": "Same brain, different harness. The harness decides which tools exist, how context is managed and how you interact."
+          "why": "The harness wraps the model with tools, permissions and memory. Claude Code is a harness."
         },
         {
           "q": "What does CLI stand for?",
-          "options": ["Command-line interface", "Cloud language integration", "Code logic interpreter", "Client link instance"],
+          "options": [
+            "Command-line interface",
+            "Code library index",
+            "Cloud language integration",
+            "Client login identity"
+          ],
           "answer": 0,
-          "why": "A command-line interface is an app you operate by typing text commands."
+          "why": "A command-line interface is an app you use by typing commands."
         },
         {
-          "q": "Claude Code reads 40 large files in one session. What fills up?",
-          "options": ["The context window", "Your hard drive", "The model's training data", "Your API key"],
+          "q": "What is the context window?",
+          "options": [
+            "How much text a model can consider at once",
+            "The window where you type your prompts",
+            "How long a session can stay open",
+            "The number of files in your project"
+          ],
           "answer": 0,
-          "why": "Everything read or produced in a session lands in the context window, the model's working memory."
+          "why": "It's the model's working memory, measured in tokens."
         },
         {
-          "q": "On its own, without a harness, what can a model do?",
-          "options": ["Take in text and produce text", "Edit files on your laptop", "Run terminal commands", "Browse your email"],
+          "q": "Claude Code and Cursor can both use Claude Sonnet, yet behave differently. Why?",
+          "options": [
+            "They have different harnesses",
+            "They use different training data",
+            "One of them only works offline",
+            "They charge different token prices"
+          ],
           "answer": 0,
-          "why": "Models just produce text. Actions happen when the harness turns that text into real tool calls."
+          "why": "Same model, different harness: tools, prompts and workflow differ."
         },
         {
-          "q": "You're switching from fixing a bug to writing docs about something unrelated. Good practice?",
-          "options": ["Start a fresh session so old context doesn't distract the model", "Keep going in the same session forever", "Restart your laptop", "Switch to a smaller model"],
+          "q": "What is a \"session\" in Claude Code?",
+          "options": [
+            "One continuous conversation and its history",
+            "A saved copy of your whole project folder",
+            "One single command sent to the terminal",
+            "The time Claude spends thinking per reply"
+          ],
           "answer": 0,
-          "why": "A clean context window keeps the model focused on what matters now."
+          "why": "A session is one conversation, including everything read and done in it."
         }
       ]
     },
@@ -72,49 +115,104 @@
         }
       ],
       "cards": [
-        { "front": "Slash command", "back": "A shortcut typed in Claude Code (e.g. `/clear`, `/model`) that triggers an action instead of sending a chat message." },
-        { "front": "Prompt", "back": "A plain-language request or instruction you give the model." },
-        { "front": "Token", "back": "A chunk of text (about ¾ of a word) that models read and write in. Context and cost are measured in tokens." },
-        { "front": "Compaction", "back": "Claude Code summarizing older conversation to free up room in a full context window." },
-        { "front": "CLAUDE.md", "back": "A file of standing project instructions that Claude Code reads at the start of every session." },
-        { "front": "Permission prompt", "back": "Claude Code pausing to ask you before doing something that changes things, like editing a file or running a command." }
+        {
+          "front": "Slash command",
+          "back": "A shortcut typed in Claude Code (e.g. `/clear`, `/model`) that triggers an action instead of sending a chat message."
+        },
+        {
+          "front": "Prompt",
+          "back": "A plain-language request or instruction you give the model."
+        },
+        {
+          "front": "Token",
+          "back": "A chunk of text (about ¾ of a word) that models read and write in. Context and cost are measured in tokens."
+        },
+        {
+          "front": "Compaction",
+          "back": "Claude Code summarizing older conversation to free up room in a full context window."
+        },
+        {
+          "front": "CLAUDE.md",
+          "back": "A file of standing project instructions that Claude Code reads at the start of every session."
+        },
+        {
+          "front": "Permission prompt",
+          "back": "Claude Code pausing to ask you before doing something that changes things, like editing a file or running a command."
+        }
       ],
       "quiz": [
         {
-          "q": "You type `/clear` in Claude Code. What happens?",
-          "options": ["The conversation's context is cleared so you start fresh", "The model deletes your files", "It runs a terminal command called clear on your server", "It sends a message to Claude asking what clear means"],
+          "q": "Which of these is a Claude Code slash command?",
+          "options": [
+            "`/compact`",
+            "`git status`",
+            "`npm install`",
+            "`cd src`"
+          ],
           "answer": 0,
-          "why": "Slash commands trigger built-in actions. `/clear` resets the conversation context."
-        },
-        {
-          "q": "Which of these is a *terminal* command rather than a slash command or a prompt?",
-          "options": ["`git status`", "`/model`", "\"Please refactor the header\"", "`/help`"],
-          "answer": 0,
-          "why": "`git status` is run by the shell. The slash ones are Claude Code shortcuts; the sentence is a prompt."
-        },
-        {
-          "q": "Late in a long session, Claude seems to have forgotten a detail from the start. The likely reason?",
-          "options": ["Older context was compacted (summarized) to make room", "The model got tired", "Your internet dropped", "CLAUDE.md was deleted"],
-          "answer": 0,
-          "why": "When context fills up, older parts are summarized, and summaries lose detail."
-        },
-        {
-          "q": "Where should \"always run tests with `npm test` before committing\" live so every session knows it?",
-          "options": ["In CLAUDE.md", "In your first message each time", "In a Slack message", "In the model's training data"],
-          "answer": 0,
-          "why": "CLAUDE.md is loaded automatically at the start of every session. That's what it's for."
+          "why": "Slash commands start with `/` and trigger Claude Code actions. The others are terminal commands."
         },
         {
           "q": "Roughly how many tokens is a 750-word document?",
-          "options": ["About 1,000", "About 75", "About 750,000", "Exactly 750"],
+          "options": [
+            "About 1,000",
+            "About 250",
+            "About 7,500",
+            "About 75"
+          ],
           "answer": 0,
           "why": "A token is about ¾ of a word, so 750 words ≈ 1,000 tokens."
+        },
+        {
+          "q": "What is CLAUDE.md?",
+          "options": [
+            "Instructions Claude reads at every session start",
+            "A log of everything Claude did in a session",
+            "The file where Claude Code stores your API key",
+            "A list of models Claude Code can switch between"
+          ],
+          "answer": 0,
+          "why": "It's the project's standing briefing, loaded automatically every session."
+        },
+        {
+          "q": "What does compaction do?",
+          "options": [
+            "Summarizes older conversation to free up context",
+            "Compresses project files to save disk space",
+            "Deletes files Claude created during a session",
+            "Combines several commits into a single commit"
+          ],
+          "answer": 0,
+          "why": "When the context window fills, older parts get summarized so work can continue."
+        },
+        {
+          "q": "Claude Code runs `git status`. Which tool call will you see?",
+          "options": [
+            "Bash",
+            "Read",
+            "Edit",
+            "Grep"
+          ],
+          "answer": 0,
+          "why": "Terminal commands run through the Bash tool."
         }
       ]
     }
   },
   "links": [
-    { "title": "Claude Code overview", "source": "Claude Code docs", "type": "docs", "minutes": 10, "url": "https://code.claude.com/docs/en/overview" },
-    { "title": "Manage Claude's memory (CLAUDE.md)", "source": "Claude Code docs", "type": "docs", "minutes": 10, "url": "https://code.claude.com/docs/en/memory" }
+    {
+      "title": "Claude Code overview",
+      "source": "Claude Code docs",
+      "type": "docs",
+      "minutes": 10,
+      "url": "https://code.claude.com/docs/en/overview"
+    },
+    {
+      "title": "Manage Claude's memory (CLAUDE.md)",
+      "source": "Claude Code docs",
+      "type": "docs",
+      "minutes": 10,
+      "url": "https://code.claude.com/docs/en/memory"
+    }
   ]
 }

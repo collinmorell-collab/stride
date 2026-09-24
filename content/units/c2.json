@@ -17,43 +17,86 @@
         }
       ],
       "cards": [
-        { "front": "Frontier lab", "back": "A company building the most capable AI models, e.g. Anthropic, OpenAI, Google." },
-        { "front": "Open weights", "back": "A model whose trained files you can download and run yourself (e.g. Llama)." },
-        { "front": "Closed model", "back": "A model you can only use through its maker's API or app (e.g. Claude, GPT, Gemini)." },
-        { "front": "Opus / Sonnet / Haiku", "back": "Claude's tiers: Opus = most capable of the three, Sonnet = balanced, Haiku = fastest and cheapest." },
-        { "front": "AWS Bedrock", "back": "Amazon's cloud service for using AI models, including Claude, inside AWS." },
-        { "front": "API (for models)", "back": "The programmatic way apps send requests to a model and get responses back, billed per token." }
+        {
+          "front": "Frontier lab",
+          "back": "A company building the most capable AI models, e.g. Anthropic, OpenAI, Google."
+        },
+        {
+          "front": "Open weights",
+          "back": "A model whose trained files you can download and run yourself (e.g. Llama)."
+        },
+        {
+          "front": "Closed model",
+          "back": "A model you can only use through its maker's API or app (e.g. Claude, GPT, Gemini)."
+        },
+        {
+          "front": "Opus / Sonnet / Haiku",
+          "back": "Claude's tiers: Opus = most capable of the three, Sonnet = balanced, Haiku = fastest and cheapest."
+        },
+        {
+          "front": "AWS Bedrock",
+          "back": "Amazon's cloud service for using AI models, including Claude, inside AWS."
+        },
+        {
+          "front": "API (for models)",
+          "back": "The programmatic way apps send requests to a model and get responses back, billed per token."
+        }
       ],
       "quiz": [
         {
-          "q": "You need to classify 10 million support tickets into 5 categories cheaply. Best starting tier?",
-          "options": ["The smallest fast model (e.g. Haiku), checked against a quality bar", "The biggest model available", "Fine-tune a new model first", "Use a human team"],
+          "q": "You need to sort 10 million support tickets into 5 categories cheaply. Which Claude tier should you test first?",
+          "options": [
+            "Haiku",
+            "Opus",
+            "Fable",
+            "Sonnet"
+          ],
           "answer": 0,
-          "why": "Simple, high-volume tasks usually suit small models. Test quality before scaling up."
+          "why": "Simple, high-volume work suits the smallest, cheapest tier. Test quality before moving up."
         },
         {
-          "q": "Your team calls Claude through AWS Bedrock. Compared to Anthropic's API, what's different?",
-          "options": ["The access point and billing (through AWS), not the underlying model family", "It's a completely different, weaker AI", "Bedrock models can't write code", "Nothing works on Bedrock"],
+          "q": "What is AWS Bedrock?",
+          "options": [
+            "Amazon's service for using AI models",
+            "Amazon's service for storing files",
+            "Amazon's own large language model",
+            "Amazon's tool for writing code"
+          ],
           "answer": 0,
-          "why": "Bedrock is another front door to the same Claude models, integrated with AWS accounts and billing."
+          "why": "Bedrock gives access to models, including Claude, inside AWS."
         },
         {
           "q": "What does \"open weights\" mean?",
-          "options": ["The model itself can be downloaded and run on your own servers", "The model is free to use via API", "The training data is public", "Anyone can edit the model online"],
+          "options": [
+            "You can download and run the model yourself",
+            "The model is free to use through an API",
+            "The training data is published for anyone",
+            "Anyone can edit the model's answers online"
+          ],
           "answer": 0,
-          "why": "Weights are the trained model. Open weights means you can host it yourself."
+          "why": "Weights are the trained model itself. Open weights = you can host it."
         },
         {
-          "q": "Which is NOT a frontier AI lab?",
-          "options": ["Bitbucket", "Anthropic", "OpenAI", "Google DeepMind"],
+          "q": "Which company makes Gemini?",
+          "options": [
+            "Google",
+            "OpenAI",
+            "Anthropic",
+            "Meta"
+          ],
           "answer": 0,
-          "why": "Bitbucket is Atlassian's code-hosting site, not an AI lab."
+          "why": "Gemini is Google's. OpenAI makes GPT, Anthropic makes Claude, Meta makes Llama."
         },
         {
-          "q": "The best default rule for picking a model for a feature?",
-          "options": ["The smallest model that reliably meets your quality bar", "Always the newest and biggest", "Always the cheapest, whatever the quality", "Whichever has the coolest name"],
+          "q": "Which Claude tier is the fastest and cheapest?",
+          "options": [
+            "Haiku",
+            "Sonnet",
+            "Opus",
+            "Fable"
+          ],
           "answer": 0,
-          "why": "Balance quality, speed and cost, and measure instead of guessing."
+          "why": "Haiku is the small, fast tier. Fable is the most capable and most expensive."
         }
       ]
     },
@@ -72,50 +115,108 @@
         }
       ],
       "cards": [
-        { "front": "MTok", "back": "Million tokens: the unit AI models are priced in." },
-        { "front": "Input vs output tokens", "back": "Input = what you send (prompt, context). Output = what the model writes. Output costs more per token." },
-        { "front": "Benchmark", "back": "A standardized test to compare models. Useful, but not the same as your real task." },
-        { "front": "Eval", "back": "Your own test set built from real use cases, used to measure whether a model or prompt is good enough." },
-        { "front": "Effort level", "back": "A setting controlling how much a model thinks before answering: higher = better on hard tasks, slower and costlier." },
-        { "front": "Deprecation", "back": "When a model version is scheduled for retirement, so products need to migrate and re-test." },
-        { "front": "Latency", "back": "The delay before a response arrives. Critical for chat UX, less so for background jobs." }
+        {
+          "front": "MTok",
+          "back": "Million tokens: the unit AI models are priced in."
+        },
+        {
+          "front": "Input vs output tokens",
+          "back": "Input = what you send (prompt, context). Output = what the model writes. Output costs more per token."
+        },
+        {
+          "front": "Benchmark",
+          "back": "A standardized test to compare models. Useful, but not the same as your real task."
+        },
+        {
+          "front": "Eval",
+          "back": "Your own test set built from real use cases, used to measure whether a model or prompt is good enough."
+        },
+        {
+          "front": "Effort level",
+          "back": "A setting controlling how much a model thinks before answering: higher = better on hard tasks, slower and costlier."
+        },
+        {
+          "front": "Deprecation",
+          "back": "When a model version is scheduled for retirement, so products need to migrate and re-test."
+        },
+        {
+          "front": "Latency",
+          "back": "The delay before a response arrives. Critical for chat UX, less so for background jobs."
+        }
       ],
       "quiz": [
         {
-          "q": "A request uses 1,000 input and 1,000 output tokens on a model priced $2 in / $10 out per MTok. Cost?",
-          "options": ["$0.012", "$12", "$0.12", "$1.20"],
+          "q": "1,000 input + 1,000 output tokens on a model priced $2 in / $10 out per million tokens. Cost?",
+          "options": [
+            "$0.012",
+            "$0.12",
+            "$0.020",
+            "$1.20"
+          ],
           "answer": 0,
           "why": "0.001 × $2 + 0.001 × $10 = $0.002 + $0.010 = $0.012."
         },
         {
-          "q": "Model A tops a public coding benchmark. Should you switch your product to it immediately?",
-          "options": ["Run your own evals first; benchmarks don't equal your use case", "Yes, benchmarks are definitive", "No, never change models", "Only if it's cheaper"],
+          "q": "What's the key difference between a benchmark and an eval?",
+          "options": [
+            "An eval tests your own use cases",
+            "An eval is the official public score",
+            "A benchmark only measures speed",
+            "They're two names for one thing"
+          ],
           "answer": 0,
-          "why": "Benchmarks are a starting signal. Your evals on your tasks decide."
+          "why": "Benchmarks are public standard tests. Evals are built from your real tasks."
         },
         {
           "q": "Which usually costs more per token?",
-          "options": ["Output tokens", "Input tokens", "They're always equal", "Neither, tokens are free"],
+          "options": [
+            "Output tokens",
+            "Input tokens",
+            "Cached tokens",
+            "They cost the same"
+          ],
           "answer": 0,
-          "why": "Output is typically about 5× the input price for Claude models."
+          "why": "Output is typically about 5× the input price. Cached input is cheapest."
         },
         {
-          "q": "Your provider announces the model you use will be deprecated in 6 months. Best response?",
-          "options": ["Plan a migration: test the successor against your evals and adjust prompts", "Ignore it", "Switch today without testing", "Build your own model"],
+          "q": "A model is \"deprecated\". What does that mean?",
+          "options": [
+            "It's scheduled to be retired",
+            "It's been made cheaper to use",
+            "It's now the default everywhere",
+            "It's been retrained on new data"
+          ],
           "answer": 0,
-          "why": "Newer models can behave differently. Measure before switching."
+          "why": "Deprecated models are on their way out, so plan and test a migration."
         },
         {
-          "q": "For a live chat feature, which matters most for how it *feels*?",
-          "options": ["Low latency (fast first words)", "Maximum effort on every message", "The biggest context window", "Open weights"],
+          "q": "What does latency measure?",
+          "options": [
+            "How long until a response arrives",
+            "How many tokens a reply contains",
+            "How often the model makes mistakes",
+            "How much each request costs"
+          ],
           "answer": 0,
-          "why": "Users feel delay directly. Background tasks can trade speed for depth."
+          "why": "Latency is delay, which users feel directly in chat."
         }
       ]
     }
   },
   "links": [
-    { "title": "Claude models overview", "source": "Claude docs", "type": "docs", "minutes": 5, "url": "https://docs.claude.com/en/docs/about-claude/models/overview" },
-    { "title": "Claude pricing", "source": "Claude docs", "type": "docs", "minutes": 5, "url": "https://docs.claude.com/en/docs/about-claude/pricing" }
+    {
+      "title": "Claude models overview",
+      "source": "Claude docs",
+      "type": "docs",
+      "minutes": 5,
+      "url": "https://docs.claude.com/en/docs/about-claude/models/overview"
+    },
+    {
+      "title": "Claude pricing",
+      "source": "Claude docs",
+      "type": "docs",
+      "minutes": 5,
+      "url": "https://docs.claude.com/en/docs/about-claude/pricing"
+    }
   ]
 }

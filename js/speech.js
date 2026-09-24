@@ -86,6 +86,12 @@ export function autoSpeak(parts) {
   if (state.settings.autoRead) speak(parts);
 }
 
+// Speaker buttons: tap once to hear it, tap again to stop.
+export function toggleSpeak(parts) {
+  if (synth && (synth.speaking || synth.pending)) { stop(); return; }
+  speak(parts);
+}
+
 export function stop() {
   if (synth) synth.cancel();
 }

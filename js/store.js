@@ -36,7 +36,7 @@ function fresh() {
     decodes: [],           // Decode history
     placementDone: false,
     settings: {
-      autoRead: true,
+      autoRead: false,
       rate: 1,
       voice: '',
       apiKey: '',
@@ -52,7 +52,10 @@ function load() {
     const saved = JSON.parse(localStorage.getItem(KEY));
     if (saved) {
       const base = fresh();
-      return { ...base, ...saved, settings: { ...base.settings, ...saved.settings } };
+      const loaded = { ...base, ...saved, settings: { ...base.settings, ...saved.settings } };
+      // One-time change: voice used to start on by default. Turn it off.
+      if (!loaded.settings.voiceOffV2) { loaded.settings.autoRead = false; loaded.settings.voiceOffV2 = true; }
+      return loaded;
     }
   } catch (e) { /* storage blocked or corrupted: start fresh */ }
   return fresh();

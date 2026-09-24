@@ -10,7 +10,7 @@ import { state, save, today } from './store.js';
 import { feed, getItem, unitMeta, newsItemIds } from './content.js';
 import { runSession } from './session.js';
 import { screen, esc, fmt, toast } from './ui.js';
-import { speak, stop } from './speech.js';
+import { speak, stop, toggleSpeak } from './speech.js';
 
 export const CATEGORIES = {
   labs: 'AI labs',
@@ -162,6 +162,6 @@ export function renderNews() {
 
   const ln = document.getElementById('listen-new');
   if (ln) {
-    ln.onclick = () => speak(fresh.flatMap((it, i) => [`${i + 1}. ${it.title}. From ${it.source}.`, it.summary, `For you: ${it.why}`]));
+    ln.onclick = () => toggleSpeak(fresh.flatMap((it, i) => [`${i + 1}. ${it.title}. From ${it.source}.`, it.summary, `For you: ${it.why}`]));
   }
 }

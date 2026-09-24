@@ -199,7 +199,7 @@ Rules:
 - why_it_matters: at most 30 words, speaking directly to this reader ("you").
 - must_know: true for at most 2 items per day that genuinely change what this reader should know or do.
 - cards: 1-3 flashcards (front = term or question, back = short answer) ONLY for must_know items, otherwise [].
-- quiz: 1 multiple-choice question (4 options, answer = 0-based index) ONLY for must_know items, otherwise [].
+- quiz: 1 multiple-choice question (4 options, answer = 0-based index) ONLY for must_know items, otherwise []. Quiz quality: all 4 options must be similar in length, wording style and detail; wrong options must be believable to a non-expert (real terms, common mix-ups), never silly; the question must require knowing the concept, so it can't be answered by common sense or by picking the most detailed option.
 - related_units: 0-2 ids of lessons in the reader's app whose topic this item directly teaches or updates. Use [] when none fit well. The lessons are:
 ${unitList}
 - Use the exact "id" from the input.
@@ -295,7 +295,7 @@ async function makeWeekly(items, guests, unitIds) {
 - top5: the 5 most important things this reader should know from this week, from the items and guest findings below. Use the exact links given. "why" = one sentence to the reader.
 - script: a ~300-word briefing written to be READ ALOUD on a walk: conversational, no bullet symbols, no URLs, covering the top 5 and why each matters.
 - cards: 5 flashcards capturing the key facts and terms from the top 5.
-- quiz: 3 multiple-choice questions (4 options, answer = 0-based index).
+- quiz: 3 multiple-choice questions (4 options, answer = 0-based index). Quiz quality: all 4 options must be similar in length, wording style and detail; wrong options must be believable to a non-expert (real terms, common mix-ups), never silly; the question must require knowing the concept, so it can't be answered by common sense or by picking the most detailed option.
 - stale_notes: for the lesson text at the bottom, list any facts this week's news has made outdated or wrong (e.g. model names, prices, features). Be specific about what changed. Return [] if nothing is outdated.
 - Summarize in your own words. Never copy sentences from sources.
 

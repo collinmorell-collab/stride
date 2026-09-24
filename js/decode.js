@@ -14,7 +14,7 @@ import { state, save, addXP, XP, today } from './store.js';
 import { allUnits, unitMeta } from './content.js';
 import { runSession } from './session.js';
 import { screen, esc, fmt, toast } from './ui.js';
-import { speak, autoSpeak } from './speech.js';
+import { toggleSpeak, autoSpeak } from './speech.js';
 
 // The official Anthropic JavaScript library, loaded from a public CDN
 // (a fast file-hosting network) only when you actually decode something.
@@ -80,7 +80,7 @@ Fill every field:
 - should_i_worry: is this normal, a problem, or dangerous? What (if anything) should they do or ask an engineer? 1-3 sentences.
 - pm_angle: one or two sentences on why a PM should care.
 - terms: 2-5 technical terms that appear or are implied, each with a one-sentence plain definition.
-- quiz: exactly 3 multiple-choice questions (4 options each, "answer" is the 0-based index of the correct option) that check understanding of this specific paste. Vary the correct position. "why" explains the answer in 1-2 sentences.
+- quiz: exactly 3 multiple-choice questions (4 options each, "answer" is the 0-based index of the correct option) that check understanding of this specific paste. Vary the correct position. "why" explains the answer in 1-2 sentences. Quiz quality: all 4 options must be similar in length, wording style and detail; wrong options must be believable to a non-expert (real terms, common mix-ups), never silly; the question must require knowing the concept, so it can't be answered by common sense or by picking the most detailed option.
 - related_units: 0-3 unit ids from this curriculum that would help:
 ${unitList}
 
@@ -249,7 +249,7 @@ function showResult(entry) {
 
   const spoken = [r.title, r.plain_english, 'Analogy. ' + r.analogy, 'Should I worry? ' + r.should_i_worry];
   autoSpeak(spoken);
-  document.getElementById('say').onclick = () => speak(spoken);
+  document.getElementById('say').onclick = () => toggleSpeak(spoken);
 
   document.getElementById('save-cards').onclick = () => {
     saveTermsAsCards(entry);
