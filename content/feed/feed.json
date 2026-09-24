@@ -1,0 +1,355 @@
+{
+  "updated": "2026-09-24T04:01:47.516Z",
+  "items": [
+    {
+      "id": "2947393216",
+      "date": "2026-09-22T12:45:14.000Z",
+      "added": "2026-09-24T04:00:57.973Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/advanced-evals-how-to-find-and-fix",
+      "category": "pm",
+      "title": "Advanced evals: finding the AI failures you don't know about",
+      "summary": "Lenny's newsletter walks through error discovery — systematically surfacing hidden failure modes in an AI product before writing eval criteria, so your metrics measure real problems instead of imagined ones.",
+      "why": "You ship agents; evals are the PM skill that separates demo-grade from production-grade. Error discovery is the step most teams skip.",
+      "score": 10,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Error discovery (in AI evals)",
+          "back": "Reading real outputs/traces to find actual failure modes first, then turning those into eval criteria — instead of guessing metrics up front."
+        },
+        {
+          "front": "Why not start with a metric?",
+          "back": "Predefined metrics miss failure modes you haven't imagined; you optimize for what you measured, not what breaks."
+        },
+        {
+          "front": "Who should do error discovery?",
+          "back": "A domain expert or PM who can judge 'good' — it's judgment work, not just engineering."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "According to the eval workflow, what should come first?",
+          "options": [
+            "Pick a scoring metric and benchmark",
+            "Look at real outputs to discover failure modes",
+            "Fine-tune the model",
+            "Add more tools to the agent"
+          ],
+          "answer": 1,
+          "why": "Error discovery precedes criteria: you can only measure failures you've actually found."
+        }
+      ]
+    },
+    {
+      "id": "f526d76790",
+      "date": "2026-09-22T23:46:41.000Z",
+      "added": "2026-09-24T04:00:57.973Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
+      "category": "labs",
+      "title": "Claude Opus 5.5, GPT-6 Sol and Luna land — plus a 40-50% price war",
+      "summary": "Simon Willison rounds up a chaotic release week: Anthropic's Opus 5.5 and OpenAI's GPT-6 Sol/Luna arrive within a day of each other, alongside Grok 4.7, with frontier prices cut sharply.",
+      "why": "Your model choice and unit economics just changed. Worth re-running cost assumptions for your Bedrock agents this week.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "a1",
+        "a2"
+      ],
+      "cards": [
+        {
+          "front": "What changed in the frontier model lineup this week?",
+          "back": "Claude Opus 5.5, GPT-6 Sol and Luna, and Grok 4.7 all shipped within ~48 hours, with price cuts of roughly 40-50%."
+        },
+        {
+          "front": "Why do model price cuts matter to a PM?",
+          "back": "They change per-request cost, so features that were too expensive (bigger context, more agent steps, more retries) can become viable."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What was the main commercial story alongside the Opus 5.5 and GPT-6 launches?",
+          "options": [
+            "Frontier model prices dropped roughly 40-50%",
+            "Open weights were discontinued",
+            "API rate limits were removed",
+            "All labs moved to per-seat pricing"
+          ],
+          "answer": 0,
+          "why": "Competing releases triggered a price war, reshaping cost models for agent products."
+        }
+      ]
+    },
+    {
+      "id": "201957d3ce",
+      "date": "2026-09-21T12:04:11.000Z",
+      "added": "2026-09-24T04:00:57.973Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-warp-ships-2000-prs-a-month-with",
+      "category": "builders",
+      "title": "Warp's 'AI factory': 2,000 PRs a month from Slack and Linear tickets",
+      "summary": "Warp's CEO explains a pipeline that turns requests from Slack, Linear and GitHub into tested, tracked pull requests run by cloud agents — and how the team measures and improves that pipeline over time.",
+      "why": "A concrete operating model for agentic delivery you could adapt to your Bitbucket workflow, plus the metrics to judge whether it works.",
+      "score": 9,
+      "mustKnow": false,
+      "related": [
+        "c2",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "f0c4809f60",
+      "date": "2026-09-22T23:12:49.000Z",
+      "added": "2026-09-24T04:00:57.973Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/opus-55-vs-gpt-6-sol-which-model",
+      "category": "labs",
+      "title": "Blind taste test: Opus 5.5 vs GPT-6 Sol across six task types",
+      "summary": "Lenny runs blind head-to-head evaluations on writing, frontend prototypes, long-running agentic tasks, SVGs, coding and video editing, showing where each model actually wins rather than trusting benchmark claims.",
+      "why": "A repeatable way to pick models by task instead of by hype — and a template for your own blind evals at work.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "a2",
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "48b6ca0f88",
+      "date": "2026-09-22T19:06:40.000Z",
+      "added": "2026-09-24T04:00:57.973Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/i-left-claude-for-months-opus-55",
+      "category": "labs",
+      "title": "Why Opus 5.5 won back a user who'd quit Claude",
+      "summary": "A practitioner who abandoned Claude for months explains the specific tasks — frontend work, SVGs, long agentic runs — where Opus 5.5 now earns a place back in their tool stack.",
+      "why": "Practical signal on where Opus 5.5 is genuinely better, useful when defending your Claude Code habits to a mixed-tool team.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "a2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "11bd1be78b",
+      "date": "2026-09-22T17:28:01.000Z",
+      "added": "2026-09-24T04:00:57.973Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/claude-opus-5-5-is-now-available-on-aws/",
+      "category": "builders",
+      "title": "Claude Opus 5.5 is live on Amazon Bedrock",
+      "summary": "Anthropic's most capable agentic-coding model is now available on Bedrock and Claude Platform on AWS, with guidance on when to use it for long-running tasks and how to start calling it.",
+      "why": "This is your company's exact stack — Lambda plus Bedrock — so it's the fastest path to test Opus 5.5 in production agents.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5387aa5d97",
+      "date": "2026-09-22T17:18:13.000Z",
+      "added": "2026-09-24T04:00:57.973Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "Testing whether your agent picked the right skill, not just sounded good",
+      "summary": "AWS shows how to use Strands Evals with Bedrock AgentCore Evaluations to measure skill selection and instruction-following in agents, since a fluent answer doesn't prove correct procedure was followed.",
+      "why": "The Bedrock-native counterpart to Lenny's evals piece — concrete tooling for evaluating the agents your team already runs.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "154febf0aa",
+      "date": "2026-09-21T15:03:51.000Z",
+      "added": "2026-09-24T04:00:57.973Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-ai-metas-muse-review-how-warp",
+      "category": "pm",
+      "title": "How I AI weekly: Meta's Muse reviewed, plus the Warp factory episode",
+      "summary": "The week's How I AI roundup pairs a hands-on review of Meta's Muse with the Warp AI-factory conversation, aimed at PMs wanting to see real AI workflows rather than product announcements.",
+      "why": "Short, workflow-focused listens that fit your walk and show how other PMs actually use these tools day to day.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "57339196ea",
+      "date": "2026-09-23T19:19:15.000Z",
+      "added": "2026-09-24T04:00:57.973Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.281",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.281: enterprise Bedrock and desktop policy controls",
+      "summary": "This release adds gateway support for newer Claude Desktop keys with policies like blocking reads outside working directories, and lets the gateway assume an IAM role via STS to call Bedrock in another AWS account.",
+      "why": "If your org routes Claude Code through Bedrock, cross-account IAM role support is the flag your platform team will care about.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    }
+  ],
+  "weekly": [
+    {
+      "weekOf": "2026-09-21",
+      "created": "2026-09-24T04:01:47.514Z",
+      "headline": "A frontier release week (Opus 5.5, GPT-6 Sol and Luna) plus a price war — and evals become the PM skill that matters",
+      "script": "Big week. Two things collided: new frontier models, and a fresh push on how we actually judge them.\n\nStart with evals. Lenny's newsletter published a piece on advanced evals, and the key idea is error discovery: before you write a single scoring criterion, you go hunting for the failure modes you don't know your product has. Most teams invert this — they invent metrics first and end up measuring imaginary problems. For you, shipping agents, this is the line between a demo that impresses and something that survives real users.\n\nSecond, Simon Willison rounded up a chaotic release week. Anthropic's Claude Opus 5.5 and OpenAI's GPT-6 Sol and Luna landed within a day of each other, Grok 4.7 alongside them, and frontier prices dropped roughly forty to fifty percent. That means your cost assumptions for your Bedrock agents are stale. Re-run the math this week; things you priced out as too expensive may now be affordable.\n\nThird, and conveniently: Opus 5.5 is already live on Amazon Bedrock. That's your exact stack — Lambda plus Bedrock — so testing it in a production agent is a config change, not a migration.\n\nFourth, Lenny ran blind head-to-head tests of Opus 5.5 versus GPT-6 Sol across six task types: writing, frontend prototypes, long-running agentic tasks, SVGs, coding and video editing. The lesson isn't which model won; it's the method. Pick models per task from your own blind tests, not from benchmark press releases.\n\nFifth, AWS published a guide to evaluating skill-equipped agents using Strands Evals with Bedrock AgentCore. It measures whether your agent picked the right skill and followed instructions — not just whether the answer sounded fluent. That's the native tooling twin of Lenny's evals piece.\n\nOne bonus: Warp's CEO described an AI factory turning Slack and Linear tickets into two thousand pull requests a month. Worth stealing the operating model for Bitbucket.",
+      "top5": [
+        {
+          "title": "Advanced evals: finding the AI failures you don't know about",
+          "link": "https://www.lennysnewsletter.com/p/advanced-evals-how-to-find-and-fix",
+          "source": "Lenny's Newsletter",
+          "why": "Error discovery comes before eval criteria — skip it and your metrics measure problems you invented rather than the ones your agents actually have."
+        },
+        {
+          "title": "Claude Opus 5.5, GPT-6 Sol and Luna land — plus a 40-50% price war",
+          "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
+          "source": "Simon Willison",
+          "why": "Three frontier releases in a week and prices down roughly half means your Bedrock unit economics need recalculating now."
+        },
+        {
+          "title": "Claude Opus 5.5 is live on Amazon Bedrock",
+          "link": "https://aws.amazon.com/blogs/machine-learning/claude-opus-5-5-is-now-available-on-aws/",
+          "source": "AWS Machine Learning Blog",
+          "why": "It's already in your Lambda-plus-Bedrock stack, so trying the new flagship on a long-running agent is a config change, not a project."
+        },
+        {
+          "title": "Blind taste test: Opus 5.5 vs GPT-6 Sol across six task types",
+          "link": "https://www.lennysnewsletter.com/p/opus-55-vs-gpt-6-sol-which-model",
+          "source": "Lenny's Newsletter",
+          "why": "Copy the method: blind, task-by-task comparisons beat benchmark claims when you're choosing which model powers which agent."
+        },
+        {
+          "title": "Testing whether your agent picked the right skill, not just sounded good",
+          "link": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
+          "source": "AWS Machine Learning Blog",
+          "why": "This is the Bedrock-native way to turn the eval theory into instrumentation your team can actually run on the agents you already ship."
+        }
+      ],
+      "cards": [
+        {
+          "front": "Error discovery (in AI evals)",
+          "back": "The step before writing eval criteria: systematically hunting for failure modes you didn't know your AI product had, so your metrics score real problems instead of guessed ones. Most teams skip it and write criteria first."
+        },
+        {
+          "front": "What shipped in the big release week (per Simon Willison)",
+          "back": "Anthropic's Claude Opus 5.5 and OpenAI's GPT-6 Sol and Luna arrived within about a day of each other, with Grok 4.7 alongside — and frontier prices were cut roughly 40–50%."
+        },
+        {
+          "front": "Why the price cuts matter for a Bedrock team",
+          "back": "Per-token costs drive agent unit economics. A ~40–50% frontier price drop changes which workloads are affordable, so cost models, routing rules and 'too expensive' decisions should be re-run."
+        },
+        {
+          "front": "Blind head-to-head model testing",
+          "back": "Lenny compared Opus 5.5 and GPT-6 Sol blind across six task types (writing, frontend prototypes, long agentic runs, SVGs, coding, video editing). Takeaway: choose models per task from your own blind tests, not benchmarks."
+        },
+        {
+          "front": "Strands Evals + Bedrock AgentCore Evaluations",
+          "back": "AWS tooling for judging agents on whether they selected the correct skill and followed instructions — because a fluent-sounding answer doesn't prove the right procedure was used."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "According to this week's Lenny piece on advanced evals, what should happen before you write eval criteria?",
+          "options": [
+            "Error discovery — surfacing failure modes you don't yet know about",
+            "Pick a benchmark like SWE-bench and track it",
+            "Fine-tune the model on your own data",
+            "Run an A/B test on pricing"
+          ],
+          "answer": 0,
+          "why": "Criteria written before discovery tend to measure imagined problems; discovery grounds them in real observed failures."
+        },
+        {
+          "q": "What happened to frontier model pricing during this release week?",
+          "options": [
+            "Prices rose about 20% due to demand",
+            "Prices were cut roughly 40–50%",
+            "Pricing moved from per-token to per-seat",
+            "Pricing was unchanged"
+          ],
+          "answer": 1,
+          "why": "Simon Willison's roundup notes sharp cuts of about 40–50% alongside the Opus 5.5 and GPT-6 launches."
+        },
+        {
+          "q": "What do Strands Evals with Bedrock AgentCore Evaluations primarily measure?",
+          "options": [
+            "How fluent and well-written the agent's response is",
+            "Token cost per request",
+            "Whether the agent chose the right skill and followed instructions",
+            "How fast the model returns its first token"
+          ],
+          "answer": 2,
+          "why": "The point is that fluency isn't proof of correct procedure, so the evals target skill selection and instruction-following."
+        }
+      ],
+      "stale": [
+        {
+          "unit": "c2",
+          "note": "The pricing table ('As of September 2026: Claude Opus 5 $5 in / $25 out, Sonnet 5 $2/$10, Haiku 4.5 $1/$5') and the worked example are now unreliable: this week's releases came with frontier price cuts of roughly 40–50%, so the numbers and the resulting $0.014 sample calculation should be re-checked against current Anthropic and Bedrock rate cards."
+        },
+        {
+          "unit": "c2",
+          "note": "The tier list treats Claude Opus 5 as the current top Opus. Claude Opus 5.5 has now shipped and is the current flagship agentic-coding model — and it is already available on AWS Bedrock, which the same section mentions as your front door."
+        },
+        {
+          "unit": "c2",
+          "note": "'Who makes the models' is behind on the frontier lineup: OpenAI has released GPT-6 in two variants (Sol and Luna) and xAI has shipped Grok 4.7, so 'OpenAI (GPT)' and the passing mention of xAI need refreshing with current version names."
+        },
+        {
+          "unit": "b0",
+          "note": "The model list in 'Claude Code = a model + a harness' should name the current generation (Opus 5.5 rather than a generic/older Opus), since model choice inside Claude Code changed this week."
+        }
+      ]
+    }
+  ],
+  "stale": [
+    {
+      "unit": "c2",
+      "note": "The pricing table ('As of September 2026: Claude Opus 5 $5 in / $25 out, Sonnet 5 $2/$10, Haiku 4.5 $1/$5') and the worked example are now unreliable: this week's releases came with frontier price cuts of roughly 40–50%, so the numbers and the resulting $0.014 sample calculation should be re-checked against current Anthropic and Bedrock rate cards.",
+      "flagged": "2026-09-24T04:01:47.514Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The tier list treats Claude Opus 5 as the current top Opus. Claude Opus 5.5 has now shipped and is the current flagship agentic-coding model — and it is already available on AWS Bedrock, which the same section mentions as your front door.",
+      "flagged": "2026-09-24T04:01:47.514Z"
+    },
+    {
+      "unit": "c2",
+      "note": "'Who makes the models' is behind on the frontier lineup: OpenAI has released GPT-6 in two variants (Sol and Luna) and xAI has shipped Grok 4.7, so 'OpenAI (GPT)' and the passing mention of xAI need refreshing with current version names.",
+      "flagged": "2026-09-24T04:01:47.514Z"
+    },
+    {
+      "unit": "b0",
+      "note": "The model list in 'Claude Code = a model + a harness' should name the current generation (Opus 5.5 rather than a generic/older Opus), since model choice inside Claude Code changed this week.",
+      "flagged": "2026-09-24T04:01:47.514Z"
+    }
+  ]
+}
