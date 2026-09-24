@@ -1,6 +1,24 @@
 {
-  "updated": "2026-09-24T04:01:47.516Z",
+  "updated": "2026-09-24T14:40:10.327Z",
   "items": [
+    {
+      "id": "eb58386549",
+      "date": "2026-09-24T08:12:59.000Z",
+      "added": "2026-09-24T14:40:10.325Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-meta-connect-2026-muse-glasses",
+      "category": "labs",
+      "title": "Meta Connect 2026: Muse smart glasses and new voice/video AI",
+      "summary": "Meta's annual event unveiled its Muse glasses line plus upgrades to voice and video AI features and a product called Charm, signalling a push toward always-on, multimodal assistants on wearable hardware.",
+      "why": "Multimodal, always-on assistants are the next interface shift — useful context when you think about where your own AI products could live.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "2947393216",
       "date": "2026-09-22T12:45:14.000Z",
