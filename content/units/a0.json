@@ -1,0 +1,122 @@
+{
+  "id": "a0",
+  "intro": "Every web page and prototype you've ever made is built from the same three layers. Learn them once and a lot of Claude Code output starts making sense.",
+  "levels": {
+    "1": {
+      "summary": "HTML, CSS and JavaScript: the three layers of every web page.",
+      "lesson": [
+        {
+          "title": "Every web page is three layers",
+          "body": "Think of a house.\n\n**HTML is the structure**: walls, rooms, doors. It's a text file that says \"here's a heading, here's a button, here's a list.\" Your HTML prototypes *are* HTML files: Claude writes the text and your browser draws it.\n\n**CSS is the paint and furniture**: colors, fonts, spacing, layout. It's a list of rules like \"all buttons are blue with rounded corners.\"\n\n**JavaScript is the electricity**: anything that *happens*. Clicking a button, flipping a card, saving your score.",
+          "pm": "When an engineer says \"that's just a CSS change,\" they mean it's cosmetic and low-risk. \"A JavaScript change\" means behavior changes, so it needs more testing."
+        },
+        {
+          "title": "Front end vs back end",
+          "body": "**JavaScript is a programming language**: a way to write instructions a computer follows. It's the only language web browsers run natively, which is why it's everywhere.\n\nThe **front end** is everything that runs on *your* device: the HTML, CSS and JavaScript your browser shows you.\n\nThe **back end** is what runs on a *server* somewhere else: storing data, checking passwords, calling AI models. You never see it directly.\n\n**Node** (or Node.js) is JavaScript running *outside* the browser, usually on a server or your laptop. So the same language can power both ends.",
+          "pm": "\"Is that front end or back end?\" is one of the most useful questions you can ask. It tells you who works on it, how it's tested, and how risky it is."
+        }
+      ],
+      "cards": [
+        { "front": "HTML", "back": "The structure of a web page: headings, buttons, text, images. Like the walls and rooms of a house." },
+        { "front": "CSS", "back": "The styling rules for a web page: colors, fonts, spacing, layout. The paint and furniture." },
+        { "front": "JavaScript", "back": "A programming language that makes web pages *do* things. The only language browsers run natively. The electricity." },
+        { "front": "Front end", "back": "The part of an app that runs on your device and that you see and touch." },
+        { "front": "Back end", "back": "The part of an app that runs on servers: data, logins, business logic. Invisible to the user." },
+        { "front": "Node (Node.js)", "back": "JavaScript running outside the browser, e.g. on a server or your laptop. Lets one language power both front and back end." }
+      ],
+      "quiz": [
+        {
+          "q": "You want every button in your prototype to be green instead of blue. Which layer do you change?",
+          "options": ["CSS", "HTML", "JavaScript", "The back end"],
+          "answer": 0,
+          "why": "Colors, fonts and spacing are styling, and styling is CSS's job."
+        },
+        {
+          "q": "Clicking \"Add to cart\" should update the cart count without reloading the page. Which layer makes that happen?",
+          "options": ["HTML", "CSS", "JavaScript", "The URL"],
+          "answer": 2,
+          "why": "Anything that *happens* in response to you (clicks, updates, animations with logic) is JavaScript."
+        },
+        {
+          "q": "Which one is a programming language?",
+          "options": ["HTML", "CSS", "JavaScript", "All three are programming languages"],
+          "answer": 2,
+          "why": "HTML and CSS *describe* a page (structure and style). JavaScript gives step-by-step instructions, which makes it a programming language."
+        },
+        {
+          "q": "Where does the back end run?",
+          "options": ["In your browser", "On a server somewhere else", "Inside the CSS file", "On your phone's home screen"],
+          "answer": 1,
+          "why": "The back end runs on servers. The front end runs on your device."
+        },
+        {
+          "q": "An engineer says \"we'll write the API in Node.\" What language will they write?",
+          "options": ["Python", "HTML", "JavaScript", "CSS"],
+          "answer": 2,
+          "why": "Node is JavaScript running outside the browser, often for back-end code like APIs."
+        }
+      ]
+    },
+    "2": {
+      "summary": "Tags, frameworks, TypeScript and build steps: what's inside real projects.",
+      "lesson": [
+        {
+          "title": "Tags, classes and rules",
+          "body": "HTML is made of **tags**, which are labels in angle brackets:\n\n```\n<button class=\"primary\">Save</button>\n```\n\n`<button>` opens the tag, `</button>` closes it, and \"Save\" is the text inside. `class=\"primary\"` is a label CSS can target.\n\nA CSS **rule** picks things and styles them:\n\n```\n.primary { background: green; }\n```\n\nThe dot means \"anything with class primary.\" A single-file prototype usually holds all three layers: HTML, plus CSS inside a `<style>` tag, plus JavaScript inside a `<script>` tag.",
+          "pm": "Knowing tags and classes lets you ask Claude for precise changes (\"make the .primary buttons bigger\") instead of vague ones."
+        },
+        {
+          "title": "Frameworks, TypeScript, build steps",
+          "body": "A **library** is a toolbox of pre-written code you pull in when you need it. A **framework** is more like a prefab house kit: it gives you structure *and* rules you build inside. **React** is the most popular front-end framework (technically a library). Next.js, Vue and Angular are others.\n\n**TypeScript** is JavaScript with labels on what kind of data each thing holds (text, number, list). Those labels catch mistakes early. Browsers can't run it directly.\n\nSo real projects have a **build step**: a command (often `npm run build`) that translates TypeScript and React code into plain HTML/CSS/JavaScript and packs it into a folder like `dist/` or `build/`.",
+          "pm": "\"The build is broken\" means that translation step failed, so nothing new can ship until it's fixed. It's usually more urgent than a single bug."
+        }
+      ],
+      "cards": [
+        { "front": "HTML tag", "back": "A label in angle brackets that marks a piece of a page, e.g. `<button>...</button>`." },
+        { "front": "CSS class", "back": "A name you give HTML elements (`class=\"primary\"`) so CSS rules can style them as a group." },
+        { "front": "Framework", "back": "A prefab kit for building apps, with structure and rules to follow. Examples: React, Next.js, Vue." },
+        { "front": "Library", "back": "A toolbox of pre-written code you use when you need it, without it dictating your app's structure." },
+        { "front": "TypeScript", "back": "JavaScript plus labels for what kind of data each thing holds. It catches mistakes early and must be translated before browsers can run it." },
+        { "front": "Build step", "back": "A command that translates and packages source code (e.g. TypeScript/React) into plain files a browser can run." }
+      ],
+      "quiz": [
+        {
+          "q": "In this HTML, what is `class=\"primary\"` for?",
+          "code": "<button class=\"primary\">Save</button>",
+          "options": ["It gives CSS (and JavaScript) a name to target this button", "It makes the button save data", "It's the text shown on the button", "It closes the tag"],
+          "answer": 0,
+          "why": "Classes are labels. CSS rules like `.primary { ... }` use them to style every element with that label."
+        },
+        {
+          "q": "What does this CSS rule do?",
+          "code": ".primary { background: green; }",
+          "options": ["Makes the background green on everything with class \"primary\"", "Creates a new button", "Makes the whole page green", "Runs when you click"],
+          "answer": 0,
+          "why": "The dot targets a class, and the rule sets that element's background color."
+        },
+        {
+          "q": "Why do most React + TypeScript projects need a build step?",
+          "options": ["Browsers can't run TypeScript/React code directly, so it must be translated to plain JavaScript", "To make the app private", "To upload the app to the internet", "To write the CSS"],
+          "answer": 0,
+          "why": "The build step translates developer-friendly code into what browsers understand, then bundles it."
+        },
+        {
+          "q": "What's the difference between a library and a framework?",
+          "options": ["A library is a toolbox you call when needed; a framework gives structure and rules you build inside", "They're the same thing", "A framework is only for CSS", "A library runs on the server, a framework in the browser"],
+          "answer": 0,
+          "why": "You call a library. A framework calls *your* code inside its structure. People blur the two, which is why React gets called both."
+        },
+        {
+          "q": "An engineer says \"the build is broken on main.\" What's the most accurate reading?",
+          "options": ["The step that packages the code is failing, so nothing new can ship until it's fixed", "A single button is the wrong color", "The website is being hacked", "Someone deleted the project"],
+          "answer": 0,
+          "why": "A broken build blocks everyone's changes from shipping, which is why teams treat it as urgent."
+        }
+      ]
+    }
+  },
+  "links": [
+    { "title": "What is JavaScript?", "source": "MDN Web Docs", "type": "docs", "minutes": 15, "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript" },
+    { "title": "Your first website (HTML, CSS & JS basics)", "source": "MDN Web Docs", "type": "docs", "minutes": 30, "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website" }
+  ]
+}

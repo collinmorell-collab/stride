@@ -1,0 +1,64 @@
+{
+  "recommendedOrder": ["a0", "b0", "a2", "a3", "b1", "c1", "a1", "a5", "c2"],
+  "tracks": [
+    {
+      "id": "a",
+      "title": "Tech Foundations",
+      "blurb": "The building blocks engineers assume you know.",
+      "units": [
+        { "id": "a0", "icon": "🧱", "title": "How apps are built", "ready": true },
+        { "id": "a1", "icon": "🌐", "title": "How the web works", "ready": true },
+        { "id": "a2", "icon": "📁", "title": "Files & formats (JSON and friends)", "ready": true },
+        { "id": "a3", "icon": "⌨️", "title": "The terminal", "ready": true },
+        { "id": "a4", "title": "Code basics: Python, Node, packages", "ready": false },
+        { "id": "a5", "icon": "🌿", "title": "Git & Bitbucket essentials", "ready": true },
+        { "id": "a5b", "title": "Git in a team: PRs, conflicts, good habits", "ready": false },
+        { "id": "a6", "title": "APIs", "ready": false },
+        { "id": "a7", "title": "Reading errors & logs", "ready": false },
+        { "id": "a8", "title": "Cloud basics: AWS, Lambda, secrets", "ready": false }
+      ]
+    },
+    {
+      "id": "b",
+      "title": "Claude Code Decoded",
+      "blurb": "Understand what Claude Code is actually doing.",
+      "units": [
+        { "id": "b0", "icon": "🗣️", "title": "Claude Code vocabulary", "ready": true },
+        { "id": "b1", "icon": "🛠️", "title": "Tool calls: Read, Edit, Bash…", "ready": true },
+        { "id": "b2", "title": "Permissions & modes", "ready": false },
+        { "id": "b3", "title": "Setting up a project well", "ready": false },
+        { "id": "b4", "title": "Commands, skills, subagents, hooks, MCP", "ready": false },
+        { "id": "b5", "title": "Models, thinking & cost", "ready": false }
+      ]
+    },
+    {
+      "id": "c",
+      "title": "AI for PMs",
+      "blurb": "Stay sharp on how AI works and where it's going.",
+      "units": [
+        { "id": "c1", "icon": "🧠", "title": "How LLMs work", "ready": true },
+        { "id": "c2", "icon": "🗺️", "title": "The model landscape", "ready": true },
+        { "id": "c3", "title": "Prompting & context engineering", "ready": false },
+        { "id": "c4", "title": "RAG & embeddings", "ready": false },
+        { "id": "c5", "title": "Agents, tools & MCP", "ready": false },
+        { "id": "c6", "title": "Evals: measuring AI quality", "ready": false },
+        { "id": "c7", "title": "AI product strategy & economics", "ready": false },
+        { "id": "c8", "title": "Reading model launches & benchmarks", "ready": false }
+      ]
+    },
+    {
+      "id": "d",
+      "title": "Building AI Agents",
+      "blurb": "From idea to production-grade agent. Opens after the foundations.",
+      "units": [
+        { "id": "d1", "title": "Anatomy of an AI service", "ready": false },
+        { "id": "d2", "title": "Calling a model: Anthropic API vs Bedrock", "ready": false },
+        { "id": "d3", "title": "Tool use & JSON schemas", "ready": false },
+        { "id": "d4", "title": "The agent loop & Agent SDK", "ready": false },
+        { "id": "d5", "title": "Production: cost, latency, guardrails", "ready": false },
+        { "id": "d6", "title": "Your team's pattern: Lambda + Bedrock", "ready": false },
+        { "id": "d7", "title": "Capstone: build your own agent", "ready": false }
+      ]
+    }
+  ]
+}

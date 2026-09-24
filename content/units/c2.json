@@ -1,0 +1,121 @@
+{
+  "id": "c2",
+  "intro": "Who makes the models, how tiers differ, and how to reason about cost, speed and quality. (Names and prices change fast. Figures here are as of September 2026.)",
+  "levels": {
+    "1": {
+      "summary": "Labs, open vs closed models, model tiers, and access via API or Bedrock.",
+      "lesson": [
+        {
+          "title": "Who makes the models",
+          "body": "A handful of **frontier labs** build the most capable models: **Anthropic** (Claude), **OpenAI** (GPT), and **Google** (Gemini), with others like Meta, Mistral, DeepSeek and xAI.\n\nTwo ways models are released:\n\n- **Closed** (proprietary): you use it through the maker's API or app, but you can't download it. Claude, GPT and Gemini work this way.\n- **Open weights**: the trained model itself is downloadable, so you can run it on your own servers. Meta's Llama and many Mistral and DeepSeek models work this way.\n\nOpen weights give you control and privacy. Closed models are usually the most capable and need zero infrastructure.",
+          "pm": "\"Build on a closed API or host open weights?\" is a real strategy decision about capability, cost, data control and team skills."
+        },
+        {
+          "title": "Tiers: big, balanced, fast",
+          "body": "Labs ship model **families** in tiers. Claude's current family:\n\n- **Opus**: very capable, for hard reasoning and coding. Pricier.\n- **Sonnet**: the balanced middle, strong and cheaper.\n- **Haiku**: fastest and cheapest, great for simple, high-volume tasks.\n\n(Anthropic also has an even more capable, more expensive top tier called Fable.)\n\nThe rule of thumb: **use the smallest model that meets your quality bar**, and route easy tasks to small models.\n\nThe same Claude models are available in several places: Anthropic's own **API**, **AWS Bedrock** (Amazon's cloud AI service, which your team uses), and Google Cloud. Same brain, different front door and billing.",
+          "pm": "Model choice is a product decision: quality vs speed vs cost per request. Make it explicitly, per feature, instead of defaulting to the biggest model everywhere."
+        }
+      ],
+      "cards": [
+        { "front": "Frontier lab", "back": "A company building the most capable AI models, e.g. Anthropic, OpenAI, Google." },
+        { "front": "Open weights", "back": "A model whose trained files you can download and run yourself (e.g. Llama)." },
+        { "front": "Closed model", "back": "A model you can only use through its maker's API or app (e.g. Claude, GPT, Gemini)." },
+        { "front": "Opus / Sonnet / Haiku", "back": "Claude's tiers: Opus = most capable of the three, Sonnet = balanced, Haiku = fastest and cheapest." },
+        { "front": "AWS Bedrock", "back": "Amazon's cloud service for using AI models, including Claude, inside AWS." },
+        { "front": "API (for models)", "back": "The programmatic way apps send requests to a model and get responses back, billed per token." }
+      ],
+      "quiz": [
+        {
+          "q": "You need to classify 10 million support tickets into 5 categories cheaply. Best starting tier?",
+          "options": ["The smallest fast model (e.g. Haiku), checked against a quality bar", "The biggest model available", "Fine-tune a new model first", "Use a human team"],
+          "answer": 0,
+          "why": "Simple, high-volume tasks usually suit small models. Test quality before scaling up."
+        },
+        {
+          "q": "Your team calls Claude through AWS Bedrock. Compared to Anthropic's API, what's different?",
+          "options": ["The access point and billing (through AWS), not the underlying model family", "It's a completely different, weaker AI", "Bedrock models can't write code", "Nothing works on Bedrock"],
+          "answer": 0,
+          "why": "Bedrock is another front door to the same Claude models, integrated with AWS accounts and billing."
+        },
+        {
+          "q": "What does \"open weights\" mean?",
+          "options": ["The model itself can be downloaded and run on your own servers", "The model is free to use via API", "The training data is public", "Anyone can edit the model online"],
+          "answer": 0,
+          "why": "Weights are the trained model. Open weights means you can host it yourself."
+        },
+        {
+          "q": "Which is NOT a frontier AI lab?",
+          "options": ["Bitbucket", "Anthropic", "OpenAI", "Google DeepMind"],
+          "answer": 0,
+          "why": "Bitbucket is Atlassian's code-hosting site, not an AI lab."
+        },
+        {
+          "q": "The best default rule for picking a model for a feature?",
+          "options": ["The smallest model that reliably meets your quality bar", "Always the newest and biggest", "Always the cheapest, whatever the quality", "Whichever has the coolest name"],
+          "answer": 0,
+          "why": "Balance quality, speed and cost, and measure instead of guessing."
+        }
+      ]
+    },
+    "2": {
+      "summary": "Token pricing math, benchmarks vs evals, effort settings and model deprecation.",
+      "lesson": [
+        {
+          "title": "Pricing math and benchmarks",
+          "body": "Models are priced per **million tokens (MTok)**, with **output costing more than input**. As of September 2026:\n\n- Claude Opus 5: $5 in / $25 out per MTok\n- Claude Sonnet 5: $2 in / $10 out\n- Claude Haiku 4.5: $1 in / $5 out\n\nQuick math: a request with 2,000 input tokens and 1,000 output tokens on Sonnet 5 costs 0.002 × $2 + 0.001 × $10 = **$0.014**. Multiply by requests per day to get your bill.\n\n**Benchmarks** are standardized tests (for example, SWE-bench for coding). They're useful for rough comparisons, but they're not *your* task. Your own **evals**, tests built from your real use cases, matter more.",
+          "pm": "Always sketch the unit economics: tokens per request × requests per user × users. AI features can be cheap per call and expensive at scale."
+        },
+        {
+          "title": "Effort, speed and versions",
+          "body": "Many models let you choose an **effort** or **thinking** level. Higher effort means better answers on hard problems, but slower and costlier. Claude Code lets you switch model and effort (try `/model`).\n\n**Latency** (how long until the answer arrives) matters for UX. Chat needs fast first words; a background job can wait.\n\nModels are **versioned** and eventually **deprecated** (retired). A newer model may behave differently even with the same prompt, so teams re-run their evals before switching.",
+          "pm": "Plan for model upgrades like dependency upgrades: budget time to re-test, and keep an eval set ready so switching is a measured decision, not a leap of faith."
+        }
+      ],
+      "cards": [
+        { "front": "MTok", "back": "Million tokens: the unit AI models are priced in." },
+        { "front": "Input vs output tokens", "back": "Input = what you send (prompt, context). Output = what the model writes. Output costs more per token." },
+        { "front": "Benchmark", "back": "A standardized test to compare models. Useful, but not the same as your real task." },
+        { "front": "Eval", "back": "Your own test set built from real use cases, used to measure whether a model or prompt is good enough." },
+        { "front": "Effort level", "back": "A setting controlling how much a model thinks before answering: higher = better on hard tasks, slower and costlier." },
+        { "front": "Deprecation", "back": "When a model version is scheduled for retirement, so products need to migrate and re-test." },
+        { "front": "Latency", "back": "The delay before a response arrives. Critical for chat UX, less so for background jobs." }
+      ],
+      "quiz": [
+        {
+          "q": "A request uses 1,000 input and 1,000 output tokens on a model priced $2 in / $10 out per MTok. Cost?",
+          "options": ["$0.012", "$12", "$0.12", "$1.20"],
+          "answer": 0,
+          "why": "0.001 × $2 + 0.001 × $10 = $0.002 + $0.010 = $0.012."
+        },
+        {
+          "q": "Model A tops a public coding benchmark. Should you switch your product to it immediately?",
+          "options": ["Run your own evals first; benchmarks don't equal your use case", "Yes, benchmarks are definitive", "No, never change models", "Only if it's cheaper"],
+          "answer": 0,
+          "why": "Benchmarks are a starting signal. Your evals on your tasks decide."
+        },
+        {
+          "q": "Which usually costs more per token?",
+          "options": ["Output tokens", "Input tokens", "They're always equal", "Neither, tokens are free"],
+          "answer": 0,
+          "why": "Output is typically about 5× the input price for Claude models."
+        },
+        {
+          "q": "Your provider announces the model you use will be deprecated in 6 months. Best response?",
+          "options": ["Plan a migration: test the successor against your evals and adjust prompts", "Ignore it", "Switch today without testing", "Build your own model"],
+          "answer": 0,
+          "why": "Newer models can behave differently. Measure before switching."
+        },
+        {
+          "q": "For a live chat feature, which matters most for how it *feels*?",
+          "options": ["Low latency (fast first words)", "Maximum effort on every message", "The biggest context window", "Open weights"],
+          "answer": 0,
+          "why": "Users feel delay directly. Background tasks can trade speed for depth."
+        }
+      ]
+    }
+  },
+  "links": [
+    { "title": "Claude models overview", "source": "Claude docs", "type": "docs", "minutes": 5, "url": "https://docs.claude.com/en/docs/about-claude/models/overview" },
+    { "title": "Claude pricing", "source": "Claude docs", "type": "docs", "minutes": 5, "url": "https://docs.claude.com/en/docs/about-claude/pricing" }
+  ]
+}

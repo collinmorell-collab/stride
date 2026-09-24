@@ -1,0 +1,122 @@
+{
+  "id": "a5",
+  "intro": "How your team saves, shares and reviews code: Git mechanics, how Bitbucket fits in, and the habits that separate smooth teams from messy ones.",
+  "levels": {
+    "1": {
+      "summary": "Repos, commits, branches, merges, and how Bitbucket fits in.",
+      "lesson": [
+        {
+          "title": "Git = save points for code",
+          "body": "**Git** is a tool that records the history of a project, like save points in a video game. You can always go back.\n\n- A **repository** (**repo**) is a project folder that Git is tracking, including its full history.\n- A **commit** is one save point: a snapshot of changes plus a short message explaining them (\"Fix checkout button on mobile\"). Each commit gets a unique ID (a **hash**) like `a1b2c3d`.\n\nGit runs on your own computer. Nothing is shared until you choose to share it.",
+          "pm": "Good commit messages are a free changelog. When something breaks, the history tells you what changed, when, and why."
+        },
+        {
+          "title": "Branches, and where Bitbucket fits",
+          "body": "A **branch** is a parallel line of work. You branch off `main` (the official version), make changes safely, and nothing on `main` is disturbed. When you're done, you **merge**: combine the branch's changes back into `main`.\n\n**Bitbucket** (like GitHub or GitLab) is a website that hosts the team's shared copy of the repo, called the **remote**, plus team features like pull requests and pipelines. **Git is the tool; Bitbucket is the meeting place.**\n\n- `git clone` downloads a copy of the repo\n- `git pull` gets teammates' new commits\n- `git push` uploads your commits",
+          "pm": "When someone says a change is \"on a branch,\" it isn't live and isn't in `main` yet. It's still in progress."
+        }
+      ],
+      "cards": [
+        { "front": "Git", "back": "A tool that records a project's history as save points (commits) and lets people work in parallel." },
+        { "front": "Repository (repo)", "back": "A project folder tracked by Git, including its whole history." },
+        { "front": "Commit", "back": "A save point: a snapshot of changes with a message explaining them." },
+        { "front": "Branch", "back": "A parallel line of work split off from `main`, so changes don't disturb the official version." },
+        { "front": "Merge", "back": "Combining one branch's changes into another (usually into `main`)." },
+        { "front": "Remote", "back": "The shared copy of a repo hosted on a site like Bitbucket or GitHub." },
+        { "front": "Push vs pull", "back": "Push uploads your commits to the remote. Pull downloads others' commits." }
+      ],
+      "quiz": [
+        {
+          "q": "What's the relationship between Git and Bitbucket?",
+          "options": ["Git is the version-control tool; Bitbucket hosts shared repos and adds team features", "They're competing tools; you use one or the other", "Bitbucket is Git's newer name", "Git is only for Bitbucket"],
+          "answer": 0,
+          "why": "Git does the tracking. Bitbucket (or GitHub/GitLab) hosts the remote and adds pull requests, pipelines, etc."
+        },
+        {
+          "q": "You finished work on your laptop. Which command shares your commits with the team?",
+          "options": ["`git push`", "`git pull`", "`git clone`", "`git status`"],
+          "answer": 0,
+          "why": "Push sends your commits up to the remote."
+        },
+        {
+          "q": "Why work on a branch instead of directly on `main`?",
+          "options": ["So unfinished changes don't disturb the official version", "Branches are faster computers", "`main` is read-only forever", "Branches are free and main costs money"],
+          "answer": 0,
+          "why": "Branches isolate work in progress until it's reviewed and ready to merge."
+        },
+        {
+          "q": "Which is the best commit message?",
+          "options": ["\"Fix checkout button not responding on iOS Safari\"", "\"stuff\"", "\"asdf\"", "\"changes\""],
+          "answer": 0,
+          "why": "A good message says what changed and ideally why. Future you will thank you."
+        },
+        {
+          "q": "What does `git clone` do?",
+          "options": ["Downloads a full copy of a remote repo to your computer", "Duplicates a branch", "Deletes the repo", "Uploads your changes"],
+          "answer": 0,
+          "why": "Clone gives you your own local copy of the repository to work in."
+        }
+      ]
+    },
+    "2": {
+      "summary": "Pull requests, merge conflicts, worktrees, rebase, and good vs bad habits.",
+      "lesson": [
+        {
+          "title": "Pull requests and merge conflicts",
+          "body": "A **pull request** (**PR**) is a formal ask: \"please review my branch and merge it into main.\" On Bitbucket a PR shows the **diff** (what changed), lets teammates comment and **approve**, and runs **pipelines**: automated checks like tests and builds (configured in `bitbucket-pipelines.yml`).\n\nA **merge conflict** happens when two branches changed *the same lines* differently. Git can't guess which version is right, so it stops and asks a human to choose. It's normal, not a disaster, but it's a sign that branches lived too long or overlapped.",
+          "pm": "Small PRs get reviewed faster and more carefully. A 2,000-line PR usually gets a rubber stamp, and that's where bugs sneak through."
+        },
+        {
+          "title": "Worktrees, rebase, and good habits",
+          "body": "A **worktree** is a second working folder for the *same* repo, checked out to a different branch. You can have two branches open at once with no switching back and forth. It's great for running several Claude Code sessions on different tasks in parallel.\n\n**Rebase** replays your commits on top of the latest `main`, for a cleaner, straight-line history. Because it rewrites history, **never rebase a branch others are using**. The same goes for `git push --force`, which overwrites the remote's history.\n\n**Good habits:** small focused commits, clear messages, short-lived branches, pull `main` often, never commit secrets, and don't push straight to main.\n**Bad habits:** \"fix stuff\" messages, giant PRs, branches that live for weeks, force-pushing shared branches.",
+          "pm": "You can ask Claude Code to write the PR description for you. A good one explains *why*, *what changed* and *how it was tested*."
+        }
+      ],
+      "cards": [
+        { "front": "Pull request (PR)", "back": "A request to review a branch and merge it into main, with diff, comments, approvals and automated checks." },
+        { "front": "Merge conflict", "back": "When two branches changed the same lines differently, so a human has to choose what's right." },
+        { "front": "Pipeline (Bitbucket Pipelines)", "back": "Automated checks (tests, builds, deploys) that run on commits and PRs, defined in `bitbucket-pipelines.yml`." },
+        { "front": "Worktree", "back": "An extra working folder for the same repo on a different branch, so you can work on two branches at once." },
+        { "front": "Rebase", "back": "Replaying your commits on top of the latest main for a cleaner history. It rewrites history, so never do it on shared branches." },
+        { "front": "Force push", "back": "`git push --force`: overwrites the remote's history with yours. Dangerous on shared branches." }
+      ],
+      "quiz": [
+        {
+          "q": "Git reports a merge conflict. What does that mean?",
+          "options": ["Two branches changed the same lines differently, and a person must decide", "The repository is corrupted", "Bitbucket is down", "Someone deleted main"],
+          "answer": 0,
+          "why": "Conflicts are Git asking for a human decision. They're routine."
+        },
+        {
+          "q": "You want two Claude Code sessions working on two features at once without them tripping over each other. What helps?",
+          "options": ["A worktree for each branch", "One branch for both", "Force-pushing often", "Committing directly to main"],
+          "answer": 0,
+          "why": "Each worktree is its own folder on its own branch, so sessions don't overwrite each other's files."
+        },
+        {
+          "q": "Which is a bad practice?",
+          "options": ["Force-pushing to a branch teammates are also using", "Writing clear commit messages", "Keeping PRs small", "Pulling main often"],
+          "answer": 0,
+          "why": "Force-pushing a shared branch overwrites others' history and can lose their work."
+        },
+        {
+          "q": "A PR's pipeline is red (failed). What should happen?",
+          "options": ["Fix what failed before merging", "Merge anyway, since it's just a warning", "Delete the pipeline", "Close Bitbucket"],
+          "answer": 0,
+          "why": "Pipelines are the automated safety net. A red check usually means tests or the build broke."
+        },
+        {
+          "q": "Why do reviewers prefer small pull requests?",
+          "options": ["They're easier to review carefully, so bugs are more likely to be caught", "Bitbucket charges per line", "Big PRs can't be merged", "Small PRs skip the pipeline"],
+          "answer": 0,
+          "why": "Review quality drops sharply as PR size grows."
+        }
+      ]
+    }
+  },
+  "links": [
+    { "title": "What is version control?", "source": "Atlassian Git tutorials", "type": "docs", "minutes": 10, "url": "https://www.atlassian.com/git/tutorials/what-is-version-control" },
+    { "title": "Making a pull request", "source": "Atlassian Git tutorials", "type": "docs", "minutes": 10, "url": "https://www.atlassian.com/git/tutorials/making-a-pull-request" },
+    { "title": "Merging vs. rebasing", "source": "Atlassian Git tutorials", "type": "docs", "minutes": 12, "url": "https://www.atlassian.com/git/tutorials/merging-vs-rebasing" }
+  ]
+}

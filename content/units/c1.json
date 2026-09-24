@@ -1,0 +1,120 @@
+{
+  "id": "c1",
+  "intro": "What a large language model actually is, why it sometimes makes things up, and what \"thinking\" means.",
+  "levels": {
+    "1": {
+      "summary": "Tokens, training vs inference, hallucination and knowledge cutoffs.",
+      "lesson": [
+        {
+          "title": "Autocomplete, but enormous",
+          "body": "A **large language model (LLM)** is a program trained on a huge amount of text to do one thing: predict the next **token** (a chunk of text, about ¾ of a word). Do that over and over and you get paragraphs, code and answers.\n\nThere are two very different phases:\n\n- **Training**: months of expensive computing where the model learns patterns from text. Done once per model version by the lab (Anthropic, OpenAI, Google...).\n- **Inference**: *using* the trained model, which is every time you send a message. You pay per token for this.\n\nThe model doesn't learn from your chats as you go. Each version is frozen after training.",
+          "pm": "Almost all AI product costs you control are inference costs, and they scale with tokens. Long prompts and long outputs cost more on every single request."
+        },
+        {
+          "title": "Why it makes things up",
+          "body": "A **hallucination** is when a model states something false with total confidence. It happens because the model generates *plausible* text. It isn't looking facts up in a database.\n\nModels also have a **knowledge cutoff**: they know nothing after their training data ends, unless you give it to them.\n\nWays to reduce hallucination:\n\n- Put the real facts in the prompt (give it the doc, the data, the code)\n- Let it use tools, like search or reading files\n- Ask it to cite where each claim came from\n- Verify anything important",
+          "pm": "\"How do we ground it?\" (meaning: give it real sources) should be one of the first questions in any AI feature review."
+        }
+      ],
+      "cards": [
+        { "front": "LLM", "back": "Large language model: an AI trained on huge amounts of text to predict the next token, which lets it write, answer and code." },
+        { "front": "Token", "back": "A chunk of text (about ¾ of a word). Models read and write in tokens, and you pay per token." },
+        { "front": "Training", "back": "The expensive, one-time process where a lab teaches a model from huge amounts of data." },
+        { "front": "Inference", "back": "Using a trained model, i.e. every request you send. Billed per token." },
+        { "front": "Hallucination", "back": "When a model confidently states something false, because it generates plausible text rather than looking up facts." },
+        { "front": "Knowledge cutoff", "back": "The date a model's training data ends. It doesn't know later events unless you tell it." }
+      ],
+      "quiz": [
+        {
+          "q": "At its core, what is an LLM trained to do?",
+          "options": ["Predict the next token of text", "Search a database of facts", "Copy answers from the internet in real time", "Run code"],
+          "answer": 0,
+          "why": "Everything an LLM does comes from repeatedly predicting the next token."
+        },
+        {
+          "q": "Your team's AI feature costs rise every time users send longer messages. That's because you pay for…",
+          "options": ["Inference, billed per token", "Training, billed per user", "A flat monthly fee", "Storage"],
+          "answer": 0,
+          "why": "Every request is inference, and it's priced by input and output tokens."
+        },
+        {
+          "q": "A model confidently cites a research paper that doesn't exist. What's that called?",
+          "options": ["A hallucination", "A knowledge cutoff", "Fine-tuning", "A token"],
+          "answer": 0,
+          "why": "Confident but false output is a hallucination."
+        },
+        {
+          "q": "Best way to get accurate answers about your company's refund policy?",
+          "options": ["Put the actual policy text in the prompt (or let it retrieve it)", "Ask it to try harder", "Use a bigger font", "Ask the same question 5 times"],
+          "answer": 0,
+          "why": "Grounding the model in real source material is the most reliable fix for hallucination."
+        },
+        {
+          "q": "Do models learn from your conversations as you chat?",
+          "options": ["No. A model version is frozen after training; within a chat it only uses the context you give it", "Yes, instantly", "Only on weekends", "Only if you say please"],
+          "answer": 0,
+          "why": "The model's knowledge is fixed at training time. Apps can *remember* things by re-sending them as context, but the model itself doesn't change."
+        }
+      ]
+    },
+    "2": {
+      "summary": "System prompts, post-training, fine-tuning, reasoning and statelessness.",
+      "lesson": [
+        {
+          "title": "How models get their personality",
+          "body": "**Pre-training** gives a model raw knowledge from huge amounts of text. On its own that makes a clever autocomplete, not a helpful assistant.\n\n**Post-training** turns it into an assistant. One well-known method is **RLHF** (reinforcement learning from human feedback): people, or other AIs, rate answers, and the model learns to give the better kind.\n\nThen, as a builder, you shape it further:\n\n- **System prompt**: standing instructions from the app builder that the end user usually doesn't see (\"You are a friendly support agent for Acme…\").\n- **Fine-tuning**: extra training on your own examples. It's powerful but slower and costlier, and usually *not* the first thing to try. Better prompts and better context solve most problems.",
+          "pm": "If someone proposes fine-tuning first, ask: \"Have we exhausted prompting and giving it better context?\" That's usually cheaper, faster and easier to change."
+        },
+        {
+          "title": "Thinking, statelessness and multimodal",
+          "body": "**Reasoning** (or **thinking**) models write out hidden scratch-work tokens before answering. That makes them better at hard, multi-step problems, but slower and more expensive. Many apps let you set an **effort** level.\n\nModels are **stateless**: each request starts from zero. A chat \"remembers\" because the app re-sends the whole conversation every time. That's why long chats get slower and cost more.\n\n**Multimodal** models take more than text: images, PDFs, screenshots, sometimes audio.",
+          "pm": "Statelessness explains a lot of AI product behavior: why memory features exist, why long conversations get expensive, and why context management is a real engineering problem."
+        }
+      ],
+      "cards": [
+        { "front": "System prompt", "back": "Standing instructions from the app builder that shape the model's behavior, usually hidden from end users." },
+        { "front": "Post-training / RLHF", "back": "Training after pre-training that makes a model a helpful assistant, e.g. by learning from ratings of its answers." },
+        { "front": "Fine-tuning", "back": "Extra training on your own examples to specialize a model. Try prompting and better context first." },
+        { "front": "Reasoning / thinking", "back": "The model generating hidden scratch work before answering: better on hard problems, slower and pricier." },
+        { "front": "Stateless", "back": "The model remembers nothing between requests. Apps re-send the conversation each time." },
+        { "front": "Multimodal", "back": "Able to take in more than text, like images, PDFs or audio." }
+      ],
+      "quiz": [
+        {
+          "q": "Your support bot keeps being too formal. What should you try first?",
+          "options": ["Adjust the system prompt", "Fine-tune a custom model", "Train a new model from scratch", "Switch to a different language"],
+          "answer": 0,
+          "why": "Tone and behavior are usually quick system prompt changes. Fine-tuning is heavier and rarely the first move."
+        },
+        {
+          "q": "Why do long chat conversations get slower and more expensive?",
+          "options": ["The app re-sends the whole conversation on each turn because models are stateless", "The model gets tired", "Servers slow down at night", "Longer chats use a bigger model"],
+          "answer": 0,
+          "why": "Every turn includes all previous turns as input tokens."
+        },
+        {
+          "q": "When is turning up reasoning/thinking effort worth the cost?",
+          "options": ["For hard, multi-step problems like tricky debugging or planning", "For simple yes/no classification", "Always, for everything", "Never"],
+          "answer": 0,
+          "why": "Extra thinking pays off on hard tasks. On simple ones it mostly adds cost and delay."
+        },
+        {
+          "q": "What does RLHF mainly do?",
+          "options": ["Teaches a pre-trained model to give the kinds of answers people rate as helpful", "Adds internet access", "Makes the model smaller", "Encrypts the model"],
+          "answer": 0,
+          "why": "Reinforcement learning from human feedback shapes behavior using ratings of answers."
+        },
+        {
+          "q": "You paste a screenshot of an error into Claude and it reads it. That's because the model is…",
+          "options": ["Multimodal", "Stateless", "Fine-tuned", "Open weights"],
+          "answer": 0,
+          "why": "Multimodal models accept images and other inputs, not just text."
+        }
+      ]
+    }
+  },
+  "links": [
+    { "title": "Intro to Large Language Models (Andrej Karpathy)", "source": "YouTube", "type": "video", "minutes": 60, "url": "https://www.youtube.com/watch?v=zjkBMFhNj_g" },
+    { "title": "But what is a GPT? Visual intro to transformers", "source": "3Blue1Brown · YouTube", "type": "video", "minutes": 27, "url": "https://www.youtube.com/watch?v=wjZofJX0v4M" }
+  ]
+}

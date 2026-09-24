@@ -1,0 +1,122 @@
+{
+  "id": "a3",
+  "intro": "The terminal is where Claude Code does a lot of its work. Learn to read what it's typing.",
+  "levels": {
+    "1": {
+      "summary": "Terminal vs shell, how a command is built, and the core navigation commands.",
+      "lesson": [
+        {
+          "title": "The terminal: texting your computer",
+          "body": "The **terminal** is an app window where you control your computer by typing instead of clicking. On a Mac it's called Terminal (or iTerm, or the panel inside VS Code).\n\nInside it runs a **shell**, the program that reads what you type and carries it out. The Mac's default shell is **zsh**; another common one is **bash**. That's why Claude Code's terminal tool is called \"Bash.\"\n\nThe **prompt** is the little bit of text (often ending in `%` or `$`) that means \"ready, type something.\" Everything you type after it is a **command**.",
+          "pm": "The terminal isn't more powerful because it's mysterious. It's powerful because commands can be saved, repeated and automated, which is exactly why AI agents love it."
+        },
+        {
+          "title": "Anatomy of a command",
+          "body": "Most commands follow the same shape:\n\n```\nls -la ~/Dev\n```\n\n- `ls` is the **command** (the verb): list files.\n- `-la` are **flags** (options): `l` = long details, `a` = include hidden files.\n- `~/Dev` is the **argument**: what to act on.\n\nThe five you'll see most:\n\n- `pwd`: print working directory (\"where am I?\")\n- `ls`: list what's in this folder\n- `cd folder`: change directory (move into a folder)\n- `mkdir name`: make a new folder\n- `cat file`: print a file's contents",
+          "pm": "Once you can split a command into verb, options and target, you can read almost any command Claude Code runs, even ones you've never seen."
+        }
+      ],
+      "cards": [
+        { "front": "Terminal", "back": "An app window where you control the computer by typing commands." },
+        { "front": "Shell", "back": "The program inside the terminal that reads and runs your commands. zsh and bash are common ones." },
+        { "front": "`pwd`", "back": "Print working directory: shows which folder you're in." },
+        { "front": "`ls`", "back": "Lists the files and folders in the current folder." },
+        { "front": "`cd`", "back": "Change directory: moves you into another folder, e.g. `cd src`." },
+        { "front": "Flag", "back": "An option added to a command, usually starting with `-` or `--`, e.g. `ls -la` or `npm install --save`." }
+      ],
+      "quiz": [
+        {
+          "q": "In `ls -la ~/Dev`, what is `-la`?",
+          "options": ["Flags (options) changing how ls behaves", "The folder being listed", "The name of the shell", "An error code"],
+          "answer": 0,
+          "why": "Flags start with a dash and tweak the command. `~/Dev` is the argument."
+        },
+        {
+          "q": "You're lost in the terminal. Which command tells you which folder you're in?",
+          "options": ["`pwd`", "`ls`", "`cd`", "`cat`"],
+          "answer": 0,
+          "why": "pwd = print working directory."
+        },
+        {
+          "q": "What's the difference between the terminal and the shell?",
+          "options": ["The terminal is the window; the shell is the program inside that runs commands", "They're competitors", "The shell is only for servers", "The terminal is a programming language"],
+          "answer": 0,
+          "why": "Terminal = the window/app. Shell (zsh, bash) = the command interpreter running inside it."
+        },
+        {
+          "q": "What will this do?",
+          "code": "cd src",
+          "options": ["Move into the folder named src", "Delete the src folder", "Create a folder called src", "Show the contents of a file named src"],
+          "answer": 0,
+          "why": "cd = change directory."
+        },
+        {
+          "q": "Why is Claude Code's command-running tool called \"Bash\"?",
+          "options": ["bash is a common shell, and the tool runs shell commands", "It bashes bugs", "It only works on Windows", "It's the name of the model"],
+          "answer": 0,
+          "why": "The tool sends commands to a shell. bash is one of the most common shells."
+        }
+      ]
+    },
+    "2": {
+      "summary": "grep, pipes, chaining, installs, and the commands that deserve respect.",
+      "lesson": [
+        {
+          "title": "Searching and chaining: grep, | and &&",
+          "body": "**grep** searches inside files for text:\n\n```\ngrep -rn \"TODO\" src/\n```\n\nThat means: search for TODO, `-r` recursively (in every subfolder), `-n` showing line numbers, inside src/.\n\nA **pipe** `|` sends one command's output into the next, like an assembly line:\n\n```\ngrep -rn \"TODO\" src/ | wc -l\n```\n\nThis finds every TODO, then `wc -l` counts the lines, so you get the number of TODOs.\n\n`&&` means \"then, but only if the first one worked\": `npm install && npm run build`.",
+          "pm": "Pipes are why the terminal is so good for quick questions like \"how many TODOs are in this codebase?\" You can ask Claude Code exactly these kinds of questions."
+        },
+        {
+          "title": "Commands to respect",
+          "body": "Some commands deserve a second look before you approve them:\n\n- `rm` deletes files **permanently**. There's no Trash. `rm -rf folder` deletes a whole folder and everything inside, without asking.\n- `sudo` runs a command as the computer's administrator.\n- `npm install` / `pip install` download outside code packages from the internet.\n- `git push --force` overwrites shared history.\n\nUseful ones to know:\n\n- **Ctrl+C** stops whatever is running.\n- **Environment variables** are named settings the shell passes to programs, like `$HOME` or `API_KEY`. `export NAME=value` sets one.",
+          "pm": "When Claude Code asks permission for a Bash command, reading it (verb, flags, target) is your safety check. Anything with `rm -rf`, `sudo` or `--force` deserves a pause."
+        }
+      ],
+      "cards": [
+        { "front": "`grep`", "back": "Searches inside files for text. `-r` = search all subfolders, `-n` = show line numbers." },
+        { "front": "Pipe `|`", "back": "Sends one command's output into the next command, like an assembly line." },
+        { "front": "`&&`", "back": "Runs the next command only if the previous one succeeded." },
+        { "front": "`rm -rf`", "back": "Permanently deletes a folder and everything in it, without asking. No Trash." },
+        { "front": "`sudo`", "back": "Runs a command with administrator powers. Use with care." },
+        { "front": "Environment variable", "back": "A named setting (like `$HOME` or `API_KEY`) the shell passes to programs." },
+        { "front": "Ctrl+C", "back": "Stops the command that's currently running in the terminal." }
+      ],
+      "quiz": [
+        {
+          "q": "What does this command output?",
+          "code": "grep -rn \"TODO\" src/ | wc -l",
+          "options": ["The number of lines containing TODO in src and its subfolders", "A list of files named TODO", "It deletes every TODO", "It creates a TODO list"],
+          "answer": 0,
+          "why": "grep finds the matching lines, the pipe passes them on, and `wc -l` counts them."
+        },
+        {
+          "q": "In `npm install && npm run build`, when does the build run?",
+          "options": ["Only if the install succeeded", "Always, at the same time", "Only if the install failed", "Never"],
+          "answer": 0,
+          "why": "`&&` means run the next command only if the previous one worked."
+        },
+        {
+          "q": "Claude Code asks permission to run `rm -rf dist/`. What will it do?",
+          "options": ["Permanently delete the dist folder and everything in it", "Move dist to the Trash", "Rename dist", "List what's in dist"],
+          "answer": 0,
+          "why": "rm = remove, -r = everything inside, -f = don't ask. `dist/` is usually a generated build folder, so this is often fine, but it's always permanent."
+        },
+        {
+          "q": "A dev server is running in your terminal and you want it to stop. What do you press?",
+          "options": ["Ctrl+C", "Cmd+S", "Delete", "Esc Esc"],
+          "answer": 0,
+          "why": "Ctrl+C interrupts the running command."
+        },
+        {
+          "q": "What does the `|` symbol do in the terminal?",
+          "options": ["Passes one command's output into the next command", "Means \"or\"", "Comments out the line", "Separates folders in a path"],
+          "answer": 0,
+          "why": "It's called a pipe and it chains commands together like an assembly line."
+        }
+      ]
+    }
+  },
+  "links": [
+    { "title": "Command line crash course", "source": "MDN Web Docs", "type": "docs", "minutes": 30, "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Command_line" }
+  ]
+}

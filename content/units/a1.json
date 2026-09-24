@@ -1,0 +1,121 @@
+{
+  "id": "a1",
+  "intro": "What happens between typing a web address and seeing a page, plus the codes and terms engineers use to talk about it.",
+  "levels": {
+    "1": {
+      "summary": "Clients, servers, URLs, HTTPS and DNS.",
+      "lesson": [
+        {
+          "title": "Clients and servers: a restaurant",
+          "body": "Picture a restaurant.\n\n- You, the diner, are the **client**: your browser or phone app.\n- The kitchen is the **server**: a computer somewhere that's always on, waiting for orders.\n- The waiter carrying your order there and your food back is **HTTP**, the set of rules for requests and responses.\n\nYou send a **request** (\"give me the homepage\"), and the server sends a **response** (the page, or an error). Every page, image and API call works this way.",
+          "pm": "When something is slow, the first question is \"client or server?\" Is the phone slow to draw the page, or is the kitchen slow to cook?"
+        },
+        {
+          "title": "Reading a URL",
+          "body": "A **URL** is a web address. Take it apart:\n\n```\nhttps://shop.example.com/products/shoes?color=red\n```\n\n- `https://` is the protocol. The **S** means secure, so the connection is encrypted.\n- `shop.example.com` is the **domain**, which names the server.\n- `/products/shoes` is the **path**: which page or resource.\n- `?color=red` is the **query string**: extra details, like filters.\n\n**DNS** is the internet's phone book. It turns `example.com` into the numeric address (an **IP address**) of the actual server.",
+          "pm": "Query strings often carry tracking and filter state. That's why you should never put personal data in them: URLs get logged and shared."
+        }
+      ],
+      "cards": [
+        { "front": "Client", "back": "The device or app making a request, like your browser or phone app." },
+        { "front": "Server", "back": "An always-on computer that receives requests and sends back responses." },
+        { "front": "HTTP / HTTPS", "back": "The rules for web requests and responses. HTTPS is the encrypted, secure version." },
+        { "front": "URL", "back": "A web address: protocol + domain + path (+ optional query string)." },
+        { "front": "DNS", "back": "The internet's phone book: turns domain names into server IP addresses." },
+        { "front": "Query string", "back": "The part of a URL after `?`, carrying extra details like `?color=red`." }
+      ],
+      "quiz": [
+        {
+          "q": "In the restaurant analogy, what is the server?",
+          "options": ["The kitchen that prepares what was ordered", "The diner", "The menu", "The tip"],
+          "answer": 0,
+          "why": "The server receives requests (orders) and sends back responses (food)."
+        },
+        {
+          "q": "In `https://shop.example.com/cart?promo=FALL`, what is `promo=FALL`?",
+          "options": ["The query string", "The domain", "The path", "The protocol"],
+          "answer": 0,
+          "why": "Everything after `?` is the query string."
+        },
+        {
+          "q": "What does DNS do?",
+          "options": ["Translates domain names into server IP addresses", "Encrypts passwords", "Designs web pages", "Stores your cookies"],
+          "answer": 0,
+          "why": "DNS is the phone book of the internet."
+        },
+        {
+          "q": "What does the S in HTTPS add?",
+          "options": ["Encryption, so others can't read the traffic", "Speed", "Search", "Styling"],
+          "answer": 0,
+          "why": "HTTPS encrypts the connection between client and server."
+        },
+        {
+          "q": "When you open an app on your phone and it loads your profile, your phone is acting as the…",
+          "options": ["Client", "Server", "DNS", "Domain"],
+          "answer": 0,
+          "why": "The phone makes the request, so it's the client."
+        }
+      ]
+    },
+    "2": {
+      "summary": "Status codes, GET vs POST, localhost, ports, CDNs and latency.",
+      "lesson": [
+        {
+          "title": "Status codes and methods",
+          "body": "Every response comes with a three-digit **status code**:\n\n- **2xx = success**: `200 OK`, `201 Created`\n- **3xx = go elsewhere**: `301 Moved Permanently`\n- **4xx = the request's fault**: `400 Bad Request`, `401 Unauthorized` (who are you?), `403 Forbidden` (I know you, but no), `404 Not Found`, `429 Too Many Requests`\n- **5xx = the server's fault**: `500 Internal Server Error`, `503 Service Unavailable`\n\nRequests also have a **method**, the verb. **GET** fetches something, and **POST** sends or creates something. You'll also see PUT/PATCH (update) and DELETE.",
+          "pm": "4xx vs 5xx is a quick triage tool: 4xx usually means the client sent something wrong; 5xx means the back end broke and needs attention."
+        },
+        {
+          "title": "localhost, ports, CDNs and latency",
+          "body": "**localhost** means \"this very computer.\" When Claude Code starts a **dev server** (a test version of your app), it runs on your laptop at an address like `http://localhost:3000`.\n\nThe `3000` is a **port**, a numbered door on the computer. One machine can run many services, each behind its own door.\n\nA **CDN** (content delivery network) keeps copies of files on servers around the world, so users get them from somewhere nearby, fast.\n\n**Latency** is the delay before a response starts arriving. It's measured in milliseconds (ms).",
+          "pm": "\"It works on localhost\" means it works on the engineer's laptop, not necessarily for real users. It's a milestone, not a launch."
+        }
+      ],
+      "cards": [
+        { "front": "Status code", "back": "The three-digit result of a web request, e.g. 200 OK or 404 Not Found." },
+        { "front": "4xx vs 5xx", "back": "4xx = problem with the request (client side). 5xx = the server broke." },
+        { "front": "401 vs 403", "back": "401 = not logged in or unknown. 403 = known, but not allowed." },
+        { "front": "GET vs POST", "back": "GET fetches data. POST sends or creates data." },
+        { "front": "localhost", "back": "\"This computer\": used for running and testing apps on your own machine." },
+        { "front": "Port", "back": "A numbered door on a computer (like `:3000`) that lets one machine run many services." },
+        { "front": "CDN", "back": "Content delivery network: copies of files on servers worldwide for faster loading." }
+      ],
+      "quiz": [
+        {
+          "q": "Users see errors and your logs show lots of `503`s. Most likely?",
+          "options": ["The server side is overloaded or down", "Users typed the wrong URL", "Users aren't logged in", "Everything is fine"],
+          "answer": 0,
+          "why": "5xx codes mean a server-side problem. 503 = service unavailable."
+        },
+        {
+          "q": "Which status means \"I know who you are, but you're not allowed\"?",
+          "options": ["403", "401", "404", "200"],
+          "answer": 0,
+          "why": "403 Forbidden = authenticated but not permitted. 401 = not authenticated."
+        },
+        {
+          "q": "Claude Code says \"your app is running at http://localhost:5173\". Who can open it?",
+          "options": ["Only you, on this computer", "Anyone on the internet", "Only people on Bitbucket", "Nobody"],
+          "answer": 0,
+          "why": "localhost means your own machine. The app isn't deployed anywhere public yet."
+        },
+        {
+          "q": "Submitting a sign-up form most likely sends which kind of request?",
+          "options": ["POST", "GET", "404", "DNS"],
+          "answer": 0,
+          "why": "POST is for sending or creating data, like a new account."
+        },
+        {
+          "q": "Your API returns `429` during a launch spike. What does it mean?",
+          "options": ["Too many requests: you're hitting a rate limit", "Page not found", "Success", "Server crashed"],
+          "answer": 0,
+          "why": "429 = Too Many Requests. It's common with AI APIs, which enforce rate limits."
+        }
+      ]
+    }
+  },
+  "links": [
+    { "title": "How the web works", "source": "MDN Web Docs", "type": "docs", "minutes": 10, "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works" },
+    { "title": "HTTP status codes reference", "source": "MDN Web Docs", "type": "docs", "minutes": 5, "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status" }
+  ]
+}

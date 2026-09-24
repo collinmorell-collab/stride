@@ -1,0 +1,120 @@
+{
+  "id": "b1",
+  "intro": "Read, Write, Edit, Bash, Grep, Glob: what Claude Code is actually doing when those lines scroll by.",
+  "levels": {
+    "1": {
+      "summary": "What a tool call is, and the six core tools.",
+      "lesson": [
+        {
+          "title": "What's a tool call?",
+          "body": "A model can only produce text. So how does Claude Code edit files?\n\nIt writes a structured request, a **tool call**, that says \"please run the Read tool on `src/app.js`.\" The **harness** (Claude Code) actually performs the action, then hands the result back to the model as new text in its context. The model reads the result and decides what to do next.\n\nThink of a surgeon saying \"scalpel\": the surgeon decides, and the nurse hands it over. Every line like `Read(src/app.js)` or `Bash(npm test)` you see scrolling by is one of those requests.",
+          "pm": "This request, act, result, decide loop is the core of every AI agent, not just coding ones. Once you see it here, you'll recognize it everywhere."
+        },
+        {
+          "title": "The six core tools",
+          "body": "- **Read** opens a file and reads it. Changes nothing.\n- **Write** creates a new file, or replaces an entire file.\n- **Edit** changes specific text inside an existing file, like find-and-replace. It's safer and more precise than rewriting the whole file.\n- **Bash** runs a terminal command (tests, git, installs...).\n- **Grep** searches *inside* files for text, e.g. every place \"checkout\" appears.\n- **Glob** finds files by *name pattern*, e.g. `**/*.json` = every JSON file in every folder.\n\nRead, Grep and Glob only look around. Write, Edit and Bash can change things, which is why those are the ones that ask your permission.",
+          "pm": "A long run of Read/Grep/Glob calls means Claude is still exploring. The Edits are where the real change happens, so that's where your review attention should go."
+        }
+      ],
+      "cards": [
+        { "front": "Tool call", "back": "A structured request from the model asking the harness to perform an action (read a file, run a command). The result comes back into context." },
+        { "front": "Read tool", "back": "Opens and reads a file. Doesn't change anything." },
+        { "front": "Write vs Edit", "back": "Write creates or fully replaces a file. Edit changes specific text inside an existing file." },
+        { "front": "Bash tool", "back": "Runs a terminal (shell) command, e.g. `npm test` or `git status`." },
+        { "front": "Grep tool", "back": "Searches inside files for matching text." },
+        { "front": "Glob tool", "back": "Finds files by name pattern, e.g. `**/*.json` = all JSON files in all folders." }
+      ],
+      "quiz": [
+        {
+          "q": "You want to know every file that mentions \"paywall\". Which tool would Claude use?",
+          "options": ["Grep", "Glob", "Write", "Edit"],
+          "answer": 0,
+          "why": "Grep searches *inside* files for text. Glob only matches file *names*."
+        },
+        {
+          "q": "What does this tool call do?",
+          "code": "Glob(**/*.test.js)",
+          "options": ["Finds all test files ending in .test.js in every folder", "Runs all the tests", "Deletes the tests", "Searches test files for the word glob"],
+          "answer": 0,
+          "why": "Glob matches file names. `**` means any folder depth, and `*.test.js` means any name ending in .test.js."
+        },
+        {
+          "q": "Why does Claude usually prefer Edit over Write for an existing file?",
+          "options": ["Edit changes only the specific text, so it's less likely to wipe out other content by accident", "Edit is free and Write costs money", "Write can't create files", "Edit runs the tests automatically"],
+          "answer": 0,
+          "why": "Write replaces the whole file. Edit makes a targeted change, which is safer and easier to review."
+        },
+        {
+          "q": "Which of these tools can change your project without anything else happening first?",
+          "options": ["Bash", "Read", "Grep", "Glob"],
+          "answer": 0,
+          "why": "Bash runs arbitrary commands, which can change or delete things. Read, Grep and Glob only look."
+        },
+        {
+          "q": "After Claude calls `Read(package.json)`, what happens next?",
+          "options": ["The file's contents are added to the model's context, and it decides its next step", "The file is uploaded to Bitbucket", "The file gets edited", "The session ends"],
+          "answer": 0,
+          "why": "Tool results flow back into context. That's the request, act, result, decide loop."
+        }
+      ]
+    },
+    "2": {
+      "summary": "Web tools, subagents, MCP tools, diffs and parallel calls.",
+      "lesson": [
+        {
+          "title": "More tools: web, subagents and MCP",
+          "body": "- **WebSearch** searches the internet. **WebFetch** reads one specific web page.\n- **Agent** (a **subagent**) spins up a helper Claude with its own fresh context window for a side task, like \"find everywhere we call the payments API.\" It works independently and reports back a short summary. Think of delegating to an intern who returns a memo instead of their whole notebook. This keeps the main conversation's context clean.\n- **Todo / task lists**: Claude writes a checklist for multi-step work and ticks items off, so you can see progress.\n- **MCP tools** come from services you connect, like Jira, Slack or a database. **MCP** (Model Context Protocol) is a standard plug shape that lets any tool connect to any AI harness. Their names look like `mcp__jira__search`.",
+          "pm": "MCP is why \"can our AI talk to X?\" is increasingly a configuration question rather than an engineering project. Worth knowing when scoping AI features."
+        },
+        {
+          "title": "Reading tool calls like a pro",
+          "body": "A tool call has a **name** and an **input**:\n\n```\nBash(git status)\nEdit(src/Header.tsx)\n```\n\nFor Edit, Claude Code shows a **diff**, the before and after: lines starting with `-` (red) are removed, lines with `+` (green) are added. Reading diffs is the single most useful review skill.\n\nYou'll often see several calls fire at once. Those are **parallel tool calls**: independent actions (like reading three files) done simultaneously to save time.\n\nIf you **deny** a permission prompt, Claude doesn't crash. It gets told \"the user said no\" and tries another approach or asks you.",
+          "pm": "You don't need to understand every line of a diff. Check that the *size* and *location* of the change match what you asked for. Surprises there are worth a question."
+        }
+      ],
+      "cards": [
+        { "front": "Subagent", "back": "A helper Claude with its own fresh context that handles a side task and reports back a summary." },
+        { "front": "WebFetch vs WebSearch", "back": "WebSearch searches the internet. WebFetch reads one specific page." },
+        { "front": "MCP", "back": "Model Context Protocol: a standard way to plug outside tools and data (Jira, Slack, databases) into AI apps." },
+        { "front": "Diff", "back": "A before/after view of a change. `-` lines were removed and `+` lines were added." },
+        { "front": "Parallel tool calls", "back": "Several independent tool calls run at the same time to save time." }
+      ],
+      "quiz": [
+        {
+          "q": "Claude launches a subagent to search a huge codebase. Main benefit?",
+          "options": ["The search mess stays out of the main context; only a summary comes back", "Subagents are always cheaper models", "It skips permissions", "It saves files to the cloud"],
+          "answer": 0,
+          "why": "Subagents have their own context window, which protects the main conversation from filling up."
+        },
+        {
+          "q": "In a diff, what does a line starting with `+` mean?",
+          "options": ["A line being added", "A line being removed", "A comment", "An error"],
+          "answer": 0,
+          "why": "`+` (usually green) = added, `-` (usually red) = removed."
+        },
+        {
+          "q": "You see a tool named `mcp__jira__create_issue`. Where does it come from?",
+          "options": ["A connected MCP server for Jira", "It's built into every model", "It's a terminal command", "It's a Git feature"],
+          "answer": 0,
+          "why": "Tools prefixed with `mcp__` come from MCP servers, connectors that plug outside services into the harness."
+        },
+        {
+          "q": "You deny a permission prompt for a Bash command. What happens?",
+          "options": ["Claude is told you declined and adjusts its approach", "Claude Code crashes", "The command runs anyway", "Your session is deleted"],
+          "answer": 0,
+          "why": "Denial is just another tool result. The agent sees it and changes course."
+        },
+        {
+          "q": "Claude needs the contents of a specific documentation page it has a link to. Which tool fits?",
+          "options": ["WebFetch", "WebSearch", "Glob", "Grep"],
+          "answer": 0,
+          "why": "WebFetch reads a specific URL. WebSearch is for finding pages you don't have yet."
+        }
+      ]
+    }
+  },
+  "links": [
+    { "title": "How Claude Code works", "source": "Claude Code docs", "type": "docs", "minutes": 10, "url": "https://code.claude.com/docs/en/how-claude-code-works" },
+    { "title": "Model Context Protocol: introduction", "source": "modelcontextprotocol.io", "type": "docs", "minutes": 10, "url": "https://modelcontextprotocol.io/docs/getting-started/intro" }
+  ]
+}

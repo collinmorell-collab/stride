@@ -1,0 +1,122 @@
+{
+  "id": "a2",
+  "intro": "Paths, extensions, JSON, YAML, .env: the file types Claude Code reads and writes all day.",
+  "levels": {
+    "1": {
+      "summary": "Folders, file paths, extensions, JSON and Markdown.",
+      "lesson": [
+        {
+          "title": "Files, folders and paths",
+          "body": "A **directory** is just a folder. Engineers say \"directory\" (or \"dir\").\n\nA **file path** is a file's address, folder by folder:\n\n```\n/Users/you/Dev/stride/index.html\n```\n\nRead it left to right like directions: start at the top of the disk, go into Users, then you, then Dev, then stride, and there's index.html. `~` is shorthand for your home folder, so `~/Dev` means `/Users/you/Dev`.\n\nThe **extension** (the part after the dot) says what kind of file it is: `.html` web page, `.css` styles, `.js` JavaScript, `.py` Python, `.md` Markdown, `.json` JSON.",
+          "pm": "When Claude Code says it edited `src/components/Header.tsx`, the path tells you *where* in the product the change is: here, a front-end component."
+        },
+        {
+          "title": "JSON: a strict labeled list",
+          "body": "**JSON** is a text format for structured data. Think of a very strict form with labels and values:\n\n```\n{\n  \"name\": \"Stride\",\n  \"levels\": 3,\n  \"offline\": true,\n  \"tracks\": [\"Foundations\", \"AI for PMs\"]\n}\n```\n\n`{ }` holds labeled pairs. Each label (\"key\") is in quotes, then a colon, then the value. Values can be text (in quotes), numbers, true/false, lists in `[ ]`, or more `{ }` groups.\n\nJSON is everywhere: APIs send it, config files use it, and **Stride's own lessons are JSON files.**\n\n**Markdown** (`.md`) is plain text with light formatting: `# Heading`, `**bold**`, `- bullet`. READMEs and CLAUDE.md are Markdown.",
+          "pm": "If you can read JSON, you can read most API responses and config files yourself instead of asking an engineer what they say."
+        }
+      ],
+      "cards": [
+        { "front": "Directory", "back": "A folder." },
+        { "front": "File path", "back": "A file's address, folder by folder, e.g. `/Users/you/Dev/app/index.html`." },
+        { "front": "`~` in a path", "back": "Shorthand for your home folder (e.g. `/Users/you`)." },
+        { "front": "File extension", "back": "The ending after the dot (`.js`, `.py`, `.json`) that says what kind of file it is." },
+        { "front": "JSON", "back": "A strict text format for structured data: labeled values in `{ }`, lists in `[ ]`. Used by APIs and config files everywhere." },
+        { "front": "Markdown (.md)", "back": "Plain text with simple formatting marks like `#` for headings and `**` for bold. Used for READMEs and CLAUDE.md." }
+      ],
+      "quiz": [
+        {
+          "q": "What kind of file is `server.py`?",
+          "options": ["Python code", "A web page", "JSON data", "A spreadsheet"],
+          "answer": 0,
+          "why": "The `.py` extension means Python."
+        },
+        {
+          "q": "In this JSON, what is the value of \"offline\"?",
+          "code": "{ \"name\": \"Stride\", \"offline\": true, \"levels\": 3 }",
+          "options": ["true", "\"Stride\"", "3", "offline"],
+          "answer": 0,
+          "why": "Each key is followed by a colon and its value. \"offline\" maps to true."
+        },
+        {
+          "q": "What does `~/Dev/stride` mean?",
+          "options": ["The stride folder inside Dev, inside your home folder", "A temporary folder", "A website address", "Approximately the Dev folder"],
+          "answer": 0,
+          "why": "`~` is your home folder, so this is /Users/you/Dev/stride."
+        },
+        {
+          "q": "Which is valid JSON?",
+          "options": ["`{ \"color\": \"blue\" }`", "`{ color: blue }`", "`color = blue`", "`<color>blue</color>`"],
+          "answer": 0,
+          "why": "JSON needs double quotes around keys and text values. The last option is XML/HTML-style."
+        },
+        {
+          "q": "Which file type is a README usually written in?",
+          "options": ["Markdown (.md)", "JSON (.json)", "Python (.py)", "CSS (.css)"],
+          "answer": 0,
+          "why": "READMEs are almost always Markdown, readable as plain text and nicely formatted on Bitbucket/GitHub."
+        }
+      ]
+    },
+    "2": {
+      "summary": "Config files, hidden dotfiles, .env secrets, YAML, and relative paths.",
+      "lesson": [
+        {
+          "title": "Config files and hidden dotfiles",
+          "body": "A **config file** holds settings, not logic: which port to run on, which features are on, which packages are needed.\n\nFiles whose names start with a dot are **dotfiles**, and they're hidden by default. Common ones:\n\n- `.env` holds **secrets** and settings like API keys. It should **never** be committed to git.\n- `.gitignore` is a list of files git should ignore (like `.env`).\n- `.claude/` is Claude Code's settings folder for the project.\n\n`package.json` is the config file of a Node/JavaScript project. It lists the project's name, its scripts (like `\"dev\"` or `\"build\"`), and its **dependencies**: the outside packages it needs.",
+          "pm": "Leaked secrets are one of the most common security incidents. \"Is that key in the .env and is .env in .gitignore?\" is a great question to ask."
+        },
+        {
+          "title": "YAML, CSV, and relative paths",
+          "body": "**YAML** (`.yml` / `.yaml`) holds the same kind of data as JSON but uses indentation instead of brackets. It's common for pipelines, e.g. `bitbucket-pipelines.yml`:\n\n```\npipelines:\n  default:\n    - step:\n        script:\n          - npm test\n```\n\n**CSV** is a spreadsheet saved as plain text, with commas between columns.\n\nAn **absolute path** starts from the very top (`/Users/you/...`). A **relative path** starts from where you are now: `./src/app.js` means \"the src folder right here,\" and `../` means \"go up one folder.\"",
+          "pm": "In YAML, indentation *is* the structure. One wrong space can break a whole deployment pipeline, which is why YAML edits deserve a careful review."
+        }
+      ],
+      "cards": [
+        { "front": "Config file", "back": "A file of settings (not logic) that tells an app or tool how to behave." },
+        { "front": "Dotfile", "back": "A file whose name starts with a dot (`.env`, `.gitignore`). Hidden by default." },
+        { "front": "`.env` file", "back": "Holds secrets and environment settings like API keys. Never commit it to git." },
+        { "front": "package.json", "back": "The config file of a JavaScript/Node project: its name, scripts, and dependencies." },
+        { "front": "YAML", "back": "A data format like JSON that uses indentation instead of brackets. Common in pipelines and config." },
+        { "front": "Relative path", "back": "A path that starts from your current folder, like `./src/app.js`. `../` means up one folder." }
+      ],
+      "quiz": [
+        {
+          "q": "Where should an API key for a project usually live?",
+          "options": ["In a `.env` file that's listed in `.gitignore`", "Directly in `index.html`", "In the README", "In a commit message"],
+          "answer": 0,
+          "why": "Secrets go in `.env`, and `.gitignore` keeps that file out of the shared repository."
+        },
+        {
+          "q": "What is this file most likely?",
+          "code": "pipelines:\n  default:\n    - step:\n        script:\n          - npm test",
+          "options": ["A YAML config for an automated pipeline", "Python code", "A JSON API response", "A CSS stylesheet"],
+          "answer": 0,
+          "why": "Colon-and-indentation structure is YAML. This one tells Bitbucket Pipelines to run the tests."
+        },
+        {
+          "q": "You're in `/Users/you/app/src`. Where does `../README.md` point?",
+          "options": ["`/Users/you/app/README.md`", "`/Users/you/app/src/README.md`", "`/README.md`", "A website"],
+          "answer": 0,
+          "why": "`../` goes up one folder, from src to app."
+        },
+        {
+          "q": "Claude Code edits `package.json` to add a new dependency. What changed?",
+          "options": ["The project now needs an additional outside package", "The page's colors", "The database contents", "The git history"],
+          "answer": 0,
+          "why": "package.json lists dependencies. Adding one means new outside code will be installed, which is worth a quick question about why."
+        },
+        {
+          "q": "Why don't you see `.gitignore` when you open the folder in Finder?",
+          "options": ["Files starting with a dot are hidden by default", "It was deleted", "It only exists on Bitbucket", "It's encrypted"],
+          "answer": 0,
+          "why": "Dotfiles are hidden. In Finder, Cmd+Shift+. toggles them."
+        }
+      ]
+    }
+  },
+  "links": [
+    { "title": "Working with JSON", "source": "MDN Web Docs", "type": "docs", "minutes": 20, "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/JSON" },
+    { "title": "Dealing with files", "source": "MDN Web Docs", "type": "docs", "minutes": 10, "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Dealing_with_files" }
+  ]
+}

@@ -1,0 +1,310 @@
+/* ============================================================
+   Stride styles
+   CSS = the "paint and furniture" of the app.
+   Colors are defined once as variables ("tokens") at the top,
+   then reused everywhere, so changing a color is a one-line edit.
+   ============================================================ */
+
+:root {
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --surface-2: #eeece7;
+  --text: #1b1c1f;
+  --muted: #62646b;
+  --border: #dcd9d2;
+  --accent: #3b5bdb;       /* main action color */
+  --accent-text: #ffffff;
+  --good: #1f8a4c;
+  --good-bg: #e3f4ea;
+  --bad: #c2372b;
+  --bad-bg: #fbe6e3;
+  --gold: #b7791f;
+  --gold-bg: #fdf2dc;
+  --radius: 16px;
+  --tap: 56px;             /* minimum height for anything you tap */
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --surface: #181b21;
+    --surface-2: #22262e;
+    --text: #eceef2;
+    --muted: #9aa0ab;
+    --border: #2d323b;
+    --accent: #7b93ff;
+    --accent-text: #0f1115;
+    --good: #4cc584;
+    --good-bg: #16301f;
+    --bad: #ff7a6b;
+    --bad-bg: #3a1a17;
+    --gold: #f0b54a;
+    --gold-bg: #33280f;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---------- Layout: header, screen, bottom tabs ---------- */
+
+#topbar {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: calc(env(safe-area-inset-top) + 10px) 16px 10px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+#topbar .brand { font-size: 20px; margin-right: auto; }
+#topbar .pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 4px 10px; border-radius: 999px;
+  background: var(--surface-2); font-size: 15px;
+}
+
+#screen {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px 16px calc(96px + env(safe-area-inset-bottom));
+}
+
+#tabs {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding-bottom: env(safe-area-inset-bottom);
+  z-index: 5;
+}
+#tabs a {
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 8px 0 6px;
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+}
+#tabs a.active { color: var(--accent); font-weight: 600; }
+#tabs .tab-icon { font-size: 22px; line-height: 1.2; }
+body.focus #tabs { display: none; }  /* hide tabs during a quiz so you don't mis-tap */
+
+/* ---------- Text ---------- */
+
+h1 { font-size: 26px; line-height: 1.2; margin: 8px 0 12px; }
+h2 { font-size: 20px; margin: 24px 0 10px; }
+h3 { font-size: 17px; margin: 16px 0 6px; }
+p { margin: 0 0 12px; }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+.center { text-align: center; }
+a { color: var(--accent); }
+
+code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--surface-2);
+  padding: 1px 5px;
+  border-radius: 6px;
+}
+pre.code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 14px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 12px;
+  border-radius: 12px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0 0 14px;
+}
+
+/* ---------- Cards and buttons ---------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%;
+  min-height: var(--tap);
+  padding: 12px 16px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:active { transform: scale(0.98); }
+.btn.primary { background: var(--accent); color: var(--accent-text); border-color: var(--accent); }
+.btn.good { background: var(--good-bg); color: var(--good); border-color: var(--good); }
+.btn.bad { background: var(--bad-bg); color: var(--bad); border-color: var(--bad); }
+.btn.ghost { background: transparent; }
+.btn[disabled] { opacity: 0.45; pointer-events: none; }
+.row { display: flex; gap: 10px; }
+.row > * { flex: 1; }
+
+/* Quiz answer buttons: big, left-aligned, lettered */
+.option {
+  justify-content: flex-start;
+  text-align: left;
+  font-weight: 500;
+}
+.option .letter {
+  flex: 0 0 30px; height: 30px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--surface-2);
+  font-weight: 700;
+}
+.option.correct { background: var(--good-bg); border-color: var(--good); }
+.option.wrong { background: var(--bad-bg); border-color: var(--bad); }
+
+.feedback { border-left: 4px solid var(--border); }
+.feedback.good { border-left-color: var(--good); }
+.feedback.bad { border-left-color: var(--bad); }
+
+/* ---------- Progress bits ---------- */
+
+.progress { height: 8px; border-radius: 99px; background: var(--surface-2); overflow: hidden; margin: 4px 0 16px; }
+.progress > span { display: block; height: 100%; background: var(--accent); transition: width 0.3s; }
+
+.hearts { font-size: 22px; letter-spacing: 2px; }
+
+.stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 12px; }
+.stat { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 12px; text-align: center; }
+.stat b { display: block; font-size: 22px; }
+.stat span { font-size: 13px; color: var(--muted); }
+
+/* ---------- Skill map ---------- */
+
+.track { margin-bottom: 20px; }
+.track-head { display: flex; align-items: baseline; justify-content: space-between; }
+.unit {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  text-decoration: none;
+  min-height: var(--tap);
+}
+.unit .badge {
+  flex: 0 0 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--surface-2);
+  font-size: 18px;
+}
+.unit .info { flex: 1; min-width: 0; }
+.unit .title { display: block; font-weight: 600; }
+.unit .sub { display: block; font-size: 13px; color: var(--muted); }
+.unit.soon { opacity: 0.5; }
+.unit.next { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.unit.mastered .badge { background: var(--gold-bg); }
+.pips { display: inline-flex; gap: 4px; margin-top: 4px; }
+.pips i { width: 18px; height: 6px; border-radius: 3px; background: var(--surface-2); }
+.pips i.on { background: var(--good); }
+.pips i.boss.on { background: var(--gold); }
+
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--surface-2);
+  color: var(--muted);
+}
+.tag.gold { background: var(--gold-bg); color: var(--gold); }
+.tag.good { background: var(--good-bg); color: var(--good); }
+.tag.bad { background: var(--bad-bg); color: var(--bad); }
+
+/* ---------- Flashcard ---------- */
+
+.flash {
+  min-height: 240px;
+  display: flex; flex-direction: column; justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+.flash .back { font-size: 17px; text-align: left; margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--border); }
+.flash .hint { font-size: 13px; color: var(--muted); margin-top: 16px; }
+
+/* ---------- Forms ---------- */
+
+textarea, input[type="text"], input[type="password"], select {
+  width: 100%;
+  font: inherit;
+  font-size: 16px; /* 16px stops iPhone from zooming in on focus */
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  margin-bottom: 10px;
+}
+textarea { min-height: 140px; font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; }
+label { display: block; font-weight: 600; margin-bottom: 4px; }
+.toggle { display: flex; align-items: center; justify-content: space-between; min-height: var(--tap); }
+.toggle input { width: 24px; height: 24px; }
+
+/* Small speaker button shown on lessons/questions */
+.speak {
+  float: right;
+  border: none; background: var(--surface-2);
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  font-size: 18px;
+  margin: -4px -4px 8px 8px;
+  cursor: pointer;
+}
+
+.toast {
+  position: fixed;
+  left: 50%; transform: translateX(-50%);
+  bottom: calc(90px + env(safe-area-inset-bottom));
+  background: var(--text); color: var(--bg);
+  padding: 10px 18px; border-radius: 99px;
+  font-weight: 600;
+  z-index: 10;
+  animation: pop 2.2s ease forwards;
+}
+@keyframes pop {
+  0% { opacity: 0; transform: translate(-50%, 10px); }
+  10%, 80% { opacity: 1; transform: translate(-50%, 0); }
+  100% { opacity: 0; }
+}
+
+.big-emoji { font-size: 56px; text-align: center; margin: 16px 0 4px; }
