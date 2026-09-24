@@ -17,7 +17,7 @@ import {
 } from './content.js';
 import { runSession } from './session.js';
 import { screen, esc, fmt, toast, shuffle } from './ui.js';
-import { speak, stop, voices, onVoicesReady } from './speech.js';
+import { speak, stop, voices, allVoices, voiceTier, onVoicesReady } from './speech.js';
 import { renderDecode } from './decode.js';
 
 const PASS_MARK = 0.7;       // 70% to pass a level
@@ -530,7 +530,8 @@ function renderMe() {
       <label for="voice">Voice</label>
       <select id="voice"></select>
       <button class="btn" id="test-voice">Test voice</button>
-      <p class="muted small" style="margin:0">Tip: for a much better voice, go to iPhone Settings → Accessibility → Spoken Content → Voices → English, and download an "Enhanced" or "Premium" voice. Then pick it here.</p>
+      <p class="muted small">Tip: for a much better voice, go to iPhone Settings → Accessibility → Read &amp; Speak → Voices → English, and download an "Enhanced" voice (not a Siri voice). Then fully close and reopen Stride and pick it here.</p>
+      <details><summary class="small">Show all voices iOS shares with Stride</summary><pre class="code" id="voice-debug" style="margin-top:10px"></pre></details>
     </div>
 
     <h2>🔑 Decode settings</h2>
@@ -563,7 +564,13 @@ function renderMe() {
   const fillVoices = () => {
     const list = voices();
     document.getElementById('voice').innerHTML = `<option value="">Automatic (best available)</option>` +
-      list.map((v) => `<option value="${esc(v.voiceURI)}" ${v.voiceURI === s.voice ? 'selected' : ''}>${esc(v.name)} (${esc(v.lang)})</option>`).join('');
+      list.map((v) => {
+        const tier = voiceTier(v);
+        return `<option value="${esc(v.voiceURI)}" ${v.voiceURI === s.voice ? 'selected' : ''}>${esc(v.name)}${tier ? ` · ${tier}` : ''} (${esc(v.lang)})</option>`;
+      }).join('');
+    const all = allVoices();
+    document.getElementById('voice-debug').textContent = `${all.length} voices total\n\n` +
+      all.map((v) => `${v.name} | ${v.lang} | ${v.voiceURI}`).join('\n');
   };
   fillVoices();
   onVoicesReady(fillVoices);
