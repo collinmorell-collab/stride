@@ -1,0 +1,13 @@
+{
+  "name": "stride-feed",
+  "private": true,
+  "type": "module",
+  "description": "Builds Stride's daily news feed. Runs on GitHub Actions.",
+  "scripts": {
+    "build": "node build-feed.mjs",
+    "dry-run": "DRY_RUN=1 node build-feed.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.128.0"
+  }
+}

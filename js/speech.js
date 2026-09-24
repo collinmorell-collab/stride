@@ -92,5 +92,5 @@ export function stop() {
 
 // Voices load a moment after the page opens; let the Settings screen know.
 export function onVoicesReady(fn) {
-  if (synth) synth.addEventListener('voiceschanged', fn);
+  if (synth) synth.onvoiceschanged = fn; // replaces any earlier listener
 }

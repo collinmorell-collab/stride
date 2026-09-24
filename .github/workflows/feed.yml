@@ -1,0 +1,60 @@
+# ============================================================
+# The news robot's schedule.
+# GitHub Actions reads this file and runs the steps below every
+# morning on one of GitHub's computers (free for public repos).
+# You can also run it by hand: repo → Actions → Update news feed → Run workflow.
+# ============================================================
+
+name: Update news feed
+
+on:
+  schedule:
+    - cron: '0 10 * * *'   # every day at 10:00 UTC (6am US Eastern / 3am Pacific)
+  workflow_dispatch:        # adds a "Run workflow" button
+    inputs:
+      weekly:
+        description: 'Also write the weekly Top 5 briefing now'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # lets the robot save feed.json back to the repo
+  pages: write      # lets it ask GitHub Pages to republish the site
+
+concurrency: feed   # never run two at once
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install the Anthropic library
+        working-directory: scripts/feed
+        run: npm install --no-audit --no-fund
+
+      - name: Build the feed
+        working-directory: scripts/feed
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FORCE_WEEKLY: ${{ inputs.weekly }}
+        run: node build-feed.mjs
+
+      - name: Save the new feed
+        run: |
+          git config user.name "stride-feed-bot"
+          git config user.email "stride-feed-bot@users.noreply.github.com"
+          git add content/feed scripts/feed/seen.json
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Update news feed $(date -u +%F)"
+          git push
+
+      - name: Republish the site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages will pick it up on its own"

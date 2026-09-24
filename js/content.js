@@ -51,6 +51,33 @@ export function levelCount(unitId) {
   return Object.keys(units[unitId]?.levels || {}).length;
 }
 
+// ---------- The news feed (Layer 4) ----------
+// Built every morning by scripts/feed/build-feed.mjs on GitHub.
+
+export let feed = { updated: null, items: [], weekly: [], stale: [] };
+
+export async function loadFeed() {
+  try {
+    const res = await fetch('content/feed/feed.json', { cache: 'no-cache' });
+    if (res.ok) feed = await res.json();
+  } catch (e) { /* offline and never loaded: show an empty feed */ }
+  feed.items.forEach((it) => registerNews(`n-${it.id}`, it.cards, it.quiz));
+  feed.weekly.forEach((w) => registerNews(`w-${w.weekOf}`, w.cards, w.quiz));
+}
+
+// Make news flashcards/questions findable like any other item.
+function registerNews(prefix, cards = [], quiz = []) {
+  cards.forEach((c, i) => { const id = `${prefix}-c${i + 1}`; items[id] = { ...c, id, kind: 'card', unitId: 'news', level: 1 }; });
+  quiz.forEach((q, i) => { const id = `${prefix}-q${i + 1}`; items[id] = { ...q, id, kind: 'quiz', unitId: 'news', level: 1 }; });
+}
+
+export function newsItemIds(prefix, entry) {
+  return [
+    ...(entry.cards || []).map((_, i) => `${prefix}-c${i + 1}`),
+    ...(entry.quiz || []).map((_, i) => `${prefix}-q${i + 1}`),
+  ];
+}
+
 // Look up any card or question, including ones Decode created.
 export function getItem(id) {
   return items[id] || state.custom[id] || null;

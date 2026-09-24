@@ -12,13 +12,14 @@ import {
   exportJSON, importJSON, resetAll,
 } from './store.js';
 import {
-  loadContent, curriculum, units, allUnits, unitMeta, levelCount, getItem,
+  loadContent, loadFeed, feed, curriculum, units, allUnits, unitMeta, levelCount, getItem,
   levelItems, unitQuiz, recommendedNext, LEVEL_NAMES,
 } from './content.js';
 import { runSession } from './session.js';
 import { screen, esc, fmt, toast, shuffle } from './ui.js';
 import { speak, stop, voices, voiceTier, onVoicesReady } from './speech.js';
 import { renderDecode } from './decode.js';
+import { renderNews, unreadCount, queueMustKnows, latestWeekly } from './news.js';
 
 const PASS_MARK = 0.7;       // 70% to pass a level
 const BOSS_QUESTIONS = 10;
@@ -35,6 +36,7 @@ const routes = {
   review: renderReview,
   practice: startPractice,
   walk: renderWalk,
+  news: renderNews,
   decode: renderDecode,
   me: renderMe,
 };
@@ -49,6 +51,9 @@ function route() {
     const tab = { unit: 'learn', study: 'learn', boss: 'learn', placement: 'learn', practice: 'review', walk: 'review' }[name] || name;
     a.classList.toggle('active', a.dataset.tab === tab);
   });
+  // Show how many new news items are waiting on the News tab.
+  const unread = name === 'news' ? 0 : unreadCount();
+  document.getElementById('news-badge').textContent = unread ? ` (${unread})` : '';
   renderTopbar();
   window.scrollTo(0, 0);
 }
@@ -97,6 +102,12 @@ function renderLearn() {
   const cont = next && state.placementDone ? `
     <a class="btn primary" href="#/unit/${next}">▶ Continue: ${esc(unitMeta(next).title)}</a>` : '';
 
+  const weekly = latestWeekly();
+  const weeklyNudge = weekly && state.weeklyHeard !== weekly.weekOf && state.placementDone
+    ? `<a class="btn" href="#/news" style="border-color:var(--gold)">🏆 This week's Top 5 is ready</a>` : '';
+  const unread = unreadCount();
+  const newsNudge = unread && state.placementDone ? `<a class="btn" href="#/news">📰 ${unread} new in News</a>` : '';
+
   const due = dueItemIds().length;
   const reviewNudge = due && state.placementDone ? `<a class="btn" href="#/practice/due">🎯 ${due} item${due === 1 ? '' : 's'} due for review</a>` : '';
 
@@ -130,6 +141,8 @@ function renderLearn() {
       <div class="muted small">${lvl.need - lvl.into} XP to level ${lvl.level + 1} · Today ${xpToday()}/${DAILY_GOAL} XP ${xpToday() >= DAILY_GOAL ? '✅' : ''}</div>
     </div>
     ${cont}
+    ${weeklyNudge}
+    ${newsNudge}
     ${reviewNudge}
     ${tracks}`;
 
@@ -182,9 +195,18 @@ function renderUnit(unitId) {
       <span class="info"><span class="title">${esc(l.title)}</span><span class="sub">${esc(l.source || '')}${l.minutes ? ` · ${l.minutes} min` : ''}</span></span>
     </a>`).join('');
 
+  const staleNotes = (feed.stale || []).filter((n) => n.unit === unitId);
+  const stale = staleNotes.length ? `
+    <div class="card feedback bad">
+      <strong>⚠️ Heads up: the news has moved on</strong>
+      ${staleNotes.map((n) => `<p class="small" style="margin:6px 0 0">${esc(n.note)}</p>`).join('')}
+      <p class="small muted" style="margin:6px 0 0">Flagged by your news robot on ${new Date(staleNotes[0].flagged).toLocaleDateString()}. Trust the news over this lesson until it's updated.</p>
+    </div>` : '';
+
   screen().innerHTML = `
     <a href="#/learn" class="muted small">‹ Skill map</a>
     <h1>${meta.icon || ''} ${esc(meta.title)}</h1>
+    ${stale}
     <p class="muted">${esc(unit.intro || meta.blurb || '')}</p>
     ${levels}
     ${boss}
@@ -333,7 +355,7 @@ function weakSpots() {
   for (const [id, it] of Object.entries(state.items)) {
     const item = getItem(id);
     if (!item) continue;
-    const key = item.unitId === 'decode' ? 'decode' : `${item.unitId}-${item.level}`;
+    const key = ['decode', 'news'].includes(item.unitId) ? item.unitId : `${item.unitId}-${item.level}`;
     const g = groups[key] || (groups[key] = { key, unitId: item.unitId, level: item.level, seen: 0, wrong: 0, weakIds: [] });
     g.seen += it.seen;
     g.wrong += it.wrong;
@@ -350,8 +372,10 @@ function renderReview() {
   const tracked = Object.keys(state.items).length;
 
   const spotCards = spots.slice(0, 6).map((g) => {
-    const isDecode = g.unitId === 'decode';
-    const title = isDecode ? '🔍 From your Decodes' : `${unitMeta(g.unitId).title} · L${g.level} ${LEVEL_NAMES[g.level]}`;
+    const isDecode = ['decode', 'news'].includes(g.unitId);
+    const title = g.unitId === 'decode' ? '🔍 From your Decodes'
+      : g.unitId === 'news' ? '📰 From the news'
+      : `${unitMeta(g.unitId).title} · L${g.level} ${LEVEL_NAMES[g.level]}`;
     const accuracy = g.seen ? Math.round((1 - g.wrong / g.seen) * 100) : 0;
     const link = !isDecode && units[g.unitId].links?.[0];
     return `
@@ -558,11 +582,13 @@ function renderMe() {
       <input type="file" id="import-file" accept="application/json,.json" hidden>
       <button class="btn bad" id="reset">Reset all progress</button>
     </div>
-    <p class="muted small center">Stride · Layers 1–3</p>`;
+    <p class="muted small center">Stride · Layers 1–4</p>`;
 
   const fillVoices = () => {
+    const select = document.getElementById('voice');
+    if (!select) return; // you've left the Me tab
     const list = voices();
-    document.getElementById('voice').innerHTML = `<option value="">Automatic (best available)</option>` +
+    select.innerHTML = `<option value="">Automatic (best available)</option>` +
       list.map((v) => {
         const tier = voiceTier(v);
         return `<option value="${esc(v.voiceURI)}" ${v.voiceURI === s.voice ? 'selected' : ''}>${esc(v.name)}${tier ? ` · ${tier}` : ''} (${esc(v.lang)})</option>`;
@@ -609,7 +635,8 @@ function renderMe() {
 async function start() {
   screen().innerHTML = '<p class="muted center" style="margin-top:40px">Loading…</p>';
   try {
-    await loadContent();
+    await Promise.all([loadContent(), loadFeed()]);
+    queueMustKnows();
   } catch (e) {
     screen().innerHTML = `<h1>Couldn't load lessons</h1><p class="muted">${esc(e.message)}</p>`;
     return;

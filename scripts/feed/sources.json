@@ -1,0 +1,17 @@
+[
+  { "id": "lenny-podcast", "name": "Lenny's Podcast", "category": "pm", "priority": true, "guests": true, "type": "rss", "url": "https://api.substack.com/feed/podcast/10845.rss" },
+  { "id": "lenny-newsletter", "name": "Lenny's Newsletter", "category": "pm", "priority": true, "type": "rss", "url": "https://www.lennysnewsletter.com/feed" },
+  { "id": "one-useful-thing", "name": "One Useful Thing (Ethan Mollick)", "category": "pm", "type": "rss", "url": "https://www.oneusefulthing.org/feed" },
+  { "id": "product-growth", "name": "Product Growth (Aakash Gupta)", "category": "pm", "type": "rss", "url": "https://www.news.aakashg.com/feed" },
+
+  { "id": "anthropic", "name": "Anthropic", "category": "labs", "type": "page", "url": "https://www.anthropic.com/news", "linkPattern": "/news/[a-z0-9-]+" },
+  { "id": "openai", "name": "OpenAI", "category": "labs", "type": "rss", "url": "https://openai.com/news/rss.xml" },
+  { "id": "google-ai", "name": "Google AI", "category": "labs", "type": "rss", "url": "https://blog.google/technology/ai/rss/" },
+  { "id": "deepmind", "name": "Google DeepMind", "category": "labs", "type": "rss", "url": "https://deepmind.google/blog/rss.xml" },
+
+  { "id": "claude-code", "name": "Claude Code releases", "category": "claude-code", "type": "rss", "url": "https://github.com/anthropics/claude-code/releases.atom" },
+
+  { "id": "aws-ml", "name": "AWS Machine Learning Blog", "category": "builders", "type": "rss", "url": "https://aws.amazon.com/blogs/machine-learning/feed/" },
+  { "id": "simon-willison", "name": "Simon Willison", "category": "builders", "type": "rss", "url": "https://simonwillison.net/atom/everything/" },
+  { "id": "latent-space", "name": "Latent Space", "category": "builders", "type": "rss", "url": "https://www.latent.space/feed" }
+]

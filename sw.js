@@ -9,7 +9,7 @@
 // then quietly fetch a fresh copy for next time.
 // ============================================================
 
-const CACHE = 'stride-v4';
+const CACHE = 'stride-v5';
 
 const CORE = [
   './',
@@ -22,6 +22,7 @@ const CORE = [
   'js/speech.js',
   'js/ui.js',
   'js/decode.js',
+  'js/news.js',
   'content/curriculum.json',
   'manifest.webmanifest',
   'icons/icon-180.png',
@@ -46,6 +47,18 @@ self.addEventListener('fetch', (event) => {
   const req = event.request;
   // Only handle our own files. Calls to Anthropic etc. go straight to the internet.
   if (req.method !== 'GET' || new URL(req.url).origin !== location.origin) return;
+
+  // The news feed changes daily, so try the internet first and only
+  // fall back to the saved copy when offline.
+  if (req.url.includes('/content/feed/')) {
+    event.respondWith(
+      caches.open(CACHE).then((cache) =>
+        fetch(req, { cache: 'no-cache' })
+          .then((res) => { if (res.ok) cache.put(req, res.clone()); return res; })
+          .catch(() => cache.match(req, { ignoreSearch: true })))
+    );
+    return;
+  }
 
   event.respondWith(
     caches.open(CACHE).then(async (cache) => {
