@@ -154,7 +154,7 @@ function validQuiz(list = []) {
 
 // ---------- Step 2: daily picks ----------
 
-async function pickDaily(candidates, unitIds) {
+async function pickDaily(candidates, unitIds, unitList) {
   const schema = {
     type: 'object',
     additionalProperties: false,
@@ -200,7 +200,8 @@ Rules:
 - must_know: true for at most 2 items per day that genuinely change what this reader should know or do.
 - cards: 1-3 flashcards (front = term or question, back = short answer) ONLY for must_know items, otherwise [].
 - quiz: 1 multiple-choice question (4 options, answer = 0-based index) ONLY for must_know items, otherwise [].
-- related_units: 0-2 ids of lessons in the reader's app that this connects to.
+- related_units: 0-2 ids of lessons in the reader's app whose topic this item directly teaches or updates. Use [] when none fit well. The lessons are:
+${unitList}
 - Use the exact "id" from the input.
 
 Posts:
@@ -327,7 +328,9 @@ ${lessons}`,
 async function main() {
   const sources = await readJSON(new URL('scripts/feed/sources.json', ROOT), []);
   const curriculum = await readJSON(new URL('content/curriculum.json', ROOT), { tracks: [] });
-  const unitIds = curriculum.tracks.flatMap((t) => t.units).filter((u) => u.ready).map((u) => u.id);
+  const readyUnits = curriculum.tracks.flatMap((t) => t.units).filter((u) => u.ready);
+  const unitIds = readyUnits.map((u) => u.id);
+  const unitList = readyUnits.map((u) => `${u.id}: ${u.title}`).join('\n');
   const feed = await readJSON(FEED_FILE, { updated: null, items: [], weekly: [], stale: [] });
   const seen = await readJSON(SEEN_FILE, {});
 
@@ -341,7 +344,7 @@ async function main() {
   }
 
   if (candidates.length) {
-    const picks = await pickDaily(candidates, unitIds);
+    const picks = await pickDaily(candidates, unitIds, unitList);
     console.log(`Kept ${picks.length}: ${picks.map((p) => p.title).join(' | ')}`);
     feed.items = [...picks, ...feed.items.filter((it) => !picks.some((p) => p.id === it.id))];
   }
