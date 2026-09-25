@@ -1,6 +1,140 @@
 {
-  "updated": "2026-09-24T14:40:10.327Z",
+  "updated": "2026-09-25T15:02:19.345Z",
   "items": [
+    {
+      "id": "8b06c9e402",
+      "date": "2026-09-24T22:05:37.000Z",
+      "added": "2026-09-25T15:02:19.342Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/zapier-ai-fluency-rubric-for-pms",
+      "category": "pm",
+      "title": "Zapier's AI fluency rubric: how every employee gets graded on AI use",
+      "summary": "Zapier's CEO shares the internal rubric rating staff from 'unacceptable' to 'transformative' on AI use, plus concrete behaviours PMs show at each level: delegating whole workflows, building internal tools, and rewiring team process around agents.",
+      "why": "It gives you a concrete yardstick for your own AI fluency and language to push your team from 'uses chat' to 'redesigns workflows'.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0"
+      ],
+      "cards": [
+        {
+          "front": "What is an 'AI fluency rubric'?",
+          "back": "A company-wide scale rating how deeply an employee uses AI — from avoiding it, to occasional chat use, to delegating full workflows and building tools that change how the team works."
+        },
+        {
+          "front": "What separates 'transformative' AI use from 'adequate' use?",
+          "back": "Adequate = faster at existing tasks. Transformative = rebuilding the workflow itself, e.g. agents doing multi-step work and internally built tools others adopt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Zapier's AI fluency framing, what best distinguishes a top-rated ('transformative') employee?",
+          "options": [
+            "They redesign workflows so agents handle whole multi-step jobs others adopt",
+            "They use an AI assistant daily to draft documents and summarise meetings",
+            "They have tried every major frontier model and can compare their strengths",
+            "They can write detailed prompts with examples, roles and output formats"
+          ],
+          "answer": 0,
+          "why": "The rubric rewards changing how work happens, not personal speed-ups or tool familiarity."
+        }
+      ]
+    },
+    {
+      "id": "2e76615d1e",
+      "date": "2026-09-24T16:12:47.000Z",
+      "added": "2026-09-25T15:02:19.343Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
+      "category": "builders",
+      "title": "Multi-account AI agents on Bedrock AgentCore Gateway with MCP",
+      "summary": "AWS walks through an architecture where a central account runs an agent that reaches data in other teams' AWS accounts, each exposing its data as an MCP server, with cross-account auth and per-user permissions via AgentCore Gateway.",
+      "why": "This is your stack: Bedrock plus agents. It shows the standard pattern for letting one agent safely query data owned by other teams.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "a1"
+      ],
+      "cards": [
+        {
+          "front": "MCP (Model Context Protocol)",
+          "back": "An open standard letting an AI agent connect to external tools and data sources through a consistent interface, so each system exposes its capabilities as an 'MCP server'."
+        },
+        {
+          "front": "What does Bedrock AgentCore Gateway do?",
+          "back": "It sits between an agent and many tool/data endpoints, handling discovery, authentication and fine-grained authorization — including across separate AWS accounts."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why expose each team's data as an MCP server instead of copying it into the agent's account?",
+          "options": [
+            "Data stays owned and governed by its team while the agent queries it through one interface",
+            "MCP servers compress data so the model can fit more of it in context",
+            "It removes the need for authentication because MCP traffic is internal to AWS",
+            "It lets the agent run without a foundation model when answering data questions"
+          ],
+          "answer": 0,
+          "why": "The pattern's point is federated access with per-account ownership and fine-grained authorization, not compression or skipping auth."
+        }
+      ]
+    },
+    {
+      "id": "e7107d9a76",
+      "date": "2026-09-24T16:20:39.000Z",
+      "added": "2026-09-25T15:02:19.343Z",
+      "source": "Google DeepMind",
+      "link": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
+      "category": "labs",
+      "title": "Google ships Gemini 3.8 Live with a real-time video avatar",
+      "summary": "DeepMind's latest Live model adds a speaking on-screen avatar to low-latency voice and video conversation, pushing real-time multimodal interaction further into mainstream assistant products.",
+      "why": "Real-time voice/avatar interfaces are becoming a product surface you may be asked about; useful for tracking where the model landscape is heading.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "cd3a2bc67e",
+      "date": "2026-09-24T18:38:05.000Z",
+      "added": "2026-09-25T15:02:19.343Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.282",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.282: readable prose width and telemetry warnings",
+      "summary": "New maxProseWidth setting stops Claude's text stretching across very wide terminals while tables and code still use full width. Startup, /status and claude doctor now flag telemetry settings in project config that were ignored or disabled.",
+      "why": "Small comfort win on a wide screen, and the telemetry notices explain surprise warnings if your company's repo config sets those variables.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "a3"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6c1df0eaae",
+      "date": "2026-09-25T01:30:57.000Z",
+      "added": "2026-09-25T15:02:19.343Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/runway",
+      "category": "labs",
+      "title": "How Runway steers a real-time generative world",
+      "summary": "Runway's world model generates video and audio on the fly, using persistent context plus timed action prompts so users can direct an interactive scene as it plays rather than rendering a fixed clip.",
+      "why": "A glimpse of prompting as continuous steering rather than one-shot requests — a UX pattern likely to spread to agent products.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "eb58386549",
       "date": "2026-09-24T08:12:59.000Z",
