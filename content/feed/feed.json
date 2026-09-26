@@ -1,6 +1,154 @@
 {
-  "updated": "2026-09-25T15:02:19.345Z",
+  "updated": "2026-09-26T14:11:30.504Z",
   "items": [
+    {
+      "id": "30b26e0786",
+      "date": "2026-09-25T23:14:41.000Z",
+      "added": "2026-09-26T14:11:30.502Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/openrouter",
+      "category": "labs",
+      "title": "Stripe buys OpenRouter for $7B: why model routing became valuable",
+      "summary": "A podcast with OpenRouter's founder on how the model landscape exploded from two frontier labs to dozens, and why a neutral router that lets apps swap between models became a $7B acquisition for Stripe.",
+      "why": "You pick models for agents; routing layers let you swap providers without rewrites, and Stripe's bet signals where AI infrastructure value is concentrating.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "What is an LLM router (e.g. OpenRouter)?",
+          "back": "A service sitting between your app and many model providers, exposing one API so you can switch or fall back between models without changing code."
+        },
+        {
+          "front": "Why does multi-model routing matter for production agents?",
+          "back": "It reduces vendor lock-in, enables cost/quality tradeoffs per task, and provides failover when one provider is slow or down."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does a service like OpenRouter primarily provide?",
+          "options": [
+            "One API that routes requests across many model providers",
+            "A fine-tuning service that customises open-weight models",
+            "A vector database for storing document embeddings",
+            "A framework for orchestrating multi-step agent workflows"
+          ],
+          "answer": 0,
+          "why": "OpenRouter is an aggregation/routing layer giving a single interface to dozens of models, not a training, storage, or orchestration tool."
+        }
+      ]
+    },
+    {
+      "id": "cf46b237d6",
+      "date": "2026-09-25T16:15:22.000Z",
+      "added": "2026-09-26T14:11:30.502Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Five techniques for QA-ing LLM output in production on Bedrock",
+      "summary": "An AWS write-up on keeping LLM answers reliable at scale: orchestrating pipelines adaptively, failing over across accounts and models, evaluating responses while they stream, combining several evaluation signals, and verifying numerical accuracy.",
+      "why": "Your agents run on Bedrock; these are concrete, reusable patterns for evaluation and failover you can put on a roadmap.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Multi-model failover",
+          "back": "Routing a request to a backup model (or account/region) when the primary is rate-limited, erroring, or too slow — key for production reliability."
+        },
+        {
+          "front": "Streaming evaluation",
+          "back": "Checking an LLM's output for errors as tokens are generated, so bad answers can be caught or stopped before the user sees the whole response."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why would an AI team add cross-account, multi-model failover to a Bedrock service?",
+          "options": [
+            "To keep serving users when the primary model hits limits or errors",
+            "To lower token costs by compressing prompts before sending them",
+            "To fine-tune the model on customer data without leaving the account",
+            "To cache identical prompts so repeat answers return instantly"
+          ],
+          "answer": 0,
+          "why": "Failover is a reliability pattern: a backup model/account takes over when the primary is throttled or failing. The others are cost or training techniques."
+        }
+      ]
+    },
+    {
+      "id": "414ec5ebf0",
+      "date": "2026-09-24T23:31:08.000Z",
+      "added": "2026-09-26T14:11:30.502Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Sep/24/harder/",
+      "category": "claude-code",
+      "title": "Simon Willison: coding agents make engineering harder, not easier",
+      "summary": "A short but pointed note arguing that coding agents raise the ceiling of what's possible while demanding more discipline and knowledge from the person driving them — not less.",
+      "why": "A useful counterweight when planning AI-assisted delivery: expect review, testing and judgement costs to rise, not vanish.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5bff2e7c4a",
+      "date": "2026-09-25T17:22:01.000Z",
+      "added": "2026-09-26T14:11:30.502Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Sep/25/john-gruber/",
+      "category": "builders",
+      "title": "Meta's Muse gives every user their own cloud Linux machine",
+      "summary": "Commentary on Meta's new Muse product: each user gets a persistent Linux virtual machine in Meta's cloud, wrapped in consumer-grade easy installation — a notable example of hiding heavy infrastructure behind simple packaging.",
+      "why": "Good product lesson: the differentiator isn't the VM, it's making serious compute feel like installing an app.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "698a7c41cd",
+      "date": "2026-09-25T21:50:12.000Z",
+      "added": "2026-09-26T14:11:30.502Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.283: tighter admin control over which models you can use",
+      "summary": "This release adds a managed setting where admins can restrict Claude Code to exact model versions, plus an opt-in header that lets corporate LLM gateways group all requests belonging to a single user prompt.",
+      "why": "If your company locks model versions, you may suddenly lose access to newer ones — worth knowing before blaming the tool.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "f34eefd443",
+      "date": "2026-09-25T16:09:46.000Z",
+      "added": "2026-09-26T14:11:30.502Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/deploying-real-time-personalized-speech-with-qwen3-tts-on-amazon-sagemaker-ai/",
+      "category": "labs",
+      "title": "Qwen3-TTS voice cloning now deployable on SageMaker",
+      "summary": "AWS shows how to run the open Qwen3-TTS text-to-speech model as a managed real-time endpoint, cloning a speaker's voice from a short clip and preserving that voice across different languages.",
+      "why": "Shows how quickly open voice models are becoming deployable on your own AWS stack — and the consent questions that follow.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "8b06c9e402",
       "date": "2026-09-24T22:05:37.000Z",
