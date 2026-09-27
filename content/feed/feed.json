@@ -1,6 +1,59 @@
 {
-  "updated": "2026-09-26T14:11:30.504Z",
+  "updated": "2026-09-27T15:00:41.081Z",
   "items": [
+    {
+      "id": "821f7322b5",
+      "date": "2026-09-27T12:32:18.000Z",
+      "added": "2026-09-27T15:00:41.079Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/the-grief-loneliness-and-burnout",
+      "category": "pm",
+      "title": "Molly Graham on burnout, grief, and delegating work to AI instead of people",
+      "summary": "Molly Graham updates her classic \"give away your Legos\" career advice for the AI era, discussing industry-wide grief, loneliness and burnout, and why handing work to an agent feels nothing like handing it to a teammate.",
+      "why": "You delegate to Claude Code daily; this reframes what that does to your role, your team's morale and your own career growth.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "\"Give away your Legos\" (Molly Graham)",
+          "back": "As a company scales, you must hand off work you love to others; the discomfort is normal and necessary for growth."
+        },
+        {
+          "front": "Why is delegating to an AI agent different from delegating to a person?",
+          "back": "No one grows on the receiving end — you lose the mentoring, trust-building and team capacity that human handoffs create, while keeping the loss of the work itself."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the core point of Molly Graham's \"give away your Legos\" advice?",
+          "options": [
+            "Handing off work you enjoy is painful but necessary as the org scales",
+            "Keeping ownership of your best projects protects your career growth",
+            "Delegating only low-value tasks keeps your team motivated over time",
+            "Rebuilding your role from scratch each year prevents professional burnout"
+          ],
+          "answer": 0,
+          "why": "The metaphor is about the discomfort of surrendering work you love so a growing company can scale."
+        }
+      ]
+    },
+    {
+      "id": "c9c09c16a0",
+      "date": "2026-09-26T17:54:02.000Z",
+      "added": "2026-09-27T15:00:41.079Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/community-wisdom-ai-doomerism-speeding",
+      "category": "pm",
+      "title": "Community Wisdom: AI doomerism, faster discovery in big orgs, and checking engineers' answers as a new PM",
+      "summary": "Reader Q&A roundup from Lenny's community covering how to handle AI anxiety, speeding up product discovery inside large organizations, sanity-checking engineering estimates without a technical background, and where analytics actually pays off.",
+      "why": "The thread on verifying engineering answers as a non-technical PM maps directly onto your goal of building technical confidence.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "30b26e0786",
       "date": "2026-09-25T23:14:41.000Z",
