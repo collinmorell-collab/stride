@@ -1,6 +1,151 @@
 {
-  "updated": "2026-09-27T15:00:41.081Z",
+  "updated": "2026-09-28T18:00:35.166Z",
   "items": [
+    {
+      "id": "c426a07aa4",
+      "date": "2026-09-28T15:03:13.000Z",
+      "added": "2026-09-28T17:59:25.225Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-ai-jev-for-beginners-i-left",
+      "category": "pm",
+      "title": "Lenny's How I AI roundup: Opus 5.5 vs GPT-6, and Jev for beginners",
+      "summary": "Weekly roundup from Lenny's How I AI network: a beginner guide to Jev, a creator explaining why Opus 5.5 pulled them back from a rival model, and a head-to-head Opus 5.5 vs GPT-6 benchmark.",
+      "why": "Your main source for how PMs actually pick and switch models; frontier comparisons directly affect which model you default to in Claude Code.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Why do practitioners re-benchmark models after each release?",
+          "back": "Frontier models leapfrog each other; a model that lost on your task six months ago may now win, so default choices should be re-tested, not assumed."
+        },
+        {
+          "front": "What is a 'head-to-head bench' in these roundups?",
+          "back": "Running the same real tasks through two models and comparing output quality, speed and cost — more useful for PMs than public leaderboard scores."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why is a self-run head-to-head test on your own tasks usually more useful than a public leaderboard score?",
+          "options": [
+            "It reflects your actual prompts, data and quality bar, which leaderboards don't capture",
+            "It uses more test cases than the benchmarks vendors publish",
+            "It measures the model's parameter count more accurately than vendors do",
+            "It removes the effect of temperature settings on the results"
+          ],
+          "answer": 0,
+          "why": "Leaderboards average over generic tasks; relevance to your workflow is what decides which model to default to."
+        }
+      ]
+    },
+    {
+      "id": "5588418545",
+      "date": "2026-09-27T23:54:15.000Z",
+      "added": "2026-09-28T17:59:25.225Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
+      "category": "labs",
+      "title": "Simon Willison's annotated review of what changed in LLMs during 2026",
+      "summary": "Conference keynote walking chronologically through the year's model releases, agent trends and shifts in how people build with LLMs, with annotated slides and notes rather than hype.",
+      "why": "The fastest single catch-up on the model landscape — ideal for filling gaps before you argue for a model or agent choice at work.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Why track LLM releases chronologically rather than by vendor?",
+          "back": "It shows how capabilities (long context, agentic tool use, cheap small models) diffused across all labs, so you can judge trends instead of marketing claims."
+        },
+        {
+          "front": "What is an 'agentic' model in 2026 terms?",
+          "back": "A model trained and tuned to plan, call tools repeatedly and work over long sessions, not just answer a single prompt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What distinguishes an 'agentic' model from a standard chat model?",
+          "options": [
+            "It is optimised for multi-step planning and repeated tool calls over a task",
+            "It is trained on more languages so it answers in the user's locale",
+            "It stores past chats permanently so it never needs context re-sent",
+            "It runs on the client device instead of in the provider's cloud"
+          ],
+          "answer": 0,
+          "why": "Agentic tuning targets long-horizon tool use and planning, which is why such models power coding agents."
+        }
+      ]
+    },
+    {
+      "id": "631e24e3f2",
+      "date": "2026-09-28T12:03:04.000Z",
+      "added": "2026-09-28T17:59:25.225Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/jev-for-beginners-how-to-use-it-and",
+      "category": "builders",
+      "title": "Using Jev to get typed, structured outputs as a cheap classification layer",
+      "summary": "A 26-minute walkthrough of Jev, which returns type-safe structured values instead of free text — presented as a fast, cheap classification step inside pipelines, with three shipped example projects.",
+      "why": "Structured output instead of parsing text is the key pattern for reliable production agents — exactly what your Lambda+Bedrock services need.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "a2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5b4f6fe726",
+      "date": "2026-09-28T15:56:32.000Z",
+      "added": "2026-09-28T17:59:25.225Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/implementing-synthetic-monitoring-using-amazon-nova-act/",
+      "category": "builders",
+      "title": "Agent-driven monitoring with Amazon Nova Act and Bedrock AgentCore",
+      "summary": "AWS shows an architecture where an agent performs user-journey checks instead of brittle scripted UI tests, using Nova Act plus Bedrock AgentCore, including patterns for resilience and a sample implementation.",
+      "why": "Runs on your exact stack (Bedrock) and shows a production agent pattern plus AgentCore, the managed runtime you may end up owning.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "00e0e3a4ad",
+      "date": "2026-09-28T04:01:30.000Z",
+      "added": "2026-09-28T17:59:25.225Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Sep/28/muse-ai-agent/",
+      "category": "builders",
+      "title": "An AI agent auto-replied 'I'm here!' when its owner wasn't — a failure worth studying",
+      "summary": "A quoted transcript where a personal AI assistant admits its automatic reply misled a real person during a pickup, causing a negative rating — a concrete example of autonomous agents acting without confirmation.",
+      "why": "A vivid, shareable illustration of why agents acting on your behalf need human confirmation gates before irreversible, real-world actions.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "4cfa73e20d",
+      "date": "2026-09-27T23:09:19.000Z",
+      "added": "2026-09-28T17:59:25.225Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Sep/27/hn-49871741/",
+      "category": "builders",
+      "title": "S3 storage prices haven't dropped in a decade",
+      "summary": "Simon Willison notes that Amazon S3's per-gigabyte price has stayed flat for around ten years despite falling hardware costs, prompting discussion of cloud storage economics and competitors.",
+      "why": "Cheap useful context on cloud cost assumptions when you plan AI features that store logs, documents or model artefacts on AWS.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "821f7322b5",
       "date": "2026-09-27T12:32:18.000Z",
@@ -570,6 +715,123 @@
   ],
   "weekly": [
     {
+      "weekOf": "2026-09-28",
+      "created": "2026-09-28T18:00:35.163Z",
+      "headline": "Frontier week: Opus 5.5 and GPT-6 land with 40-50% price cuts, Stripe pays $7B for a model router, and evals become the PM skill to own.",
+      "script": "Big week. Start with the models: Anthropic's Opus 5.5 and OpenAI's GPT-6 Sol and Luna shipped within about a day of each other, Grok 4.7 too, and frontier prices were cut roughly forty to fifty percent. Two takeaways for you. First, your cost assumptions for your Bedrock agents are now wrong in your favour, so it's worth re-running the per-million-token math before your next roadmap conversation. Second, Opus 5.5 is already live on Bedrock, so testing it is a config change, not a project. Lenny even ran blind head-to-head tests and found the winner depends on the task, which is a good habit to steal: judge by your own tasks, not benchmark charts.\n\nSecond story: Stripe bought OpenRouter for seven billion dollars. OpenRouter is a routing layer that sits between your app and dozens of models, so you can swap providers without rewriting anything. When a payments giant pays that much for a switchboard, it's telling you that optionality between models is where infrastructure value is concentrating, and that locking yourself to one provider is now a real product risk.\n\nThird: Lenny's piece on advanced evals. The key idea is error discovery. Before you write any scoring criteria, go hunting through real outputs for failure modes you didn't know existed, otherwise your metrics measure imaginary problems. That's the step most teams skip, and it's the line between demo-grade and production-grade.\n\nFourth, straight onto your stack: AWS published a pattern where one central agent reaches data owned by other teams' AWS accounts, with each team exposing its data as an MCP server and AgentCore Gateway handling cross-account auth and per-user permissions. That's the answer to \"how does our agent query their data safely.\"\n\nFifth, Zapier's AI fluency rubric grades every employee from unacceptable to transformative. Use it as a yardstick, and push your team from chatting to redesigning workflows. Bonus listen: Molly Graham on why handing work to an agent feels nothing like handing it to a person.",
+      "top5": [
+        {
+          "title": "Claude Opus 5.5, GPT-6 Sol and Luna land — plus a 40-50% price war",
+          "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
+          "source": "Simon Willison",
+          "why": "Two frontier releases in one day plus sharp price cuts means your model default and your Bedrock unit economics both need a re-check this week."
+        },
+        {
+          "title": "Stripe buys OpenRouter for $7B: why model routing became valuable",
+          "link": "https://www.latent.space/p/openrouter",
+          "source": "Latent Space",
+          "why": "A routing layer lets you swap models without rewrites, and Stripe's price tag tells you provider optionality is now strategic, not a nice-to-have."
+        },
+        {
+          "title": "Advanced evals: finding the AI failures you don't know about",
+          "link": "https://www.lennysnewsletter.com/p/advanced-evals-how-to-find-and-fix",
+          "source": "Lenny's Newsletter",
+          "why": "Error discovery — hunting real failure modes before writing eval criteria — is the PM skill that separates a demo from a production agent."
+        },
+        {
+          "title": "Multi-account AI agents on Bedrock AgentCore Gateway with MCP",
+          "link": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
+          "source": "AWS Machine Learning Blog",
+          "why": "This is the standard pattern on your exact stack for letting one agent safely query data owned by other teams' AWS accounts."
+        },
+        {
+          "title": "Zapier's AI fluency rubric: how every employee gets graded on AI use",
+          "link": "https://www.news.aakashg.com/p/zapier-ai-fluency-rubric-for-pms",
+          "source": "Product Growth (Aakash Gupta)",
+          "why": "It gives you a concrete ladder from 'unacceptable' to 'transformative' and the language to push your team from chatting to rewiring workflows."
+        }
+      ],
+      "cards": [
+        {
+          "front": "What changed in frontier models this week?",
+          "back": "Anthropic's Claude Opus 5.5 and OpenAI's GPT-6 (Sol and Luna) shipped within about a day of each other, alongside Grok 4.7, with frontier prices cut roughly 40-50%. Opus 5.5 is already available on Amazon Bedrock."
+        },
+        {
+          "front": "What is a model router (e.g. OpenRouter)?",
+          "back": "A neutral layer between your app and many model providers: one interface, and you can swap or fall back across models without rewriting your app. Stripe acquired OpenRouter for $7B, signalling that provider optionality is where infra value sits."
+        },
+        {
+          "front": "What is 'error discovery' in evals?",
+          "back": "The step before writing eval criteria: systematically dig through real outputs to surface failure modes you didn't know existed, so your metrics score actual problems instead of imagined ones. Most teams skip it."
+        },
+        {
+          "front": "How does one agent safely read data owned by other teams on AWS?",
+          "back": "Pattern from AWS: a central account runs the agent; each other account exposes its data as an MCP server; Bedrock AgentCore Gateway handles cross-account authentication and per-user permissions."
+        },
+        {
+          "front": "Zapier's AI fluency rubric",
+          "back": "An internal scale rating every employee from 'unacceptable' to 'transformative' on AI use. For PMs, higher levels mean delegating whole workflows, building internal tools, and redesigning team process around agents — not just using chat."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main benefit of putting a model router in front of your AI product?",
+          "options": [
+            "You can switch or fall back between providers without rewriting the application",
+            "You get a cheaper price per token than calling the provider's API directly",
+            "You remove the need to run your own evaluations on each model version",
+            "You keep the conversation history so the model no longer has to be re-sent"
+          ],
+          "answer": 0,
+          "why": "A router is a neutral interface across many models, so swapping providers becomes configuration rather than a rewrite. It doesn't replace evals, doesn't inherently discount tokens, and doesn't change the stateless nature of models."
+        },
+        {
+          "q": "In an eval programme, what is 'error discovery' meant to produce?",
+          "options": [
+            "A list of real failure modes found in actual outputs, before criteria are written",
+            "A benchmark score that can be compared against published model leaderboards",
+            "A scoring rubric derived from the product requirements document",
+            "A fallback chain of models to use when the primary model is unavailable"
+          ],
+          "answer": 0,
+          "why": "Error discovery comes first: you surface the failures you didn't know about, then write eval criteria against them, so your metrics measure real problems rather than assumed ones."
+        },
+        {
+          "q": "In the AWS multi-account agent pattern, what job does AgentCore Gateway do?",
+          "options": [
+            "Handles cross-account access and per-user permissions to remote MCP servers",
+            "Copies each team's data into the central account so the agent can query it",
+            "Fine-tunes a separate model per account to specialise on that team's data",
+            "Caches tool results across accounts to reduce per-token inference costs"
+          ],
+          "answer": 0,
+          "why": "Each team keeps its data and exposes it as an MCP server; the Gateway is the controlled front door, handling cross-account auth and per-user permissions rather than moving or retraining anything."
+        }
+      ],
+      "stale": [
+        {
+          "unit": "c2",
+          "note": "The pricing table ('As of September 2026: Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5') is now out of date: frontier prices were cut by roughly 40-50% this week. The worked example (2k in / 1k out on Sonnet 5 = $0.014) needs recalculating at the new rates."
+        },
+        {
+          "unit": "c2",
+          "note": "The Claude tier list implies Opus 5 is the top current coding/reasoning model. Claude Opus 5.5 has now shipped and is already available on Amazon Bedrock and Claude Platform on AWS, so Opus 5.5 is the current flagship to name."
+        },
+        {
+          "unit": "c2",
+          "note": "The frontier-lab examples are behind: OpenAI's current generation is GPT-6 (Sol and Luna variants), xAI shipped Grok 4.7, and Google shipped Gemini 3.8 Live with a real-time avatar. Worth refreshing the model names used as examples."
+        },
+        {
+          "unit": "c2",
+          "note": "'Claude Code lets you switch model and effort (try /model)' is no longer universally true: Claude Code 2.1.283 added a managed admin setting that can restrict Claude Code to exact model versions, so in a locked-down company the model picker may be limited."
+        },
+        {
+          "unit": "c2",
+          "note": "The 'closed vs open weights / Bedrock is a front door' framing misses this week's development: neutral routing layers (OpenRouter, acquired by Stripe for $7B) are now a mainstream third option for accessing many models through one interface."
+        }
+      ]
+    },
+    {
       "weekOf": "2026-09-21",
       "created": "2026-09-24T04:01:47.514Z",
       "headline": "A frontier release week (Opus 5.5, GPT-6 Sol and Luna) plus a price war — and evals become the PM skill that matters",
@@ -686,23 +948,28 @@
   "stale": [
     {
       "unit": "c2",
-      "note": "The pricing table ('As of September 2026: Claude Opus 5 $5 in / $25 out, Sonnet 5 $2/$10, Haiku 4.5 $1/$5') and the worked example are now unreliable: this week's releases came with frontier price cuts of roughly 40–50%, so the numbers and the resulting $0.014 sample calculation should be re-checked against current Anthropic and Bedrock rate cards.",
-      "flagged": "2026-09-24T04:01:47.514Z"
+      "note": "The pricing table ('As of September 2026: Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5') is now out of date: frontier prices were cut by roughly 40-50% this week. The worked example (2k in / 1k out on Sonnet 5 = $0.014) needs recalculating at the new rates.",
+      "flagged": "2026-09-28T18:00:35.163Z"
     },
     {
       "unit": "c2",
-      "note": "The tier list treats Claude Opus 5 as the current top Opus. Claude Opus 5.5 has now shipped and is the current flagship agentic-coding model — and it is already available on AWS Bedrock, which the same section mentions as your front door.",
-      "flagged": "2026-09-24T04:01:47.514Z"
+      "note": "The Claude tier list implies Opus 5 is the top current coding/reasoning model. Claude Opus 5.5 has now shipped and is already available on Amazon Bedrock and Claude Platform on AWS, so Opus 5.5 is the current flagship to name.",
+      "flagged": "2026-09-28T18:00:35.163Z"
     },
     {
       "unit": "c2",
-      "note": "'Who makes the models' is behind on the frontier lineup: OpenAI has released GPT-6 in two variants (Sol and Luna) and xAI has shipped Grok 4.7, so 'OpenAI (GPT)' and the passing mention of xAI need refreshing with current version names.",
-      "flagged": "2026-09-24T04:01:47.514Z"
+      "note": "The frontier-lab examples are behind: OpenAI's current generation is GPT-6 (Sol and Luna variants), xAI shipped Grok 4.7, and Google shipped Gemini 3.8 Live with a real-time avatar. Worth refreshing the model names used as examples.",
+      "flagged": "2026-09-28T18:00:35.163Z"
     },
     {
-      "unit": "b0",
-      "note": "The model list in 'Claude Code = a model + a harness' should name the current generation (Opus 5.5 rather than a generic/older Opus), since model choice inside Claude Code changed this week.",
-      "flagged": "2026-09-24T04:01:47.514Z"
+      "unit": "c2",
+      "note": "'Claude Code lets you switch model and effort (try /model)' is no longer universally true: Claude Code 2.1.283 added a managed admin setting that can restrict Claude Code to exact model versions, so in a locked-down company the model picker may be limited.",
+      "flagged": "2026-09-28T18:00:35.163Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The 'closed vs open weights / Bedrock is a front door' framing misses this week's development: neutral routing layers (OpenRouter, acquired by Stripe for $7B) are now a mainstream third option for accessing many models through one interface.",
+      "flagged": "2026-09-28T18:00:35.163Z"
     }
   ]
 }
