@@ -1,6 +1,207 @@
 {
-  "updated": "2026-09-28T18:00:35.166Z",
+  "updated": "2026-09-29T16:22:08.437Z",
   "items": [
+    {
+      "id": "64138d9738",
+      "date": "2026-09-29T13:15:57.000Z",
+      "added": "2026-09-29T16:22:08.434Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/all-of-the-lenny-and-friends-summit",
+      "category": "pm",
+      "title": "Every Lenny & Friends Summit talk is now free to watch",
+      "summary": "Lenny released full video of all Summit talks plus his own notes on the biggest themes from the day — product craft, AI-era team shapes, and career advice from the speakers.",
+      "why": "A concentrated dose of the thinkers you already follow; pick one talk per walk instead of hunting for podcast episodes.",
+      "score": 9,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "2d52fce207",
+      "date": "2026-09-28T22:07:38.000Z",
+      "added": "2026-09-29T16:22:08.434Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Sep/28/claude-sonnet-5-5/",
+      "category": "labs",
+      "title": "Claude Sonnet 5.5: faster, cheaper, beats Sonnet 5 across benchmarks",
+      "summary": "Anthropic shipped Sonnet 5.5 at the same list price as Sonnet 5 but roughly 30% faster and up to 30% cheaper per task, with benchmark wins across the board and a 1M-token context.",
+      "why": "Sonnet is your everyday workhorse in Claude Code; switching gets you speed and cost wins with no quality tradeoff.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Claude Sonnet 5.5",
+          "back": "Anthropic's mid-tier model, released Sep 2026: ~30% faster and up to 30% cheaper per task than Sonnet 5, same list price, 1M-token context."
+        },
+        {
+          "front": "Why does a 'mid-tier' model matter if Opus exists?",
+          "back": "Sonnet handles most focused coding and knowledge work at a fraction of Opus's cost and latency — better economics for agents that run many steps."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main improvement Anthropic claims for Claude Sonnet 5.5 over Sonnet 5?",
+          "options": [
+            "Similar price, but faster and lower cost per task with better benchmarks",
+            "Higher price, justified by a much larger training dataset",
+            "Same speed, but a new dedicated image-generation capability",
+            "Lower benchmarks, offset by a far cheaper per-token price"
+          ],
+          "answer": 0,
+          "why": "Anthropic priced it the same as Sonnet 5 while claiming ~30% faster, up to 30% cheaper per task, and better scores across benchmarks."
+        }
+      ]
+    },
+    {
+      "id": "00e36c8cef",
+      "date": "2026-09-28T18:02:03.000Z",
+      "added": "2026-09-29T16:22:08.434Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.284",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.284 adds Sonnet 5.5 and a smarter permission prompt",
+      "summary": "The new release makes Sonnet 5.5 the default Sonnet model (1M context, $2/$10 per million tokens) and adds a \"Yes, but ask again next time\" option when Claude wants to read a file outside your working directory.",
+      "why": "You'll see both changes today: a cheaper default model and finer-grained control over what Claude Code is allowed to read.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "What does \"Yes, but ask again next time\" do in Claude Code?",
+          "back": "Approves one single action (e.g. reading a file outside your project folder) without granting a standing permission for future ones."
+        },
+        {
+          "front": "Why does Claude Code ask before reading outside the working directory?",
+          "back": "Files outside your project aren't part of the agreed scope; the prompt prevents accidental exposure of unrelated or sensitive files."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Claude Code, choosing \"Yes, but ask again next time\" for an out-of-directory read means:",
+          "options": [
+            "Only this one read is allowed; future ones still prompt",
+            "All reads in that folder are allowed for the session",
+            "The read is queued until you end the session",
+            "Claude reads the file but cannot edit anything after"
+          ],
+          "answer": 0,
+          "why": "It's a one-time approval, keeping the permission prompt active for later reads instead of granting a blanket allow."
+        }
+      ]
+    },
+    {
+      "id": "c72c096f52",
+      "date": "2026-09-29T01:48:18.000Z",
+      "added": "2026-09-29T16:22:08.434Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/thariq",
+      "category": "claude-code",
+      "title": "Anthropic's Claude Code lead on what's coming next",
+      "summary": "An interview with Thariq Shihipar covering the Opus/Sonnet 5.5 launch and Claude Code's newer surfaces — Mods, Plugins, Projects and Tag — plus how the team decides what to ship as models improve.",
+      "why": "Hearing the product thinking behind your daily tool tells you which features to adopt and where the workflow is heading.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "89a36e7713",
+      "date": "2026-09-28T18:57:13.000Z",
+      "added": "2026-09-29T16:22:08.434Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-5-on-aws/",
+      "category": "builders",
+      "title": "Sonnet 5.5 lands on Amazon Bedrock",
+      "summary": "AWS made Claude Sonnet 5.5 available on Bedrock and the Claude Platform, with guidance on when to route work to Sonnet rather than Opus based on cost per task and latency.",
+      "why": "Your production agents run on Bedrock — this is the concrete path to cutting their cost and latency without a rewrite.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "60a3597ffe",
+      "date": "2026-09-28T22:13:16.000Z",
+      "added": "2026-09-29T16:22:08.434Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/grok-4-7-is-now-available-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Grok 4.7 joins Amazon Bedrock with 500K context",
+      "summary": "xAI's Grok 4.7 is now callable through Bedrock's Converse and Chat Completions APIs, offering a 500K-token window and four selectable reasoning-effort levels aimed at coding and long-running agents.",
+      "why": "Useful context on Bedrock's growing model menu: you can swap models behind the same API and tune reasoning effort per task.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "f66c7f6fe6",
+      "date": "2026-09-29T16:14:24.000Z",
+      "added": "2026-09-29T16:22:08.434Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/building-an-ai-powered-contract-intelligence-platform-with-amazon-quick-and-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "A reference pattern for agents that extract and verify data from documents",
+      "summary": "AWS walks through a contract-intelligence build on Bedrock AgentCore: agents pull structured fields out of contracts, a second pass verifies them, and an analytics layer answers portfolio-wide questions that plain RAG chat can't.",
+      "why": "Shows why retrieval chat fails on \"across all documents\" questions, and a production-shaped alternative on your own stack.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "cf468ec39d",
+      "date": "2026-09-28T19:00:00.000Z",
+      "added": "2026-09-29T16:22:08.434Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/towards-safety-cases-for-frontier-ai-training",
+      "category": "labs",
+      "title": "OpenAI publishes early guidelines for AI training \"safety cases\"",
+      "summary": "OpenAI outlines how it plans to argue that a frontier training run is safe: technical safeguards, operational practices, and procedures for investigating misalignment incidents when they appear.",
+      "why": "Safety-case language is starting to appear in enterprise AI procurement and risk reviews you may be asked to fill out.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "abda39f339",
+      "date": "2026-09-29T02:55:27.000Z",
+      "added": "2026-09-29T16:22:08.434Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-amd-buys-world-labs-for-82b",
+      "category": "labs",
+      "title": "AMD buys World Labs for $8.2B as spatial AI heats up",
+      "summary": "AMD's acquisition of World Labs, alongside the Atlas model tackling sparse 3D reconstruction, signals serious money moving into world models and spatial AI for robotics and design tooling.",
+      "why": "Useful trend radar: the frontier is widening beyond text models into spatial understanding, which will reshape some product categories.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "c426a07aa4",
       "date": "2026-09-28T15:03:13.000Z",
