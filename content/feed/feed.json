@@ -1,6 +1,206 @@
 {
-  "updated": "2026-09-29T16:22:08.437Z",
+  "updated": "2026-09-30T16:18:06.595Z",
   "items": [
+    {
+      "id": "82cfe0728e",
+      "date": "2026-09-30T14:45:15.000Z",
+      "added": "2026-09-30T16:18:06.592Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/openai-dev-day-2026-the-releases",
+      "category": "pm",
+      "title": "Lenny's team tests OpenAI DevDay 2026: what's actually worth using",
+      "summary": "A 24-minute walkthrough where Claire tries OpenAI's new DevDay features — Dots, Spaces, Sites, AI thumbnail picking, even a $97 vibe-coded game — and ranks what product people should try first.",
+      "why": "A PM-filtered shortcut through 20+ announcements, so you know which new OpenAI capabilities are worth a real experiment this week.",
+      "score": 10,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Dots (OpenAI)",
+          "back": "Proactive assistants that keep working on multi-step projects in the background, checking in with you rather than waiting for each prompt."
+        },
+        {
+          "front": "Why watch a hands-on DevDay review instead of the recap page?",
+          "back": "Vendor recaps list features; hands-on reviews show which ones actually work and which are demo-ware — cheaper than testing all yourself."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What distinguishes OpenAI's 'dots' from a normal chatbot conversation?",
+          "options": [
+            "They work proactively across a project over time instead of one prompt at a time",
+            "They run entirely on your own device with no network calls",
+            "They only generate images and video rather than text",
+            "They are a cheaper model tier with a smaller context window"
+          ],
+          "answer": 0,
+          "why": "Dots are framed as proactive assistants that keep progressing work across tasks, not single-turn responders."
+        }
+      ]
+    },
+    {
+      "id": "dd66acaed2",
+      "date": "2026-09-29T10:00:00.000Z",
+      "added": "2026-09-30T16:18:06.592Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "category": "labs",
+      "title": "GPT-6.1 Sol: near-flagship quality at a fifth of the price",
+      "summary": "OpenAI released GPT-6.1 Sol, claiming close to Astra-level reasoning for coding, computer use and professional tasks at roughly 20% of Astra's API token prices. It's already generally available on Amazon Bedrock.",
+      "why": "Price-per-quality drops reset what your agents can afford to do per request — and Bedrock availability means your stack can use it now.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Why does a cheaper 'near-flagship' model change product decisions?",
+          "back": "Workloads you rejected on cost (per-item classification, retries, multi-step agents) become viable, so you can re-open shelved ideas."
+        },
+        {
+          "front": "Input vs output tokens",
+          "back": "You pay separately for tokens sent in (prompt/context) and tokens generated out; long contexts and chatty outputs both drive cost."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "GPT-6.1 Sol is pitched as 'near-Astra intelligence for a fifth of the price.' What does that most directly change for a product team?",
+          "options": [
+            "High-volume or multi-step agent workloads become affordable at good quality",
+            "Model responses become deterministic and no longer need evaluation",
+            "Data no longer leaves your AWS region when you call the model",
+            "Context windows become unlimited so prompts need no trimming"
+          ],
+          "answer": 0,
+          "why": "Cost per token is the constraint on frequent, multi-call agent work; quality-per-dollar gains unlock those use cases, not determinism or residency."
+        }
+      ]
+    },
+    {
+      "id": "d58360993c",
+      "date": "2026-09-30T12:04:27.000Z",
+      "added": "2026-09-30T16:18:06.592Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/jev-8-real-use-cases-for-the-fastest",
+      "category": "builders",
+      "title": "Eight things you can build when the model is nearly free (Jev demos)",
+      "summary": "John Lindquist demos eight uses of Jev, an extremely fast and cheap model: live voice classification, deduplication, agent routing and more — arguing ultra-low cost makes previously impractical patterns sensible.",
+      "why": "Concrete patterns for cheap-model plumbing (routing, classification, dedup) — the unglamorous parts of production agents you're learning to build.",
+      "score": 9,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "884977ecb8",
+      "date": "2026-09-29T00:00:00.000Z",
+      "added": "2026-09-30T16:18:06.592Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-dots",
+      "category": "labs",
+      "title": "OpenAI's 'dots': proactive assistants that keep working",
+      "summary": "OpenAI introduced dots, assistants designed to make progress on long-running projects and routine tasks on their own while still surfacing checkpoints so the user stays in control.",
+      "why": "This is the industry moving from chat to background agents — the same UX questions (trust, checkpoints, undo) you face in your own agent features.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "d906990043",
+      "date": "2026-09-29T19:27:30.000Z",
+      "added": "2026-09-30T16:18:06.592Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.285",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.285: kill switch for WebFetch, desktop handoff, plugin config",
+      "summary": "New release adds an environment variable to disable the WebFetch tool, a `claude --desktop` command to open the current directory or a resumed session in the desktop app, and a command to inspect plugin configuration.",
+      "why": "Useful day-to-day: disabling WebFetch tightens what Claude can pull from the web, and --desktop moves a session between interfaces.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1",
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "8be48fae8c",
+      "date": "2026-09-30T15:37:15.000Z",
+      "added": "2026-09-30T16:18:06.592Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/query-claims-in-natural-language-with-amazon-bedrock-knowledge-bases/",
+      "category": "builders",
+      "title": "Building a cited, natural-language document assistant on Bedrock Knowledge Bases",
+      "summary": "AWS walks through a claims-question assistant: ingest documents from S3, retrieve with an agentic streaming API, handle follow-up turns, filter by metadata, and use contextual grounding guardrails to curb made-up answers.",
+      "why": "A blueprint for retrieval-over-your-documents on the exact AWS stack your production agents already run on, including grounding guardrails.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5d4893f286",
+      "date": "2026-09-30T15:21:57.000Z",
+      "added": "2026-09-30T16:18:06.592Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances/",
+      "category": "builders",
+      "title": "Bedrock AgentCore Runtime Instances: multi-agent workflows with shared state",
+      "summary": "AWS added long-running runtime instances where several agents share one GPU machine, a persistent filesystem and multi-day sessions, demonstrated with a three-agent pipeline that hands work between agents to finish a music track.",
+      "why": "Your agents on Lambda are short-lived; this shows AWS's answer for multi-agent work that needs hours, shared files and handoffs.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "da4fbb5bee",
+      "date": "2026-09-30T05:53:10.000Z",
+      "added": "2026-09-30T16:18:06.592Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-openai-devday-2026-dots-61",
+      "category": "labs",
+      "title": "The full DevDay 2026 firehose, digested",
+      "summary": "An AI-news roundup of everything OpenAI shipped: GPT-6.1 Sol, an Ultrafast tier, Decisions and Agents APIs, Spaces, a marketplace, and the claim of 1.2 billion weekly ChatGPT users.",
+      "why": "Skim to see the platform shift: OpenAI is selling agent infrastructure and distribution, not just models — relevant to your roadmap bets.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "88a7c9c523",
+      "date": "2026-09-30T01:13:12.000Z",
+      "added": "2026-09-30T16:18:06.592Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-anthropic-models-on-amazon-bedrock-for-in-region-inference-in-seoul-and-singapore/",
+      "category": "builders",
+      "title": "Claude models get in-region inference in Seoul, Singapore and India",
+      "summary": "Bedrock now processes Claude Opus 5 and Sonnet 5 requests entirely within Seoul, Sonnet 5 in Singapore, and offers India in-country inference, aimed at local data-processing requirements.",
+      "why": "If a market ever asks where your agent's data is processed, this is the Bedrock lever that answers it without changing models.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "64138d9738",
       "date": "2026-09-29T13:15:57.000Z",
