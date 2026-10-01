@@ -1,6 +1,193 @@
 {
-  "updated": "2026-09-30T16:18:06.595Z",
+  "updated": "2026-10-01T16:55:31.739Z",
   "items": [
+    {
+      "id": "f6301490aa",
+      "date": "2026-10-01T05:25:16.000Z",
+      "added": "2026-10-01T16:55:31.736Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/harness-engineering",
+      "category": "builders",
+      "title": "Harness engineering: the new core skill for AI product builders",
+      "summary": "Aakash Gupta argues that beyond prompts and context, the real work is the 'harness' — the scaffolding of tools, memory, retries, evals and guardrails wrapped around a model that turns it into a reliable product.",
+      "why": "This names the exact layer you own as a PM shipping agents: the harness, not the model, decides whether your product works in production.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "What is a 'harness' around an LLM?",
+          "back": "The surrounding system — tool definitions, context assembly, memory, retries, validation, evals and guardrails — that turns a raw model into a dependable product."
+        },
+        {
+          "front": "Prompt vs context vs harness engineering",
+          "back": "Prompt = wording of the instruction; context = what information gets into the window; harness = the whole runtime loop and safety net around the model."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which change is an example of harness engineering rather than prompt engineering?",
+          "options": [
+            "Adding automatic retries and output validation around each model call",
+            "Rewriting the system instruction to be clearer and more specific",
+            "Adding few-shot examples showing the desired answer format",
+            "Asking the model to think step by step before answering"
+          ],
+          "answer": 0,
+          "why": "Retries and validation are part of the runtime scaffolding (the harness); the other three are all edits to the text sent to the model."
+        }
+      ]
+    },
+    {
+      "id": "a4df635e20",
+      "date": "2026-10-01T16:40:24.000Z",
+      "added": "2026-10-01T16:55:31.736Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+      "category": "builders",
+      "title": "Event-driven 'ambient' agents on Bedrock AgentCore, Lambda and SQS",
+      "summary": "AWS walks through agents triggered by events — a file upload, a schedule, an alert — rather than a chat message, using queues, Lambda and DynamoDB, plus an ask_human tool and a review queue for approvals.",
+      "why": "This is your exact production stack, and it shows the pattern for agents that work in the background with a human approval step.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Ambient agent",
+          "back": "An agent triggered by an event (file upload, schedule, alert) instead of a user prompt — it runs in the background and only surfaces when it needs a human."
+        },
+        {
+          "front": "Human-in-the-loop via an 'ask_human' tool",
+          "back": "The agent treats asking a person as just another tool call: it pauses, writes a job to a queue/table, and resumes once someone answers."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What mainly distinguishes an ambient agent from a chat agent?",
+          "options": [
+            "It is started by system events rather than by a user message",
+            "It uses a smaller, cheaper model to reduce running costs",
+            "It cannot call external tools, only read stored data",
+            "It runs entirely on the user's device instead of the cloud"
+          ],
+          "answer": 0,
+          "why": "Ambient agents are event-driven — uploads, schedules, alerts start them — rather than waiting for someone to type a prompt."
+        }
+      ]
+    },
+    {
+      "id": "15e70ee5e4",
+      "date": "2026-09-30T20:01:45.000Z",
+      "added": "2026-10-01T16:55:31.736Z",
+      "source": "Google DeepMind",
+      "link": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/",
+      "category": "labs",
+      "title": "Google DeepMind announces Gemini 4 Argon",
+      "summary": "DeepMind unveiled Gemini 4 Argon as its new frontier model, reportedly with up to a million tokens of output. Access is initially limited to a restricted trusted-tester program rather than general availability.",
+      "why": "Keeps your model landscape map current; huge output limits change what document- and code-generation features are feasible to spec.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "ee61659f96",
+      "date": "2026-10-01T10:54:12.000Z",
+      "added": "2026-10-01T16:55:31.736Z",
+      "source": "One Useful Thing (Ethan Mollick)",
+      "link": "https://www.oneusefulthing.org/p/the-dot-and-the-swarm",
+      "category": "pm",
+      "title": "Ethan Mollick on single agents versus swarms",
+      "summary": "Mollick contrasts concentrating work in one strong model with orchestrating many cooperating agents, arguing through the 'bitter lesson' that scale and general methods usually beat hand-built coordination structures.",
+      "why": "Useful framing when deciding whether your next feature needs a multi-agent architecture or just a better single model and harness.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "4fb3caa1ba",
+      "date": "2026-10-01T06:29:01.000Z",
+      "added": "2026-10-01T16:55:31.736Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/1/matthew-green/",
+      "category": "builders",
+      "title": "Sandboxes alone won't stop rogue agents",
+      "summary": "A cryptographer argues agent worms are plausible: a prompt-injection payload hijacks one agent, and agents sharing files or workspaces pass the instructions along, so isolation per-agent doesn't contain the spread.",
+      "why": "A concrete risk to raise in design reviews for your production agents: shared storage between agents is an attack path, not just plumbing.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "1a601b09c6",
+      "date": "2026-09-30T22:23:40.000Z",
+      "added": "2026-10-01T16:55:31.736Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/devday-2026",
+      "category": "labs",
+      "title": "OpenAI's computer-use team on where agents that click are heading",
+      "summary": "A DevDay interview with OpenAI's computer-use and API platform leads covers why browser-operating agents are improving faster than critics claim, and how the team shipped a competing product in about a week.",
+      "why": "Computer-use agents could replace integrations you'd otherwise have to build; worth knowing their current limits before planning roadmap bets.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "957c29ef0f",
+      "date": "2026-10-01T16:32:23.000Z",
+      "added": "2026-10-01T16:55:31.736Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/implementing-multi-environment-access-for-claude-platform-on-aws/",
+      "category": "builders",
+      "title": "Giving teams safe multi-environment access to Claude on AWS",
+      "summary": "AWS describes patterns for one Claude subscription serving many environments: cross-account signed requests for AWS workloads, workspace-scoped API keys for developers, and federated login for outside systems, with isolation per workspace.",
+      "why": "Explains how access and cost separation for Claude usage works at your company — handy vocabulary when security reviews your agent plans.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "efce1daa2f",
+      "date": "2026-09-30T19:10:13.000Z",
+      "added": "2026-10-01T16:55:31.736Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.286",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.286: clearer permission prompts",
+      "summary": "Stacked permission requests now show a counter like '2 of 5', long lists get clickable 'N more' rows in fullscreen, and a bug spawning multiple login browser windows across processes and IDE extensions is fixed.",
+      "why": "Small quality-of-life wins you'll notice daily — you can now tell how many approvals are still waiting behind the current one.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "82cfe0728e",
       "date": "2026-09-30T14:45:15.000Z",

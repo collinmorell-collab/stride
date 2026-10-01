@@ -6298,5 +6298,69 @@
   "da4fbb5bee": {
     "source": "latent-space",
     "at": "2026-09-30T16:17:27.513Z"
+  },
+  "ee61659f96": {
+    "source": "one-useful-thing",
+    "at": "2026-10-01T16:54:50.123Z"
+  },
+  "f6301490aa": {
+    "source": "product-growth",
+    "at": "2026-10-01T16:54:50.277Z"
+  },
+  "91b1f786ee": {
+    "source": "anthropic",
+    "at": "2026-10-01T16:54:50.486Z"
+  },
+  "a80484c2d5": {
+    "source": "openai",
+    "at": "2026-10-01T16:54:50.690Z"
+  },
+  "6a91381a42": {
+    "source": "openai",
+    "at": "2026-10-01T16:54:50.690Z"
+  },
+  "15e70ee5e4": {
+    "source": "deepmind",
+    "at": "2026-10-01T16:54:50.927Z"
+  },
+  "efce1daa2f": {
+    "source": "claude-code",
+    "at": "2026-10-01T16:54:51.185Z"
+  },
+  "763452b382": {
+    "source": "aws-ml",
+    "at": "2026-10-01T16:54:51.398Z"
+  },
+  "a4df635e20": {
+    "source": "aws-ml",
+    "at": "2026-10-01T16:54:51.398Z"
+  },
+  "957c29ef0f": {
+    "source": "aws-ml",
+    "at": "2026-10-01T16:54:51.398Z"
+  },
+  "e7bc0f51dc": {
+    "source": "aws-ml",
+    "at": "2026-10-01T16:54:51.398Z"
+  },
+  "c2ac20a52b": {
+    "source": "aws-ml",
+    "at": "2026-10-01T16:54:51.398Z"
+  },
+  "4fb3caa1ba": {
+    "source": "simon-willison",
+    "at": "2026-10-01T16:54:51.475Z"
+  },
+  "562470c22e": {
+    "source": "simon-willison",
+    "at": "2026-10-01T16:54:51.475Z"
+  },
+  "d579ab095f": {
+    "source": "latent-space",
+    "at": "2026-10-01T16:54:51.738Z"
+  },
+  "1a601b09c6": {
+    "source": "latent-space",
+    "at": "2026-10-01T16:54:51.738Z"
   }
 }
