@@ -1,6 +1,198 @@
 {
-  "updated": "2026-10-01T16:55:31.739Z",
+  "updated": "2026-10-02T16:08:24.835Z",
   "items": [
+    {
+      "id": "287cb9c642",
+      "date": "2026-10-01T18:43:19.000Z",
+      "added": "2026-10-02T16:08:24.831Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.287",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.287: plugins can now change Claude's behavior, plus a 'You should know' watchdog",
+      "summary": "New release introduces Claude Mods, letting plugins alter deeper agent behavior, and ships a built-in mod that runs a side agent flagging things you or Claude may have missed. Also adds a new session filter.",
+      "why": "You use Claude Code daily; a background agent that catches your blind spots is a direct quality upgrade worth enabling today.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Claude Mods",
+          "back": "A Claude Code plugin capability that lets plugins modify deeper agent behavior, not just add commands or context."
+        },
+        {
+          "front": "'You should know' mod",
+          "back": "Built-in Claude Code plugin where a side agent watches your session and flags risks or omissions. Enable via /plugin enable cc-plugin-you-should-know@builtin."
+        },
+        {
+          "front": "What is a side agent?",
+          "back": "A second AI process running alongside your main session with its own job — here, reviewing work rather than doing it."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is new about 'Claude Mods' compared with earlier Claude Code plugins?",
+          "options": [
+            "Plugins can modify deeper agent behavior, not only add commands",
+            "Plugins can be installed without restarting the session",
+            "Plugins can run on a remote server instead of locally",
+            "Plugins can be written in any programming language"
+          ],
+          "answer": 0,
+          "why": "Mods extend plugins from adding surface features to changing how the agent itself behaves."
+        }
+      ]
+    },
+    {
+      "id": "60dd895033",
+      "date": "2026-10-02T15:46:05.000Z",
+      "added": "2026-10-02T16:08:24.831Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/add-secure-web-search-to-claude-desktop-with-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "Giving a Bedrock-hosted Claude live web search via AgentCore Gateway",
+      "summary": "AWS walks through wiring Claude Desktop on Bedrock to a web search tool through Bedrock AgentCore Gateway, with token-based login handled by IAM Identity Center and Cognito so access is authenticated per user.",
+      "why": "Your production agents run on Bedrock; this is the standard pattern for adding tools to an agent with real enterprise auth.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b1",
+        "a1"
+      ],
+      "cards": [
+        {
+          "front": "Knowledge cutoff",
+          "back": "The date after which a model has no training data. Without a search or retrieval tool, it can't know newer facts."
+        },
+        {
+          "front": "Bedrock AgentCore Gateway",
+          "back": "AWS service that exposes tools/APIs to an agent through a managed, authenticated endpoint instead of each app wiring tools itself."
+        },
+        {
+          "front": "JWT auth (in one line)",
+          "back": "A signed token proving who the caller is, passed with each request so the gateway can allow or deny the tool call."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does an agent need a search tool rather than just a bigger model?",
+          "options": [
+            "The model cannot know events after its training cutoff",
+            "Larger models use more tokens than tool calls do",
+            "Tool calls are always cheaper than model inference",
+            "Search results are stored in the model's context window permanently"
+          ],
+          "answer": 0,
+          "why": "Tools exist to fetch facts the model was never trained on; size doesn't fix a cutoff date."
+        }
+      ]
+    },
+    {
+      "id": "d81483cb0d",
+      "date": "2026-10-02T14:04:49.000Z",
+      "added": "2026-10-02T16:08:24.831Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/airbnb",
+      "category": "pm",
+      "title": "Airbnb's AI rebuild, led by Meta's former Llama chief",
+      "summary": "Ahmad Al-Dahle, previously head of Meta's Llama models, discusses applying AI at Airbnb both internally — how teams build products — and externally in the guest experience.",
+      "why": "A rare look at how a consumer product org actually restructures PM and engineering workflows around AI, not just ships AI features.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "443df385e8",
+      "date": "2026-10-01T17:34:56.000Z",
+      "added": "2026-10-02T16:08:24.831Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-agent-memory-with-nvidia-nemo-agent-toolkit-and-amazon-s3-vectors/",
+      "category": "builders",
+      "title": "How agent memory actually works, using S3 Vectors as the store",
+      "summary": "Walkthrough of a memory subsystem for multi-agent apps: storing embeddings in Amazon S3 Vectors as a persistent memory provider so agents recall prior context, demonstrated on an investment research workflow.",
+      "why": "Memory is the piece most PMs underestimate when scoping agents; this shows concretely what 'the agent remembers' means in infrastructure terms.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "1122627a66",
+      "date": "2026-10-02T15:00:00.000Z",
+      "added": "2026-10-02T16:08:24.831Z",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/",
+      "category": "labs",
+      "title": "Google's September 2026 AI roundup",
+      "summary": "A consolidated recap of everything Google shipped across its AI products and models last month — a fast way to catch up on one major lab's direction in a single read.",
+      "why": "Cheap way to keep your mental model of the competitive landscape current without tracking every launch separately.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7e67b43cf9",
+      "date": "2026-10-01T17:00:00.000Z",
+      "added": "2026-10-02T16:08:24.831Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/the-eternal-complement",
+      "category": "pm",
+      "title": "OpenAI essay: the bottleneck is execution, not ideas",
+      "summary": "An argument that AI's biggest economic effect may come from compressing the routine execution work surrounding breakthroughs, making follow-through — not ideation — the scarce input that sets the pace of progress.",
+      "why": "Reframes where to point AI in your roadmap: automate the grinding execution layer rather than chasing idea-generation features.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b9de1bc88d",
+      "date": "2026-10-01T22:06:14.000Z",
+      "added": "2026-10-02T16:08:24.831Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/scaling-cloud-migrations-with-agentic-ai-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "A multi-agent system for enterprise cloud migrations on Bedrock AgentCore",
+      "summary": "AWS Professional Services describes splitting a migration into specialist agents — discovery, infrastructure code generation, governance, post-migration ops — claiming infrastructure code work dropped from weeks to minutes.",
+      "why": "A clear template for decomposing a messy enterprise process into narrow agents, on the same Bedrock stack your team ships on.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "22b95dcb28",
+      "date": "2026-10-02T06:40:53.000Z",
+      "added": "2026-10-02T16:08:24.831Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-pi-10-pi-durable-and-aie-nyc",
+      "category": "builders",
+      "title": "Pi 1.0: the minimalist agent harness goes stable",
+      "summary": "Newsletter covering the 1.0 release of Pi, a deliberately stripped-down agent harness now with TypeScript support, plus notes from the AI Engineer NYC event on where agent scaffolding is heading.",
+      "why": "'Harness' is the layer Claude Code sits in; watching minimal harnesses helps you judge what your tools actually add.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "f6301490aa",
       "date": "2026-10-01T05:25:16.000Z",
