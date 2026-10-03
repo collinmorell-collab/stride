@@ -1,6 +1,85 @@
 {
-  "updated": "2026-10-02T16:08:24.835Z",
+  "updated": "2026-10-03T14:35:27.683Z",
   "items": [
+    {
+      "id": "8e206c4d9e",
+      "date": "2026-10-02T16:15:00.000Z",
+      "added": "2026-10-03T14:35:27.680Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/practical-guide-building-gpt-6",
+      "category": "labs",
+      "title": "OpenAI publishes a practical guide to picking GPT-6 models",
+      "summary": "OpenAI released guidance for teams choosing among the GPT-6 family: how to match model size to task, dial reasoning effort up or down, write better prompts and skills, orchestrate tool calls, and harden workflows for production.",
+      "why": "You pick models for agents at work; this gives you a vocabulary for cost-vs-reasoning tradeoffs you can reuse on Bedrock too.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Reasoning effort (as a model setting)",
+          "back": "A dial that controls how much internal thinking a model does before answering. Higher = better on hard tasks, but slower and more expensive."
+        },
+        {
+          "front": "Why not always use the biggest model?",
+          "back": "Latency and cost scale with model size and reasoning effort. Most production steps (routing, extraction, formatting) run fine on smaller models."
+        },
+        {
+          "front": "What is a 'skill' in a model guide?",
+          "back": "A packaged instruction set / procedure the model can load for a recurring task, rather than re-explaining it in every prompt."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A product step just extracts dates from short emails, thousands of times a day. What's the usual right call?",
+          "options": [
+            "Use a small model with low reasoning effort to keep cost and latency down",
+            "Use the largest model with high reasoning effort for maximum accuracy",
+            "Use the largest model but shorten the prompt to control spend",
+            "Use a small model with maximum reasoning effort to compensate for its size"
+          ],
+          "answer": 0,
+          "why": "High-volume, low-complexity tasks don't benefit from extra reasoning; the gain is noise while cost and latency rise sharply."
+        }
+      ]
+    },
+    {
+      "id": "9f2dde650f",
+      "date": "2026-10-02T23:01:00.000Z",
+      "added": "2026-10-03T14:35:27.680Z",
+      "source": "Anthropic",
+      "link": "https://www.anthropic.com/news/claude-frontier-academy",
+      "category": "labs",
+      "title": "Anthropic commits $100M to train 10,000 'deployed engineers'",
+      "summary": "Anthropic announced Claude Frontier Academy, a $100M program to train 10,000 people by end of 2027 as Frontier Deployed Engineers — practitioners who embed with customers to ship real Claude deployments to Anthropic's internal standard.",
+      "why": "Signals that the scarce skill is deploying agents well, not building models — a credible career lane for a technically-curious PM.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "21904a5fc0",
+      "date": "2026-10-02T20:19:57.000Z",
+      "added": "2026-10-03T14:35:27.680Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.288",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.288: cloud sessions get GitHub CLI, selection API for mods",
+      "summary": "This release adds a built-in gh api command for cloud sessions whose image lacks the GitHub CLI, fixes stray control characters leaking into the terminal from filenames and errors, and exposes the last text you selected to mods.",
+      "why": "Mostly plumbing, but the cleaner terminal output and cloud-session GitHub access affect you if you run Claude Code sessions remotely.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b1",
+        "a3"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "287cb9c642",
       "date": "2026-10-01T18:43:19.000Z",
