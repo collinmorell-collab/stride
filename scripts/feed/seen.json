@@ -6434,5 +6434,29 @@
   "85c4629bdb": {
     "source": "latent-space",
     "at": "2026-10-03T14:35:10.433Z"
+  },
+  "11bbfc6002": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-04T15:10:26.142Z"
+  },
+  "3e3437293d": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-04T15:10:26.142Z"
+  },
+  "811b330a28": {
+    "source": "claude-code",
+    "at": "2026-10-04T15:10:27.480Z"
+  },
+  "5a3f1f4a82": {
+    "source": "simon-willison",
+    "at": "2026-10-04T15:10:27.834Z"
+  },
+  "4956a5acae": {
+    "source": "simon-willison",
+    "at": "2026-10-04T15:10:27.834Z"
+  },
+  "da9bc33d3f": {
+    "source": "simon-willison",
+    "at": "2026-10-04T15:10:27.834Z"
   }
 }

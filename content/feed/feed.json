@@ -1,6 +1,119 @@
 {
-  "updated": "2026-10-03T14:35:27.683Z",
+  "updated": "2026-10-04T15:10:52.865Z",
   "items": [
+    {
+      "id": "11bbfc6002",
+      "date": "2026-10-04T12:32:47.000Z",
+      "added": "2026-10-04T15:10:52.862Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/openais-head-of-chatgpt-were-entering",
+      "category": "pm",
+      "title": "OpenAI's Head of ChatGPT on the agent era and what builders get wrong",
+      "summary": "Tibo Sottiaux discusses OpenAI's bet on Dots, his prediction that autonomous agents will make up most internet traffic, and the mistakes teams repeatedly make when designing agentic products.",
+      "why": "Direct signal from inside OpenAI on where agent products are heading — shapes how you plan your own agent roadmap.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "What does it mean that \"agents will dominate internet traffic\"?",
+          "back": "Most web requests would come from AI programs acting on a user's behalf (browsing, buying, calling APIs) rather than humans clicking in browsers — which changes how sites, auth and pricing are designed."
+        },
+        {
+          "front": "Common builder mistake with agents",
+          "back": "Treating the agent as a chatbot wrapper instead of designing the task, tools, permissions and evaluation around a real end-to-end job."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "If agents become the dominant source of web traffic, what changes most for product teams?",
+          "options": [
+            "Interfaces and APIs must be designed for machine consumers, not only human visitors",
+            "Websites will need faster image loading to keep human bounce rates low",
+            "Products will need more onboarding tooltips because users read less text",
+            "Teams will rely more on A/B testing colour and copy variations for clicks"
+          ],
+          "answer": 0,
+          "why": "Agent traffic means the 'user' is software: structured access, clear tool/API surfaces, auth and rate limits matter more than visual UI tweaks."
+        }
+      ]
+    },
+    {
+      "id": "3e3437293d",
+      "date": "2026-10-03T17:00:49.000Z",
+      "added": "2026-10-04T15:10:52.862Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/community-wisdom-getting-value-from",
+      "category": "pm",
+      "title": "Community wisdom: personal AI agents without giving up your inbox",
+      "summary": "Reader-sourced advice on extracting value from personal AI agents while limiting data access, the ego hit of moving from IC to manager, and unusual perks worth negotiating in an offer.",
+      "why": "Practical patterns for safely delegating work to agents — plus career framing you can reuse in your own PM growth conversations.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5a3f1f4a82",
+      "date": "2026-10-03T23:34:02.000Z",
+      "added": "2026-10-04T15:10:52.862Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/",
+      "category": "builders",
+      "title": "Why usage-based AI services need hard budget caps",
+      "summary": "Simon Willison argues pay-per-use AI APIs should ship default hard spending limits that cut off service, not soft warning emails, because runaway agent loops can rack up huge bills before anyone reacts.",
+      "why": "Your Lambda + Bedrock agents bill per token and per invocation; a looping agent can burn real money overnight without caps.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Hard cap vs soft cap on API spend",
+          "back": "A hard cap stops the service and returns errors once a limit is hit; a soft cap only sends a warning, so spending keeps growing while you sleep."
+        },
+        {
+          "front": "Why do AI agents create unusual billing risk?",
+          "back": "Agents loop autonomously and call paid models/tools many times per task, so a bug or retry storm multiplies cost with no human in the loop."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does Willison argue soft spending limits are insufficient for AI APIs?",
+          "options": [
+            "They only notify you, so an unattended agent keeps spending after the limit",
+            "They apply per account rather than per project, hiding real usage",
+            "They reset monthly, so overruns carry into the next billing period",
+            "They measure requests instead of tokens, so costs are underestimated"
+          ],
+          "answer": 0,
+          "why": "The core point is enforcement: a warning doesn't stop the spend, and runaway agents run unattended."
+        }
+      ]
+    },
+    {
+      "id": "811b330a28",
+      "date": "2026-10-03T23:07:17.000Z",
+      "added": "2026-10-04T15:10:52.862Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.289",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.289: permission and stability fixes",
+      "summary": "Bug-fix release: deny/ask rules now hold correctly inside compound shell commands on managed machines, Read deny rules apply to @-mentioned files, and the terminal no longer freezes on certain messy code blocks.",
+      "why": "If your team restricts which files Claude Code may read, those rules now actually apply to @-mentioned files too.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b1",
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "8e206c4d9e",
       "date": "2026-10-02T16:15:00.000Z",
