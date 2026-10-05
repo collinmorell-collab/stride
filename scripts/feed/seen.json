@@ -6458,5 +6458,57 @@
   "da9bc33d3f": {
     "source": "simon-willison",
     "at": "2026-10-04T15:10:27.834Z"
+  },
+  "126d97f78f": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-05T19:05:47.060Z"
+  },
+  "49838babf0": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-05T19:05:47.060Z"
+  },
+  "78ad538158": {
+    "source": "openai",
+    "at": "2026-10-05T19:05:47.997Z"
+  },
+  "3cbec84de8": {
+    "source": "openai",
+    "at": "2026-10-05T19:05:47.997Z"
+  },
+  "17a8be9486": {
+    "source": "aws-ml",
+    "at": "2026-10-05T19:05:49.521Z"
+  },
+  "875cbdf4f6": {
+    "source": "aws-ml",
+    "at": "2026-10-05T19:05:49.521Z"
+  },
+  "b9ec7ad0ea": {
+    "source": "aws-ml",
+    "at": "2026-10-05T19:05:49.521Z"
+  },
+  "a764a26c5c": {
+    "source": "aws-ml",
+    "at": "2026-10-05T19:05:49.521Z"
+  },
+  "e80698f355": {
+    "source": "aws-ml",
+    "at": "2026-10-05T19:05:49.521Z"
+  },
+  "e07a3dc2ab": {
+    "source": "aws-ml",
+    "at": "2026-10-05T19:05:49.521Z"
+  },
+  "88d553ae09": {
+    "source": "simon-willison",
+    "at": "2026-10-05T19:05:49.784Z"
+  },
+  "88caa1a107": {
+    "source": "simon-willison",
+    "at": "2026-10-05T19:05:49.784Z"
+  },
+  "e9331b1c07": {
+    "source": "simon-willison",
+    "at": "2026-10-05T19:05:49.784Z"
   }
 }

@@ -1,6 +1,184 @@
 {
-  "updated": "2026-10-04T15:10:52.865Z",
+  "updated": "2026-10-05T19:07:27.703Z",
   "items": [
+    {
+      "id": "49838babf0",
+      "date": "2026-10-05T12:04:54.000Z",
+      "added": "2026-10-05T19:06:25.690Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-openai-uses-chatgpt-sites-live",
+      "category": "pm",
+      "title": "OpenAI's Kath Korevec demos ChatGPT Sites for internal tools",
+      "summary": "A live DevDay demo of ChatGPT Sites: stitching Slack, Notion and calendar data into lightweight internal apps that personalize per teammate, without a developer writing the glue code.",
+      "why": "A preview of PMs shipping internal tools themselves — directly relevant to how you could prototype team tooling without engineers.",
+      "score": 9,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "126d97f78f",
+      "date": "2026-10-05T15:03:24.000Z",
+      "added": "2026-10-05T19:06:25.690Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-ai-8-real-jev-use-cases-how",
+      "category": "pm",
+      "title": "How I AI roundup: eight real AI workflows plus a DevDay recap",
+      "summary": "Lenny's network newsletter bundles eight concrete AI use cases from practitioner Jev, the ChatGPT Sites session, and Claire's summary of what OpenAI announced at DevDay.",
+      "why": "Dense, practitioner-level AI workflows plus a DevDay digest — efficient catch-up for your walk from a source you already trust.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "17a8be9486",
+      "date": "2026-10-05T17:25:20.000Z",
+      "added": "2026-10-05T19:06:25.690Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/supercharge-regulated-workloads-with-claude-code-and-amazon-bedrock/",
+      "category": "claude-code",
+      "title": "Claude Code running on Bedrock, now in AWS GovCloud",
+      "summary": "Anthropic's newest Opus and Sonnet models are available via Amazon Bedrock in GovCloud regions, letting teams point Claude Code at Bedrock endpoints so code and prompts stay inside compliance-controlled AWS boundaries.",
+      "why": "Your stack is exactly Claude Code plus Bedrock; this shows how model access is governed and where your prompts actually run.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "What does it mean to run Claude Code \"on Bedrock\"?",
+          "back": "Claude Code sends requests to Anthropic models hosted inside your AWS account via Amazon Bedrock, instead of Anthropic's own API — so data stays in your AWS region and billing/compliance follow AWS."
+        },
+        {
+          "front": "Why do regulated teams care which region a model runs in?",
+          "back": "Rules like ITAR and government compliance restrict where data may be processed; region-bound endpoints (e.g. GovCloud) keep prompts and code inside an approved boundary."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What mainly changes when a team uses Claude Code through Amazon Bedrock instead of Anthropic's API?",
+          "options": [
+            "Requests are served inside the company's AWS account and region",
+            "The model is retrained on the company's private codebase",
+            "Claude Code switches from agentic editing to read-only review",
+            "Responses are generated locally on the developer's laptop"
+          ],
+          "answer": 0,
+          "why": "Bedrock is a hosting/routing layer: same models, but access, data residency and billing run through AWS. It doesn't retrain the model or change Claude Code's capabilities."
+        }
+      ]
+    },
+    {
+      "id": "3cbec84de8",
+      "date": "2026-10-05T10:00:00.000Z",
+      "added": "2026-10-05T19:06:25.690Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "category": "pm",
+      "title": "OpenAI starts selling visual ads inside ChatGPT",
+      "summary": "OpenAI introduces a visual advertising format in ChatGPT along with measurement tooling, attribution partnerships and brand-suitability controls — the first real step toward monetizing assistant traffic with advertisers.",
+      "why": "Assistants becoming an ad channel reshapes distribution and discovery for any product you ship; worth tracking as a strategic shift.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Why is advertising in ChatGPT a big deal for product teams?",
+          "back": "If users discover products inside an assistant, traditional SEO and app-store distribution lose weight, and a new paid-placement channel (with its own attribution rules) appears."
+        },
+        {
+          "front": "What is \"brand suitability\" in ad products?",
+          "back": "Controls that prevent an advertiser's ad from appearing next to content or conversations the brand considers inappropriate — distinct from measuring whether the ad worked."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In OpenAI's new ad offering, what does \"attribution\" refer to?",
+          "options": [
+            "Linking a user action, like a purchase, back to an ad they saw",
+            "Labeling which parts of an answer came from an advertiser",
+            "Crediting the publisher whose content the model cited",
+            "Disclosing that a response was generated by an AI model"
+          ],
+          "answer": 0,
+          "why": "Attribution is advertising measurement: connecting downstream conversions to ad exposure. The other options describe citation, provenance labeling or AI disclosure."
+        }
+      ]
+    },
+    {
+      "id": "a764a26c5c",
+      "date": "2026-10-05T15:53:56.000Z",
+      "added": "2026-10-05T19:06:25.690Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/agentic-retrieval-with-langchain-and-amazon-bedrock-knowledge-bases/",
+      "category": "builders",
+      "title": "Agentic retrieval vs. plain RAG on Bedrock Knowledge Bases",
+      "summary": "A walkthrough comparing single-shot retrieval with an agent that plans multiple searches, run on Bedrock Knowledge Bases with LangChain, including trace events and the cost difference between the two approaches.",
+      "why": "Agentic retrieval is the standard fix for multi-part questions; this uses your exact stack and shows the accuracy-versus-cost tradeoff.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "e07a3dc2ab",
+      "date": "2026-10-05T15:50:01.000Z",
+      "added": "2026-10-05T19:06:25.690Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/evaluating-multi-agent-systems-for-explainability-and-helpfulness-with-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "Evaluating multi-agent systems for helpfulness and explainability",
+      "summary": "Bedrock AgentCore Evaluations is used to score a multi-agent supply-chain system on tool choice, constraint adherence and whether it can explain decisions, using built-in, custom and explainability evaluators.",
+      "why": "Evals are the PM's lever on agent quality; this shows what to measure beyond \"the answer sounded fine\".",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "875cbdf4f6",
+      "date": "2026-10-05T17:23:19.000Z",
+      "added": "2026-10-05T19:06:25.690Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/new-agent-skill-amazon-sagemaker-optimized-generative-ai-inference-for-your-coding-agent/",
+      "category": "claude-code",
+      "title": "AWS ships an \"agent skill\" that teaches coding agents about inference tuning",
+      "summary": "The aws-ai-ml skill plugs into Claude Code, Kiro and Codex, giving the agent packaged AWS expertise so it can generate SageMaker code to benchmark and compare model deployment options from a plain description.",
+      "why": "Shows how \"skills\" extend Claude Code with domain knowledge — a pattern your team could reuse for your own AWS conventions.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b9ec7ad0ea",
+      "date": "2026-10-05T15:56:28.000Z",
+      "added": "2026-10-05T19:06:25.690Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/making-amazon-quick-enterprise-ready-automated-auditable-cross-account-resource-promotion/",
+      "category": "builders",
+      "title": "Automating dev-to-prod promotion of AI agents on AWS",
+      "summary": "AWS describes replacing manual copying of agents, knowledge bases and connectors between development and production accounts with an auditable, idempotent MCP server running on Bedrock AgentCore.",
+      "why": "Introduces environments, idempotency and auditability — the unglamorous plumbing that separates a demo agent from a production one.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "11bbfc6002",
       "date": "2026-10-04T12:32:47.000Z",
@@ -1687,6 +1865,123 @@
   ],
   "weekly": [
     {
+      "weekOf": "2026-10-05",
+      "created": "2026-10-05T19:07:27.701Z",
+      "headline": "Sonnet 5.5 and GPT-6.1 Sol make good models cheap — so the harness, not the model, is now your product",
+      "script": "Good morning. Five things this week, and the theme is simple: frontier quality got cheaper, so the work moves to everything wrapped around the model.\n\nFirst, Claude Sonnet 5.5. Same list price as Sonnet 5, but roughly thirty percent faster and up to thirty percent cheaper per task, with a million-token context and benchmark wins across the board. Claude Code version two-point-one-two-eight-four already makes it your default Sonnet, and it's on Bedrock. So your daily tool and your production agents both get cheaper and quicker with no rewrite.\n\nSecond, OpenAI shipped GPT-6.1 Sol: close to flagship-level reasoning for coding and computer use at about a fifth of the price of their top model, and it's already generally available on Amazon Bedrock. Two price drops in one week means the question stops being can we afford this call, and becomes what should the agent now do on every request.\n\nThird, Aakash Gupta's piece on harness engineering. The harness is the scaffolding around the model: tools, memory, retries, evaluations and guardrails. His argument is that this layer, not the model choice, decides whether your product works in production. That is exactly the layer you own as a product manager.\n\nFourth, AWS published a walkthrough of ambient agents: agents triggered by a file upload, a schedule or an alert instead of a chat message, built on AgentCore with Lambda, queues and DynamoDB, plus an ask-human tool and a review queue for approvals. That is your stack, and it's the blueprint for background agents with a human checkpoint.\n\nFifth, Claude Code introduced Mods, letting plugins change deeper agent behaviour, including a built-in side agent that flags things you or Claude missed. Turn it on today.\n\nTwo quick ones worth a thought: OpenAI started selling visual ads inside ChatGPT, and Simon Willison is arguing every pay-per-use AI API needs hard budget caps. With looping agents on Lambda, that one's personal.",
+      "top5": [
+        {
+          "title": "Claude Sonnet 5.5: faster, cheaper, now the Claude Code default",
+          "link": "https://simonwillison.net/2026/Sep/28/claude-sonnet-5-5/",
+          "source": "Simon Willison",
+          "why": "Your everyday workhorse in Claude Code and on Bedrock just got about 30% faster and cheaper per task at the same list price, with no quality tradeoff."
+        },
+        {
+          "title": "GPT-6.1 Sol: near-flagship quality at roughly a fifth of the price, live on Bedrock",
+          "link": "https://openai.com/index/introducing-gpt-6-1-sol",
+          "source": "OpenAI",
+          "why": "A second big price-per-quality drop this week, available on your own stack, which resets what your agents can afford to do per request."
+        },
+        {
+          "title": "Harness engineering: the new core skill for AI product builders",
+          "link": "https://www.news.aakashg.com/p/harness-engineering",
+          "source": "Product Growth (Aakash Gupta)",
+          "why": "This names the layer you actually own as a PM — tools, memory, retries, evals, guardrails — and argues it, not the model, determines production reliability."
+        },
+        {
+          "title": "Event-driven 'ambient' agents on Bedrock AgentCore, Lambda and SQS",
+          "link": "https://aws.amazon.com/blogs/machine-learning/building-ambient-agents-with-amazon-bedrock-agentcore-from-event-driven-signals-to-human-in-the-loop-workflows/",
+          "source": "AWS Machine Learning Blog",
+          "why": "It's your exact production stack, showing agents triggered by events rather than chat, with a human approval queue built in."
+        },
+        {
+          "title": "Claude Code 2.1.287 adds Mods and a 'You should know' watchdog agent",
+          "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.287",
+          "source": "Claude Code releases",
+          "why": "A background side agent that flags what you or Claude missed is a free quality upgrade on the tool you use every day."
+        }
+      ],
+      "cards": [
+        {
+          "front": "Claude Sonnet 5.5 — what changed?",
+          "back": "Same list price as Sonnet 5 ($2 in / $10 out per million tokens) but ~30% faster and up to 30% cheaper per task, benchmark wins across the board, 1M-token context. It's the default Sonnet in Claude Code from v2.1.284 and is available on Amazon Bedrock."
+        },
+        {
+          "front": "GPT-6.1 Sol",
+          "back": "OpenAI model claiming close to Astra-level reasoning for coding, computer use and professional tasks at roughly 20% of Astra's API token prices. Already generally available on Amazon Bedrock, so a Bedrock team can switch without leaving its stack."
+        },
+        {
+          "front": "Harness (harness engineering)",
+          "back": "Everything wrapped around the model that makes it a product: tools, memory, retries, evals and guardrails. Aakash Gupta's argument: the harness, not the model choice, decides whether an AI feature is reliable in production — and it's the PM's layer."
+        },
+        {
+          "front": "Ambient agent",
+          "back": "An agent triggered by an event — a file upload, a schedule, an alert — instead of a chat message. AWS's pattern uses Bedrock AgentCore with Lambda, SQS queues and DynamoDB, plus an ask_human tool and a review queue so a person approves sensitive steps."
+        },
+        {
+          "front": "Claude Mods",
+          "back": "Introduced in Claude Code 2.1.287: plugins that can alter deeper agent behaviour, not just add commands. Ships with a built-in 'You should know' mod — a side agent that runs alongside your session and flags things you or Claude may have missed."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In AI product work, what does the term \"harness\" refer to?",
+          "options": [
+            "The scaffolding of tools, memory, retries, evals and guardrails around a model",
+            "The post-training stage that turns a base model into a helpful assistant",
+            "The downloadable set of weights you get with an open-weights model release",
+            "The hidden scratch-work tokens a reasoning model writes before its answer"
+          ],
+          "answer": 0,
+          "why": "The harness is the engineering layer wrapped around the model — Claude Code is one. The other options describe post-training, open weights and reasoning tokens."
+        },
+        {
+          "q": "What makes GPT-6.1 Sol notable for a team already building on Amazon Bedrock?",
+          "options": [
+            "Near-flagship reasoning at roughly a fifth of the top model's token price, generally available on Bedrock",
+            "A context window of one million tokens offered first through a restricted trusted-tester programme",
+            "An open-weights release you can download and host inside your own AWS account",
+            "A fine-tuning-only model that needs your own labelled examples before it can be used"
+          ],
+          "answer": 0,
+          "why": "Sol's pitch is near-Astra quality at about 20% of the price, already GA on Bedrock. The trusted-tester framing describes Gemini 4 Argon; Sol is neither open weights nor fine-tuning-only."
+        },
+        {
+          "q": "Which description matches an \"ambient\" agent as AWS describes the pattern?",
+          "options": [
+            "An agent triggered by events such as uploads, schedules or alerts, with a human approval step",
+            "An agent that keeps one long chat session open and shares a single growing context window",
+            "An agent that drives a browser, clicking through pages to complete tasks on your behalf",
+            "An agent that rewrites its own system prompt between runs to improve its future answers"
+          ],
+          "answer": 0,
+          "why": "Ambient agents are event-driven rather than chat-driven, built on queues, Lambda and a human review queue. The clicking agent is computer use; the others are unrelated patterns."
+        }
+      ],
+      "stale": [
+        {
+          "unit": "c2",
+          "note": "The tier list and the 'as of September 2026' price table are out of date. Claude Sonnet 5.5 is now the current Sonnet (and the default Sonnet in Claude Code v2.1.284): same $2 in / $10 out per MTok list price as Sonnet 5, but roughly 30% faster and up to 30% cheaper per task, with a 1M-token context. The Sonnet 5 row should be relabelled or Sonnet 5.5 added."
+        },
+        {
+          "unit": "c2",
+          "note": "'The same Claude models are available in Anthropic's API, AWS Bedrock and Google Cloud. Same brain, different front door' understates Bedrock. Bedrock is now a multi-vendor menu: OpenAI's GPT-6.1 Sol is generally available there, and xAI's Grok 4.7 (500K context, four reasoning-effort levels) was added this week — so model choice on your own stack is no longer Claude-only."
+        },
+        {
+          "unit": "c2",
+          "note": "The regional/deployment framing is incomplete: Bedrock now offers in-region inference for Claude Opus 5 and Sonnet 5 in Seoul, Sonnet 5 in Singapore, in-country inference in India, and Anthropic's newest Opus and Sonnet models in AWS GovCloud — relevant to the 'different front door and billing' point."
+        },
+        {
+          "unit": "b0",
+          "note": "The harness description should note that Claude Code's harness is now extensible from the outside: v2.1.287 added Claude Mods (plugins that change deeper agent behaviour, including a built-in side agent that flags missed issues), alongside plugins and agent skills such as AWS's aws-ai-ml skill."
+        },
+        {
+          "unit": "b1",
+          "note": "Two tool details changed: WebFetch can now be switched off entirely via an environment variable (v2.1.285), and Read deny rules now also apply to @-mentioned files and hold inside compound shell commands (v2.1.289) — worth adding to the permissions discussion, which currently implies permission rules only cover Write, Edit and Bash."
+        }
+      ]
+    },
+    {
       "weekOf": "2026-09-28",
       "created": "2026-09-28T18:00:35.163Z",
       "headline": "Frontier week: Opus 5.5 and GPT-6 land with 40-50% price cuts, Stripe pays $7B for a model router, and evals become the PM skill to own.",
@@ -1920,28 +2215,28 @@
   "stale": [
     {
       "unit": "c2",
-      "note": "The pricing table ('As of September 2026: Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5') is now out of date: frontier prices were cut by roughly 40-50% this week. The worked example (2k in / 1k out on Sonnet 5 = $0.014) needs recalculating at the new rates.",
-      "flagged": "2026-09-28T18:00:35.163Z"
+      "note": "The tier list and the 'as of September 2026' price table are out of date. Claude Sonnet 5.5 is now the current Sonnet (and the default Sonnet in Claude Code v2.1.284): same $2 in / $10 out per MTok list price as Sonnet 5, but roughly 30% faster and up to 30% cheaper per task, with a 1M-token context. The Sonnet 5 row should be relabelled or Sonnet 5.5 added.",
+      "flagged": "2026-10-05T19:07:27.701Z"
     },
     {
       "unit": "c2",
-      "note": "The Claude tier list implies Opus 5 is the top current coding/reasoning model. Claude Opus 5.5 has now shipped and is already available on Amazon Bedrock and Claude Platform on AWS, so Opus 5.5 is the current flagship to name.",
-      "flagged": "2026-09-28T18:00:35.163Z"
+      "note": "'The same Claude models are available in Anthropic's API, AWS Bedrock and Google Cloud. Same brain, different front door' understates Bedrock. Bedrock is now a multi-vendor menu: OpenAI's GPT-6.1 Sol is generally available there, and xAI's Grok 4.7 (500K context, four reasoning-effort levels) was added this week — so model choice on your own stack is no longer Claude-only.",
+      "flagged": "2026-10-05T19:07:27.701Z"
     },
     {
       "unit": "c2",
-      "note": "The frontier-lab examples are behind: OpenAI's current generation is GPT-6 (Sol and Luna variants), xAI shipped Grok 4.7, and Google shipped Gemini 3.8 Live with a real-time avatar. Worth refreshing the model names used as examples.",
-      "flagged": "2026-09-28T18:00:35.163Z"
+      "note": "The regional/deployment framing is incomplete: Bedrock now offers in-region inference for Claude Opus 5 and Sonnet 5 in Seoul, Sonnet 5 in Singapore, in-country inference in India, and Anthropic's newest Opus and Sonnet models in AWS GovCloud — relevant to the 'different front door and billing' point.",
+      "flagged": "2026-10-05T19:07:27.701Z"
     },
     {
-      "unit": "c2",
-      "note": "'Claude Code lets you switch model and effort (try /model)' is no longer universally true: Claude Code 2.1.283 added a managed admin setting that can restrict Claude Code to exact model versions, so in a locked-down company the model picker may be limited.",
-      "flagged": "2026-09-28T18:00:35.163Z"
+      "unit": "b0",
+      "note": "The harness description should note that Claude Code's harness is now extensible from the outside: v2.1.287 added Claude Mods (plugins that change deeper agent behaviour, including a built-in side agent that flags missed issues), alongside plugins and agent skills such as AWS's aws-ai-ml skill.",
+      "flagged": "2026-10-05T19:07:27.701Z"
     },
     {
-      "unit": "c2",
-      "note": "The 'closed vs open weights / Bedrock is a front door' framing misses this week's development: neutral routing layers (OpenRouter, acquired by Stripe for $7B) are now a mainstream third option for accessing many models through one interface.",
-      "flagged": "2026-09-28T18:00:35.163Z"
+      "unit": "b1",
+      "note": "Two tool details changed: WebFetch can now be switched off entirely via an environment variable (v2.1.285), and Read deny rules now also apply to @-mentioned files and hold inside compound shell commands (v2.1.289) — worth adding to the permissions discussion, which currently implies permission rules only cover Write, Edit and Bash.",
+      "flagged": "2026-10-05T19:07:27.701Z"
     }
   ]
 }
