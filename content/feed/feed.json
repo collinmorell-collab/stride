@@ -1,6 +1,174 @@
 {
-  "updated": "2026-10-05T19:07:27.703Z",
+  "updated": "2026-10-06T16:32:46.510Z",
   "items": [
+    {
+      "id": "b69035289d",
+      "date": "2026-10-05T22:35:16.000Z",
+      "added": "2026-10-06T16:32:46.507Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/n8n-vs-claude-code",
+      "category": "pm",
+      "title": "n8n's CEO on building AI products and hiring AI PMs",
+      "summary": "The automation platform's CEO argues workflow tools still matter in an agent-heavy world, explains how they build AI features that survive model upgrades, and describes the traits he screens for in AI product managers.",
+      "why": "You're an AI PM without an engineering background; this gives you a vocabulary and hiring bar for what good AI product work looks like.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0"
+      ],
+      "cards": [
+        {
+          "front": "Why do workflow/automation tools still matter when agents can plan themselves?",
+          "back": "Agents are probabilistic; deterministic workflow steps give reliability, auditability and cost control around the fuzzy parts."
+        },
+        {
+          "front": "What is commonly screened for in an AI PM?",
+          "back": "Hands-on tool use, evaluation thinking (how you measure quality), and judgment about where to use a model vs. deterministic logic."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In an AI product, what is usually the strongest argument for keeping deterministic workflow steps around an LLM?",
+          "options": [
+            "They make outputs predictable, auditable and cheaper to run",
+            "They let the model access more training data at runtime",
+            "They increase the model's context window automatically",
+            "They remove the need to write any evaluation tests"
+          ],
+          "answer": 0,
+          "why": "Deterministic steps constrain where randomness can occur, which improves reliability, cost and auditability; they don't change model capacity or replace evals."
+        }
+      ]
+    },
+    {
+      "id": "cc69483039",
+      "date": "2026-10-05T23:25:17.000Z",
+      "added": "2026-10-06T16:32:46.507Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-glm-5-3-on-amazon-bedrock/",
+      "category": "labs",
+      "title": "GLM 5.3 lands on Amazon Bedrock as a coding/agent model",
+      "summary": "Z.ai's 753B mixture-of-experts model, tuned for coding and long-running agent tasks, is now callable on Bedrock through OpenAI-compatible APIs, with prompt caching highlighted as the lever for cutting latency and cost.",
+      "why": "Your production agents run on Bedrock, so a new agentic model plus prompt caching is a concrete cost and capability option to raise with your team.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Mixture-of-experts (MoE) model",
+          "back": "A model where only a subset of its parameters (\"experts\") activate per token, so a huge model can run at a fraction of the compute cost."
+        },
+        {
+          "front": "Prompt caching",
+          "back": "Reusing the processed form of a repeated prompt prefix (system prompt, docs) across calls to cut latency and token cost."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why can a 753B-parameter mixture-of-experts model be cheaper to serve than its size suggests?",
+          "options": [
+            "Only a small share of its parameters activate per token",
+            "Its weights are compressed into the prompt cache each call",
+            "It skips tokenization and reads raw text directly",
+            "It shares one set of parameters across all requests"
+          ],
+          "answer": 0,
+          "why": "MoE routes each token to a few experts, so active compute is far below total parameter count; the other options describe things that don't exist."
+        }
+      ]
+    },
+    {
+      "id": "34010b5d6c",
+      "date": "2026-10-06T15:45:42.000Z",
+      "added": "2026-10-06T16:32:46.507Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-a-voice-travel-concierge-with-amazon-bedrock-agentcore-managed-knowledge-base-and-nova-sonic/",
+      "category": "builders",
+      "title": "A voice agent built on Bedrock AgentCore, speech models and MCP tools",
+      "summary": "AWS walks through an airline voice concierge: real-time speech in and out, a knowledge base for policy answers, backend access via MCP tools, and an explicit confirmation step before any action that changes data.",
+      "why": "It's a readable reference architecture on your exact stack, and the confirm-before-write pattern is a product decision you'll have to make.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "31ce016c93",
+      "date": "2026-10-06T03:55:19.000Z",
+      "added": "2026-10-06T16:32:46.507Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.291",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.291 fixes lost messages and dropped permission answers",
+      "summary": "A patch release repairing two recent regressions: sessions could lose their final messages when you quit, and cloud sessions sometimes ignored your answers to permission prompts.",
+      "why": "If you're on 2.1.288–2.1.290 you may be silently losing work or approvals; update before your next session.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "16140ec435",
+      "date": "2026-10-05T23:56:47.000Z",
+      "added": "2026-10-06T16:32:46.507Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/5/felix-rieseberg/",
+      "category": "labs",
+      "title": "Why Anthropic shipped Cowork with a sandboxed VM on your machine",
+      "summary": "An Anthropic engineer explains the design: inference happens in the cloud while tool calls execute inside a provided virtual machine on your computer, with only the data you explicitly add mapped into the session.",
+      "why": "A clear mental model of where agent code actually runs and how data access is scoped, which is the core safety question for any agent you ship.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1",
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "75046b1c8f",
+      "date": "2026-10-06T06:28:43.000Z",
+      "added": "2026-10-06T16:32:46.508Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-reflection-beam-501b-a23b",
+      "category": "labs",
+      "title": "A new large US open-weights model arrives",
+      "summary": "Reflection releases Beam, a 501B mixture-of-experts model with 23B active parameters, positioned as a competitive American open-weights option against the Chinese labs that have dominated open releases.",
+      "why": "Open-weight models shape your build-vs-buy and hosting options; useful context for where the model landscape is heading.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "de695e4010",
+      "date": "2026-10-06T15:53:28.000Z",
+      "added": "2026-10-06T16:32:46.508Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/responsible-ai-governance-how-aws-positions-customers-to-align-with-iso-iec-420052025/",
+      "category": "pm",
+      "title": "AI impact assessments and the new ISO/IEC 42005 standard",
+      "summary": "AWS outlines what an AI system impact assessment covers, how it feeds enterprise risk management, and how the 2025 ISO standard formalises documenting intended use, affected people and potential harms.",
+      "why": "Governance paperwork increasingly gates AI launches; knowing the standard's structure helps you write it once rather than being blocked late.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "49838babf0",
       "date": "2026-10-05T12:04:54.000Z",
