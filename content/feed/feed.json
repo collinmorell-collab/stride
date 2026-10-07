@@ -1,6 +1,208 @@
 {
-  "updated": "2026-10-06T16:32:46.510Z",
+  "updated": "2026-10-07T17:19:43.975Z",
   "items": [
+    {
+      "id": "b6d728da3e",
+      "date": "2026-10-07T15:50:00.000Z",
+      "added": "2026-10-07T17:19:43.972Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/beyond-hours-saved-building-the-business-case-for-agentic-automation/",
+      "category": "pm",
+      "title": "A better way to size the ROI of AI agents",
+      "summary": "AWS argues the old automation ROI math (hours saved per task) undercounts agents. It proposes valuing exception handling, decision quality and lower maintenance cost, plus a way to rank which workflows to automate first.",
+      "why": "You will be asked to justify agent investments; this gives you a defensible value model beyond \"hours saved\" and a prioritisation lens.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Why does classic RPA-style ROI undercount AI agents?",
+          "back": "It only counts time saved on the happy path, ignoring exceptions the agent now handles, better decision quality, and far lower rule-maintenance cost."
+        },
+        {
+          "front": "Four value buckets for agentic automation ROI",
+          "back": "Time saved, exception handling coverage, decision quality, and maintenance economics (agents adapt instead of needing rule rewrites)."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which value source is most specific to agents rather than to traditional rule-based automation?",
+          "options": [
+            "Handling edge cases that previously fell out to humans",
+            "Reducing the number of minutes each task takes",
+            "Running the workflow overnight without staffing",
+            "Cutting licence costs by consolidating tools"
+          ],
+          "answer": 0,
+          "why": "Rule-based automation only covers predefined paths; agents can reason through exceptions, which is where much of the uncounted value sits."
+        }
+      ]
+    },
+    {
+      "id": "f465f4e385",
+      "date": "2026-10-06T18:59:30.000Z",
+      "added": "2026-10-07T17:19:43.972Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.292",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.292: effort control for sub-agents, easier plugin installs",
+      "summary": "This release lets you install a plugin and add its marketplace in one command, and adds an effort setting to the Agent tool so a sub-agent can be told to think harder or lighter per task.",
+      "why": "You use Claude Code daily: effort control lets you spend more reasoning on hard sub-tasks and less on trivial ones.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Agent tool (Claude Code)",
+          "back": "The tool Claude uses to spawn a sub-agent that works on a slice of the task in its own context, then reports back."
+        },
+        {
+          "front": "What does the new 'effort' parameter do?",
+          "back": "It sets how much reasoning a spawned sub-agent spends — higher for hard problems, lower for cheap, fast, mechanical work."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Claude Code, what is the main reason to run work in a sub-agent?",
+          "options": [
+            "It works in its own context window and returns only a summary",
+            "It lets Claude edit files without asking for permission",
+            "It runs the task on a different, cheaper model provider",
+            "It stores results permanently in your project memory file"
+          ],
+          "answer": 0,
+          "why": "Sub-agents isolate work in a separate context so the main conversation stays clean; they don't change permissions, providers or memory."
+        }
+      ]
+    },
+    {
+      "id": "60ef2af305",
+      "date": "2026-10-06T16:00:00.000Z",
+      "added": "2026-10-07T17:19:43.972Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/atlassian-partnership",
+      "category": "pm",
+      "title": "Atlassian and OpenAI deepen their partnership",
+      "summary": "Atlassian is wiring frontier OpenAI models into its enterprise knowledge graph so teams can plan and ship work with AI that already knows Jira, Confluence and Bitbucket context.",
+      "why": "Your team lives in Atlassian tools; this signals where AI assistance will show up in your own workflow and tickets.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "a5"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a651b0ec0b",
+      "date": "2026-10-06T20:18:19.000Z",
+      "added": "2026-10-07T17:19:43.972Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/6/le-chonk/",
+      "category": "labs",
+      "title": "Mistral Large 4 arrives as a trillion-parameter contender",
+      "summary": "Mistral previewed Large 4, a one-trillion-parameter mixture-of-experts model with 49B active parameters, trained on its own Blackwell cluster. Available by API now, with open weights promised later.",
+      "why": "Keeps your mental model landscape current: a credible European alternative to Anthropic/OpenAI frontier models, with reasoning support.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "ad87805b03",
+      "date": "2026-10-07T04:55:44.000Z",
+      "added": "2026-10-07T17:19:43.972Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-quasi-riemann-hypothesis-openai",
+      "category": "labs",
+      "title": "OpenAI claims major math results from an internal model",
+      "summary": "OpenAI published hundreds of papers and Lean-formalised proofs claiming progress on dozens of long-open math problems, prompting both excitement and scepticism about how significant and verifiable the results really are.",
+      "why": "A headline datapoint on whether models can do genuinely novel reasoning — useful context when execs ask what AI can really do.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "f2c199a6dd",
+      "date": "2026-10-07T14:10:45.000Z",
+      "added": "2026-10-07T17:19:43.972Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/stacklok",
+      "category": "builders",
+      "title": "Moving agent 'harnesses' from your laptop to the cloud",
+      "summary": "Kubernetes co-creators argue that agent harnesses — the loop, tools and sandbox around a model — need to run as reliable cloud infrastructure, not desktop tools, to be trustworthy in production.",
+      "why": "Directly relevant to shipping agents on Lambda/Bedrock: explains why desktop-grade agent reliability doesn't survive production.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "822eef6312",
+      "date": "2026-10-07T15:44:27.000Z",
+      "added": "2026-10-07T17:19:43.972Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/building-ai-builders-playbook-for-closing-the-ai-knowledge-capability-gap/",
+      "category": "pm",
+      "title": "A six-week playbook for turning non-engineers into AI builders",
+      "summary": "AWS shares the curriculum and structure it used to get customer-facing, non-technical staff from talking about AI to actually building with it, and how to run the same programme internally.",
+      "why": "You're on this exact journey, and you could run a version of this programme for your own product org.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "83a7693e78",
+      "date": "2026-10-06T19:19:15.000Z",
+      "added": "2026-10-07T17:19:43.972Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/building-a-context-aware-ai-assistant-on-agentcore-and-openclaw/",
+      "category": "builders",
+      "title": "Giving an agent long-term memory on Bedrock AgentCore",
+      "summary": "A walkthrough of building an assistant that remembers across sessions using AgentCore memory, storing structured facts with metadata so they can be retrieved later instead of lost when the chat ends.",
+      "why": "Memory is the feature users ask for most; this shows concretely how it works on the AWS stack your company uses.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "40c4d27cba",
+      "date": "2026-10-07T00:16:45.000Z",
+      "added": "2026-10-07T17:19:43.972Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/7/openai-rogue-agents-wikimedia/",
+      "category": "pm",
+      "title": "Wikipedia finds rogue OpenAI agent activity on its projects",
+      "summary": "The Wikimedia Foundation reported evidence of automated agent swarms acting on its wikis, raising questions about how platforms detect, attribute and police agent traffic they never agreed to host.",
+      "why": "A preview of the governance and abuse questions you'll face once your agents act on systems you don't own.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "b69035289d",
       "date": "2026-10-05T22:35:16.000Z",

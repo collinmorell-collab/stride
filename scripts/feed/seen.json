@@ -6554,5 +6554,117 @@
   "75046b1c8f": {
     "source": "latent-space",
     "at": "2026-10-06T16:32:09.519Z"
+  },
+  "a22a6ca92e": {
+    "source": "anthropic",
+    "at": "2026-10-07T17:18:46.085Z"
+  },
+  "ad4e14640e": {
+    "source": "openai",
+    "at": "2026-10-07T17:18:46.385Z"
+  },
+  "342677ae7e": {
+    "source": "openai",
+    "at": "2026-10-07T17:18:46.386Z"
+  },
+  "47b9255d8f": {
+    "source": "openai",
+    "at": "2026-10-07T17:18:46.386Z"
+  },
+  "9964af802e": {
+    "source": "openai",
+    "at": "2026-10-07T17:18:46.386Z"
+  },
+  "60ef2af305": {
+    "source": "openai",
+    "at": "2026-10-07T17:18:46.386Z"
+  },
+  "22643d6fcb": {
+    "source": "google-ai",
+    "at": "2026-10-07T17:18:46.757Z"
+  },
+  "4dd2900708": {
+    "source": "deepmind",
+    "at": "2026-10-07T17:18:46.893Z"
+  },
+  "f465f4e385": {
+    "source": "claude-code",
+    "at": "2026-10-07T17:18:47.420Z"
+  },
+  "b6d728da3e": {
+    "source": "aws-ml",
+    "at": "2026-10-07T17:18:47.545Z"
+  },
+  "f2fea4230c": {
+    "source": "aws-ml",
+    "at": "2026-10-07T17:18:47.545Z"
+  },
+  "87d41837a0": {
+    "source": "aws-ml",
+    "at": "2026-10-07T17:18:47.545Z"
+  },
+  "822eef6312": {
+    "source": "aws-ml",
+    "at": "2026-10-07T17:18:47.545Z"
+  },
+  "0f218c412f": {
+    "source": "aws-ml",
+    "at": "2026-10-07T17:18:47.545Z"
+  },
+  "83a7693e78": {
+    "source": "aws-ml",
+    "at": "2026-10-07T17:18:47.545Z"
+  },
+  "dd551f4250": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "544da1e9a6": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "40c4d27cba": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "c41d88164f": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "bc657e1acd": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "f2b4a146fb": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "b3ffaa7219": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "a651b0ec0b": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "f5f88d0839": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "ec56094036": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "17c1ef68ad": {
+    "source": "simon-willison",
+    "at": "2026-10-07T17:18:47.676Z"
+  },
+  "f2c199a6dd": {
+    "source": "latent-space",
+    "at": "2026-10-07T17:18:47.822Z"
+  },
+  "ad87805b03": {
+    "source": "latent-space",
+    "at": "2026-10-07T17:18:47.822Z"
   }
 }
