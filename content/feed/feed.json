@@ -1,6 +1,172 @@
 {
-  "updated": "2026-10-07T17:19:43.975Z",
+  "updated": "2026-10-08T17:14:36.398Z",
   "items": [
+    {
+      "id": "0ca1450969",
+      "date": "2026-10-07T00:00:00.000Z",
+      "added": "2026-10-08T17:14:36.395Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/gpt-6-for-everyone",
+      "category": "labs",
+      "title": "GPT-6 launches globally with \"Intelligent UI\"",
+      "summary": "OpenAI is rolling out GPT-6 to ChatGPT worldwide, paired with a generative interface layer that renders visuals and interactive widgets inside answers rather than plain text replies.",
+      "why": "A frontier model plus generated UI changes what chat products can look like — directly relevant to how you spec AI features.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "What is \"Intelligent UI\" in ChatGPT?",
+          "back": "A layer where the model generates interactive visuals/widgets in its answers instead of only text."
+        },
+        {
+          "front": "Why does generative UI matter for PMs?",
+          "back": "The interface stops being fully pre-designed; you spec behaviour and constraints, not fixed screens."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main product shift introduced alongside GPT-6 in ChatGPT?",
+          "options": [
+            "Answers can render interactive, generated interfaces instead of only text",
+            "Conversations are stored locally on the user's device by default",
+            "The model is trained separately for each enterprise customer",
+            "Responses are priced per rendered element rather than per token"
+          ],
+          "answer": 0,
+          "why": "Intelligent UI means the model produces interactive visual components in its responses."
+        }
+      ]
+    },
+    {
+      "id": "6dcb3088ac",
+      "date": "2026-10-07T20:56:21.000Z",
+      "added": "2026-10-08T17:14:36.395Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/7/claude-haiku-5-5/",
+      "category": "labs",
+      "title": "Claude Haiku 5.5: cheap, fast, 1M context",
+      "summary": "Anthropic's new small model replaces the year-old Haiku 4.5. Simon Willison's rundown covers speed, benchmark positioning against cheap rivals, and where a low-cost model is good enough versus Sonnet.",
+      "why": "Cheap fast models are the default choice for high-volume agent steps — a cost lever you can actually push on your Bedrock agents.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "When do you pick Haiku over Sonnet?",
+          "back": "High-volume, latency-sensitive, or simple subagent/classification steps where top-end reasoning isn't needed."
+        },
+        {
+          "front": "Haiku 5.5 headline specs",
+          "back": "~1M token context, roughly $0.10/$0.50 per million input/output tokens, ~75% cheaper than Haiku 4.5."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In an agent pipeline, what's the usual reason to route a step to a Haiku-class model?",
+          "options": [
+            "The step is high-volume and simple, so cost and latency dominate",
+            "The step needs the longest possible chain of complex reasoning",
+            "The step requires stricter safety filtering than larger models",
+            "The step must run offline without any API connection"
+          ],
+          "answer": 0,
+          "why": "Small models are chosen for cheap, fast, high-volume work; hard reasoning still goes to larger models."
+        }
+      ]
+    },
+    {
+      "id": "161fece6e1",
+      "date": "2026-10-07T18:52:10.000Z",
+      "added": "2026-10-08T17:14:36.395Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-haiku-5-5-on-aws/",
+      "category": "builders",
+      "title": "Haiku 5.5 is live on Amazon Bedrock",
+      "summary": "AWS announced Claude Haiku 5.5 availability on Bedrock, pitched for subagents and high-volume cost-sensitive workloads, with roughly 75% lower cost than the previous Haiku generation.",
+      "why": "Your production agents run on Bedrock — this is a concrete model-swap option for cutting cost on your Lambda-based agent steps.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "4250e365b8",
+      "date": "2026-10-07T18:10:20.000Z",
+      "added": "2026-10-08T17:14:36.395Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.293",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.293 adds Haiku 5.5 as default Haiku",
+      "summary": "The release makes claude-haiku-5-5 the default Haiku model with 1M context and new low pricing, plus small additions for subagent status scripts and deferred tool results.",
+      "why": "If you use Haiku for subagents in Claude Code, you now get a cheaper, longer-context default without changing anything.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "c7ca45f162",
+      "date": "2026-10-08T05:03:54.000Z",
+      "added": "2026-10-08T17:14:36.395Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.294",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.294 fixes hooks that were ignoring their own rules",
+      "summary": "Instruction-style prompt and agent hooks that were meant to block certain commands were letting them through; this release fixes that and makes Stop hooks less likely to end work prematurely.",
+      "why": "If you wrote plain-English guardrail hooks, they may not have been enforcing them — worth re-testing after updating.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7a238471d7",
+      "date": "2026-10-08T17:00:00.000Z",
+      "added": "2026-10-08T17:14:36.395Z",
+      "source": "Anthropic",
+      "link": "https://www.anthropic.com/news/2026-usage-policy-update",
+      "category": "labs",
+      "title": "Anthropic's 2026 Usage Policy update",
+      "summary": "Anthropic published a revised Usage Policy and a summary of what changed, covering permitted and restricted uses across its products and API.",
+      "why": "Usage policy terms shape what your team can legitimately ship on Claude — a compliance detail PMs are expected to know.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "077dea1e8a",
+      "date": "2026-10-08T00:00:00.000Z",
+      "added": "2026-10-08T17:14:36.395Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/disrupting-ai-enabled-false-front-operations",
+      "category": "labs",
+      "title": "OpenAI shuts down AI-run \"false front\" influence campaigns",
+      "summary": "OpenAI reports disrupting two covert operations that used AI to fabricate journalist personas and a fake think tank to push geopolitical narratives, with details on detection signals.",
+      "why": "Useful grounding on real-world AI misuse patterns and the trust/safety questions that increasingly land on product teams.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "b6d728da3e",
       "date": "2026-10-07T15:50:00.000Z",
