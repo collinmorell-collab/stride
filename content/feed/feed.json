@@ -1,6 +1,176 @@
 {
-  "updated": "2026-10-08T17:14:36.398Z",
+  "updated": "2026-10-09T16:51:13.546Z",
   "items": [
+    {
+      "id": "a1d2fda313",
+      "date": "2026-10-09T15:35:02.000Z",
+      "added": "2026-10-09T16:51:13.542Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-postman-runs-agent-mode-for-40-million-developers-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "How Postman runs a production agent for 40M developers on Bedrock",
+      "summary": "Postman explains the architecture behind its Agent Mode: limiting how many tools the agent can see, letting it read schemas instead of dumping data, and treating the context window as the scarcest resource.",
+      "why": "Your company's agents run on Bedrock too — these are the patterns that separate a demo agent from one that survives real traffic.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b1",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Tool sprawl (in agents)",
+          "back": "Giving an agent too many tools, so it picks wrong ones and burns context. Fix: expose a small, curated tool set per task."
+        },
+        {
+          "front": "Why is context the bottleneck in production agents?",
+          "back": "Every tool definition, schema and result eats the model's limited context window, degrading accuracy and raising cost as the conversation grows."
+        },
+        {
+          "front": "Schema-based reads",
+          "back": "Letting the agent fetch a description of the data's structure first, then request only the fields it needs, instead of loading full payloads."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "An agent with 60 available tools starts choosing the wrong ones and giving vaguer answers. What is the most likely cause?",
+          "options": [
+            "Too many tool definitions crowd the context window and confuse selection",
+            "The model's training data is too old to know the tools",
+            "The agent is running on serverless infrastructure instead of servers",
+            "The tools return JSON rather than plain text responses"
+          ],
+          "answer": 0,
+          "why": "Tool sprawl fills context and makes selection harder; curating the tool set per task is the standard fix."
+        }
+      ]
+    },
+    {
+      "id": "99aff9c7a1",
+      "date": "2026-10-08T19:48:38.000Z",
+      "added": "2026-10-09T16:51:13.542Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.295",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.295: hooks can now hard-block actions",
+      "summary": "New release lets hooks be set to block an action outright if the hook fails, times out or errors, rather than quietly letting it through. Terminals can also show whether Claude is working, waiting or finished.",
+      "why": "If you use hooks as guardrails, blocking-on-failure is the setting that makes them actually enforce rules rather than suggest them.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Hook (Claude Code)",
+          "back": "A script or HTTP call Claude Code runs automatically at defined points, e.g. before a tool runs — used for checks, logging or guardrails."
+        },
+        {
+          "front": "onFailure: \"block\"",
+          "back": "New hook setting: if the hook can't run, times out or exits unexpectedly, the action it guards is stopped instead of allowed."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "With onFailure set to \"block\", what happens if a pre-tool hook times out?",
+          "options": [
+            "The action the hook guards is stopped from running",
+            "The action runs and the timeout is logged as a warning",
+            "Claude Code restarts the session and retries the hook",
+            "The hook is disabled for the rest of the session"
+          ],
+          "answer": 0,
+          "why": "Blocking means a hook that fails or times out prevents the action, turning hooks into real enforcement rather than advisory checks."
+        }
+      ]
+    },
+    {
+      "id": "66eb0fc716",
+      "date": "2026-10-09T15:38:39.000Z",
+      "added": "2026-10-09T16:51:13.542Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-september-2026/",
+      "category": "builders",
+      "title": "AWS Bedrock monthly roundup: more models, faster serverless agents, built-in evals",
+      "summary": "AWS recaps September changes across Bedrock, AgentCore and the Strands agent framework: a wider model selection, quicker serverless agent runtimes with evaluation built in, and knowledge bases that auto-sync from enterprise data sources.",
+      "why": "This is the exact stack your production agents run on; a single recap keeps you current without reading a month of AWS posts.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "153bcde248",
+      "date": "2026-10-08T23:03:02.000Z",
+      "added": "2026-10-09T16:51:13.542Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/pm-to-product-builder-roadmap",
+      "category": "pm",
+      "title": "The 'product builder' role hiding in 12,500 PM job posts",
+      "summary": "Aakash Gupta and Ankit Shukla analyse thousands of PM listings and argue a distinct hybrid role is emerging — PMs who ship with AI tools themselves — plus what skills and portfolio evidence hiring managers look for.",
+      "why": "You're already a PM who builds with Claude Code; this names the role and tells you how to position for it.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "1cbff2ecfd",
+      "date": "2026-10-08T18:33:29.000Z",
+      "added": "2026-10-09T16:51:13.542Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/pay-per-inference-for-ai-agents-how-blockrun-and-incarna-use-amazon-bedrock-agentcore-payments/",
+      "category": "builders",
+      "title": "Agents that pay per request: Bedrock AgentCore payments",
+      "summary": "AWS adds a managed way for agents to pay for external services on demand, with infrastructure-level spending limits, using the x402 payment protocol. Two companies describe metering model inference one request at a time.",
+      "why": "Agents transacting autonomously is a real product surface now — and the spending-limit pattern is a guardrail worth copying.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "95fd0fb1a7",
+      "date": "2026-10-09T12:54:06.000Z",
+      "added": "2026-10-09T16:51:13.542Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/9/built-using-my-voice/",
+      "category": "builders",
+      "title": "Shipping a real feature by talking to an AI coding agent",
+      "summary": "Simon Willison built and released a new page on his site almost entirely by dictating instructions to a coding agent, describing how voice-driven, chat-style development worked end to end.",
+      "why": "A concrete model for how non-typing, non-engineering workflows can still produce shipped code — relevant to how you use Claude Code.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "f6d3626eb7",
+      "date": "2026-10-08T12:00:00.000Z",
+      "added": "2026-10-09T16:51:13.542Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/legalon-halves-codex-costs",
+      "category": "builders",
+      "title": "Cutting AI coding costs 65% by routing tasks to cheaper models",
+      "summary": "LegalOn reports large savings on its AI coding spend by matching each task to an appropriately sized model and managing budgets deliberately, rather than defaulting to the most capable option for everything.",
+      "why": "Model routing is the simplest lever for controlling AI spend — a decision you'll likely own on your own agent products.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "0ca1450969",
       "date": "2026-10-07T00:00:00.000Z",
