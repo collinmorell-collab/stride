@@ -1,6 +1,107 @@
 {
-  "updated": "2026-10-10T15:46:08.467Z",
+  "updated": "2026-10-11T16:10:41.924Z",
   "items": [
+    {
+      "id": "490ac16a59",
+      "date": "2026-10-11T12:31:59.000Z",
+      "added": "2026-10-11T16:10:41.922Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/why-every-company-now-needs-to-think",
+      "category": "pm",
+      "title": "Josh Woodward (Google Labs): run your company like a lab team",
+      "summary": "Lenny interviews Google Labs/AI Studio lead Josh Woodward on sourcing ideas, killing them fast, and shipping products when the frontier of what's technically possible shifts every week.",
+      "why": "A playbook for doing PM work when model capabilities change monthly — exactly the environment you ship agents in.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "\"Operate like a lab team\" — what does it mean for a product org?",
+          "back": "Run many small, cheap bets with explicit kill criteria and short cycles, rather than one long roadmap, because what's technically possible keeps changing."
+        },
+        {
+          "front": "Who is Josh Woodward?",
+          "back": "Lead of Google Labs and Google AI Studio (and Gemini app work) — Google's unit for fast, experimental AI product bets."
+        },
+        {
+          "front": "Why do AI roadmaps decay faster than normal ones?",
+          "back": "Model capability jumps can make a planned feature trivial or obsolete, so plans must be re-validated against the current frontier."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What best describes a \"lab team\" operating model for product?",
+          "options": [
+            "Many small bets shipped fast, with explicit criteria for killing them",
+            "A fixed annual roadmap defended with detailed quarterly planning",
+            "A dedicated research group that publishes papers before any build",
+            "A single large bet resourced heavily until it reaches profitability"
+          ],
+          "answer": 0,
+          "why": "Lab-style teams optimise for cheap experiments and fast kill decisions, not long committed roadmaps or pure research output."
+        }
+      ]
+    },
+    {
+      "id": "cf932deabd",
+      "date": "2026-10-10T16:08:19.000Z",
+      "added": "2026-10-11T16:10:41.922Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/company-os",
+      "category": "claude-code",
+      "title": "Building a \"Company OS\" inside Claude Code",
+      "summary": "Aakash Gupta describes assembling a personal operating system in Claude Code — structured files, prompts and repeatable workflows — so a PM can run recurring company work rather than one-off chats.",
+      "why": "A concrete pattern for turning your daily Claude Code use into reusable, versioned PM workflows instead of throwaway prompts.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "a2"
+      ],
+      "cards": [
+        {
+          "front": "Why keep Claude Code instructions in files instead of chat?",
+          "back": "Files (e.g. CLAUDE.md, markdown playbooks) persist across sessions, can be versioned in Git, and give every run the same context."
+        },
+        {
+          "front": "What is a \"Company OS\" in a Claude Code context?",
+          "back": "A folder of structured docs, prompts and workflows the agent reads to run recurring work (reviews, specs, reporting) consistently."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does putting your recurring PM prompts into repo files beat retyping them in chat?",
+          "options": [
+            "They persist, can be versioned, and give every session identical context",
+            "They let the model train on your data between sessions",
+            "They remove the need for the model to read any other files",
+            "They make the model's responses cheaper per token by default"
+          ],
+          "answer": 0,
+          "why": "Files give persistence, version history and consistent context; they don't train the model or change token pricing."
+        }
+      ]
+    },
+    {
+      "id": "a786585932",
+      "date": "2026-10-11T00:52:37.000Z",
+      "added": "2026-10-11T16:10:41.922Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/11/dwarf-fortress/",
+      "category": "builders",
+      "title": "Even Dwarf Fortress finally adopted version control",
+      "summary": "Simon Willison notes that the famously complex game Dwarf Fortress, long developed without version control, now uses it — a reminder that manual file-copy workflows eventually break on any serious codebase.",
+      "why": "A memorable, low-effort way to internalise why Git exists before you touch your team's Bitbucket repos.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a5"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "09682752ef",
       "date": "2026-10-10T13:01:38.000Z",
