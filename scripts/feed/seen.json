@@ -6946,5 +6946,37 @@
   "fee9bab748": {
     "source": "latent-space",
     "at": "2026-10-11T16:10:14.863Z"
+  },
+  "35483b1348": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-12T19:39:23.701Z"
+  },
+  "2d01a1ff8e": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-12T19:39:23.701Z"
+  },
+  "5b65685336": {
+    "source": "aws-ml",
+    "at": "2026-10-12T19:39:25.664Z"
+  },
+  "5314a62ab1": {
+    "source": "aws-ml",
+    "at": "2026-10-12T19:39:25.664Z"
+  },
+  "8dfe752ac2": {
+    "source": "aws-ml",
+    "at": "2026-10-12T19:39:25.664Z"
+  },
+  "92f57cbc84": {
+    "source": "simon-willison",
+    "at": "2026-10-12T19:39:25.901Z"
+  },
+  "59e7fc14e8": {
+    "source": "simon-willison",
+    "at": "2026-10-12T19:39:25.901Z"
+  },
+  "728a22683c": {
+    "source": "latent-space",
+    "at": "2026-10-12T19:39:26.120Z"
   }
 }
