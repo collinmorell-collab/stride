@@ -1,6 +1,169 @@
 {
-  "updated": "2026-10-12T19:40:32.663Z",
+  "updated": "2026-10-13T17:24:28.525Z",
   "items": [
+    {
+      "id": "ee47aa4819",
+      "date": "2026-10-13T12:45:41.000Z",
+      "added": "2026-10-13T17:24:28.522Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-to-tell-if-a-startup-has-a-moat",
+      "category": "pm",
+      "title": "Lenny: A framework for judging whether a startup actually has a moat",
+      "summary": "Lenny's newsletter lays out how to assess durable competitive advantage — network effects, switching costs, data and distribution — when deciding whether a company you'd join (or compete with) can last.",
+      "why": "Moat thinking sharpens your product strategy and is the single best filter when AI makes feature-copying nearly free.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "What is a 'moat' in product strategy?",
+          "back": "A structural advantage (network effects, switching costs, scale economics, brand, proprietary data/distribution) that makes a company's position hard for competitors to copy."
+        },
+        {
+          "front": "Why do features rarely count as a moat in the AI era?",
+          "back": "Models and tooling are widely available, so a feature can be replicated in weeks; durability comes from compounding assets like data, distribution and switching costs."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which of these is most likely to be a genuine moat rather than a temporary advantage?",
+          "options": [
+            "High switching costs because customer workflows and data live in the product",
+            "A faster, better-designed UI than the current competitors",
+            "Being first to ship a new feature in the category",
+            "Access to a top frontier model through a vendor API"
+          ],
+          "answer": 0,
+          "why": "Switching costs compound over time; UI quality, first-mover timing and vendor model access can all be matched by competitors quickly."
+        }
+      ]
+    },
+    {
+      "id": "c1e94fc831",
+      "date": "2026-10-13T16:00:00.000Z",
+      "added": "2026-10-13T17:24:28.522Z",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "category": "labs",
+      "title": "Google launches Gemini 4 Argon, its new frontier model",
+      "summary": "Google released Gemini 4 Argon to developers, enterprises and consumers, positioning it as its top-end model for hard reasoning problems, with a companion robotics variant also announced.",
+      "why": "The frontier lineup you compare against Claude just shifted; worth knowing when picking models for your agents.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Gemini 4 Argon",
+          "back": "Google's newest frontier model (Oct 2026), aimed at hard reasoning tasks, released to developers and consumers, with a separate robotics variant."
+        },
+        {
+          "front": "What does 'frontier model' mean?",
+          "back": "A lab's most capable, newest large model — the top tier of its lineup, usually most expensive and used for the hardest reasoning or agentic work."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does it mean when a lab calls something its 'frontier model'?",
+          "options": [
+            "Its most capable current model, typically priciest and aimed at hard reasoning",
+            "A model trained only on data from the most recent twelve months",
+            "A smaller, cheaper model tuned for high-volume production traffic",
+            "A model restricted to enterprise customers with signed contracts"
+          ],
+          "answer": 0,
+          "why": "Frontier means the top-capability tier; recency of data, cheap high-volume tiers and enterprise-only access are different things."
+        }
+      ]
+    },
+    {
+      "id": "c1d6272d93",
+      "date": "2026-10-13T15:52:20.000Z",
+      "added": "2026-10-13T17:24:28.522Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-long-horizon-agents-with-grok-4-7-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Grok 4.7 on Bedrock, with a guide to tuning 'reasoning effort' vs cost",
+      "summary": "AWS walks through building a tool-calling agent on Grok 4.7 in Bedrock and benchmarks four reasoning-effort levels, showing the accuracy-versus-token-cost trade-off and how to tune and monitor it per request.",
+      "why": "Your agents run on Bedrock — this is a concrete pattern for dialing reasoning effort per request instead of overpaying everywhere.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "524f371e99",
+      "date": "2026-10-13T16:03:31.000Z",
+      "added": "2026-10-13T17:24:28.523Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/natural-language-security-queries-at-orca-security-using-amazon-bedrock/",
+      "category": "builders",
+      "title": "Orca cut agent cost 90% by restructuring a text-to-query agent",
+      "summary": "Orca Security's Bedrock agent turns plain-English security questions into structured queries. A multi-stage architecture cut query cost 90%, input tokens 93% and latency 75% versus their first naive version.",
+      "why": "Shows the real lever in production agents: pipeline design and context trimming, not a bigger model. Directly applicable to your Bedrock stack.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "f2e8cbb870",
+      "date": "2026-10-13T15:54:49.000Z",
+      "added": "2026-10-13T17:24:28.523Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-shipstation-global-built-an-ai-it-help-desk-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "A Slack IT help-desk agent that resolved 97.5% of queries",
+      "summary": "ShipStation built a Bedrock AgentCore agent in Slack that answers IT questions from a curated knowledge base, reads error screenshots and files Jira tickets — 97.5% resolution and 96% positive feedback in three months.",
+      "why": "A realistic scope-and-metrics template for an internal agent you could actually pitch and ship on your existing AWS stack.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "87e22abf54",
+      "date": "2026-10-13T13:32:00.000Z",
+      "added": "2026-10-13T17:24:28.523Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/13/geoffrey-huntley/",
+      "category": "claude-code",
+      "title": "Enforce coding rules with hooks, not just AGENTS.md instructions",
+      "summary": "Geoffrey Huntley argues written agent instructions drift over time; instead add a pre-commit check that fails on forbidden patterns and feeds the error back as a prompt, so the agent self-corrects deterministically.",
+      "why": "A practical upgrade over stuffing rules into CLAUDE.md: guardrails that actually hold as your repo and team grow.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a5",
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "ec132ecc41",
+      "date": "2026-10-13T09:37:04.000Z",
+      "added": "2026-10-13T17:24:28.523Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-meta-muse-wonder-and-wonder",
+      "category": "labs",
+      "title": "Meta's superintelligence lab ships a frontier-tier model",
+      "summary": "AI News reports Meta Superintelligence Labs released Muse Wonder and Wonder Full, models positioned in the same capability tier as top Claude releases — marking Meta's arrival as a genuine frontier competitor.",
+      "why": "Another serious player in the model landscape you choose from; useful context for vendor and pricing conversations.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "2d01a1ff8e",
       "date": "2026-10-12T12:03:55.000Z",
