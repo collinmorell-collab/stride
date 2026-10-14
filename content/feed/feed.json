@@ -1,6 +1,192 @@
 {
-  "updated": "2026-10-13T17:24:28.525Z",
+  "updated": "2026-10-14T14:55:20.772Z",
   "items": [
+    {
+      "id": "a23eabea07",
+      "date": "2026-10-14T12:04:05.000Z",
+      "added": "2026-10-14T14:55:20.770Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/metas-new-muse-wonder-model-good",
+      "category": "pm",
+      "title": "Lenny: Stress-testing Meta's new Muse Wonder model inside Claude Code",
+      "summary": "Lenny's guest ran Meta's newly launched Muse Wonder model headlessly through Claude Code on ~20 real tasks to check its frontier agentic claims — strong at agentic coding, weak at design work.",
+      "why": "Shows you how to evaluate a model yourself instead of trusting launch benchmarks — a skill you can reuse for Bedrock model choices.",
+      "score": 10,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "b0"
+      ],
+      "cards": [
+        {
+          "front": "Running Claude Code \"headlessly\"",
+          "back": "Running it non-interactively (scripted, no chat UI) so you can fire the same prompts/tasks at a model many times — useful for batch evaluation."
+        },
+        {
+          "front": "Why run your own model eval?",
+          "back": "Vendor benchmarks are chosen to flatter the model. Your own task set shows how it performs on the work you actually do (e.g. agentic coding vs design)."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does testing a new model on your own task set beat reading its launch benchmarks?",
+          "options": [
+            "Benchmarks are chosen by the vendor and may not match your real tasks",
+            "Benchmarks are run on smaller versions of the released model",
+            "Benchmarks always measure speed rather than output quality",
+            "Benchmarks are recomputed monthly and are usually out of date"
+          ],
+          "answer": 0,
+          "why": "Vendors pick benchmarks that flatter their model; a personal task suite reflects your actual workload."
+        }
+      ]
+    },
+    {
+      "id": "5231ee939b",
+      "date": "2026-10-14T02:49:42.000Z",
+      "added": "2026-10-14T14:55:20.770Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.299",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.299: idle compaction and a toggle for @ file mentions",
+      "summary": "New release adds automatic compaction of large idle conversations before the one-hour prompt cache expires, plus an env variable that makes @ mentions pass file paths for Claude to read instead of pasting full file contents.",
+      "why": "Both changes affect your daily sessions: fewer slow resumes after breaks, and leaner context when you @-mention big files.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Compaction (Claude Code)",
+          "back": "Summarising an older, long conversation so it fits in the context window; 2.1.299 now does this automatically after ~54 idle minutes on 200K+ token chats."
+        },
+        {
+          "front": "Prompt cache",
+          "back": "A stored copy of your conversation context that makes follow-up messages fast and cheap. It expires after about an hour."
+        },
+        {
+          "front": "CLAUDE_CODE_DISABLE_FILE_MENTIONS",
+          "back": "Env variable: @file gives Claude only the path, so it reads the file with its tools instead of dumping full contents into context."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does idle compaction in Claude Code 2.1.299 actually do?",
+          "options": [
+            "Summarises a long idle conversation before the prompt cache expires",
+            "Deletes older messages from a conversation to lower your token bill",
+            "Pauses the session and reloads the model after an hour of inactivity",
+            "Compresses files on disk so tool calls read them more quickly"
+          ],
+          "answer": 0,
+          "why": "It compacts 200K+ token conversations left idle ~54 minutes so the next message doesn't hit an expired cache."
+        }
+      ]
+    },
+    {
+      "id": "fd83ae3d1e",
+      "date": "2026-10-13T23:00:06.000Z",
+      "added": "2026-10-14T14:55:20.770Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/13/redesigning-source-control-at-anthropic/",
+      "category": "builders",
+      "title": "Anthropic built its own replacement for Git",
+      "summary": "Anthropic describes why the sheer volume of AI-generated commits broke Git-based workflows, and how they designed a custom source control system around a much higher change rate.",
+      "why": "Explains what version control is for and why agent-written code strains Bitbucket-style workflows your team relies on.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "a5"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "268ff6550b",
+      "date": "2026-10-14T05:40:28.000Z",
+      "added": "2026-10-14T14:55:20.770Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-ai-engineer-nyc-gemini-4-argon",
+      "category": "labs",
+      "title": "Gemini 4 Argon is generally available",
+      "summary": "Google's Gemini 4 Argon shipped to general availability; independent benchmarks including coding-focused ones largely confirm Google's claims rather than contradicting them.",
+      "why": "Keeps your mental model of the frontier current when comparing Claude, GPT and Gemini options for agent work.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "e1297e04be",
+      "date": "2026-10-13T20:10:33.000Z",
+      "added": "2026-10-14T14:55:20.770Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/building-agents-that-transact-with-anchor-browser-and-agentcore-payments/",
+      "category": "builders",
+      "title": "Agents that pay for things: Bedrock AgentCore payments",
+      "summary": "AWS shows agents autonomously paying for protected web resources using the x402 protocol, with AgentCore checking budgets and signing transactions so wallet credentials never reach the agent runtime.",
+      "why": "Your stack is Bedrock; this is an early look at agent-initiated payments and the guardrail pattern of keeping credentials out of the agent.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "c54a347527",
+      "date": "2026-10-14T13:58:43.000Z",
+      "added": "2026-10-14T14:55:20.770Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/generate-presentations-with-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "A supervisor-agent pattern on Bedrock AgentCore, explained via slide generation",
+      "summary": "AWS walks through a multi-agent system where a supervisor agent coordinates retrieval (RAG) and guardrails to turn internal documents into grounded presentations in under 90 seconds.",
+      "why": "A readable template of supervisor agents, RAG and guardrails on exactly the AWS stack your production agents run on.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "2f3282e483",
+      "date": "2026-10-14T00:00:00.000Z",
+      "added": "2026-10-14T14:55:20.770Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
+      "category": "pm",
+      "title": "OpenAI's read on agentic AI adoption in Europe",
+      "summary": "OpenAI publishes analysis of how EU enterprises and small businesses are adopting agentic AI, where usage is still shallow, and which deeper use cases could unlock more value.",
+      "why": "Useful adoption data and use-case framing when you argue for agent investment in roadmap or stakeholder discussions.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "58e4191fcf",
+      "date": "2026-10-14T02:00:14.000Z",
+      "added": "2026-10-14T14:55:20.770Z",
+      "source": "Google DeepMind",
+      "link": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/",
+      "category": "labs",
+      "title": "On-device Gemma models detect chat scams without sending data to the cloud",
+      "summary": "DeepMind and Singapore's GovTech fine-tuned small Gemma models that run on the phone to flag conversational scams in private chats, with no data leaving the device.",
+      "why": "A concrete example of small fine-tuned on-device models solving privacy constraints — a design option worth knowing as a PM.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "ee47aa4819",
       "date": "2026-10-13T12:45:41.000Z",
