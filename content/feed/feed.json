@@ -1,6 +1,180 @@
 {
-  "updated": "2026-10-14T14:55:20.772Z",
+  "updated": "2026-10-15T14:43:12.566Z",
   "items": [
+    {
+      "id": "5f0e4286e5",
+      "date": "2026-10-14T21:40:52.000Z",
+      "added": "2026-10-15T14:43:12.564Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/crossing-the-threshold",
+      "category": "builders",
+      "title": "How frontier labs draw the line on agent autonomy in finance",
+      "summary": "A conference session where OpenAI, Anthropic and financial firms discussed where agents should act alone versus pause for human approval, and the guardrail patterns used when a wrong action costs real money.",
+      "why": "Your production agents need the same autonomy boundaries; this gives you vocabulary and patterns to argue for them in design reviews.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Human-in-the-loop (agent design)",
+          "back": "A checkpoint where an agent must get human approval before taking a consequential or irreversible action."
+        },
+        {
+          "front": "Why limit agent autonomy on irreversible actions?",
+          "back": "Because models are probabilistic: a wrong reversible step is cheap to undo, a wrong payment or deletion is not."
+        },
+        {
+          "front": "Typical guardrail stack for a production agent",
+          "back": "Scoped tool permissions, approval gates on high-impact actions, logging/audit trails, and spend or action limits."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which agent action most clearly deserves a human approval gate rather than full autonomy?",
+          "options": [
+            "Transferring funds from a customer account to an external bank",
+            "Summarising the last ten transactions for a support reply",
+            "Looking up a currency exchange rate from an internal API",
+            "Drafting an internal note describing a flagged transaction"
+          ],
+          "answer": 0,
+          "why": "Approval gates are reserved for consequential, irreversible actions; the other three are read-only or easily reviewed drafts."
+        }
+      ]
+    },
+    {
+      "id": "36fb2fd61a",
+      "date": "2026-10-14T16:24:07.000Z",
+      "added": "2026-10-15T14:43:12.564Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-self-improving-document-processing-using-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "Self-improving document processing on Amazon Bedrock AgentCore",
+      "summary": "AWS walks through an agentic document pipeline that classifies, extracts and validates business documents, then learns from corrections so new document layouts work without someone hand-writing a template each time.",
+      "why": "It's your exact stack (Bedrock), and it shows a concrete pattern for agents that improve from feedback instead of hardcoded rules.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "a2"
+      ],
+      "cards": [
+        {
+          "front": "Amazon Bedrock AgentCore",
+          "back": "AWS's managed runtime and building blocks for deploying agents (memory, tools, identity, observability) on top of Bedrock models."
+        },
+        {
+          "front": "IDP (intelligent document processing)",
+          "back": "Automated classification, extraction and validation of data from documents like invoices or forms, increasingly done by LLM agents instead of fixed templates."
+        },
+        {
+          "front": "What makes a document pipeline 'self-improving'?",
+          "back": "It stores human corrections and prior examples as memory/context, so later runs handle new formats without new template config."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What's the main advantage of an agent-based document pipeline over a template-based one?",
+          "options": [
+            "It can handle unseen document layouts without new per-format configuration",
+            "It removes the need to validate extracted fields before storing them",
+            "It processes each document at a lower, fixed cost per page",
+            "It guarantees extraction accuracy because the model is deterministic"
+          ],
+          "answer": 0,
+          "why": "The win is generalisation to new formats; validation is still needed, cost is token-based, and LLM output is not deterministic."
+        }
+      ]
+    },
+    {
+      "id": "5cf0b33a92",
+      "date": "2026-10-14T22:00:44.000Z",
+      "added": "2026-10-15T14:43:12.564Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/how-the-best-pms-think-about-product-strategy",
+      "category": "pm",
+      "title": "Product strategy that actually helps you say no",
+      "summary": "Tim Herbig uses a fictional used-car marketplace to show how to write a strategy concrete enough to reject work, rather than a vision statement that justifies everything, with AI bets treated like any other bet.",
+      "why": "A usable template for turning 'we should add AI' requests into choices you can defend or decline.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6702d1aaf0",
+      "date": "2026-10-15T13:04:03.000Z",
+      "added": "2026-10-15T14:43:12.564Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/15/anthropic-tells-investors/",
+      "category": "labs",
+      "title": "Anthropic's revenue jumps ~50% quarter over quarter ahead of IPO",
+      "summary": "An FT report, relayed by Simon Willison, on numbers Anthropic shared with investors: roughly $16.8bn quarterly revenue, up nearly half, alongside IPO preparation and details about how the business is composed.",
+      "why": "Your daily tool's vendor is becoming a public company; pricing, roadmap and enterprise priorities will follow that pressure.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "e181547094",
+      "date": "2026-10-14T07:00:00.000Z",
+      "added": "2026-10-15T14:43:12.564Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/third-moment-research",
+      "category": "builders",
+      "title": "Running 10,000 agents for 36 hours straight",
+      "summary": "An AI lab describes orchestrating thousands of long-running agents on OpenAI's newest models, with agents that stay on task for days and get better as they accumulate experience from each run.",
+      "why": "Long-horizon, massively parallel agents are the current frontier; useful context for what your Lambda-based agents may need next.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "0c6f09c40e",
+      "date": "2026-10-15T10:08:08.000Z",
+      "added": "2026-10-15T14:43:12.564Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-modals-1b-arr-16b-series-d",
+      "category": "builders",
+      "title": "Modal hits $1B ARR as agent sandboxes become infrastructure",
+      "summary": "Newsletter roundup on Modal's huge funding round and growth, driven by demand for secure sandboxes where AI agents can run code safely — a fast-growing layer of the agent infrastructure stack.",
+      "why": "Explains why 'sandbox' keeps appearing in agent architecture talk, and what alternatives exist beside your Lambda setup.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "bbc1e25e9e",
+      "date": "2026-10-14T21:23:01.000Z",
+      "added": "2026-10-15T14:43:12.564Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/14/tree-appreciator/",
+      "category": "claude-code",
+      "title": "Building a small 3D game from a phone prompt",
+      "summary": "Simon Willison prompted the Claude mobile app (plain chat, not Claude Code) to generate a playable three.js game, showing how far a single well-scoped prompt gets you without a development environment.",
+      "why": "A cheap way to see the gap between chat-mode generation and agentic Claude Code with real file and tool access.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "a23eabea07",
       "date": "2026-10-14T12:04:05.000Z",
