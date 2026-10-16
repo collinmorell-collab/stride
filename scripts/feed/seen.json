@@ -7158,5 +7158,45 @@
   "ecfb2d56ac": {
     "source": "latent-space",
     "at": "2026-10-15T14:42:35.001Z"
+  },
+  "932c5a3abd": {
+    "source": "product-growth",
+    "at": "2026-10-16T14:35:40.266Z"
+  },
+  "dc9ed14da7": {
+    "source": "anthropic",
+    "at": "2026-10-16T14:35:40.497Z"
+  },
+  "a72d1e4da6": {
+    "source": "openai",
+    "at": "2026-10-16T14:35:40.779Z"
+  },
+  "dd00c04c9b": {
+    "source": "openai",
+    "at": "2026-10-16T14:35:40.779Z"
+  },
+  "996b33c09a": {
+    "source": "deepmind",
+    "at": "2026-10-16T14:35:41.280Z"
+  },
+  "371a0b09d7": {
+    "source": "claude-code",
+    "at": "2026-10-16T14:35:41.457Z"
+  },
+  "e47b86ab81": {
+    "source": "aws-ml",
+    "at": "2026-10-16T14:35:41.635Z"
+  },
+  "36341170f8": {
+    "source": "aws-ml",
+    "at": "2026-10-16T14:35:41.635Z"
+  },
+  "08c7976423": {
+    "source": "simon-willison",
+    "at": "2026-10-16T14:35:41.791Z"
+  },
+  "6def1af444": {
+    "source": "latent-space",
+    "at": "2026-10-16T14:35:42.008Z"
   }
 }

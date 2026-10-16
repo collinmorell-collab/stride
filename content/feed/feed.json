@@ -1,6 +1,152 @@
 {
-  "updated": "2026-10-15T14:43:12.566Z",
+  "updated": "2026-10-16T14:36:14.019Z",
   "items": [
+    {
+      "id": "932c5a3abd",
+      "date": "2026-10-15T21:48:08.000Z",
+      "added": "2026-10-16T14:36:14.016Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/model-pm",
+      "category": "pm",
+      "title": "What an AI 'Model PM' actually does — and how to become one",
+      "summary": "Aakash Gupta's guide to the model PM role: who hires them, what the job involves (evals, data, post-training priorities, launch decisions), required skills, and how a product PM can move toward it.",
+      "why": "It maps the fastest-growing PM specialty and gives you concrete skills to build, even if you stay a product PM working alongside models.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "What is a 'model PM'?",
+          "back": "A PM whose product is the model itself — shaping training/post-training priorities, evals, data mix, safety behaviour and release decisions, rather than app UI features."
+        },
+        {
+          "front": "Main measurement tool of a model PM",
+          "back": "Evals — structured test sets and scoring that decide whether a model version is better, instead of classic product analytics."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which activity best distinguishes a model PM from a typical AI feature PM?",
+          "options": [
+            "Deciding post-training priorities and the eval suite a model version must pass",
+            "Writing the onboarding flow and pricing page for an AI product",
+            "Running user interviews to prioritise the next quarter's roadmap",
+            "Choosing which third-party model API the app should call"
+          ],
+          "answer": 0,
+          "why": "Model PMs own the model's behaviour and its evaluation; the others are standard app-level product work."
+        }
+      ]
+    },
+    {
+      "id": "dc9ed14da7",
+      "date": "2026-10-15T17:20:00.000Z",
+      "added": "2026-10-16T14:36:14.016Z",
+      "source": "Anthropic",
+      "link": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "category": "labs",
+      "title": "Anthropic will embed independent evaluators into its testing",
+      "summary": "Anthropic says outside evaluators will get deeper, ongoing access to test its models rather than one-off pre-launch reviews, part of a shift toward third-party verification of safety and capability claims.",
+      "why": "Third-party evaluation is becoming a procurement question; expect customers and compliance teams to ask who independently tested your agents.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "371a0b09d7",
+      "date": "2026-10-15T19:22:06.000Z",
+      "added": "2026-10-16T14:36:14.016Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.301",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.301: smarter unattended retries, tracing docs",
+      "summary": "New setting caps how long unattended retry mode waits when you hit a usage limit — it now ends the request instead of stalling for hours. Also adds OpenTelemetry tracing guidance to the claude-api skill.",
+      "why": "If you run long Claude Code jobs, this stops them silently hanging on a rate limit; tracing guidance helps your team observe agent runs.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "e47b86ab81",
+      "date": "2026-10-15T17:43:35.000Z",
+      "added": "2026-10-16T14:36:14.016Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/metas-muse-spark-open-now-available-in-amazon-sagemaker-jumpstart/",
+      "category": "builders",
+      "title": "Meta's coding model lands in Amazon SageMaker JumpStart",
+      "summary": "Meta's open-weight, coding-focused model can now be deployed to a SageMaker endpoint inside your own AWS account, as an alternative to calling a hosted Bedrock model.",
+      "why": "Your stack is AWS; knowing when to self-host an open model vs. call Bedrock is a cost-and-control tradeoff you'll be asked about.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "dd00c04c9b",
+      "date": "2026-10-15T00:00:00.000Z",
+      "added": "2026-10-16T14:36:14.016Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/sullivan-cromwell",
+      "category": "pm",
+      "title": "A law firm's contract-review agent: narrow scope, expert-defined rules",
+      "summary": "Sullivan & Cromwell built an agent that flags issues in draft agreements, encoding partner expertise into the review criteria rather than asking a general model to 'check the contract'.",
+      "why": "A clean template for domain agents: narrow the task, encode expert judgement as explicit checks, keep humans deciding.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "08c7976423",
+      "date": "2026-10-15T19:47:52.000Z",
+      "added": "2026-10-16T14:36:14.016Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/15/chirp-pong/",
+      "category": "builders",
+      "title": "Simon Willison builds a two-phone game that networks over sound",
+      "summary": "A one-prompt experiment: a browser Pong where two phones communicate by emitting and listening for audio chirps instead of using a server — a vivid demo of how far quick AI prototyping now goes.",
+      "why": "Good reminder that you can test weird product ideas end-to-end yourself in an afternoon, no engineer required.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a72d1e4da6",
+      "date": "2026-10-15T19:00:00.000Z",
+      "added": "2026-10-16T14:36:14.016Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+      "category": "labs",
+      "title": "OpenAI sponsors lab access to its science-focused model",
+      "summary": "OpenAI launches an academic plan giving eligible life-sciences labs sponsored access to GPT-Rosalind plus supporting tools — part of the trend of labs targeting specific scientific verticals.",
+      "why": "Signals the shift from general chatbots to domain-specialised models; a pattern worth watching if you ever vertical-ise your own agents.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "5f0e4286e5",
       "date": "2026-10-14T21:40:52.000Z",
