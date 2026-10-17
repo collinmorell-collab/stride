@@ -1,6 +1,122 @@
 {
-  "updated": "2026-10-16T14:36:14.019Z",
+  "updated": "2026-10-17T13:29:44.745Z",
   "items": [
+    {
+      "id": "2ce82b1b1d",
+      "date": "2026-10-16T20:48:16.000Z",
+      "added": "2026-10-17T13:29:44.742Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/building-trust-in-ai-agents-a-production-ready-evaluation-framework-with-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "A nine-stage framework for evaluating AI agents in production on Bedrock",
+      "summary": "AWS outlines how agent quality degrades silently (latency looks fine, answers get worse) and proposes staged evaluation from first commit through live traffic, using Bedrock AgentCore observability and automated scoring of agent trajectories.",
+      "why": "Your production agents run on Bedrock; this gives you a vocabulary and checklist for agent evals to bring to your engineering team.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Why do AI agents 'fail softly'?",
+          "back": "Latency and error rates stay normal while answer quality quietly degrades, so standard monitoring misses it. Only quality evaluations catch it."
+        },
+        {
+          "front": "Agent trajectory evaluation",
+          "back": "Judging not just the final answer but the sequence of steps/tool calls the agent took to get there — did it pick the right tools in the right order?"
+        },
+        {
+          "front": "Amazon Bedrock AgentCore",
+          "back": "AWS's managed layer for running agents in production: memory, tool gateway, identity, and observability/traces you can evaluate against."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why is latency monitoring a poor way to detect agent quality problems?",
+          "options": [
+            "Response quality can degrade while response times remain completely unchanged",
+            "Latency metrics are only collected for the first request in a session",
+            "Agents always get slower before their answers become less accurate",
+            "Latency is measured by the model provider rather than by your application"
+          ],
+          "answer": 0,
+          "why": "Agents fail softly: the system stays fast and error-free while answers quietly get worse, which only quality evaluations reveal."
+        }
+      ]
+    },
+    {
+      "id": "e946af68fd",
+      "date": "2026-10-16T22:06:37.000Z",
+      "added": "2026-10-17T13:29:44.742Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/16/code-review/",
+      "category": "pm",
+      "title": "Anthropic is rethinking code review: the human gate isn't the point",
+      "summary": "Anthropic engineers argue 'did a human read it?' is a weak proxy for safety. Better question: what could go wrong here, and is an automated check or a human the right catcher? Review shifts earlier, continuous rather than a PR gate.",
+      "why": "A clean mental model for how AI changes your team's workflow rituals — useful when your team debates review and quality bars for AI-written code.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "a5"
+      ],
+      "cards": [
+        {
+          "front": "Pull request (PR)",
+          "back": "A proposal to merge code changes into the main branch, traditionally reviewed and approved by a human before merging."
+        },
+        {
+          "front": "Anthropic's reframing of code review",
+          "back": "Replace 'did a human read this?' with 'what could go wrong, and which check — automated or human — best catches that?' Review moves earlier and becomes continuous."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main critique of the traditional pull-request review gate in this piece?",
+          "options": [
+            "Human reading is an imprecise proxy for whether real risks get caught",
+            "Human reviewers merge changes faster than automated checks can run",
+            "Pull requests cannot be created automatically by AI coding agents",
+            "Reviews at the end of a branch produce inaccurate commit histories"
+          ],
+          "answer": 0,
+          "why": "The argument is about proxies: a human glancing at a diff doesn't guarantee the right risk-specific check happened, automated or otherwise."
+        }
+      ]
+    },
+    {
+      "id": "0c6e6f4701",
+      "date": "2026-10-16T20:53:06.000Z",
+      "added": "2026-10-17T13:29:44.742Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.302",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.302: control idle compaction and the auto-mode model",
+      "summary": "New release adds a /config toggle to turn idle compaction on or off (with on-screen hints about how), plus an env variable to pick which model the client-side auto-mode classifier uses.",
+      "why": "Idle compaction silently shrinks your context; knowing you can disable it from /config saves confusing mid-session surprises.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "65442e7082",
+      "date": "2026-10-16T19:00:00.000Z",
+      "added": "2026-10-17T13:29:44.742Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/itau-generative-ai",
+      "category": "pm",
+      "title": "Itaú's two-layer AI strategy: a chat product plus a governance platform",
+      "summary": "Brazil's largest bank pairs a customer-facing conversational assistant with a separate internal governance platform for approving and monitoring AI use — a structure for shipping generative AI inside heavy regulation.",
+      "why": "A reusable pattern if you ever need to ship AI features where compliance matters: product layer and governance layer built as separate things.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "932c5a3abd",
       "date": "2026-10-15T21:48:08.000Z",
