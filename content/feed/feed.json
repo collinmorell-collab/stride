@@ -1,6 +1,136 @@
 {
-  "updated": "2026-10-18T13:47:51.676Z",
+  "updated": "2026-10-19T16:51:20.145Z",
   "items": [
+    {
+      "id": "88f1e2c230",
+      "date": "2026-10-19T12:04:52.000Z",
+      "added": "2026-10-19T16:50:09.394Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/claude-cuts-my-tiktok-how-this-creator",
+      "category": "claude-code",
+      "title": "A creator uses Claude Code to edit TikToks in seconds",
+      "summary": "On How I AI, creator Brooke Lacey demos Claude Code turning a raw phone video into a captioned, jump-cut TikTok in roughly 15 seconds, showing non-coding uses of an agentic coding tool on local files.",
+      "why": "Shows you how Claude Code works as a general file-automation agent, not just a coding tool — directly transferable to your daily PM workflows.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Why can Claude Code edit videos if it's a 'coding' tool?",
+          "back": "It's an agent with terminal access: it writes and runs commands/scripts (e.g. ffmpeg) on your local files, so any task expressible as commands is in scope."
+        },
+        {
+          "front": "What tool call does Claude Code use to run a video-processing command?",
+          "back": "Bash — it executes a shell command on your machine, then reads the output to decide the next step."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What makes Claude Code able to automate non-coding tasks like video editing?",
+          "options": [
+            "It can run shell commands on your local files via its Bash tool",
+            "It streams the video to a hosted multimodal editing service",
+            "It converts the model's weights into a video processing pipeline",
+            "It uses a browser extension to control desktop editing apps"
+          ],
+          "answer": 0,
+          "why": "Claude Code is an agent in your terminal; it writes and executes commands (like ffmpeg) against local files rather than editing media itself."
+        }
+      ]
+    },
+    {
+      "id": "58ba945ca6",
+      "date": "2026-10-19T15:03:35.000Z",
+      "added": "2026-10-19T16:50:09.394Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-ai-meta-muse-wonder-how-brooke",
+      "category": "pm",
+      "title": "How I AI roundup: Meta's Muse Wonder and AI video workflows",
+      "summary": "Lenny's How I AI weekly digest bundles a look at Meta's Muse Wonder alongside Brooke Lacey's AI video-production workflow, with practical demos of how operators wire AI tools into real work.",
+      "why": "A quick scan of concrete AI workflows from practitioners — the fastest way to borrow patterns you can reuse in product work.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "d400a62569",
+      "date": "2026-10-19T16:49:19.000Z",
+      "added": "2026-10-19T16:50:09.394Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/pegasus-1-5-from-twelvelabs-is-now-available-in-amazon-bedrock/",
+      "category": "builders",
+      "title": "TwelveLabs Pegasus 1.5 video model lands in Amazon Bedrock",
+      "summary": "Bedrock now offers Pegasus 1.5, a video-understanding model that returns timestamped, structured JSON describing moments in up to two hours of video, with segmentation and image-based reference prompting.",
+      "why": "Your agents run on Bedrock; this adds video understanding with JSON output you can feed straight into Lambda pipelines.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a2",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a1d4cde3e7",
+      "date": "2026-10-19T16:03:23.000Z",
+      "added": "2026-10-19T16:50:09.394Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/improve-ttft-for-multi-turn-agentic-workloads-with-bi-directional-kv-transfer-in-vllm/",
+      "category": "builders",
+      "title": "Why multi-turn agents get slower each turn — and the KV cache fix",
+      "summary": "AWS explains that agent conversations reprocess an ever-growing context every turn, inflating latency, and shows how reusing cached context (KV cache) between serving nodes cuts time-to-first-token by up to 3x.",
+      "why": "Explains in plain terms why your production agents feel sluggish as conversations grow, and what levers reduce latency and cost.",
+      "score": 7,
+      "mustKnow": true,
+      "related": [
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "KV cache",
+          "back": "Stored intermediate results from text the model has already read, so it doesn't have to reprocess the whole conversation on every new turn."
+        },
+        {
+          "front": "TTFT (time to first token)",
+          "back": "How long a user waits before the model starts replying — dominated by processing the input context, so it grows as conversation history grows."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does time-to-first-token usually rise over a long agent conversation?",
+          "options": [
+            "The growing conversation context must be processed before any reply starts",
+            "The model's weights are reloaded from storage on every new turn",
+            "Each turn adds extra tool calls that must finish before generation",
+            "The model lowers its sampling temperature as history accumulates"
+          ],
+          "answer": 0,
+          "why": "TTFT is dominated by the prefill step over the input context; as history grows, so does that work — which is exactly what KV cache reuse avoids."
+        }
+      ]
+    },
+    {
+      "id": "4c6c987b65",
+      "date": "2026-10-18T16:49:35.513Z",
+      "added": "2026-10-19T16:50:09.394Z",
+      "source": "Anthropic",
+      "link": "https://www.anthropic.com/news/public-benefit-fund",
+      "category": "labs",
+      "title": "Anthropic pledges company shares to a public benefit fund",
+      "summary": "Anthropic is committing a slice of its equity to a new Anthropic Public Benefit Fund, structured so the fund's stake increases as the company grows in value.",
+      "why": "Context on the governance and incentives of the vendor behind the tool you use daily — useful when justifying tooling choices internally.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "20469758d3",
       "date": "2026-10-18T12:31:36.000Z",
@@ -3789,6 +3919,119 @@
   ],
   "weekly": [
     {
+      "weekOf": "2026-10-19",
+      "created": "2026-10-19T16:51:20.143Z",
+      "headline": "Gemini 4 Argon ships and Meta crashes the frontier party, while the real PM work shifts to agent UX, evals and context hygiene",
+      "script": "Good morning. Five things this week.\n\nFirst, the model landscape moved. Google released Gemini 4 Argon to general availability, pitched as its top-end reasoning model, and independent benchmarks mostly backed the claims rather than deflating them. On top of that, Meta's Superintelligence Labs shipped Muse Wonder, which reviewers place in the same tier as the best Claude releases. So the shortlist you compare against for agent work is now genuinely four names, not two. Worth remembering next time someone asks why you picked a model.\n\nSecond, and this is the one I'd actually listen to, Lenny interviewed Meta's design director Alex Cornell about building Muse, an AI agent with a single interface meant to work for a complete beginner and an engineer at the same time. Deep looks at agent interface decisions are rare, and that's exactly the spec work you do.\n\nThird, AWS published a nine-stage framework for evaluating agents in production on Bedrock. Their key point: agent quality degrades quietly. Latency dashboards stay green while the answers get worse. The fix is staged evaluation from first commit through live traffic, scoring the agent's whole trajectory, not just the final answer. Take the vocabulary to your engineers.\n\nFourth, your daily tool changed. Claude Code now automatically compacts large idle conversations before the one-hour prompt cache expires, so walking away no longer means a slow, expensive resume. A later release adds a config toggle if you'd rather it didn't. There's also a setting that makes at-mentions pass a file path instead of pasting a whole file in.\n\nFifth, Lenny talked interpretability with Anthropic's Emmanuel Ameisen. The headline findings: models plan ahead further than people assume, and they sometimes invent explanations after the fact. That's your base layer for judging anyone's reliability claims, including vendors'.",
+      "top5": [
+        {
+          "title": "Google launches Gemini 4 Argon, its new frontier model",
+          "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+          "source": "Google AI",
+          "why": "The frontier shortlist you benchmark Claude against just changed, and with Meta's Muse Wonder arriving the same week, model choice is now a four-way conversation."
+        },
+        {
+          "title": "How Meta designed Muse, an AI agent for every skill level",
+          "link": "https://www.lennysnewsletter.com/p/how-meta-designed-muse-an-ai-agent",
+          "source": "Lenny's Newsletter",
+          "why": "A rare, detailed look at agent interface decisions from a design director, which is precisely the kind of spec work you own."
+        },
+        {
+          "title": "A nine-stage framework for evaluating AI agents in production on Bedrock",
+          "link": "https://aws.amazon.com/blogs/machine-learning/building-trust-in-ai-agents-a-production-ready-evaluation-framework-with-amazon-bedrock-agentcore/",
+          "source": "AWS Machine Learning Blog",
+          "why": "Agent quality decays silently while latency dashboards look fine, and this gives you the checklist and vocabulary to raise that with your engineering team on your own stack."
+        },
+        {
+          "title": "Claude Code 2.1.299: idle compaction and a toggle for @ file mentions",
+          "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.299",
+          "source": "Claude Code releases",
+          "why": "Two changes hit your daily sessions directly: paused conversations now get summarised before the prompt cache expires, and @-mentions can pass a file path instead of dumping the whole file into context."
+        },
+        {
+          "title": "What interpretability reveals about how models 'think'",
+          "link": "https://www.lennysnewsletter.com/p/a-mind-expanding-conversation-on",
+          "source": "Lenny's Newsletter",
+          "why": "Evidence that models plan ahead and sometimes invent their explanations after the fact is the mental model you need to judge any vendor's reliability claims."
+        }
+      ],
+      "cards": [
+        {
+          "front": "Gemini 4 Argon",
+          "back": "Google's new frontier model, released to general availability for developers, enterprises and consumers as its top-end option for hard reasoning, with a robotics variant alongside. Independent benchmarks largely confirmed Google's claims. Arrived the same week as Meta's frontier-tier Muse Wonder."
+        },
+        {
+          "front": "Muse (Meta) — the agent UX lesson",
+          "back": "Meta's conversational AI agent, covered on Lenny's Podcast with design director Alex Cornell. The core design bet: one interface that works for a total novice and an engineer alike, rather than separate modes. Demos included shopping catalogues, golf recaps and turning a blog post into a podcast."
+        },
+        {
+          "front": "Silent agent degradation",
+          "back": "The failure mode where an agent's answers get worse while operational metrics like latency and error rates stay healthy. AWS's nine-stage evaluation framework addresses it with staged evals from first commit through live traffic, scoring the agent's whole trajectory (its sequence of steps), not just the final output."
+        },
+        {
+          "front": "Idle compaction (Claude Code)",
+          "back": "Claude Code automatically summarises a large conversation that's been sitting idle, before the one-hour prompt cache expires, so resuming after a break isn't slow or expensive. Release 2.1.302 added a /config toggle to turn it off. Distinct from normal compaction, which fires when the context window fills."
+        },
+        {
+          "front": "Interpretability findings (Anthropic)",
+          "back": "Research into what happens inside a model, discussed by Emmanuel Ameisen on Lenny's Podcast: models plan ahead rather than purely improvising token by token, and they sometimes produce post-hoc explanations that don't match the actual internal process. Implication: a model's stated reasoning is not proof of its real reasoning."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does Claude Code's new idle compaction do?",
+          "options": [
+            "Summarises a conversation left idle before its prompt cache expires",
+            "Ends a request that has been waiting on a usage limit too long",
+            "Switches an idle session to a smaller, cheaper model automatically",
+            "Replaces @-mentioned file contents with a shorter file path reference"
+          ],
+          "answer": 0,
+          "why": "Idle compaction summarises large idle conversations ahead of the one-hour prompt cache expiry. The other options describe real but separate Claude Code features from the same release cycle: the unattended retry cap, auto-mode model selection, and the @-mention path toggle."
+        },
+        {
+          "q": "According to AWS's production evaluation framework, what makes failing agents hard to catch?",
+          "options": [
+            "Answer quality drifts while latency and error metrics stay healthy",
+            "Token prices change, so the same workload quietly costs more",
+            "Older model versions get deprecated without warning to callers",
+            "Permission scopes narrow over time, so tool calls start failing"
+          ],
+          "answer": 1,
+          "why": "Wait — the correct choice is the first option: AWS's point is that quality degrades silently because standard operational dashboards still look green, which is why staged evaluation and trajectory scoring are needed."
+        },
+        {
+          "q": "Why does each turn of a long agent conversation tend to take longer than the last?",
+          "options": [
+            "The growing conversation is reprocessed as context unless it's cached",
+            "The model's reasoning effort level escalates as the task continues",
+            "The model weights are reloaded into memory between every request",
+            "The remaining output token budget shrinks as the session continues"
+          ],
+          "answer": 0,
+          "why": "Models are stateless, so the whole accumulated conversation is sent and processed again each turn; reusing the cached context (KV cache) is what cuts time-to-first-token."
+        }
+      ],
+      "stale": [
+        {
+          "unit": "b0",
+          "note": "The compaction section says compaction happens when the context window gets full, or manually via /compact. Claude Code 2.1.299 added idle compaction: it also auto-compacts large conversations that have been sitting idle, before the one-hour prompt cache expires. Version 2.1.302 then added a /config toggle to turn idle compaction on or off. Worth adding both, since the reader will see context shrink without hitting any limit."
+        },
+        {
+          "unit": "c1",
+          "note": "'Models are stateless: each request starts from zero... that's why long chats get slower and cost more' is now only half the story. Prompt caching and KV-cache reuse mean the already-processed context can be reused rather than recomputed; AWS reported up to 3x better time-to-first-token for multi-turn agents using bi-directional KV transfer. The conversation is still re-sent, but it isn't necessarily reprocessed from scratch."
+        },
+        {
+          "unit": "c2",
+          "note": "The 'who makes the models' section frames Meta as a second-tier player known for open-weights Llama. This week Meta Superintelligence Labs released Muse Wonder and Wonder Full, positioned in the same capability tier as top Claude releases, plus the open-weight coding model Muse Spark now deployable from Amazon SageMaker JumpStart. Meta should be listed alongside Anthropic, OpenAI and Google as a frontier lab, and the open-weights example updated beyond Llama."
+        },
+        {
+          "unit": "c2",
+          "note": "The frontier-lab list mentions Google (Gemini) generically; it should now name Gemini 4 Argon as Google's current top-end model, generally available to developers, enterprises and consumers, with a robotics variant. Also note Grok 4.7 is now available on Bedrock with four selectable reasoning-effort levels, which makes the 'effort' discussion in this unit concrete on the reader's own stack."
+        }
+      ]
+    },
+    {
       "weekOf": "2026-10-12",
       "created": "2026-10-12T19:40:32.660Z",
       "headline": "Cheap models and hard guardrails: Haiku 5.5 lands on Bedrock, GPT-6 ships a generated UI, and Anthropic's own agents go off-script",
@@ -4259,34 +4502,24 @@
   ],
   "stale": [
     {
-      "unit": "c2",
-      "note": "Pricing table lists 'Claude Haiku 4.5: $1 in / $5 out' as current. Haiku 4.5 has been replaced by Claude Haiku 5.5, which AWS describes as roughly 75% cheaper than the previous Haiku generation. Update the model name and price.",
-      "flagged": "2026-10-12T19:40:32.660Z"
-    },
-    {
-      "unit": "c2",
-      "note": "The 'Tiers: big, balanced, fast' section describes Haiku generically; it should now note that the current Haiku (5.5) has a 1M-token context window, which breaks the old assumption that the cheap tier also has the smallest context.",
-      "flagged": "2026-10-12T19:40:32.660Z"
-    },
-    {
-      "unit": "c2",
-      "note": "'As of September 2026' dating on the pricing section is now out of date — Haiku 5.5 shipped in October 2026, so the whole price block needs a refresh and a new date stamp.",
-      "flagged": "2026-10-12T19:40:32.660Z"
-    },
-    {
-      "unit": "c2",
-      "note": "The frontier-lab list mentions OpenAI (GPT) without version context; GPT-6 has now rolled out globally in ChatGPT with a generative 'Intelligent UI' layer, and Mistral has previewed Large 4 (1T params, 49B active). Worth refreshing the landscape examples.",
-      "flagged": "2026-10-12T19:40:32.660Z"
-    },
-    {
-      "unit": "c2",
-      "note": "Open-weights examples cite only Meta's Llama, Mistral and DeepSeek. Reflection's Beam (501B MoE, 23B active) is a new US open-weights entrant worth adding.",
-      "flagged": "2026-10-12T19:40:32.660Z"
-    },
-    {
       "unit": "b0",
-      "note": "The harness list ('Cursor, Cline and Copilot's agent mode') could add that Claude Code's default Haiku model is now claude-haiku-5-5 with 1M context, since the unit already names Opus/Sonnet/Haiku as the model options.",
-      "flagged": "2026-10-12T19:40:32.660Z"
+      "note": "The compaction section says compaction happens when the context window gets full, or manually via /compact. Claude Code 2.1.299 added idle compaction: it also auto-compacts large conversations that have been sitting idle, before the one-hour prompt cache expires. Version 2.1.302 then added a /config toggle to turn idle compaction on or off. Worth adding both, since the reader will see context shrink without hitting any limit.",
+      "flagged": "2026-10-19T16:51:20.143Z"
+    },
+    {
+      "unit": "c1",
+      "note": "'Models are stateless: each request starts from zero... that's why long chats get slower and cost more' is now only half the story. Prompt caching and KV-cache reuse mean the already-processed context can be reused rather than recomputed; AWS reported up to 3x better time-to-first-token for multi-turn agents using bi-directional KV transfer. The conversation is still re-sent, but it isn't necessarily reprocessed from scratch.",
+      "flagged": "2026-10-19T16:51:20.143Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The 'who makes the models' section frames Meta as a second-tier player known for open-weights Llama. This week Meta Superintelligence Labs released Muse Wonder and Wonder Full, positioned in the same capability tier as top Claude releases, plus the open-weight coding model Muse Spark now deployable from Amazon SageMaker JumpStart. Meta should be listed alongside Anthropic, OpenAI and Google as a frontier lab, and the open-weights example updated beyond Llama.",
+      "flagged": "2026-10-19T16:51:20.143Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The frontier-lab list mentions Google (Gemini) generically; it should now name Gemini 4 Argon as Google's current top-end model, generally available to developers, enterprises and consumers, with a robotics variant. Also note Grok 4.7 is now available on Bedrock with four selectable reasoning-effort levels, which makes the 'effort' discussion in this unit concrete on the reader's own stack.",
+      "flagged": "2026-10-19T16:51:20.143Z"
     }
   ]
 }

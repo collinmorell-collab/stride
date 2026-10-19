@@ -7250,5 +7250,45 @@
   "d6c06ffc09": {
     "source": "simon-willison",
     "at": "2026-10-18T13:47:37.001Z"
+  },
+  "58ba945ca6": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-19T16:49:38.206Z"
+  },
+  "88f1e2c230": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-19T16:49:38.206Z"
+  },
+  "4c6c987b65": {
+    "source": "anthropic",
+    "at": "2026-10-19T16:49:38.848Z"
+  },
+  "13d5315f51": {
+    "source": "claude-code",
+    "at": "2026-10-19T16:49:40.212Z"
+  },
+  "d400a62569": {
+    "source": "aws-ml",
+    "at": "2026-10-19T16:49:40.416Z"
+  },
+  "06c322e581": {
+    "source": "aws-ml",
+    "at": "2026-10-19T16:49:40.416Z"
+  },
+  "83ef29d513": {
+    "source": "aws-ml",
+    "at": "2026-10-19T16:49:40.416Z"
+  },
+  "a1d4cde3e7": {
+    "source": "aws-ml",
+    "at": "2026-10-19T16:49:40.416Z"
+  },
+  "b8a89dddc6": {
+    "source": "simon-willison",
+    "at": "2026-10-19T16:49:40.535Z"
+  },
+  "12899128ec": {
+    "source": "simon-willison",
+    "at": "2026-10-19T16:49:40.535Z"
   }
 }
