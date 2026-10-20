@@ -1,6 +1,121 @@
 {
-  "updated": "2026-10-19T16:51:20.145Z",
+  "updated": "2026-10-20T14:44:55.685Z",
   "items": [
+    {
+      "id": "ff7d6b6860",
+      "date": "2026-10-19T23:32:19.000Z",
+      "added": "2026-10-20T14:44:55.682Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Bedrock now guarantees valid JSON from Claude models",
+      "summary": "Amazon Bedrock added structured outputs for all Anthropic Claude models: you supply a JSON Schema and the model's reply is guaranteed to match it, removing hand-written parsing, retries and cleanup code in agent pipelines.",
+      "why": "Your production agents run on Bedrock; this removes a common source of flaky failures when an agent's output feeds another system.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "a2",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Structured outputs (LLM)",
+          "back": "A mode where the model is forced to return data matching a schema you define, instead of free-form text you must parse."
+        },
+        {
+          "front": "JSON Schema",
+          "back": "A written description of what fields a JSON object must have and their types — used to validate or constrain output."
+        },
+        {
+          "front": "Why structured outputs matter for agents",
+          "back": "Downstream code (Lambda, APIs, tools) needs predictable fields; guaranteed schema compliance removes parsing and retry logic."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does enabling structured outputs with a JSON Schema on Bedrock actually change?",
+          "options": [
+            "The model's response is constrained to match the fields and types you defined",
+            "The model is given more context window to work with on long inputs",
+            "The model's answers are checked for factual accuracy before being returned",
+            "The model routes the request to a cheaper variant of the same model"
+          ],
+          "answer": 0,
+          "why": "Structured outputs constrain the response format to your schema; they say nothing about accuracy, cost or context size."
+        }
+      ]
+    },
+    {
+      "id": "af02b0baed",
+      "date": "2026-10-19T23:58:25.000Z",
+      "added": "2026-10-20T14:44:55.682Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/19/my-obituary-for-programming/",
+      "category": "pm",
+      "title": "What programmers lose when coding agents take over",
+      "summary": "Simon Willison highlights an essay mourning the craft of programming: the enjoyable logic-puzzle part of the job is being absorbed by coding agents, shifting developers toward review, specification and orchestration work.",
+      "why": "Useful empathy and vocabulary for leading engineers through the agent shift, and a hint at where your own leverage as a PM grows.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "fb236cc542",
+      "date": "2026-10-20T05:21:52.000Z",
+      "added": "2026-10-20T14:44:55.682Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-not-much-happened-today-f09",
+      "category": "labs",
+      "title": "Quiet day, but three new fast models shipped",
+      "summary": "A roundup notes DeepSeek V4.1 Flash, MiniMax M3.1 Flash and Mercury 3 launching the same day — all cheap, speed-focused models not yet in wide use, signalling continued commoditisation at the low-latency tier.",
+      "why": "Keeps your mental map of the model landscape current: fast, cheap tiers are multiplying and may undercut your agent costs.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7a364f356a",
+      "date": "2026-10-19T12:00:00.000Z",
+      "added": "2026-10-20T14:44:55.682Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/low-resource-programming-languages",
+      "category": "labs",
+      "title": "OpenAI targets languages models are bad at, including COBOL",
+      "summary": "OpenAI published work and evaluations on improving coding help for low-resource languages — those with little public training data — including SQLite work and COBOL-to-modern migration benchmarks.",
+      "why": "Explains why AI coding help feels uneven across stacks, and flags legacy-migration as an emerging AI product opportunity.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "1288e651f2",
+      "date": "2026-10-19T21:34:39.000Z",
+      "added": "2026-10-20T14:44:55.682Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.304",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.304: clearer plugin and permission behaviour",
+      "summary": "This release mostly refines plugins: the transcript now tells you when one plugin skips another's hook, and tools can require a human decision, so approval must come from the permission dialog rather than being auto-granted.",
+      "why": "If you use plugins, you get visible reasons for skipped hooks and stronger guarantees that risky actions wait for your approval.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "88f1e2c230",
       "date": "2026-10-19T12:04:52.000Z",
