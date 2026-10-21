@@ -1,6 +1,225 @@
 {
-  "updated": "2026-10-20T14:44:55.685Z",
+  "updated": "2026-10-21T14:54:42.285Z",
   "items": [
+    {
+      "id": "5787abc2d3",
+      "date": "2026-10-20T21:31:12.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/claude-code-for-growth",
+      "category": "claude-code",
+      "title": "A Claude Code \"operating system\" for growth work",
+      "summary": "Aakash Gupta and James McAulay walk through using Claude Code for growth tasks — analysis, experiment design, reporting — and share a reusable prompt/skill setup non-engineers can drop into their own repo.",
+      "why": "You already use Claude Code daily; this gives you a concrete PM-shaped workflow instead of ad-hoc prompting.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "What is a CLAUDE.md file?",
+          "back": "A project file Claude Code reads automatically at session start, holding standing context and rules — the backbone of a reusable 'operating system' for recurring work."
+        },
+        {
+          "front": "Why run growth analysis in Claude Code instead of a chat window?",
+          "back": "It can read your real files, run commands, and save outputs — so the workflow is repeatable and version-controlled, not one-off."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What makes Claude Code able to repeat a growth workflow reliably week after week?",
+          "options": [
+            "Persistent project instructions and files it reads each session",
+            "A larger context window than the chat interface offers",
+            "Automatic fine-tuning of the model on your past sessions",
+            "Built-in memory of every previous conversation you've had"
+          ],
+          "answer": 0,
+          "why": "Repeatability comes from files on disk (CLAUDE.md, skills, scripts) that get re-read each run — not from model memory or fine-tuning."
+        }
+      ]
+    },
+    {
+      "id": "dd8a8739a4",
+      "date": "2026-10-20T15:57:59.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "One Useful Thing (Ethan Mollick)",
+      "link": "https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts",
+      "category": "pm",
+      "title": "Ethan Mollick: 30 months of AI progress, in charts",
+      "summary": "Mollick marks his new book with a chart-led review of how model capability, cost, and adoption have moved over two and a half years, and what has stayed stubbornly unchanged in how organisations use AI.",
+      "why": "A fast, visual way to calibrate your mental model of AI progress — useful ammunition for roadmap and strategy conversations.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Why do capability charts outpace adoption charts?",
+          "back": "Model benchmarks improve fast, but organisational workflow, trust, and process change are the real bottleneck to value."
+        },
+        {
+          "front": "What does 'on the exponential' mean in practice for a PM?",
+          "back": "Plan for the model you'll have in 6–12 months, not today's — but ship against today's reliability."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "According to the recurring argument in Mollick's work, what most limits the business value companies get from AI?",
+          "options": [
+            "Organisational workflow and process change",
+            "The context window size of frontier models",
+            "The cost per token of inference",
+            "The availability of GPUs in cloud regions"
+          ],
+          "answer": 0,
+          "why": "Capability and cost have improved rapidly; diffusion into real workflows is the lagging constraint."
+        }
+      ]
+    },
+    {
+      "id": "0fff47054c",
+      "date": "2026-10-21T13:04:19.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/claude-mods",
+      "category": "claude-code",
+      "title": "Claude Mods: turning the agent harness toward the human",
+      "summary": "Latent Space argues Claude Mods points to an 'attention interface' — instead of the scaffolding around an agent serving the model, it's designed to surface what the human needs to see and decide.",
+      "why": "Useful framing for designing agent UX: the hard product problem is directing human attention, not just orchestrating tool calls.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "60dd51ea95",
+      "date": "2026-10-20T16:22:24.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/discover-tools-at-runtime-with-aws-agent-registry/",
+      "category": "builders",
+      "title": "AWS Agent Registry: agents that find their tools at runtime",
+      "summary": "AWS introduces a registry where an orchestrator semantically searches for MCP servers and A2A agents while running, instead of hardcoding every tool at build time — a pattern for agents with hundreds of tools.",
+      "why": "Directly relevant to your Bedrock stack, and explains why tool sprawl breaks agents and how teams solve it.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "e5ce86047b",
+      "date": "2026-10-20T15:57:57.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-eon-built-multi-cloud-investigation-with-an-mcp-gateway-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "One MCP gateway instead of credentials everywhere",
+      "summary": "Eon replaced per-tool credentials and locally running MCP servers across three clouds with a single authenticated AgentCore gateway, cutting new-engineer setup from two days to two minutes for 100+ devs and agents.",
+      "why": "A clean illustration of why centralised MCP access control matters once agents leave your laptop and hit production.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a6e1fb4e07",
+      "date": "2026-10-21T05:01:26.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/tenex",
+      "category": "pm",
+      "title": "Selling AI outcomes, not seats, to the Fortune 2000",
+      "summary": "Tenex's founders discuss building an AI-native software development lifecycle for large enterprises, charging for outcomes rather than licences, and the messy last mile of getting big organisations to actually adopt agents.",
+      "why": "Pricing-for-outcomes and enterprise adoption friction are two of the live debates you'll face shipping AI features.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "edef63b51a",
+      "date": "2026-10-21T07:00:00.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/building-chatgpt-ad-stack",
+      "category": "pm",
+      "title": "How OpenAI designed ads inside ChatGPT",
+      "summary": "OpenAI explains its LLM-based ad system: inferring intent from conversation, keeping sponsored content visually and logically separate from answers, and ranking relevance at scale without eroding trust.",
+      "why": "A rare public teardown of monetising an AI assistant while protecting trust — exactly the trade-off you'll argue about.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "61f4d0141f",
+      "date": "2026-10-21T12:00:00.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/openai-models-google-cloud",
+      "category": "labs",
+      "title": "OpenAI models arrive on Google Cloud",
+      "summary": "OpenAI's frontier models and Codex workflows are becoming available through Google Cloud's Model Garden and Marketplace, continuing the trend of frontier models being distributed across rival clouds.",
+      "why": "Reinforces that model choice is decoupling from cloud choice — relevant when you weigh Bedrock lock-in.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "4f8bcbb83b",
+      "date": "2026-10-20T16:42:53.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/access-openai-gpt-models-on-amazon-bedrock-from-canada-with-cross-region-inference/",
+      "category": "builders",
+      "title": "GPT-6 family on Bedrock, now reachable from Canada",
+      "summary": "AWS enables cross-Region inference so Canadian regions can call OpenAI GPT-5.6, GPT-6 and GPT-6.1 on Bedrock, with notes on inference profiles, IAM permissions, and the Converse and Responses APIs.",
+      "why": "Your agents run on Bedrock; cross-Region inference profiles are the mechanism that decides which models you can actually call.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "e35546215d",
+      "date": "2026-10-21T03:16:31.000Z",
+      "added": "2026-10-21T14:54:42.283Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.306 fixes false 'prompt is too long' errors",
+      "summary": "This patch stops sessions with many MCP tools from mislabelling API errors as context-length failures and triggering needless compaction, and fixes a bogus 'Not logged in' message in cloud sessions.",
+      "why": "If you load lots of MCP servers, you may have been hitting fake context-limit errors and unnecessary compactions.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "ff7d6b6860",
       "date": "2026-10-19T23:32:19.000Z",
