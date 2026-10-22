@@ -1,6 +1,172 @@
 {
-  "updated": "2026-10-21T14:54:42.285Z",
+  "updated": "2026-10-22T14:54:38.581Z",
   "items": [
+    {
+      "id": "a76f8995ad",
+      "date": "2026-10-21T20:25:18.000Z",
+      "added": "2026-10-22T14:54:38.578Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/claude-duet-is-beautiful-i-still",
+      "category": "pm",
+      "title": "Lenny tests Claude Duet: a gorgeous personal agent he kept forgetting to use",
+      "summary": "Lenny puts Anthropic's new personal agent Claude Duet through real work tasks, asking whether great design is enough to overcome \"agent fatigue\" — the habit problem of remembering to delegate to an agent at all.",
+      "why": "You live in Claude Code; this shows where Anthropic is taking agents beyond the terminal, and why adoption is a habit problem, not a capability one.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "What is Claude Duet?",
+          "back": "Anthropic's personal agent product — a polished, consumer-style agent for everyday work tasks, distinct from the developer-focused Claude Code."
+        },
+        {
+          "front": "\"Agent fatigue\"",
+          "back": "When users stop reaching for AI agents not because they're bad, but because remembering to delegate isn't yet a habit; adoption, not capability, is the bottleneck."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "According to Lenny's test, what mainly limited Claude Duet's usefulness?",
+          "options": [
+            "He kept forgetting to delegate work to it at all",
+            "It could not connect to any external tools or data",
+            "Its answers were markedly less accurate than Claude's chat",
+            "It required writing code to set up each new task"
+          ],
+          "answer": 0,
+          "why": "His verdict was about habit and recall — the agent was well designed, but he defaulted to doing the work himself."
+        }
+      ]
+    },
+    {
+      "id": "181d9eb73f",
+      "date": "2026-10-21T23:36:47.000Z",
+      "added": "2026-10-22T14:54:38.578Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/5-production-challenges-in-multi-agent-systems-and-how-deep-insight-solved-them/",
+      "category": "builders",
+      "title": "Five things that break multi-agent systems in production (and AWS fixes)",
+      "summary": "AWS names the five walls teams hit when moving multi-agent prototypes to production: orchestration, choosing a model per agent, reliability, safely running generated code, and monitoring — illustrated with an open-source system.",
+      "why": "This is exactly your company's stack and the gap between demo agents and the production agents you want to help ship.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Why pick a different model per agent in a multi-agent system?",
+          "back": "Cheap/fast small models handle routine sub-tasks; expensive frontier models handle hard reasoning. Per-agent choice controls cost and latency without losing quality."
+        },
+        {
+          "front": "Why is agent-generated code run in a sandbox?",
+          "back": "Generated code is untrusted — a sandbox (isolated execution environment) limits what it can touch so a bad or malicious script can't damage systems or leak data."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Which pair are both named as production challenges for multi-agent systems?",
+          "options": [
+            "Orchestration between agents and secure execution of generated code",
+            "Model pre-training cost and GPU cluster scheduling",
+            "Dataset labelling quality and human annotator throughput",
+            "Tokenizer selection and embedding dimension tuning"
+          ],
+          "answer": 0,
+          "why": "The five challenges are orchestration, per-agent model selection, reliable operation, secure code execution and monitoring — all deployment concerns, not training concerns."
+        }
+      ]
+    },
+    {
+      "id": "4e2ec0dca8",
+      "date": "2026-10-22T07:42:44.000Z",
+      "added": "2026-10-22T14:54:38.578Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/ainews-openais-patch-the-planet-program",
+      "category": "labs",
+      "title": "AI agents found critical PHP flaws affecting most of the web",
+      "summary": "OpenAI's \"Patch the Planet\" program used frontier models to uncover remote-code-execution vulnerabilities in core PHP, coordinating a two-month disclosure with maintainers before this week's emergency patches.",
+      "why": "A concrete milestone: agents doing real security research. Expect AI-found vulnerabilities and AI-assisted patching to become normal pressure on your eng teams.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "a1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "2a72004265",
+      "date": "2026-10-21T22:17:02.000Z",
+      "added": "2026-10-22T14:54:38.578Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.307",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.307 adds safety-event telemetry and an API version switch",
+      "summary": "New release emits a telemetry event every time a permission rule, sandbox, hook, or safety check blocks or questions a tool call, plus a command to bump Claude API code to the latest API version, and a model-not-found fix.",
+      "why": "The safety-event stream is how teams audit what Claude Code was stopped from doing — useful ammo when your org asks about agent governance.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b6a64fed47",
+      "date": "2026-10-21T21:23:26.000Z",
+      "added": "2026-10-22T14:54:38.578Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/adaptive-agentic-intelligence-framework-using-strands-agents/",
+      "category": "builders",
+      "title": "Routing easy tasks to small local models and hard ones to Bedrock",
+      "summary": "AWS demos a framework where small on-device language models handle routine requests and only complex ones escalate to larger models on Bedrock, using an IoT monitoring example to show the cost/latency tradeoff.",
+      "why": "Model routing is the main lever for cutting agent cost without hurting quality — a decision you'll be asked to weigh in on.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "63c31ca523",
+      "date": "2026-10-22T06:00:00.000Z",
+      "added": "2026-10-22T14:54:38.578Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/forward-deployed-engineering-means",
+      "category": "pm",
+      "title": "What a \"forward deployed engineer\" actually does at OpenAI",
+      "summary": "OpenAI explains its forward deployed engineering role: embedding with customers to build working AI systems rather than selling or supporting them, bridging product, model limits and real workflows.",
+      "why": "A useful lens on how AI companies turn models into deployed value — and a role shape your own team may need.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "1b6cbb04dc",
+      "date": "2026-10-22T14:03:40.000Z",
+      "added": "2026-10-22T14:54:38.578Z",
+      "source": "Latent Space",
+      "link": "https://www.latent.space/p/the-recommendation-engine-for-commodity",
+      "category": "pm",
+      "title": "Building an AI product that fits an expert's existing workflow",
+      "summary": "Moshi's founder discusses turning messy commodity-market data into recommendations traders will actually act on, and why AI tooling for expert users must slot into existing habits instead of replacing them.",
+      "why": "A clean case study in AI product design for expert users — adoption comes from workflow fit, not model quality.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "5787abc2d3",
       "date": "2026-10-20T21:31:12.000Z",

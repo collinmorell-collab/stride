@@ -7470,5 +7470,89 @@
   "b88101e5b9": {
     "source": "latent-space",
     "at": "2026-10-21T14:53:55.772Z"
+  },
+  "a76f8995ad": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-22T14:53:57.661Z"
+  },
+  "b12d9d8f20": {
+    "source": "anthropic",
+    "at": "2026-10-22T14:53:58.642Z"
+  },
+  "63c31ca523": {
+    "source": "openai",
+    "at": "2026-10-22T14:53:58.888Z"
+  },
+  "4ab93569e2": {
+    "source": "openai",
+    "at": "2026-10-22T14:53:58.888Z"
+  },
+  "2ed22a61b2": {
+    "source": "openai",
+    "at": "2026-10-22T14:53:58.888Z"
+  },
+  "d3f519557f": {
+    "source": "openai",
+    "at": "2026-10-22T14:53:58.888Z"
+  },
+  "9201054eeb": {
+    "source": "openai",
+    "at": "2026-10-22T14:53:58.888Z"
+  },
+  "b2deaf97c9": {
+    "source": "openai",
+    "at": "2026-10-22T14:53:58.888Z"
+  },
+  "e66e9796ba": {
+    "source": "deepmind",
+    "at": "2026-10-22T14:53:59.378Z"
+  },
+  "831ab4bfc7": {
+    "source": "claude-code",
+    "at": "2026-10-22T14:53:59.607Z"
+  },
+  "2a72004265": {
+    "source": "claude-code",
+    "at": "2026-10-22T14:53:59.607Z"
+  },
+  "a872764d5e": {
+    "source": "aws-ml",
+    "at": "2026-10-22T14:53:59.735Z"
+  },
+  "181d9eb73f": {
+    "source": "aws-ml",
+    "at": "2026-10-22T14:53:59.735Z"
+  },
+  "b6a64fed47": {
+    "source": "aws-ml",
+    "at": "2026-10-22T14:53:59.735Z"
+  },
+  "11335792ef": {
+    "source": "aws-ml",
+    "at": "2026-10-22T14:53:59.735Z"
+  },
+  "287298ad05": {
+    "source": "aws-ml",
+    "at": "2026-10-22T14:53:59.735Z"
+  },
+  "952285572a": {
+    "source": "simon-willison",
+    "at": "2026-10-22T14:53:59.860Z"
+  },
+  "6c1da1b548": {
+    "source": "simon-willison",
+    "at": "2026-10-22T14:53:59.860Z"
+  },
+  "00c66b5eda": {
+    "source": "simon-willison",
+    "at": "2026-10-22T14:53:59.860Z"
+  },
+  "1b6cbb04dc": {
+    "source": "latent-space",
+    "at": "2026-10-22T14:54:00.018Z"
+  },
+  "4e2ec0dca8": {
+    "source": "latent-space",
+    "at": "2026-10-22T14:54:00.018Z"
   }
 }
