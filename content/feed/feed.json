@@ -1,6 +1,213 @@
 {
-  "updated": "2026-10-22T14:54:38.581Z",
+  "updated": "2026-10-23T14:43:09.864Z",
   "items": [
+    {
+      "id": "86405d6d1e",
+      "date": "2026-10-22T00:00:00.000Z",
+      "added": "2026-10-23T14:43:09.861Z",
+      "source": "Anthropic",
+      "link": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "category": "labs",
+      "title": "Anthropic hands Agent Skills to a vendor-neutral foundation",
+      "summary": "Anthropic donated the Agent Skills standard — folder-based instructions plus files that teach an agent a repeatable task — to the Linux Foundation's Agentic AI Foundation, so other vendors' agents can adopt the same format.",
+      "why": "Skills you write for Claude Code may soon run in other agents too, so investing in them is lower-risk for your team.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "What is an Agent Skill?",
+          "back": "A folder of instructions (plus optional scripts/files) that teaches an agent how to do a specific recurring task, loaded only when relevant."
+        },
+        {
+          "front": "Why donate a standard to a foundation?",
+          "back": "Vendor-neutral governance makes other companies willing to adopt it, so the format becomes portable instead of locked to one product."
+        },
+        {
+          "front": "Skill vs MCP server",
+          "back": "A Skill is instructions/know-how for the agent; an MCP server is a connection that gives the agent live tools and data."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does making Agent Skills a vendor-neutral standard most directly change for a team?",
+          "options": [
+            "Skills written once can be reused across different AI coding agents",
+            "Skills run faster because the agent caches them between sessions",
+            "Skills replace the need for a model to call external tools",
+            "Skills let the agent fine-tune the underlying model on your code"
+          ],
+          "answer": 0,
+          "why": "Open, neutral governance is about portability and adoption across vendors — not speed, tool calls, or training."
+        }
+      ]
+    },
+    {
+      "id": "fd3ae03361",
+      "date": "2026-10-22T07:42:44.000Z",
+      "added": "2026-10-23T14:43:09.861Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-openais-patch-the-planet-program/",
+      "category": "labs",
+      "title": "AI models reportedly found critical flaws in core PHP affecting much of the web",
+      "summary": "Reports say an OpenAI security program used a frontier model to uncover serious remote-code-execution bugs in core PHP, disclosed over a two-month coordinated response. Signals a shift to AI-driven vulnerability discovery at internet scale.",
+      "why": "Expect security questions about AI-found bugs and AI-written code to land on your roadmap and your Lambda/Bedrock services.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "a1"
+      ],
+      "cards": [
+        {
+          "front": "Coordinated disclosure",
+          "back": "Reporting a vulnerability privately to maintainers and agreeing a timeline to patch before the details are published."
+        },
+        {
+          "front": "Why does AI change vulnerability research?",
+          "back": "Models can scan huge codebases cheaply, so both defenders and attackers find more bugs faster — patch cadence matters more."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is 'coordinated disclosure' in software security?",
+          "options": [
+            "Privately telling maintainers about a flaw and publishing only after a fix ships",
+            "Publishing full exploit details immediately so users can defend themselves",
+            "Paying researchers a bounty before they are allowed to test a system",
+            "Rotating all production credentials after a suspected breach is detected"
+          ],
+          "answer": 0,
+          "why": "Coordinated disclosure gives maintainers time to patch before details become public; the others describe full disclosure, bug bounties, and incident response."
+        }
+      ]
+    },
+    {
+      "id": "27825e3003",
+      "date": "2026-10-22T19:00:00.000Z",
+      "added": "2026-10-23T14:43:09.861Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/decisions-api",
+      "category": "builders",
+      "title": "OpenAI ships a 'Decisions API' for fast, cheap classification calls",
+      "summary": "A new endpoint aimed at small, low-latency judgement calls inside apps — routing, classifying, approving — rather than long generative responses, priced and tuned for high-volume decision points.",
+      "why": "Most agent latency and cost hides in small decisions; this is a pattern you can copy on Bedrock too.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "d85b259ea5",
+      "date": "2026-10-22T22:18:57.000Z",
+      "added": "2026-10-23T14:43:09.861Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.309",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.309 tightens sandbox escapes",
+      "summary": "Bug-fix release: sandboxed Bash commands no longer run shell startup files outside the sandbox, deny-write rules now follow symlinks correctly, and sandboxed or auto-accepted edits can no longer modify protected config.",
+      "why": "If you use auto-accept edits or sandboxed Bash daily, this closes paths where Claude could change things you thought were protected.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b1",
+        "a3"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "f27a2223f1",
+      "date": "2026-10-22T23:40:49.000Z",
+      "added": "2026-10-23T14:43:09.861Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/product-manager-salary-hiring-report-2026",
+      "category": "pm",
+      "title": "2026 PM pay and hiring data, by level and region",
+      "summary": "Aakash Gupta combines Levels.fyi data with a survey of 276 PMs to map 2026 compensation by seniority, company size and country, plus where hiring demand is actually concentrated.",
+      "why": "Concrete benchmarks for your next review or job move, and a read on which PM skills the market is paying for.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "03f220919b",
+      "date": "2026-10-22T16:25:57.000Z",
+      "added": "2026-10-23T14:43:09.861Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-rescale-built-an-ai-triage-agent-with-strands-agents-and-ai-dlc/",
+      "category": "builders",
+      "title": "A structured 'AI-driven development lifecycle' used to ship a triage agent",
+      "summary": "Rescale built a test-triage agent on Bedrock with the Strands Agents framework, using AWS's AI-DLC process to break work into AI-assisted phases — and is now spreading that way of working across engineering.",
+      "why": "Closest thing to a playbook for how your Bedrock-and-Lambda team could standardise agent development, not just one-off prototypes.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "cb51b79b07",
+      "date": "2026-10-21T05:01:26.000Z",
+      "added": "2026-10-23T14:43:09.861Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/tenex/",
+      "category": "pm",
+      "title": "Selling AI outcomes, not seats: Tenex on enterprise adoption",
+      "summary": "Alex Lieberman and CJ Hess discuss building an AI-native software lifecycle for large enterprises, charging for outcomes instead of licences, and why the hard part is the last mile of adoption.",
+      "why": "Outcome-based pricing and adoption friction are the two AI product debates you'll face in roadmap and pricing meetings.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "12d4585120",
+      "date": "2026-10-21T13:04:19.000Z",
+      "added": "2026-10-23T14:43:09.861Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/claude-mods/",
+      "category": "claude-code",
+      "title": "Claude Mods and the idea of an 'attention interface'",
+      "summary": "An essay arguing agent harnesses have been designed for the model; Claude Mods instead shapes what the human sees and approves, turning the harness into an interface for directing your attention.",
+      "why": "Useful framing for designing agent UX: the product question is what the human must look at, not what the model can do.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6018ea9507",
+      "date": "2026-10-21T06:54:09.000Z",
+      "added": "2026-10-23T14:43:09.861Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-deepseek-deepinfer-open-source/",
+      "category": "labs",
+      "title": "DeepSeek open-sources a high-throughput inference stack",
+      "summary": "DeepSeek released DeepInfer, an open inference system claimed to serve enormous token volumes per cluster at high margin, with a fast hardware payback — more downward pressure on what model serving should cost.",
+      "why": "Inference costs set your agent's unit economics; open stacks like this push Bedrock-style pricing down over time.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "a76f8995ad",
       "date": "2026-10-21T20:25:18.000Z",
