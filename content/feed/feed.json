@@ -1,6 +1,155 @@
 {
-  "updated": "2026-10-23T14:43:09.864Z",
+  "updated": "2026-10-24T13:52:12.750Z",
   "items": [
+    {
+      "id": "2e71264ea8",
+      "date": "2026-10-23T19:40:54.000Z",
+      "added": "2026-10-24T13:52:12.745Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/23/kimi-k31-pro/",
+      "category": "labs",
+      "title": "Kimi K3.1 Pro lands, with open weights promised for November",
+      "summary": "Moonshot released Kimi K3.1 Pro via API, pledging to publish full model weights by Nov 4. A \"Highspeed\" tier runs 2-3x faster for double the price, with cached input tokens priced the same.",
+      "why": "Open-weight frontier models change your build-vs-buy math and what Bedrock may host next; also a clear example of speed-vs-price tiering.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Open weights vs. closed model",
+          "back": "Open weights means the trained model file is downloadable, so anyone can self-host or fine-tune it. Closed models are only reachable through the provider's API."
+        },
+        {
+          "front": "Why do providers charge less for cached input tokens?",
+          "back": "Repeated prompt prefixes (system prompts, long context) can be stored and reused, so the provider skips recomputation and passes on the saving."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A lab says its new model will have \"open weights\" next month. What does that actually let you do?",
+          "options": [
+            "Download and run the model on your own infrastructure",
+            "Call the model's API without usage rate limits",
+            "See the training data used to build the model",
+            "Get the model's reasoning traces with every response"
+          ],
+          "answer": 0,
+          "why": "Open weights release the trained parameters for self-hosting or fine-tuning; it says nothing about training data, rate limits, or reasoning traces."
+        }
+      ]
+    },
+    {
+      "id": "6fc2c0f171",
+      "date": "2026-10-23T16:21:36.000Z",
+      "added": "2026-10-24T13:52:12.745Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/",
+      "category": "builders",
+      "title": "Bayer's multi-agent platform on Bedrock: five production design decisions",
+      "summary": "Bayer Crop Science built a natural-language multi-agent analytics assistant on Amazon Bedrock AgentCore. The write-up covers the architecture, five key design choices, and what they had to add to make it operationally production-ready.",
+      "why": "Your production agents run on Bedrock; this is a concrete template for routing, agent boundaries and operational readiness you can borrow.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Multi-agent architecture",
+          "back": "Instead of one giant prompt, a router or supervisor agent delegates to specialised sub-agents (each with its own tools and instructions) and combines their results."
+        },
+        {
+          "front": "Bedrock AgentCore",
+          "back": "AWS's managed runtime for hosting agents: handles sessions, memory, tool/gateway access and identity so you don't build the agent plumbing yourself."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why do teams split a production assistant into several specialised agents instead of one large one?",
+          "options": [
+            "Each agent keeps a narrower toolset and instruction scope, which improves reliability",
+            "Multiple agents let you avoid paying for input tokens on each call",
+            "Splitting agents removes the need for evaluation before releasing changes",
+            "Separate agents guarantee the model will not hallucinate any answers"
+          ],
+          "answer": 0,
+          "why": "Narrower scope per agent reduces tool confusion and prompt bloat; it doesn't eliminate token costs, evals, or hallucination."
+        }
+      ]
+    },
+    {
+      "id": "27b067f2e1",
+      "date": "2026-10-23T23:39:00.000Z",
+      "added": "2026-10-24T13:52:12.745Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.310",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.310 adds a Monitor tool and fixes gateway failures",
+      "summary": "This release introduces a Monitor tool plus plugin monitors for Bedrock, Vertex and Foundry setups, blocks long foreground sleeps there, and fixes requests that failed behind gateways rejecting a newer beta header or mid-conversation system messages.",
+      "why": "If your Claude Code hits Bedrock through a company gateway, this upgrade likely removes mysterious request failures and adds monitoring.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "4fe4a52829",
+      "date": "2026-10-24T07:18:29.000Z",
+      "added": "2026-10-24T13:52:12.745Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-kimi-31/",
+      "category": "labs",
+      "title": "Open-weight models are now roughly a month behind the frontier",
+      "summary": "A roundup argues the newest Chinese open-weight release performs close to top closed models, shrinking the capability gap to around a month, while also shipping a faster paid API tier. Treat the hype framing with some scepticism.",
+      "why": "The shrinking closed-vs-open gap affects pricing leverage, vendor choice and which models your platform team can realistically self-host.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6c7366eae8",
+      "date": "2026-10-23T15:19:48.000Z",
+      "added": "2026-10-24T13:52:12.745Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ai-is-getting-good-at-math/",
+      "category": "labs",
+      "title": "Why AI keeps getting better at maths — and what that predicts",
+      "summary": "An analysis of model progress on mathematical problems finds a pattern in which kinds of problems fall first, offering a way to anticipate which reasoning tasks models will crack next.",
+      "why": "A useful mental model for forecasting which product features become feasible next quarter rather than guessing from benchmark headlines.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "bc7694eb15",
+      "date": "2026-10-23T17:48:54.000Z",
+      "added": "2026-10-24T13:52:12.745Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/",
+      "category": "builders",
+      "title": "Training agents on outcomes, not steps: multi-turn RL on SageMaker",
+      "summary": "AWS walks through multi-turn reinforcement learning, where an agent is rewarded for completing a whole task rather than individual labelled steps, using Wordle as the example across deployment, data prep, training and evaluation.",
+      "why": "Explains the technique behind today's agentic models and why outcome-based evaluation beats step-by-step scoring in your own agent work.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "86405d6d1e",
       "date": "2026-10-22T00:00:00.000Z",
