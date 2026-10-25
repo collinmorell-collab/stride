@@ -1,6 +1,100 @@
 {
-  "updated": "2026-10-24T13:52:12.750Z",
+  "updated": "2026-10-25T14:08:34.215Z",
   "items": [
+    {
+      "id": "a1d2b210a5",
+      "date": "2026-10-25T12:31:34.000Z",
+      "added": "2026-10-25T14:08:34.211Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/an-86-minute-guide-to-finding-pmf",
+      "category": "pm",
+      "title": "Rob Snyder's PULL framework for actually finding product-market fit",
+      "summary": "A long-form masterclass from an advisor who's helped 50+ startups reach $1M ARR. Argues PMF comes from demand you can feel pulling you, not from pushing features, and lays out how to test for it.",
+      "why": "PMF thinking is the core PM skill; this gives you a concrete, testable framework instead of vague vision talk for your own roadmap bets.",
+      "score": 10,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "What does 'pull' mean in product-market fit terms?",
+          "back": "Customers actively drag the product forward — chasing you, paying early, improvising workarounds — instead of you pushing features and hoping for adoption."
+        },
+        {
+          "front": "Why do most PMF efforts fail, per Snyder?",
+          "back": "Teams treat PMF as a product-building problem and scale too early, rather than first finding a specific situation where demand already exists."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "According to the 'pull' view of product-market fit, what is the strongest early signal?",
+          "options": [
+            "Customers push to buy or use it before it is polished",
+            "A rising number of signups from paid acquisition channels",
+            "Positive feedback from users during moderated interviews",
+            "A roadmap validated by senior stakeholders and analysts"
+          ],
+          "answer": 0,
+          "why": "Pull means demand drags the product forward; surveys, ad-driven signups and internal validation can all look good without real demand."
+        }
+      ]
+    },
+    {
+      "id": "95ad285f18",
+      "date": "2026-10-24T15:11:42.000Z",
+      "added": "2026-10-25T14:08:34.212Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/community-wisdom-negotiating-a-lowball",
+      "category": "pm",
+      "title": "Community Q&A: lowball offers, designer influence, and how to build an MCP server",
+      "summary": "Reader-sourced advice covering salary negotiation after a low offer, how designers earn real input on product decisions, and a pointer list of resources for building your own MCP server.",
+      "why": "The MCP thread is a practical on-ramp to extending Claude Code yourself; the negotiation and influence advice is directly usable in your PM role.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0"
+      ],
+      "cards": [
+        {
+          "front": "MCP (Model Context Protocol)",
+          "back": "An open standard that lets an AI assistant connect to external tools and data sources through a small server you can run or install."
+        },
+        {
+          "front": "Why build your own MCP server?",
+          "back": "To give Claude Code access to your company's specific systems — docs, tickets, internal APIs — rather than only generic built-in tools."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does an MCP server actually do for a tool like Claude Code?",
+          "options": [
+            "Exposes external tools and data the assistant can call",
+            "Hosts the language model weights used for responses",
+            "Stores the conversation history between you and the model",
+            "Converts your prompts into cheaper, smaller model calls"
+          ],
+          "answer": 0,
+          "why": "MCP is a connection standard for tools and data; the model itself, chat history and routing are handled elsewhere."
+        }
+      ]
+    },
+    {
+      "id": "3812b4d599",
+      "date": "2026-10-24T03:59:57.000Z",
+      "added": "2026-10-25T14:08:34.212Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/24/battledrones/",
+      "category": "builders",
+      "title": "Simon Willison ships a four-player game mode mostly by prompting",
+      "summary": "Willison added a new four-player map to his browser game by writing a detailed specification prompt and letting the model implement it, then publishing the prompt alongside the release.",
+      "why": "A clear example of how specific a prompt must be to get working code — useful calibration for your own Claude Code requests.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "2e71264ea8",
       "date": "2026-10-23T19:40:54.000Z",
