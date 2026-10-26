@@ -1,6 +1,125 @@
 {
-  "updated": "2026-10-25T14:08:34.215Z",
+  "updated": "2026-10-26T16:35:37.251Z",
   "items": [
+    {
+      "id": "c6373e1c52",
+      "date": "2026-10-26T12:04:20.000Z",
+      "added": "2026-10-26T16:34:25.486Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/why-reddit-built-its-own-ai-prototyping",
+      "category": "pm",
+      "title": "How Reddit's design team prototypes with a custom Figma MCP + Cursor pipeline",
+      "summary": "Reddit's principal UX engineer walks through an in-house prototyping setup: a custom Figma MCP server feeds design context to Cursor, letting designers go from blank slate to shareable, production-shaped prototypes without touching Git.",
+      "why": "A concrete template for giving your design and PM team AI prototyping power, and a clear example of what an MCP server actually does.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "What is an MCP server?",
+          "back": "A small service that exposes tools and data (e.g. Figma files) to an AI coding agent through the Model Context Protocol, so the agent can fetch real context instead of guessing."
+        },
+        {
+          "front": "Why build a custom MCP instead of using the default one?",
+          "back": "To shape exactly what context the model gets — design tokens, components, conventions — so output matches your production system rather than generic code."
+        },
+        {
+          "front": "'Production-shaped prototype'",
+          "back": "A prototype built with your real design system and code patterns, so engineers can reuse it rather than rebuild from scratch."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Reddit's workflow, what role does the custom Figma MCP server play?",
+          "options": [
+            "It gives the AI coding tool structured access to design files and components",
+            "It converts Figma frames directly into a deployed web application",
+            "It fine-tunes a model on Reddit's past design decisions",
+            "It stores prototype versions so designers avoid using Git"
+          ],
+          "answer": 0,
+          "why": "MCP servers expose tools and context to an agent; the model still writes the code, and version storage or fine-tuning isn't what MCP does."
+        }
+      ]
+    },
+    {
+      "id": "2f03fd1eed",
+      "date": "2026-10-26T15:00:53.000Z",
+      "added": "2026-10-26T16:34:25.486Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-ai-claude-duet-honest-review",
+      "category": "pm",
+      "title": "How I AI roundup: an honest review of Claude's 'Duet' and Reddit's prototyping stack",
+      "summary": "This week's How I AI episodes pair a candid hands-on assessment of Anthropic's Duet collaboration feature with Reddit's custom AI prototyping pipeline — practical takes on where these tools help real product work and where they fall short.",
+      "why": "Short, practitioner-level reviews of the exact Anthropic tooling you use daily — useful before you push a new workflow to your team.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "edf59637f5",
+      "date": "2026-10-26T00:00:00.000Z",
+      "added": "2026-10-26T16:34:25.486Z",
+      "source": "Anthropic",
+      "link": "https://www.anthropic.com/news/s1-sec",
+      "category": "labs",
+      "title": "Anthropic files for an IPO",
+      "summary": "Anthropic submitted its S-1 registration to the SEC for a proposed public offering. The filing will expose revenue, model economics and customer concentration figures that labs have so far kept private.",
+      "why": "You build on Claude daily; public financials reveal pricing pressure, enterprise traction and how durable your core vendor really is.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "What is an S-1?",
+          "back": "The registration document a US company files with the SEC before going public, disclosing financials, risks and business model."
+        },
+        {
+          "front": "Why does a lab's IPO matter to product teams?",
+          "back": "Public reporting forces disclosure of revenue, margins and customer mix — signals about future pricing, roadmap stability and vendor risk."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does filing an S-1 with the SEC indicate about a company?",
+          "options": [
+            "It is preparing to sell shares to the public",
+            "It has completed a public share offering",
+            "It is raising a private round from institutions",
+            "It is being formally audited by regulators"
+          ],
+          "answer": 0,
+          "why": "An S-1 is the pre-IPO registration statement; the offering itself has not happened yet and it isn't a private round or an audit."
+        }
+      ]
+    },
+    {
+      "id": "0c0ce1d912",
+      "date": "2026-10-25T15:10:19.000Z",
+      "added": "2026-10-26T16:34:25.486Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/25/seam-cutter/",
+      "category": "builders",
+      "title": "A one-off image tool built in an afternoon, as a model for AI-assisted building",
+      "summary": "Simon Willison built a niche cropping tool that slices an image and slides the halves to remove a middle section. The point is less the tool than the habit: disposable, AI-built utilities for personal workflow friction.",
+      "why": "A good mental model for your own learning — build tiny throwaway tools with Claude Code rather than waiting for a big project.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "a1d2b210a5",
       "date": "2026-10-25T12:31:34.000Z",
@@ -4869,6 +4988,127 @@
   ],
   "weekly": [
     {
+      "weekOf": "2026-10-26",
+      "created": "2026-10-26T16:35:37.248Z",
+      "headline": "Anthropic files to go public, Agent Skills go vendor-neutral, and Bedrock quietly fixes the flakiest part of your agents",
+      "script": "Five things this week, starting with the biggest. Anthropic has filed its S-1 with the SEC for a public offering. You build on Claude every day, so this matters less as drama and more as disclosure: an S-1 forces a company to publish revenue, margins, customer concentration and the real economics of selling models. For the first time you'll get hard numbers on how durable your core vendor is, and that's useful ammunition the next time someone asks why your team standardised on Claude.\n\nSecond, Amazon Bedrock now supports structured outputs for all Anthropic Claude models. You hand the model a JSON Schema, and the reply is guaranteed to match it. That removes a whole category of flaky production failures, the ones where an agent's answer feeds into another system and occasionally comes back malformed. If your team still writes parsing and retry code around model output, they can delete a lot of it.\n\nThird, Anthropic donated the Agent Skills format to the Linux Foundation's new Agentic AI Foundation. Skills are just folders of instructions and files that teach an agent a repeatable task. Now that the format is vendor-neutral, skills your team writes for Claude Code could run in other agents too, which makes investing in them much lower risk.\n\nFourth, AWS published the five walls teams hit taking multi-agent systems to production: orchestration, picking the right model per agent, reliability, safely running generated code, and monitoring. That's the exact gap between a demo and the agents your company runs on Lambda and Bedrock. Borrow the checklist.\n\nAnd fifth, Lenny reviewed Claude Duet, Anthropic's new personal agent. His verdict: beautiful, capable, and he kept forgetting to use it. He calls it agent fatigue. The lesson for you is that adoption of AI features is a habit problem, not a capability problem, and that's a product design job.",
+      "top5": [
+        {
+          "title": "Anthropic files for an IPO",
+          "link": "https://www.anthropic.com/news/s1-sec",
+          "source": "Anthropic",
+          "why": "The S-1 will expose revenue, model economics and customer concentration for the vendor your daily workflow and production stack depend on."
+        },
+        {
+          "title": "Bedrock now guarantees valid JSON from Claude models",
+          "link": "https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/",
+          "source": "AWS Machine Learning Blog",
+          "why": "Supplying a JSON Schema and getting a guaranteed-matching reply removes one of the most common sources of flaky agent failures in your Bedrock pipelines."
+        },
+        {
+          "title": "Anthropic hands Agent Skills to a vendor-neutral foundation",
+          "link": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+          "source": "Anthropic",
+          "why": "Skills your team writes for Claude Code are now a portable standard rather than a bet on one vendor's tool."
+        },
+        {
+          "title": "Five things that break multi-agent systems in production (and AWS fixes)",
+          "link": "https://aws.amazon.com/blogs/machine-learning/5-production-challenges-in-multi-agent-systems-and-how-deep-insight-solved-them/",
+          "source": "AWS Machine Learning Blog",
+          "why": "A named checklist of the exact gap between demo agents and the production agents your company runs on Bedrock and Lambda."
+        },
+        {
+          "title": "Lenny tests Claude Duet: a gorgeous personal agent he kept forgetting to use",
+          "link": "https://www.lennysnewsletter.com/p/claude-duet-is-beautiful-i-still",
+          "source": "Lenny's Newsletter",
+          "why": "Shows where Anthropic is taking agents beyond the terminal, and makes the case that AI adoption is a habit design problem, not a model capability one."
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is an S-1, and why does Anthropic's matter to you?",
+          "back": "An S-1 is the registration document a company files with the SEC before going public. Anthropic filed one this week. It forces disclosure of revenue, margins, customer concentration and model economics — the first hard numbers on how durable your main AI vendor is."
+        },
+        {
+          "front": "Structured outputs on Amazon Bedrock",
+          "back": "You supply a JSON Schema with your request and the Claude model's reply is guaranteed to conform to it. Now available for all Anthropic Claude models on Bedrock. Removes hand-written parsing, retries and cleanup code when one agent's output feeds another system."
+        },
+        {
+          "front": "Agent Skills — what they are and what changed",
+          "back": "A Skill is a folder of instructions plus supporting files that teaches an agent a repeatable task. Anthropic donated the format to the Linux Foundation's Agentic AI Foundation, making it vendor-neutral, so other companies' agents can adopt the same format."
+        },
+        {
+          "front": "The five production walls for multi-agent systems (AWS)",
+          "back": "1) Orchestration between agents, 2) choosing the right model per agent, 3) reliability, 4) safely running model-generated code, 5) monitoring and observability. These are the gap between a working prototype and a production agent."
+        },
+        {
+          "front": "Agent fatigue",
+          "back": "The habit problem Lenny hit testing Claude Duet: the agent works well, but you keep forgetting to delegate to it. Implication for PMs — adoption of agentic features is usually a workflow and habit design problem, not a model capability problem."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does Bedrock's new structured outputs feature for Claude models actually guarantee?",
+          "options": [
+            "The reply conforms to a JSON Schema you supply with the request",
+            "The reply is fact-checked against your source documents before returning",
+            "The reply is cached, so repeated identical requests cost less",
+            "The reply is routed to the cheapest Claude tier that meets quality"
+          ],
+          "answer": 0,
+          "why": "Structured outputs constrain the shape of the output to a schema you define. It is about format reliability, not accuracy, caching or model routing."
+        },
+        {
+          "q": "What changed this week for Anthropic's Agent Skills format?",
+          "options": [
+            "It was donated to a vendor-neutral foundation so other agents can adopt it",
+            "It was restricted to Anthropic's enterprise plans with a paid registry",
+            "It replaced the Model Context Protocol as the way agents reach tools",
+            "It became a hosted service that runs skills on Anthropic's servers"
+          ],
+          "answer": 0,
+          "why": "Anthropic gave the Skills standard to the Linux Foundation's Agentic AI Foundation, making it a shared format rather than an Anthropic-only one. It complements MCP rather than replacing it."
+        },
+        {
+          "q": "Why do multi-turn agent conversations tend to get slower with each turn?",
+          "options": [
+            "The whole growing conversation is re-sent and reprocessed each turn",
+            "The model keeps learning from the chat, which adds compute overhead",
+            "A fresh network connection is opened to the provider on every turn",
+            "The effort or thinking level is raised automatically as chats lengthen"
+          ],
+          "answer": 0,
+          "why": "Models are stateless, so each turn resends the full accumulated context, which must be processed again. Reusing cached context (the KV cache) is the standard fix for time-to-first-token."
+        }
+      ],
+      "stale": [
+        {
+          "unit": "b1",
+          "note": "The tool list is now incomplete: Claude Code 2.1.310 added a Monitor tool plus plugin monitors for Bedrock, Vertex and Foundry setups. Also worth adding to the permissions section — recent releases let a tool require an explicit human decision in the permission dialog, so it can never be auto-granted, and safety blocks now emit telemetry events."
+        },
+        {
+          "unit": "b1",
+          "note": "MCP is described as the only shared standard for connecting things to agents. As of this week there is a second vendor-neutral standard alongside it: Agent Skills, donated by Anthropic to the Linux Foundation's Agentic AI Foundation (folder-based instructions that teach an agent a repeatable task)."
+        },
+        {
+          "unit": "c1",
+          "note": "\"That's why long chats get slower and cost more\" is now only half true. Prompt/KV caching changes the economics: AWS showed reusing cached context between serving nodes cuts time-to-first-token by up to 3x, and vendors such as Moonshot price cached input tokens at the same rate on faster tiers. Statelessness still holds, but resent context is not always re-billed or reprocessed at full price."
+        },
+        {
+          "unit": "c2",
+          "note": "The framing that Bedrock is where you get \"the same Claude models, different front door\" is out of date. Bedrock now also serves OpenAI GPT-5.6, GPT-6 and GPT-6.1 (newly reachable from Canada via cross-Region inference profiles) and third-party models like TwelveLabs Pegasus 1.5 for video. Separately, OpenAI's models are now distributed via Google Cloud's Model Garden — model choice is decoupling from cloud choice."
+        },
+        {
+          "unit": "c2",
+          "note": "\"Closed models are usually the most capable\" needs softening: this week's Kimi K3.1 Pro release (open weights promised for 4 November) prompted analysts to put the open-vs-closed capability gap at roughly a month. The open-weights example list should also be updated — Moonshot (Kimi) belongs alongside Meta, Mistral and DeepSeek."
+        },
+        {
+          "unit": "c2",
+          "note": "The pricing table is labelled \"as of September 2026\" and should be re-checked before being quoted; note also that tiering now often includes a speed dimension, not just capability — Kimi K3.1 Pro ships a \"Highspeed\" tier running 2-3x faster for double the price."
+        }
+      ]
+    },
+    {
       "weekOf": "2026-10-19",
       "created": "2026-10-19T16:51:20.143Z",
       "headline": "Gemini 4 Argon ships and Meta crashes the frontier party, while the real PM work shifts to agent UX, evals and context hygiene",
@@ -5452,24 +5692,34 @@
   ],
   "stale": [
     {
-      "unit": "b0",
-      "note": "The compaction section says compaction happens when the context window gets full, or manually via /compact. Claude Code 2.1.299 added idle compaction: it also auto-compacts large conversations that have been sitting idle, before the one-hour prompt cache expires. Version 2.1.302 then added a /config toggle to turn idle compaction on or off. Worth adding both, since the reader will see context shrink without hitting any limit.",
-      "flagged": "2026-10-19T16:51:20.143Z"
+      "unit": "b1",
+      "note": "The tool list is now incomplete: Claude Code 2.1.310 added a Monitor tool plus plugin monitors for Bedrock, Vertex and Foundry setups. Also worth adding to the permissions section — recent releases let a tool require an explicit human decision in the permission dialog, so it can never be auto-granted, and safety blocks now emit telemetry events.",
+      "flagged": "2026-10-26T16:35:37.248Z"
+    },
+    {
+      "unit": "b1",
+      "note": "MCP is described as the only shared standard for connecting things to agents. As of this week there is a second vendor-neutral standard alongside it: Agent Skills, donated by Anthropic to the Linux Foundation's Agentic AI Foundation (folder-based instructions that teach an agent a repeatable task).",
+      "flagged": "2026-10-26T16:35:37.248Z"
     },
     {
       "unit": "c1",
-      "note": "'Models are stateless: each request starts from zero... that's why long chats get slower and cost more' is now only half the story. Prompt caching and KV-cache reuse mean the already-processed context can be reused rather than recomputed; AWS reported up to 3x better time-to-first-token for multi-turn agents using bi-directional KV transfer. The conversation is still re-sent, but it isn't necessarily reprocessed from scratch.",
-      "flagged": "2026-10-19T16:51:20.143Z"
+      "note": "\"That's why long chats get slower and cost more\" is now only half true. Prompt/KV caching changes the economics: AWS showed reusing cached context between serving nodes cuts time-to-first-token by up to 3x, and vendors such as Moonshot price cached input tokens at the same rate on faster tiers. Statelessness still holds, but resent context is not always re-billed or reprocessed at full price.",
+      "flagged": "2026-10-26T16:35:37.248Z"
     },
     {
       "unit": "c2",
-      "note": "The 'who makes the models' section frames Meta as a second-tier player known for open-weights Llama. This week Meta Superintelligence Labs released Muse Wonder and Wonder Full, positioned in the same capability tier as top Claude releases, plus the open-weight coding model Muse Spark now deployable from Amazon SageMaker JumpStart. Meta should be listed alongside Anthropic, OpenAI and Google as a frontier lab, and the open-weights example updated beyond Llama.",
-      "flagged": "2026-10-19T16:51:20.143Z"
+      "note": "The framing that Bedrock is where you get \"the same Claude models, different front door\" is out of date. Bedrock now also serves OpenAI GPT-5.6, GPT-6 and GPT-6.1 (newly reachable from Canada via cross-Region inference profiles) and third-party models like TwelveLabs Pegasus 1.5 for video. Separately, OpenAI's models are now distributed via Google Cloud's Model Garden — model choice is decoupling from cloud choice.",
+      "flagged": "2026-10-26T16:35:37.248Z"
     },
     {
       "unit": "c2",
-      "note": "The frontier-lab list mentions Google (Gemini) generically; it should now name Gemini 4 Argon as Google's current top-end model, generally available to developers, enterprises and consumers, with a robotics variant. Also note Grok 4.7 is now available on Bedrock with four selectable reasoning-effort levels, which makes the 'effort' discussion in this unit concrete on the reader's own stack.",
-      "flagged": "2026-10-19T16:51:20.143Z"
+      "note": "\"Closed models are usually the most capable\" needs softening: this week's Kimi K3.1 Pro release (open weights promised for 4 November) prompted analysts to put the open-vs-closed capability gap at roughly a month. The open-weights example list should also be updated — Moonshot (Kimi) belongs alongside Meta, Mistral and DeepSeek.",
+      "flagged": "2026-10-26T16:35:37.248Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The pricing table is labelled \"as of September 2026\" and should be re-checked before being quoted; note also that tiering now often includes a speed dimension, not just capability — Kimi K3.1 Pro ships a \"Highspeed\" tier running 2-3x faster for double the price.",
+      "flagged": "2026-10-26T16:35:37.248Z"
     }
   ]
 }

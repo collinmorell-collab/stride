@@ -7766,5 +7766,29 @@
   "3812b4d599": {
     "source": "simon-willison",
     "at": "2026-10-25T14:08:08.858Z"
+  },
+  "2f03fd1eed": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-26T16:33:55.935Z"
+  },
+  "c6373e1c52": {
+    "source": "lenny-newsletter",
+    "at": "2026-10-26T16:33:55.935Z"
+  },
+  "edf59637f5": {
+    "source": "anthropic",
+    "at": "2026-10-26T16:33:56.498Z"
+  },
+  "eb7708c5f5": {
+    "source": "openai",
+    "at": "2026-10-26T16:33:56.741Z"
+  },
+  "be77c96c39": {
+    "source": "google-ai",
+    "at": "2026-10-26T16:33:57.105Z"
+  },
+  "0c0ce1d912": {
+    "source": "simon-willison",
+    "at": "2026-10-26T16:33:57.740Z"
   }
 }
