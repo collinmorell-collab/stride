@@ -1,6 +1,213 @@
 {
-  "updated": "2026-10-26T16:35:37.251Z",
+  "updated": "2026-10-27T15:46:48.724Z",
   "items": [
+    {
+      "id": "b021226a01",
+      "date": "2026-10-27T07:24:59.000Z",
+      "added": "2026-10-27T15:46:48.721Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-anthropic-s1/",
+      "category": "labs",
+      "title": "Anthropic files for a $2T IPO",
+      "summary": "Anthropic's S-1 filing reveals ~1400% growth, 85% gross margin, a $1B operating profit in Q2, $134B cash, and that nearly half its revenue flows through cloud partners like AWS Bedrock.",
+      "why": "Your main work tool's vendor is about to go public; the numbers show Claude is a durable platform bet, not a startup gamble.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "What is an S-1?",
+          "back": "The public filing a US company submits before an IPO, disclosing financials, risks and business model."
+        },
+        {
+          "front": "Why does '48% of revenue through cloud partners' matter?",
+          "back": "Much of Anthropic's income arrives via resellers like AWS Bedrock and Google Cloud — the same channel your production agents use."
+        },
+        {
+          "front": "Gross margin vs operating profit",
+          "back": "Gross margin = revenue minus direct cost of serving (compute). Operating profit = what's left after all running costs, including R&D."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Anthropic's filing, what does the 85% margin figure most directly describe?",
+          "options": [
+            "Revenue left after the direct compute cost of serving models",
+            "Share of total revenue that comes from enterprise customers",
+            "Portion of training runs that finish without a failure",
+            "Fraction of queries answered without human escalation"
+          ],
+          "answer": 0,
+          "why": "Gross margin measures revenue minus the direct cost of delivering the service — mainly inference compute for a model lab."
+        }
+      ]
+    },
+    {
+      "id": "d44490076c",
+      "date": "2026-10-26T17:27:20.000Z",
+      "added": "2026-10-27T15:46:48.721Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Prompt caching for agents on Amazon Bedrock",
+      "summary": "AWS explains how prompt caching works for OpenAI models on Bedrock: an agent normally re-sends its whole context (tools, instructions, history) every step, and caching that stable prefix cuts both input cost and latency.",
+      "why": "Your company's agents run on Bedrock Lambda; caching the stable prompt prefix is one of the cheapest wins you can ask your team for.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Prompt caching",
+          "back": "Reusing the already-processed stable start of a prompt (system instructions, tool definitions, prior turns) so the model doesn't re-read it each call."
+        },
+        {
+          "front": "Why are agent loops expensive?",
+          "back": "Each step resends the entire growing context as input tokens, so cost and latency climb with every tool call."
+        },
+        {
+          "front": "What must stay fixed for a cache hit?",
+          "back": "The prefix — identical system prompt, tool list and earlier messages, in the same order. Changing anything early invalidates the cache."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does prompt caching save money in a multi-step agent?",
+          "options": [
+            "The repeated start of the prompt isn't reprocessed as fresh input tokens",
+            "The model produces shorter output once it has seen a request before",
+            "Tool calls are batched together and billed as a single invocation",
+            "Cached answers are returned without calling the model at all"
+          ],
+          "answer": 0,
+          "why": "Caching stores the processed stable prefix, so those input tokens are billed cheaper and skipped in processing; the model still runs each turn."
+        }
+      ]
+    },
+    {
+      "id": "51b6dc0210",
+      "date": "2026-10-26T23:53:07.000Z",
+      "added": "2026-10-27T15:46:48.721Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/26/gpt-61-terra/",
+      "category": "labs",
+      "title": "GPT-6.1 Terra leads with computer use, not benchmarks",
+      "summary": "OpenAI's new fast, efficient model is pitched on visual reasoning and computer use — driving a screen like a person. Simon Willison notes what a launch chooses to emphasise says a lot about intended uses.",
+      "why": "Computer-use agents are the next product surface; knowing which model is positioned where helps you judge build-vs-wait decisions.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6eac475f74",
+      "date": "2026-10-26T23:31:46.000Z",
+      "added": "2026-10-27T15:46:48.721Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/how-to-steal-your-way-to-a-hit-product",
+      "category": "pm",
+      "title": "Mark Pincus on copying your way to a hit product",
+      "summary": "The Zynga founder's 'Proven Better New' framework: start from something already proven, make it meaningfully better, add one new twist — and test demand with a fake door before building anything.",
+      "why": "A concrete, reusable framing for deciding what to build next and how to validate it before burning your team's quarter.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "64d59b55a8",
+      "date": "2026-10-26T10:00:00.000Z",
+      "added": "2026-10-27T15:46:48.721Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/chatgpt-expanding-world-of-work",
+      "category": "pm",
+      "title": "OpenAI data on how people actually use ChatGPT at work",
+      "summary": "OpenAI published usage signals across 165 work activities in nearly 100 countries, showing which tasks people hand to AI and how that mix shifts over time.",
+      "why": "Rare real-world adoption data you can cite when arguing which workflows in your product deserve AI features first.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7644611dfa",
+      "date": "2026-10-26T17:15:14.000Z",
+      "added": "2026-10-27T15:46:48.721Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-agentic-retrieval-on-a-managed-amazon-bedrock-knowledge-base-with-cdk/",
+      "category": "builders",
+      "title": "A reference architecture for agentic retrieval on Bedrock",
+      "summary": "AWS walks through an agent that routes across two Bedrock Knowledge Bases, retrieves via AgentCore Gateway, returns cited answers, and ships with layered observability plus on-demand and continuous evaluation — all as one deployable package.",
+      "why": "Close to your stack: shows what 'production-grade' RAG actually includes — routing, citations, observability and ongoing evaluation.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "38313c82af",
+      "date": "2026-10-26T21:51:23.000Z",
+      "added": "2026-10-27T15:46:48.721Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.311",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.311 fixes startup and file-edit freezes",
+      "summary": "This release kills long hangs at startup and after reading or editing files when a CLAUDE.md is present, adds a tip surfacing the Explanatory output style, and adds idle-session flags for self-hosted runners.",
+      "why": "If Claude Code has felt sluggish on repos with a CLAUDE.md, update — and try Explanatory style when you want the reasoning spelled out.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "34adadfb17",
+      "date": "2026-10-26T19:00:25.000Z",
+      "added": "2026-10-27T15:46:48.721Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/26/jason-koebler/",
+      "category": "pm",
+      "title": "ChatGPT is sending frustrated users to a news site for support",
+      "summary": "404 Media reports ChatGPT confidently tells people the outlet can fix their tech problems. A vivid example of a confident model inventing a support path because platforms hide human help.",
+      "why": "A cautionary tale about hallucinated next steps in support flows — and about what happens when your product removes human escape hatches.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6c51131286",
+      "date": "2026-10-27T14:41:25.000Z",
+      "added": "2026-10-27T15:46:48.721Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/offline-coding/",
+      "category": "builders",
+      "title": "Running a coding agent fully offline",
+      "summary": "A walkthrough of pairing OpenCode with Ollama and a local Qwen model so a coding agent works with no internet — useful for understanding what parts of an agent are cloud-dependent.",
+      "why": "A cheap way to learn agent plumbing hands-on, and to see how local open models compare with Claude in practice.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2",
+        "a3"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "c6373e1c52",
       "date": "2026-10-26T12:04:20.000Z",
