@@ -1,6 +1,203 @@
 {
-  "updated": "2026-10-27T15:46:48.724Z",
+  "updated": "2026-10-28T16:28:25.886Z",
   "items": [
+    {
+      "id": "f41fca18f2",
+      "date": "2026-10-28T12:04:22.000Z",
+      "added": "2026-10-28T16:28:25.882Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/grok-vs-dot-vs-muse-vs-claude-duet",
+      "category": "pm",
+      "title": "Lenny ranks four personal AI agents across nine real tasks",
+      "summary": "Lenny benchmarks Grok Bot, Dot, Muse and Claude Duet on nine everyday work and life tasks, scoring each, and concludes different agents win for professional execution versus personal assistance.",
+      "why": "A PM-friendly evaluation framework you can copy: define real tasks, score agents, and pick tools on evidence rather than hype.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Why evaluate agents on your own task set instead of benchmarks?",
+          "back": "Public benchmarks don't reflect your workflows; a scored set of real recurring tasks exposes reliability, tone and tool-use gaps that matter to you."
+        },
+        {
+          "front": "\"Agent\" vs \"chatbot\"",
+          "back": "A chatbot answers; an agent plans multi-step work, calls tools/apps, and acts on your behalf until a goal is done."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main advantage of a task-based head-to-head agent comparison over published leaderboard scores?",
+          "options": [
+            "It measures performance on the specific work you actually do repeatedly",
+            "It guarantees the model with the largest context window will win",
+            "It reflects the training data size each lab used for the model",
+            "It removes the need to check outputs for accuracy afterwards"
+          ],
+          "answer": 0,
+          "why": "Personal task suites capture your real workflows; leaderboards average over generic tasks that may not resemble your job."
+        }
+      ]
+    },
+    {
+      "id": "de0ff86e4f",
+      "date": "2026-10-27T18:53:10.000Z",
+      "added": "2026-10-28T16:28:25.882Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/opus55/",
+      "category": "builders",
+      "title": "Anthropic on building agents: separate the model's \"brain\" from its \"hands\"",
+      "summary": "Anthropic's Katelyn Lesse and Angela Jiang describe how they ship Claude with Claude: splitting reasoning from tool execution, running managed agents reliably at scale, and the platform engineering behind Opus 5.5.",
+      "why": "Direct guidance on architecting production agents — exactly what your Lambda+Bedrock agents need to be reliable and safe.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "\"Separating the brain from the hands\" in agent design",
+          "back": "Keep the model's reasoning/planning separate from the tool layer that executes actions, so you can test, permission and swap each independently."
+        },
+        {
+          "front": "Managed agent",
+          "back": "An agent whose execution loop, tool access and safety limits are run by a platform rather than hand-built, making behaviour more predictable."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In agent architecture, what does separating the \"brain\" from the \"hands\" mainly buy you?",
+          "options": [
+            "You can change, limit and test tool execution without retraining or swapping the model",
+            "You cut token costs by compressing the system prompt automatically",
+            "You let the model run entirely offline without any API calls",
+            "You remove the need for retries when a tool call fails"
+          ],
+          "answer": 0,
+          "why": "The split isolates reasoning from action, so permissions, testing and tool changes happen independently of the model."
+        }
+      ]
+    },
+    {
+      "id": "93b9dc1d31",
+      "date": "2026-10-28T13:55:15.000Z",
+      "added": "2026-10-28T16:28:25.882Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/28/vibe-game-development/",
+      "category": "builders",
+      "title": "Simon Willison: October 2026 is a tipping point for \"vibe\" game building",
+      "summary": "Willison argues coding agents crossed another capability threshold this month, now making playable games buildable by description alone — a follow-up to his earlier 2025 inflection point for daily-driver coding agents.",
+      "why": "A reliable signal-reader telling you model capability jumped again; useful for judging what non-engineers can now ship themselves.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5d9615019e",
+      "date": "2026-10-28T10:09:07.000Z",
+      "added": "2026-10-28T16:28:25.882Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/28/terk-terkowitz/",
+      "category": "pm",
+      "title": "Amazon's guidance: proving AI doesn't help is a valid finding",
+      "summary": "A quoted Amazon engineering guideline says that if AI tooling doesn't improve your work, that's a documented finding to share with peers and managers, not a personal failure — judgment about AI's limits is itself a skill.",
+      "why": "Useful framing for your team's AI mandates: reward honest evidence about where Claude Code or Copilot underperforms.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6a0b9071c4",
+      "date": "2026-10-28T08:50:30.000Z",
+      "added": "2026-10-28T16:28:25.882Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-anthropic-ends-coding-interviews-hunger-beats-tenure/",
+      "category": "labs",
+      "title": "Anthropic drops coding interviews as AI reshapes hiring",
+      "summary": "Anthropic reportedly stops traditional coding interviews, favouring drive and judgment over tenure, on the premise that writing code is increasingly automated — a newsletter roundup of the broader hiring shift.",
+      "why": "A visible marker of how AI changes what skills are valued — relevant to your career bet on judgment over engineering credentials.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "beaa9b2559",
+      "date": "2026-10-27T16:53:02.000Z",
+      "added": "2026-10-28T16:28:25.882Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/fix-evaluation-bias-to-unlock-better-models-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Hidden evaluation bias can hide your model's real accuracy on Bedrock",
+      "summary": "A team found 96.8% of their evaluation labels were simply inherited from the existing model, masking its true error rate. Rebuilding unbiased ground truth plus prompt optimization found a cheaper, more accurate Bedrock model.",
+      "why": "Your stack is Bedrock; if your eval labels come from the current model, you'll never see it failing or justify switching.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "d17d13a000",
+      "date": "2026-10-27T16:01:38.000Z",
+      "added": "2026-10-28T16:28:25.882Z",
+      "source": "Google DeepMind",
+      "link": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+      "category": "labs",
+      "title": "DeepMind releases Genie 4 world model",
+      "summary": "Google DeepMind announced Genie 4, a world model that generates interactive, real-time simulated environments with notably higher realism than previous versions.",
+      "why": "World models are the next frontier beyond text LLMs; worth knowing the category exists when mapping the model landscape.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a3a879144b",
+      "date": "2026-10-27T07:00:00.000Z",
+      "added": "2026-10-28T16:28:25.882Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/oracle-apps-in-chatgpt",
+      "category": "labs",
+      "title": "OpenAI and Oracle push business apps and agents into ChatGPT",
+      "summary": "An expanded OpenAI–Oracle partnership will surface Oracle business applications and agents inside ChatGPT, while Oracle builds new AI offerings on OpenAI models.",
+      "why": "Chat assistants are becoming the front door to enterprise software — a distribution shift that affects how your product gets discovered.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "3fa83c67bd",
+      "date": "2026-10-27T20:24:20.000Z",
+      "added": "2026-10-28T16:28:25.882Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.312",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.312: click-to-send queued messages",
+      "summary": "This release adds click-to-send for queued messages in fullscreen mode, plus enterprise identity options and fixes to managed organization settings.",
+      "why": "Small daily-use win: you can now click the hint under a queued message to send it immediately instead of waiting.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "b021226a01",
       "date": "2026-10-27T07:24:59.000Z",
