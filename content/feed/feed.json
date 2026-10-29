@@ -1,6 +1,187 @@
 {
-  "updated": "2026-10-28T16:28:25.886Z",
+  "updated": "2026-10-29T16:40:44.969Z",
   "items": [
+    {
+      "id": "b0da25ea6c",
+      "date": "2026-10-28T17:00:58.000Z",
+      "added": "2026-10-29T16:40:44.965Z",
+      "source": "Google DeepMind",
+      "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+      "category": "labs",
+      "title": "Google ships Gemini 4 Carbon, its new frontier model",
+      "summary": "Google DeepMind announced Gemini 4 Carbon, a new top-end model that leads several independent evaluations. Initial access is restricted to vetted cyber-defence partners rather than general availability, with wider rollout expected later.",
+      "why": "The frontier leaderboard just shifted again; you should know where Gemini sits versus Claude when choosing models for your agents.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Gemini 4 Carbon",
+          "back": "Google DeepMind's newest frontier model (Oct 2026), topping independent evals; first released to trusted cyber-defence partners before broad availability."
+        },
+        {
+          "front": "Why do labs do limited 'trusted tester' releases?",
+          "back": "To test safety and misuse risk (e.g. cyber capabilities) with vetted users before opening a powerful model to everyone."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does a 'frontier model' usually mean in AI coverage?",
+          "options": [
+            "The most capable current generation of general-purpose model from a major lab",
+            "A small model tuned to run locally on a laptop or phone",
+            "A model that only answers questions about its own training data",
+            "An open-weights model anyone can download and fine-tune freely"
+          ],
+          "answer": 0,
+          "why": "Frontier refers to the leading-edge, most capable models; size, openness and local deployment are separate dimensions."
+        }
+      ]
+    },
+    {
+      "id": "81ea71b472",
+      "date": "2026-10-28T18:28:26.000Z",
+      "added": "2026-10-29T16:40:44.965Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/building-an-agentic-ai-platform-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "AWS blueprint for running agents in production on Bedrock AgentCore",
+      "summary": "AWS published a reference architecture for a governed agent platform: a central control plane, isolated per-team environments, separate gateways for model inference and tools, and a CI/CD evaluation pipeline that must pass before an agent reaches production.",
+      "why": "Your company's agents run on Bedrock; this is the shape of a grown-up platform and gives you vocabulary for architecture conversations.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Tool gateway (agent platform)",
+          "back": "A central service agents call to reach external tools/APIs, so access, auth and logging are controlled in one place instead of per agent."
+        },
+        {
+          "front": "Evaluation gate in CI/CD",
+          "back": "An automated test step that scores an agent against a fixed set of cases; the agent can't deploy to production unless it passes."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In the AWS agent platform blueprint, what is the purpose of putting an evaluation pipeline in CI/CD?",
+          "options": [
+            "To block an agent from reaching production until it passes scored test cases",
+            "To reduce inference cost by routing requests to the cheapest available model",
+            "To let each team manage its own AWS account permissions and billing",
+            "To convert agent prompts into reusable tool definitions automatically"
+          ],
+          "answer": 0,
+          "why": "The evaluation pipeline acts as a quality gate before deployment; cost routing and account isolation are handled by other parts of the architecture."
+        }
+      ]
+    },
+    {
+      "id": "0dc3cf0b7c",
+      "date": "2026-10-28T10:00:00.000Z",
+      "added": "2026-10-29T16:40:44.965Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/the-future-of-the-firm",
+      "category": "pm",
+      "title": "OpenAI's essay on how AI reshapes the org chart",
+      "summary": "OpenAI argues AI agents will sit beneath, beside and between human roles, changing how firms coordinate work, allocate accountability and decide what stays human. A conceptual piece about org design rather than a product announcement.",
+      "why": "Useful framing for how your PM role and team structure change when agents do a growing share of the work.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "d8f853e661",
+      "date": "2026-10-28T16:45:23.000Z",
+      "added": "2026-10-29T16:40:44.966Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/28/github-octoverse-2026/",
+      "category": "builders",
+      "title": "GitHub Octoverse 2026: agent-driven development hits new highs",
+      "summary": "GitHub's annual developer report shows record commits and pushes, with a large share now involving coding agents. It tracks language shifts, new-developer growth and how agent-assisted workflows are becoming mainstream on the platform.",
+      "why": "Hard numbers on how fast agent-written code is spreading — useful evidence when you argue for AI workflow investment.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "a5"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b0fbfced4c",
+      "date": "2026-10-28T23:23:21.000Z",
+      "added": "2026-10-29T16:40:44.966Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/28/ted-sanders/",
+      "category": "pm",
+      "title": "Why model rankings don't transfer between tasks",
+      "summary": "OpenAI's Ted Sanders notes that LLM ability is multidimensional — the best model at maths isn't automatically best at humour — yet much of the variation still tracks a single factor: model size.",
+      "why": "A clean mental model for reading benchmarks: pick models per task, and treat leaderboard order as task-specific.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "18c36f7241",
+      "date": "2026-10-29T14:06:27.000Z",
+      "added": "2026-10-29T16:40:44.966Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/29/ben-hylak/",
+      "category": "pm",
+      "title": "The 'every product should be a headless MCP' joke",
+      "summary": "Ben Hylak quips that every product he uses should be a headless MCP server feeding an agent — except his own, where customers supposedly love the UI. A pointed jab at founder blind spots about interfaces.",
+      "why": "Forces the question you'll face soon: which parts of your product should be agent-callable instead of clicked by humans.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "2ad8f77a17",
+      "date": "2026-10-28T19:48:05.000Z",
+      "added": "2026-10-29T16:40:44.966Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/supabase/",
+      "category": "builders",
+      "title": "Supabase founders on building a backend agents can use",
+      "summary": "Supabase's founders discuss why agents gravitate to their platform: instant databases, predictable APIs and auth that an AI can provision without human setup, plus what breaks when agents spin up infrastructure at scale.",
+      "why": "Concrete picture of what 'backend' means and why agent-friendly infrastructure is becoming a product category of its own.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "75e2017ed4",
+      "date": "2026-10-28T13:15:00.000Z",
+      "added": "2026-10-29T16:40:44.966Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/openai-servicenow-partnership-expansion",
+      "category": "labs",
+      "title": "OpenAI and ServiceNow push agents into enterprise workflows",
+      "summary": "The two companies deepen their partnership: OpenAI models and agents get embedded in ServiceNow workflows, while ServiceNow processes become callable from ChatGPT and Codex in both directions.",
+      "why": "Signals the enterprise pattern to watch — agents embedded in systems of record, not standalone chat apps.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "f41fca18f2",
       "date": "2026-10-28T12:04:22.000Z",
