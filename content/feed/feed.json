@@ -1,6 +1,205 @@
 {
-  "updated": "2026-10-29T16:40:44.969Z",
+  "updated": "2026-10-30T16:34:12.502Z",
   "items": [
+    {
+      "id": "d820d0beaa",
+      "date": "2026-10-30T01:06:26.000Z",
+      "added": "2026-10-30T16:34:12.498Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.314",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.314 adds a hard guard against edits outside your project folder",
+      "summary": "New setting blocks Write, Edit and NotebookEdit from touching files outside your working directories in every permission mode, plus enterprise gateway routing by identity group and added guardrail options.",
+      "why": "You run Claude Code daily; this setting stops accidental edits to files outside your repo, a common and messy mistake.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "permissions.blockWritesOutsideWorkingDirectories",
+          "back": "A Claude Code setting that makes Write/Edit/NotebookEdit refuse any file path outside your configured working directories, in every permission mode."
+        },
+        {
+          "front": "What is a 'working directory' in Claude Code?",
+          "back": "The folder(s) Claude Code is allowed to treat as your project — usually where you launched it, plus any you explicitly add."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does blockWritesOutsideWorkingDirectories change in Claude Code?",
+          "options": [
+            "File-editing tools refuse paths outside your project folders in all permission modes",
+            "File-editing tools ask for approval once per session instead of per file",
+            "Bash commands are restricted to read-only operations across the whole machine",
+            "Edits are written to a staging copy and merged after you review a diff"
+          ],
+          "answer": 0,
+          "why": "The setting is a hard refusal on write paths outside the working directories, not a prompt, a Bash restriction, or a staging workflow."
+        }
+      ]
+    },
+    {
+      "id": "66eaaf2a56",
+      "date": "2026-10-29T16:54:52.000Z",
+      "added": "2026-10-30T16:34:12.499Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-moengage-turned-over-400-apis-into-agent-tools-with-agentcore-gateway/",
+      "category": "builders",
+      "title": "Turning 400 internal APIs into agent tools without blowing up context",
+      "summary": "A team exposed ~400 private REST APIs as permission-scoped agent tools via Bedrock AgentCore Gateway, using OpenAPI specs instead of custom MCP servers, Cedar policies for access, and private networking — avoiding a 400-tool context overload.",
+      "why": "Your agents run on Bedrock; this is the pattern for giving them safe access to many internal APIs without tool bloat.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b1",
+        "a1"
+      ],
+      "cards": [
+        {
+          "front": "Why can't you just give an agent 400 tools?",
+          "back": "Every tool definition consumes context window and confuses tool selection. You need a gateway that filters/searches tools and exposes only the relevant few."
+        },
+        {
+          "front": "OpenAPI spec",
+          "back": "A standard machine-readable description of a REST API's endpoints, inputs and outputs — it can be auto-converted into agent tool definitions."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why did the team route agent tool access through a gateway rather than wiring each API directly?",
+          "options": [
+            "To avoid loading hundreds of tool definitions into the model's context at once",
+            "To let the model call APIs without any authentication or permission checks",
+            "To convert REST responses into training data for a fine-tuned model",
+            "To replace OpenAPI specs with hand-written prompts for each endpoint"
+          ],
+          "answer": 0,
+          "why": "Tool-definition bloat eats the context window and degrades tool choice; the gateway scopes permissions and surfaces only relevant tools."
+        }
+      ]
+    },
+    {
+      "id": "423d32319d",
+      "date": "2026-10-30T00:58:06.000Z",
+      "added": "2026-10-30T16:34:12.499Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/pm-take-home-assignment-playbook",
+      "category": "pm",
+      "title": "Acing PM interview take-homes and presentations in the AI era",
+      "summary": "A breakdown of who assigns PM homework assignments, two worked examples, and how to use AI tools in the process without producing generic output that hiring managers now instantly recognize.",
+      "why": "Even if you're not job-hunting, these frameworks sharpen how you structure product proposals and presentations at work.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "8d9b5cf421",
+      "date": "2026-10-29T16:58:57.000Z",
+      "added": "2026-10-30T16:34:12.499Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/lend-and-borrow-resources-across-teams-with-aws-batchs-quota-management-for-sagemaker-training-jobs/",
+      "category": "builders",
+      "title": "AWS Batch can now share GPU quota across teams",
+      "summary": "New scheduling feature splits GPU capacity into per-team quota shares, automatically lends idle capacity to others, and preempts lower-priority SageMaker training jobs so urgent work runs first.",
+      "why": "Useful vocabulary on how GPU scarcity is actually managed inside companies — context for why model training timelines slip.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "1f3c261e4a",
+      "date": "2026-10-29T18:20:27.000Z",
+      "added": "2026-10-30T16:34:12.499Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/building-intent-driven-ui-testing-with-amazon-nova-act/",
+      "category": "builders",
+      "title": "Writing UI tests in plain English with Bedrock AgentCore",
+      "summary": "A team built a shared service where product teams describe tests in natural language and an agent drives real browsers hosted by AWS, replacing brittle scripted selectors with intent-based checks.",
+      "why": "A concrete, PM-friendly example of agents doing QA on your exact stack — plausible to pitch to your own team.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "672400a4a7",
+      "date": "2026-10-29T17:00:26.000Z",
+      "added": "2026-10-30T16:34:12.499Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/",
+      "category": "builders",
+      "title": "Inside a company building almost entirely with agents",
+      "summary": "A founder describes running a game studio where frontier models do most of the engineering: long autonomous runs, heavy parallelism, and new workflows for reviewing work humans didn't write.",
+      "why": "A realistic look at what fully agentic product teams look like, and which human skills become the bottleneck.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7bf0065ceb",
+      "date": "2026-10-29T17:00:00.000Z",
+      "added": "2026-10-30T16:34:12.499Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/updated-model-spec",
+      "category": "labs",
+      "title": "OpenAI rewrites its Model Spec around five core values",
+      "summary": "The updated spec defines how OpenAI wants models to behave as they become more capable: exercising judgment, preserving user agency, and staying faithful to intent rather than following literal instructions.",
+      "why": "Model Specs are the product requirements doc for a model's behavior — worth reading as a PM to see how behavior is specified.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "d28967fce9",
+      "date": "2026-10-29T09:00:00.000Z",
+      "added": "2026-10-30T16:34:12.499Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/how-we-detect-frontier-model-misalignment",
+      "category": "labs",
+      "title": "How OpenAI watches for agents going off the rails",
+      "summary": "An overview of layered monitoring used to spot misaligned model behavior and unauthorized agent actions early enough for human responders to intervene before problems compound.",
+      "why": "Monitoring and escalation design is the part of production agents PMs usually under-spec; borrow the layered approach.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "07b8277675",
+      "date": "2026-10-29T22:48:29.000Z",
+      "added": "2026-10-30T16:34:12.499Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/29/api-credits/",
+      "category": "labs",
+      "title": "OpenAI copies Anthropic's API credits perk for subscribers",
+      "summary": "Eligible ChatGPT subscription tiers now include monthly API credits, mirroring the benefit Anthropic added for Max and Team plans earlier in the month — pushing subscribers toward building with the API.",
+      "why": "If you already pay for a plan, you may have free API credits sitting unused for prototyping your own agents.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "b0da25ea6c",
       "date": "2026-10-28T17:00:58.000Z",
