@@ -1,6 +1,122 @@
 {
-  "updated": "2026-10-31T15:37:56.176Z",
+  "updated": "2026-11-01T16:36:48.952Z",
   "items": [
+    {
+      "id": "d0139d3297",
+      "date": "2026-11-01T13:31:36.000Z",
+      "added": "2026-11-01T16:36:48.948Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-a-19-year-old-intern-built-the",
+      "category": "pm",
+      "title": "Wispr Flow's growth engine: paid UGC, young hires, and marketers who avoid AI",
+      "summary": "Lenny interviews Hector Serrano, who joined Wispr Flow as a 19-year-old intern and built its paid creator-content growth machine. Covers hiring for raw hunger over resumes, and why great marketers resist AI-generated copy.",
+      "why": "A concrete playbook for AI-product growth and a counterpoint to 'AI writes everything' — useful when you shape go-to-market for AI features.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "60ae10a553",
+      "date": "2026-10-31T16:14:41.000Z",
+      "added": "2026-11-01T16:36:48.948Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/community-wisdom-the-biggest-sources",
+      "category": "pm",
+      "title": "PM community wisdom: building a 'product harness' for AI-driven development",
+      "summary": "Lenny's community roundup covers taming PM interruptions, junior PM interviews (case study vs behavioral), and how PMs can set up a repeatable 'harness' — specs, context, guardrails — so AI coding agents produce usable product work.",
+      "why": "The harness idea maps directly onto how you brief Claude Code daily; peer practices here are immediately copyable at your job.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0"
+      ],
+      "cards": [
+        {
+          "front": "What is a 'harness' around an AI coding agent?",
+          "back": "The scaffolding you give the agent — specs, context files, rules, tests and review steps — so its output is repeatable and production-usable, rather than ad-hoc prompting."
+        },
+        {
+          "front": "Why do PMs need a product harness, not just prompts?",
+          "back": "Prompts vary per person; a harness encodes product context and quality gates once, so any teammate (or agent run) produces consistent results."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In AI-assisted development, what does a 'harness' mainly provide?",
+          "options": [
+            "Reusable context, rules and checks that shape and verify the agent's output",
+            "A larger context window so the model can read the whole codebase at once",
+            "A fine-tuned private model trained on your company's past pull requests",
+            "A faster inference endpoint that reduces the cost of each agent run"
+          ],
+          "answer": 0,
+          "why": "A harness is scaffolding around the model — context, instructions, guardrails, verification — not a change to the model itself or its serving infrastructure."
+        }
+      ]
+    },
+    {
+      "id": "9350ae34d9",
+      "date": "2026-10-31T16:05:00.000Z",
+      "added": "2026-11-01T16:36:48.948Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/arca/",
+      "category": "builders",
+      "title": "Agents that work for days: memory, custom harnesses, and agents that ask humans",
+      "summary": "Arca's head of AI describes production agents handling multi-day financial workflows: persistent memory across sessions, a purpose-built harness instead of an off-the-shelf framework, and agents that pause to prompt humans for input.",
+      "why": "Your Lambda+Bedrock agents are short-lived; this shows the patterns needed when real work spans days and needs human checkpoints.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Long-horizon agent",
+          "back": "An agent whose task spans hours or days and multiple sessions, so it needs persistent memory, state storage and resumability rather than a single context window."
+        },
+        {
+          "front": "'Agents prompt people' pattern",
+          "back": "The agent pauses and asks a human for a decision or missing data, then resumes — turning humans into a tool the agent can call."
+        },
+        {
+          "front": "Why build a custom harness?",
+          "back": "Generic frameworks hide control over memory, retries and tool permissions; a custom harness lets you tune reliability for your specific workflow."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does a multi-day agent workflow need persistent memory outside the model?",
+          "options": [
+            "Context windows reset between sessions, so state must be stored and reloaded",
+            "Models forget their system prompt after a fixed number of tool calls",
+            "Persistent memory is required before an agent can call any external tool",
+            "Long outputs degrade model weights unless results are written to a database"
+          ],
+          "answer": 0,
+          "why": "An LLM is stateless between runs; anything that must survive across sessions has to be saved externally and fed back in as context."
+        }
+      ]
+    },
+    {
+      "id": "0def4a2fca",
+      "date": "2026-10-31T23:15:22.000Z",
+      "added": "2026-11-01T16:36:48.948Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
+      "category": "labs",
+      "title": "Researchers hijacked ChatGPT accounts via the artifacts/canvas feature",
+      "summary": "Parameter Labs found a flaw in how ChatGPT renders artifacts (canvas-style documents) that allowed account takeover. A reminder that AI features rendering model-generated content create new attack surfaces.",
+      "why": "If your agents render model output in a UI, the same class of bug applies — worth raising with your engineers as a security review item.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "3d38f84a40",
       "date": "2026-10-31T05:00:48.000Z",
