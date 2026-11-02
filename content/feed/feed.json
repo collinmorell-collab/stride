@@ -1,6 +1,189 @@
 {
-  "updated": "2026-11-01T16:36:48.952Z",
+  "updated": "2026-11-02T20:01:36.818Z",
   "items": [
+    {
+      "id": "81161cac28",
+      "date": "2026-11-02T13:04:11.000Z",
+      "added": "2026-11-02T20:00:23.535Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-figmas-pms-actually-use-ai-every",
+      "category": "pm",
+      "title": "How Figma's PMs use AI daily: a shared 31-skill repo and an experiment-running agent",
+      "summary": "Figma growth PM Ezra Mechaber walks through \"PM OS,\" a shared repository of 31 reusable AI skills used by 60+ PMs, plus AutoXP, an agent that designs and runs growth experiments with one human approval step.",
+      "why": "A concrete, copyable pattern for turning your personal Claude Code habits into shared team skills and a semi-autonomous experiment loop.",
+      "score": 10,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "What is a \"skill\" in an AI coding/PM setup like Figma's PM OS?",
+          "back": "A reusable, named prompt-plus-instructions file (often with scripts/templates) stored in a repo so any teammate's agent can invoke the same workflow consistently."
+        },
+        {
+          "front": "What is a \"human checkpoint\" in an agent workflow?",
+          "back": "A deliberate pause where a person reviews and approves before the agent continues — used in AutoXP before experiments actually ship."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main advantage of storing PM AI prompts as a shared skills repo rather than each PM keeping their own prompts?",
+          "options": [
+            "Everyone gets the same reviewed workflow, and improvements spread to the whole team at once",
+            "The underlying model is fine-tuned on the team's data each time a skill is used",
+            "Prompts stored in a repo consume fewer tokens than prompts typed into the chat",
+            "It removes the need for human review because the skills are version controlled"
+          ],
+          "answer": 0,
+          "why": "A shared repo makes workflows consistent and compounding; it doesn't change the model, token costs, or the need for human checkpoints."
+        }
+      ]
+    },
+    {
+      "id": "853a62592e",
+      "date": "2026-11-02T16:02:08.000Z",
+      "added": "2026-11-02T20:00:23.535Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-ai-grok-vs-dot-vs-muse-vs-duet",
+      "category": "pm",
+      "title": "How I AI roundup: comparing Grok, Dot, Muse and Duet for everyday work",
+      "summary": "Lenny's weekly How I AI digest puts several assistants head-to-head on real tasks and bundles the Figma PM episode, giving a quick read on which tools suit which kinds of product work.",
+      "why": "Fast calibration on tools outside your Claude Code bubble, so you can argue from experience rather than vendor marketing.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5818becf10",
+      "date": "2026-11-02T17:00:58.000Z",
+      "added": "2026-11-02T20:00:23.535Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-circle-k-accelerated-devops-incident-triage-to-under-15-minutes-with-amazon-bedrock/",
+      "category": "builders",
+      "title": "Circle K's incident-triage agent: from Bedrock Flows to AgentCore",
+      "summary": "A DevOps team cut triage from ~an hour to under 15 minutes with an agentic system on Amazon Bedrock, and explains why they outgrew the visual Flows approach and rebuilt on Bedrock AgentCore.",
+      "why": "Your production agents run on Bedrock; this shows when orchestration-by-flow breaks down and what scaling to AgentCore actually involves.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Amazon Bedrock Flows vs. Bedrock AgentCore",
+          "back": "Flows is a visual, pre-defined orchestration of steps; AgentCore is runtime infrastructure for agents that decide their own next steps, with memory, tools and identity handled for you."
+        },
+        {
+          "front": "What is \"triage\" in an incident-response agent?",
+          "back": "The first step: classify the alert, gather context from logs/metrics, and route it to the right owner — before anyone attempts a fix."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why would a team move an agent from Amazon Bedrock Flows to Bedrock AgentCore as it scales?",
+          "options": [
+            "They need the agent to choose its own sequence of tool calls rather than follow a fixed path",
+            "They need the model to be retrained on their incident history after every deployment",
+            "They need to stop paying per token and switch to a flat monthly inference price",
+            "They need the agent to run on-device instead of inside the AWS cloud"
+          ],
+          "answer": 0,
+          "why": "Flows encodes a predetermined path; AgentCore supports dynamic, agent-directed tool use with managed memory and runtime. The other options aren't what either service does."
+        }
+      ]
+    },
+    {
+      "id": "de14340539",
+      "date": "2026-11-02T17:01:31.000Z",
+      "added": "2026-11-02T20:00:23.535Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-efficient-agents-with-knowledge-distillation-on-amazon-sagemaker-ai/",
+      "category": "builders",
+      "title": "Making agents cheaper by distilling a big model into a small one",
+      "summary": "AWS explains sequence-level knowledge distillation: run a frontier model to generate good agent trajectories, then train a small model to imitate them, cutting per-step cost in multi-step tool loops.",
+      "why": "Agent loops call the model many times, so unit economics bite. This is the standard lever teams pull before scaling an agent to production.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "ed4b582536",
+      "date": "2026-11-02T09:00:00.000Z",
+      "added": "2026-11-02T20:00:23.535Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/lifeval",
+      "category": "labs",
+      "title": "OpenAI's LifeVal benchmark scores AI on real-life errands",
+      "summary": "A new benchmark measures how well models help with mundane but high-stakes tasks: finding childcare, handling finances, navigating government paperwork — rather than coding or exam questions.",
+      "why": "A useful counter-example when you design evals: benchmarks should mirror your users' messy real tasks, not abstract puzzles.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6bf0704cb5",
+      "date": "2026-11-02T13:31:26.000Z",
+      "added": "2026-11-02T20:00:23.535Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/2/census-bureau-super-intelligence/",
+      "category": "pm",
+      "title": "That \"corporate AI adoption is falling\" chart was misleading",
+      "summary": "Simon Willison revisits the widely shared Census Bureau–based chart suggesting enterprise AI adoption was declining, and unpacks why the underlying survey data doesn't support the headline conclusion.",
+      "why": "You'll see this chart in strategy decks. Knowing how it was misread saves you from building a narrative on bad data.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "835fd14063",
+      "date": "2026-11-01T16:49:04.000Z",
+      "added": "2026-11-02T20:00:23.535Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/1/kyle-kingsbury/",
+      "category": "builders",
+      "title": "Kyle Kingsbury: LLM-written code erodes the signals we use to trust software",
+      "summary": "A distributed-systems tester argues that polished docs, tidy READMEs and confident changelogs no longer prove maturity, because they're now trivially generated — so evaluating dependencies needs harder evidence.",
+      "why": "When you evaluate AI tools or open-source libraries for your stack, surface polish is no longer a quality signal. Ask for tests and track record.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "cb7e6c407e",
+      "date": "2026-11-02T17:11:21.000Z",
+      "added": "2026-11-02T20:00:23.535Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/prepare-web-content-for-amazon-bedrock-knowledge-bases-with-crawl4ai/",
+      "category": "builders",
+      "title": "Cleaning up web content before it enters a Bedrock Knowledge Base",
+      "summary": "A walkthrough of using the open-source Crawl4AI crawler to render JavaScript pages, strip noise, and add metadata before dumping content into S3 for Bedrock Knowledge Bases to index.",
+      "why": "RAG quality is mostly data-prep quality. Useful vocabulary for pushing back when retrieval answers in your Bedrock stack are poor.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a1",
+        "a2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "d0139d3297",
       "date": "2026-11-01T13:31:36.000Z",
@@ -6037,6 +6220,123 @@
   ],
   "weekly": [
     {
+      "weekOf": "2026-11-02",
+      "created": "2026-11-02T20:01:36.815Z",
+      "headline": "Figma's PMs ship a shared AI skill library, Anthropic files to go public, and Gemini 4 Carbon takes the frontier crown",
+      "script": "Five things worth your walk this week.\n\nFirst, Lenny published the clearest look yet at how PMs actually work with AI every day. Figma growth PM Ezra Mechaber describes PM OS, a shared repository of thirty-one reusable AI skills that more than sixty product managers draw on, plus AutoXP, an agent that designs and runs growth experiments with exactly one human approval step. The lesson for you: your personal Claude Code habits are only valuable once they become shared, named skills your team can reuse. That's a quarter-sized project you could propose on Monday.\n\nSecond, Anthropic's team went on Latent Space to explain how they build agents, and the core idea is separating the model's brain from its hands. One part reasons and decides, a separate execution layer actually runs the tools. That split is what makes agents reliable at scale, and it's directly relevant to your Lambda and Bedrock agents.\n\nThird, Google DeepMind announced Gemini 4 Carbon, a new frontier model leading several independent evaluations. Access is initially limited to vetted cyber-defence partners, with broader rollout later. So the leaderboard moved, but you can't act on it yet. Worth noting before anyone quotes a model ranking as settled fact.\n\nFourth, a very practical one. AWS published how prompt caching works on Bedrock. An agent re-sends its whole context, tools, instructions and history, on every single step. Caching that stable prefix cuts both input cost and latency. This is probably the cheapest unit economics win you can ask your engineers for.\n\nFifth, Anthropic filed for an IPO at a reported two trillion dollar valuation, with around fourteen hundred percent growth, eighty-five percent gross margins, and nearly half its revenue flowing through cloud partners like AWS Bedrock. Translation: your main tool is a durable platform bet, and the Bedrock route your company already uses is strategically core, not a side channel.",
+      "top5": [
+        {
+          "title": "How Figma's PMs use AI daily: a shared 31-skill repo and an experiment-running agent",
+          "link": "https://www.lennysnewsletter.com/p/how-figmas-pms-actually-use-ai-every",
+          "source": "Lenny's Newsletter",
+          "why": "The most copyable thing you'll read this month: it turns one person's Claude Code tricks into a shared team asset plus a semi-autonomous experiment loop."
+        },
+        {
+          "title": "Anthropic on building agents: separate the model's \"brain\" from its \"hands\"",
+          "link": "https://latent.space/p/opus55/",
+          "source": "Latent Space",
+          "why": "The architectural principle behind reliable production agents, from the team that ships Claude — directly applicable to your Lambda plus Bedrock setup."
+        },
+        {
+          "title": "Google ships Gemini 4 Carbon, its new frontier model",
+          "link": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+          "source": "Google DeepMind",
+          "why": "The frontier leaderboard moved again, but access is restricted to vetted partners, so know the news without rewriting your model choices yet."
+        },
+        {
+          "title": "Prompt caching for agents on Amazon Bedrock",
+          "link": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock/",
+          "source": "AWS Machine Learning Blog",
+          "why": "Agents resend their whole context every step; caching the stable prefix is the cheapest cost-and-latency win you can ask your engineers for this quarter."
+        },
+        {
+          "title": "Anthropic files for a $2T IPO",
+          "link": "https://latent.space/p/ainews-anthropic-s1/",
+          "source": "Latent Space",
+          "why": "Your main work tool's vendor is going public with real profits and roughly half its revenue through cloud partners like Bedrock — that's a platform you can safely build on."
+        }
+      ],
+      "cards": [
+        {
+          "front": "What is Figma's \"PM OS\"?",
+          "back": "A shared repository of 31 reusable AI skills used by 60+ Figma PMs, paired with AutoXP — an agent that designs and runs growth experiments with a single human approval step."
+        },
+        {
+          "front": "What does \"separate the brain from the hands\" mean in agent design?",
+          "back": "Anthropic's pattern of splitting the reasoning model (decides what to do) from the execution layer that actually runs tools, which makes managed agents more reliable and safer at scale."
+        },
+        {
+          "front": "Gemini 4 Carbon: what is it and who can use it?",
+          "back": "Google DeepMind's new frontier model, leading several independent evaluations. Initial access is limited to vetted cyber-defence partners; general availability comes later."
+        },
+        {
+          "front": "What is prompt caching, and why does it matter for agents?",
+          "back": "An agent re-sends its full context (tools, instructions, history) on every step. Caching that stable prefix means you aren't charged full price or full latency for re-processing it each time — a big saving in multi-step loops."
+        },
+        {
+          "front": "Key numbers from Anthropic's S-1 filing",
+          "back": "~$2T target valuation, ~1400% growth, 85% gross margin, $1B operating profit in Q2, $134B cash, and nearly half of revenue flowing through cloud partners such as AWS Bedrock."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In an agent loop on Bedrock, what does prompt caching actually save you money on?",
+          "options": [
+            "Re-processing the stable prompt prefix that is resent on every step",
+            "Repeated user questions, by returning a previously generated answer",
+            "Older conversation turns, by summarizing them into a shorter form",
+            "Repeated tool calls, by storing and reusing each tool's output"
+          ],
+          "answer": 0,
+          "why": "Caching applies to the unchanging front of the prompt (tools, instructions, history) that the agent must resend each step; the other options describe answer caching, compaction and tool memoization."
+        },
+        {
+          "q": "Anthropic describes separating an agent's \"brain\" from its \"hands.\" What is the split?",
+          "options": [
+            "Reasoning and decision-making are kept separate from the layer that executes tools",
+            "The system prompt is kept in a separate context window from the chat history",
+            "One model generates the input embedding and another produces the output tokens",
+            "Easy requests are routed to a small model and hard ones to a larger model"
+          ],
+          "answer": 0,
+          "why": "The brain/hands split is reasoning versus tool execution; the last option describes model routing, which is a different cost-control technique."
+        },
+        {
+          "q": "How is Google DeepMind's Gemini 4 Carbon being made available at launch?",
+          "options": [
+            "Restricted to vetted cyber-defence partners, with wider rollout expected later",
+            "Released as open weights so teams can host it on their own servers",
+            "Available immediately to all cloud customers through standard API endpoints",
+            "Offered only inside consumer chat apps, with no developer API at all"
+          ],
+          "answer": 0,
+          "why": "Initial access is limited to vetted cyber-defence partners; it is neither open weights nor generally available yet."
+        }
+      ],
+      "stale": [
+        {
+          "unit": "c2",
+          "note": "The Claude tier list and the \"as of September 2026\" price table name Claude Opus 5 as the top Opus model. This week's Latent Space episode with Anthropic covers the platform engineering behind Opus 5.5, so the current Opus version — and very likely its $5 in / $25 out per MTok pricing line — needs re-checking before the lesson is trusted."
+        },
+        {
+          "unit": "c2",
+          "note": "The \"who makes the models\" and benchmarks sections treat the frontier line-up as settled. Google DeepMind announced Gemini 4 Carbon this week, which leads several independent evaluations but is initially restricted to vetted cyber-defence partners rather than generally available — worth adding as an example that 'most capable' and 'available to you' are different things."
+        },
+        {
+          "unit": "c2",
+          "note": "The pricing math example implies you always pay full input price per request. On Bedrock, prompt caching now lets an agent's stable prompt prefix be reused at reduced input cost and latency, so naive tokens-times-price estimates overstate the bill for multi-step agents."
+        },
+        {
+          "unit": "b1",
+          "note": "The section says Write, Edit and Bash are guarded by asking your permission. Claude Code 2.1.314 adds a setting that hard-blocks Write, Edit and NotebookEdit from touching files outside your working directories in every permission mode — a guard that applies even when permissions would otherwise allow it."
+        },
+        {
+          "unit": "c1",
+          "note": "The statelessness section explains that long chats cost more because the whole conversation is resent each time, but no longer reflects that caching of the resent prefix is now a standard mitigation on Bedrock and other APIs."
+        }
+      ]
+    },
+    {
       "weekOf": "2026-10-26",
       "created": "2026-10-26T16:35:37.248Z",
       "headline": "Anthropic files to go public, Agent Skills go vendor-neutral, and Bedrock quietly fixes the flakiest part of your agents",
@@ -6741,34 +7041,29 @@
   ],
   "stale": [
     {
-      "unit": "b1",
-      "note": "The tool list is now incomplete: Claude Code 2.1.310 added a Monitor tool plus plugin monitors for Bedrock, Vertex and Foundry setups. Also worth adding to the permissions section — recent releases let a tool require an explicit human decision in the permission dialog, so it can never be auto-granted, and safety blocks now emit telemetry events.",
-      "flagged": "2026-10-26T16:35:37.248Z"
+      "unit": "c2",
+      "note": "The Claude tier list and the \"as of September 2026\" price table name Claude Opus 5 as the top Opus model. This week's Latent Space episode with Anthropic covers the platform engineering behind Opus 5.5, so the current Opus version — and very likely its $5 in / $25 out per MTok pricing line — needs re-checking before the lesson is trusted.",
+      "flagged": "2026-11-02T20:01:36.815Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The \"who makes the models\" and benchmarks sections treat the frontier line-up as settled. Google DeepMind announced Gemini 4 Carbon this week, which leads several independent evaluations but is initially restricted to vetted cyber-defence partners rather than generally available — worth adding as an example that 'most capable' and 'available to you' are different things.",
+      "flagged": "2026-11-02T20:01:36.815Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The pricing math example implies you always pay full input price per request. On Bedrock, prompt caching now lets an agent's stable prompt prefix be reused at reduced input cost and latency, so naive tokens-times-price estimates overstate the bill for multi-step agents.",
+      "flagged": "2026-11-02T20:01:36.815Z"
     },
     {
       "unit": "b1",
-      "note": "MCP is described as the only shared standard for connecting things to agents. As of this week there is a second vendor-neutral standard alongside it: Agent Skills, donated by Anthropic to the Linux Foundation's Agentic AI Foundation (folder-based instructions that teach an agent a repeatable task).",
-      "flagged": "2026-10-26T16:35:37.248Z"
+      "note": "The section says Write, Edit and Bash are guarded by asking your permission. Claude Code 2.1.314 adds a setting that hard-blocks Write, Edit and NotebookEdit from touching files outside your working directories in every permission mode — a guard that applies even when permissions would otherwise allow it.",
+      "flagged": "2026-11-02T20:01:36.815Z"
     },
     {
       "unit": "c1",
-      "note": "\"That's why long chats get slower and cost more\" is now only half true. Prompt/KV caching changes the economics: AWS showed reusing cached context between serving nodes cuts time-to-first-token by up to 3x, and vendors such as Moonshot price cached input tokens at the same rate on faster tiers. Statelessness still holds, but resent context is not always re-billed or reprocessed at full price.",
-      "flagged": "2026-10-26T16:35:37.248Z"
-    },
-    {
-      "unit": "c2",
-      "note": "The framing that Bedrock is where you get \"the same Claude models, different front door\" is out of date. Bedrock now also serves OpenAI GPT-5.6, GPT-6 and GPT-6.1 (newly reachable from Canada via cross-Region inference profiles) and third-party models like TwelveLabs Pegasus 1.5 for video. Separately, OpenAI's models are now distributed via Google Cloud's Model Garden — model choice is decoupling from cloud choice.",
-      "flagged": "2026-10-26T16:35:37.248Z"
-    },
-    {
-      "unit": "c2",
-      "note": "\"Closed models are usually the most capable\" needs softening: this week's Kimi K3.1 Pro release (open weights promised for 4 November) prompted analysts to put the open-vs-closed capability gap at roughly a month. The open-weights example list should also be updated — Moonshot (Kimi) belongs alongside Meta, Mistral and DeepSeek.",
-      "flagged": "2026-10-26T16:35:37.248Z"
-    },
-    {
-      "unit": "c2",
-      "note": "The pricing table is labelled \"as of September 2026\" and should be re-checked before being quoted; note also that tiering now often includes a speed dimension, not just capability — Kimi K3.1 Pro ships a \"Highspeed\" tier running 2-3x faster for double the price.",
-      "flagged": "2026-10-26T16:35:37.248Z"
+      "note": "The statelessness section explains that long chats cost more because the whole conversation is resent each time, but no longer reflects that caching of the resent prefix is now a standard mitigation on Bedrock and other APIs.",
+      "flagged": "2026-11-02T20:01:36.815Z"
     }
   ]
 }
