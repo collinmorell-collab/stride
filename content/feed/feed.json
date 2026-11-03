@@ -1,6 +1,173 @@
 {
-  "updated": "2026-11-02T20:01:36.818Z",
+  "updated": "2026-11-03T17:36:32.573Z",
   "items": [
+    {
+      "id": "8491ebd6e6",
+      "date": "2026-11-03T01:25:46.000Z",
+      "added": "2026-11-03T17:36:32.569Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.317",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.317 adds privacy prompts and safer scheduled tasks",
+      "summary": "This release warns you when a cloud scheduled task gains connectors you never requested and explains how to remove them, asks permission before a web or shell tool sends your account email over the network, and lets Agent SDK hooks block actions when a callback fails.",
+      "why": "You run Claude Code daily; these are consent prompts you will actually see, and they reflect a push toward agent-safety defaults.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "What does a 'connector' mean in a Claude Code scheduled task?",
+          "back": "An external integration (data source or service) the task can reach. New builds warn you if a scheduled task picks up connectors you didn't request."
+        },
+        {
+          "front": "Why does Claude Code now ask before sending your account email in a tool call?",
+          "back": "Web and shell tool calls can leak identity data to third-party servers; the prompt makes that network egress an explicit, consented choice."
+        },
+        {
+          "front": "What is hook `onFailure: \"block\"` in the Agent SDK?",
+          "back": "A setting where, if the hook callback errors, the agent's action is blocked rather than allowed through — fail-closed instead of fail-open."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Claude Code's Agent SDK, what does setting a hook to onFailure: \"block\" do?",
+          "options": [
+            "Stops the agent's action from running when the hook callback itself fails",
+            "Retries the hook callback a fixed number of times before giving up",
+            "Logs the hook error and lets the agent's action continue as normal",
+            "Blocks only network tool calls while allowing file edits to proceed"
+          ],
+          "answer": 0,
+          "why": "It is a fail-closed policy: a broken guardrail blocks the action instead of silently letting it through."
+        }
+      ]
+    },
+    {
+      "id": "1a6e22a433",
+      "date": "2026-11-02T22:54:03.000Z",
+      "added": "2026-11-03T17:36:32.569Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/building_legal_agents_when_you_can_t_see_the_data_-_jacob_lauritzen_cto_of_legora/",
+      "category": "builders",
+      "title": "Legora's CTO on building legal agents when you can't look at the data",
+      "summary": "The CTO of a fast-growing legal AI company explains how they evaluate and improve agents without ever seeing real user traces, run reviews over million-cell tables, and why AI pressure is cracking law firms' billable-hour model.",
+      "why": "A rare, concrete playbook for evaluating production agents under privacy constraints — exactly the problem your Bedrock agents will hit.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "What is a 'trace' in an AI agent system?",
+          "back": "A recorded log of one agent run: the prompts, tool calls, intermediate steps and outputs. It's the main raw material for debugging and evals."
+        },
+        {
+          "front": "How do you evaluate an agent when you can't see customer data?",
+          "back": "Build synthetic or internally-created test cases that mimic real work, collect aggregate/anonymous signals and user feedback, and rely on domain experts to grade sample outputs."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why is losing access to production traces such a problem for an AI agent team?",
+          "options": [
+            "Traces show where real runs go wrong, so evals must be rebuilt from synthetic cases",
+            "Traces are required to fine-tune the underlying model on customer data",
+            "Without traces the agent cannot call its tools in the correct sequence",
+            "Traces store the system prompt, which otherwise resets between sessions"
+          ],
+          "answer": 0,
+          "why": "Traces are the debugging and evaluation substrate; without them you must construct representative test cases yourself."
+        }
+      ]
+    },
+    {
+      "id": "3e5d35744d",
+      "date": "2026-11-03T16:47:40.000Z",
+      "added": "2026-11-03T17:36:32.569Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/servicenow-on-behalf-of-token-exchange-with-bedrock-agentcore-gateway/",
+      "category": "builders",
+      "title": "Bedrock AgentCore can now pass the user's identity to external APIs",
+      "summary": "AWS shows how AgentCore Gateway natively performs an on-behalf-of token exchange with Microsoft Entra ID, letting an agent call ServiceNow's API as the actual requesting user — no custom Lambda interceptor needed.",
+      "why": "Your agents run on Bedrock and Lambda; identity pass-through is the standard answer to 'can the agent see things this user shouldn't?'",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "de4cf53f9d",
+      "date": "2026-11-02T15:30:00.000Z",
+      "added": "2026-11-03T17:36:32.569Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/scaling-git-at-openai",
+      "category": "builders",
+      "title": "OpenAI rebuilt Git's backend because coding agents broke it",
+      "summary": "OpenAI describes Pando, a Git-compatible storage backend built because agent-generated commits and branches at Codex scale overwhelmed conventional Git hosting. A signal of how agent-written code stresses existing developer infrastructure.",
+      "why": "Helps you picture why version control matters and how agent volume changes repo workflows — useful context for your Bitbucket world.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a5"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "bbb1cbf367",
+      "date": "2026-11-03T05:35:00.000Z",
+      "added": "2026-11-03T17:36:32.569Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-llms-can-read-write-neural-network-weights-weight-space-programming-cuts-autoresearch-out-of/",
+      "category": "labs",
+      "title": "New result: models can read and edit another model's raw weights",
+      "summary": "A widely-discussed paper claims frontier models can inspect and modify the numeric weights of a small neural network directly — e.g. editing a model to reduce reasoning loops. Early, but a notable step toward AI improving AI.",
+      "why": "Worth tracking as a capability trendline: it shortens the loop between AI research and AI self-improvement.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "8de1952e38",
+      "date": "2026-11-03T16:32:54.000Z",
+      "added": "2026-11-03T17:36:32.569Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-india-based-inference-for-kimi-k3-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Bedrock adds in-country inference in India for Kimi K3",
+      "summary": "Amazon Bedrock now keeps Kimi K3 inference inside Indian regions, and the post explains the difference between global, geographic and in-country cross-region inference options, plus examples on Indic-language document understanding.",
+      "why": "A clean explainer of Bedrock's cross-region inference choices — the knob that governs where your agent's data actually gets processed.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5c054ef054",
+      "date": "2026-11-03T14:45:33.000Z",
+      "added": "2026-11-03T17:36:32.569Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/lennys-newsletter-holiday-gift-guide-057",
+      "category": "pm",
+      "title": "Lenny's 2026 holiday gift guide",
+      "summary": "Lenny's annual list of 100+ products and tools he personally uses and recommends, spanning gear, books and software. Light reading rather than product craft, but a window into what the PM world is adopting.",
+      "why": "Low-stakes, but Lenny's picks often surface tools and books that show up in later podcast conversations.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "81161cac28",
       "date": "2026-11-02T13:04:11.000Z",

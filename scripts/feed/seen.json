@@ -8166,5 +8166,89 @@
   "835fd14063": {
     "source": "simon-willison",
     "at": "2026-11-02T19:59:39.975Z"
+  },
+  "5c054ef054": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-03T17:35:44.950Z"
+  },
+  "08b710f1e7": {
+    "source": "openai",
+    "at": "2026-11-03T17:35:46.012Z"
+  },
+  "de4cf53f9d": {
+    "source": "openai",
+    "at": "2026-11-03T17:35:46.012Z"
+  },
+  "262cfa35f4": {
+    "source": "openai",
+    "at": "2026-11-03T17:35:46.012Z"
+  },
+  "6fd6ad7938": {
+    "source": "openai",
+    "at": "2026-11-03T17:35:46.012Z"
+  },
+  "ff138f709a": {
+    "source": "openai",
+    "at": "2026-11-03T17:35:46.012Z"
+  },
+  "7b04a568c5": {
+    "source": "deepmind",
+    "at": "2026-11-03T17:35:47.188Z"
+  },
+  "8491ebd6e6": {
+    "source": "claude-code",
+    "at": "2026-11-03T17:35:47.514Z"
+  },
+  "cf714de9cc": {
+    "source": "aws-ml",
+    "at": "2026-11-03T17:35:47.660Z"
+  },
+  "3e5d35744d": {
+    "source": "aws-ml",
+    "at": "2026-11-03T17:35:47.660Z"
+  },
+  "8564eb547f": {
+    "source": "aws-ml",
+    "at": "2026-11-03T17:35:47.660Z"
+  },
+  "462c228cc8": {
+    "source": "aws-ml",
+    "at": "2026-11-03T17:35:47.660Z"
+  },
+  "4ed75b5aad": {
+    "source": "aws-ml",
+    "at": "2026-11-03T17:35:47.660Z"
+  },
+  "8de1952e38": {
+    "source": "aws-ml",
+    "at": "2026-11-03T17:35:47.660Z"
+  },
+  "6857dc224a": {
+    "source": "simon-willison",
+    "at": "2026-11-03T17:35:47.743Z"
+  },
+  "22c23cfe75": {
+    "source": "simon-willison",
+    "at": "2026-11-03T17:35:47.744Z"
+  },
+  "c006e897d4": {
+    "source": "simon-willison",
+    "at": "2026-11-03T17:35:47.744Z"
+  },
+  "10dab842bc": {
+    "source": "simon-willison",
+    "at": "2026-11-03T17:35:47.744Z"
+  },
+  "bbb1cbf367": {
+    "source": "latent-space",
+    "at": "2026-11-03T17:35:48.490Z"
+  },
+  "19ed9c0e8a": {
+    "source": "latent-space",
+    "at": "2026-11-03T17:35:48.490Z"
+  },
+  "1a6e22a433": {
+    "source": "latent-space",
+    "at": "2026-11-03T17:35:48.490Z"
   }
 }
