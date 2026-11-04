@@ -1,6 +1,141 @@
 {
-  "updated": "2026-11-03T17:36:32.573Z",
+  "updated": "2026-11-04T17:48:42.433Z",
   "items": [
+    {
+      "id": "24432e46bc",
+      "date": "2026-11-04T16:30:40.000Z",
+      "added": "2026-11-04T17:48:42.429Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/",
+      "category": "builders",
+      "title": "A four-layer framework for managing context in production AI agents",
+      "summary": "AWS lays out context engineering in four layers — agent architecture, prompt design, file-based tools instead of giant context dumps, and verification agents that check outputs — with open-source code running on Bedrock AgentCore.",
+      "why": "Your company's agents run on Bedrock; this is a concrete vocabulary for why agents fail and how to structure them reliably.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b1",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Context engineering",
+          "back": "Deciding what information an AI agent sees at each step — architecture, prompts, tool outputs — so the limited context window holds only what's useful."
+        },
+        {
+          "front": "Why use file-based tools in an agent?",
+          "back": "The agent writes and reads intermediate results as files instead of stuffing everything into the context window, keeping prompts small and reusable."
+        },
+        {
+          "front": "Verification agent",
+          "back": "A separate agent whose job is to check another agent's output against rules or data before it's accepted."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In this framework, what problem do file-based tools mainly solve?",
+          "options": [
+            "Intermediate results fill up the context window and crowd out useful information",
+            "The model's weights drift over time and need periodic retraining",
+            "Tool calls are slower than direct model generation for long tasks",
+            "Prompts written in English are ambiguous compared with structured formats"
+          ],
+          "answer": 0,
+          "why": "Writing intermediate data to files lets the agent reference it on demand instead of carrying it in the limited context window."
+        }
+      ]
+    },
+    {
+      "id": "3af842205c",
+      "date": "2026-11-03T23:44:37.000Z",
+      "added": "2026-11-04T17:48:42.429Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/salesforce-ai-native-product-team",
+      "category": "pm",
+      "title": "How Salesforce runs an AI-native product team",
+      "summary": "Agentforce lead Jayesh Govindarajan describes an \"AI development lifecycle\" replacing the classic SDLC, how PM, design and engineering roles blur when agents do the building, and what Salesforce now screens for when hiring PMs.",
+      "why": "A direct look at how PM work and hiring bars change when agents write most of the code — useful for your own positioning.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "a0"
+      ],
+      "cards": [
+        {
+          "front": "ADLC (AI development lifecycle)",
+          "back": "A rework of the traditional software lifecycle where evaluation, prompt/context iteration and agent behaviour testing replace much of the classic spec-build-QA loop."
+        },
+        {
+          "front": "What changes about the PM role on AI-native teams?",
+          "back": "Less spec-writing hand-off, more defining evaluations, judging agent output quality, and prototyping directly with AI tools."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What most distinguishes an AI-native development lifecycle from the traditional one?",
+          "options": [
+            "Continuous evaluation of model and agent behaviour becomes a core, ongoing stage",
+            "Releases are batched into longer cycles to allow for more manual QA",
+            "Product requirements documents are replaced by detailed technical architecture diagrams",
+            "Design is moved after engineering so prototypes can be built faster"
+          ],
+          "answer": 0,
+          "why": "Because agent output is probabilistic, evals become a permanent stage rather than a one-off QA step."
+        }
+      ]
+    },
+    {
+      "id": "8525aff323",
+      "date": "2026-11-04T16:33:03.000Z",
+      "added": "2026-11-04T17:48:42.429Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/smart-approvals-in-amazon-quick-human-oversight-where-it-matters/",
+      "category": "builders",
+      "title": "AWS adds policy-based \"smart approvals\" for agent actions",
+      "summary": "Amazon Quick can now auto-approve low-risk agent actions using a policy plus a classifier, escalating only consequential ones to a human, with CloudTrail and CloudWatch logs for audit trails.",
+      "why": "Human-in-the-loop design is the hardest product question for production agents; this shows one pattern for tuning it without approval fatigue.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "3a06f84c0f",
+      "date": "2026-11-04T14:30:00.000Z",
+      "added": "2026-11-04T17:48:42.429Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/openai-to-acquire-pierre",
+      "category": "labs",
+      "title": "OpenAI buys Pierre to strengthen Codex code review",
+      "summary": "OpenAI is acquiring Pierre Computer Company to expand Codex's abilities around building, understanding and reviewing code — a signal that coding agents are competing on review and comprehension, not just generation.",
+      "why": "Your team weighs Claude Code against alternatives; code review quality is becoming the next battleground in coding agents.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6385d8e47a",
+      "date": "2026-11-04T00:01:03.000Z",
+      "added": "2026-11-04T17:48:42.429Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.318",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.318: AWS role assumption and per-mod effort settings",
+      "summary": "This release records your answer when Claude Code asks to enable mods it wrote, adds AWS assume_role support for cross-account access and per-developer cost attribution, and lets a mod set an effort level when forking a model.",
+      "why": "The AWS role and cost-attribution bits matter if your org tracks Bedrock spend per developer; effort levels let cheap tasks stay cheap.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "8491ebd6e6",
       "date": "2026-11-03T01:25:46.000Z",
