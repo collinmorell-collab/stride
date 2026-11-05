@@ -1,6 +1,143 @@
 {
-  "updated": "2026-11-04T17:48:42.433Z",
+  "updated": "2026-11-05T17:53:45.269Z",
   "items": [
+    {
+      "id": "eb6fb01c2c",
+      "date": "2026-11-04T18:46:36.000Z",
+      "added": "2026-11-05T17:53:45.266Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/",
+      "category": "builders",
+      "title": "Bedrock AgentCore can now gate releases on automated agent evaluations",
+      "summary": "AWS shows how to plug small \"decision models\" (Jev, Strands Decider) into Bedrock AgentCore Evaluations as code-based evaluators that answer narrow, repeatable yes/no checks on agent output — and how to validate the checker before trusting it.",
+      "why": "Your agents run on Bedrock; this is the standard way to prove an agent change is safe before shipping, instead of eyeballing outputs.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b1",
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "What is an \"evaluator\" in agent evaluation?",
+          "back": "A repeatable automated check that scores an agent's output (pass/fail or rating) so you can compare versions and block bad releases."
+        },
+        {
+          "front": "What is a \"decision model\"?",
+          "back": "A small, cheap model used only to answer narrow, repeatable judgement questions (e.g. \"did the agent follow policy?\") inside an eval pipeline."
+        },
+        {
+          "front": "Why validate an evaluator before gating releases on it?",
+          "back": "If the checker itself is wrong, you block good releases or ship bad ones. You first compare its verdicts against human-labelled examples."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why would a team use a small decision model instead of a large general model as an agent evaluator?",
+          "options": [
+            "The question is narrow and repeatable, so a small model is cheaper and more consistent",
+            "Small models are the only ones allowed to run inside AWS Bedrock AgentCore",
+            "Large models cannot return structured pass/fail answers for automated checks",
+            "Evaluators must always use a different vendor than the agent being tested"
+          ],
+          "answer": 0,
+          "why": "Decision models target narrow, repeatable judgements where cost and consistency matter more than broad reasoning ability."
+        }
+      ]
+    },
+    {
+      "id": "a4f4c423c5",
+      "date": "2026-11-04T08:00:00.000Z",
+      "added": "2026-11-05T17:53:45.266Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/a-thousand-fewer-paths-to-root",
+      "category": "labs",
+      "title": "OpenAI's agent pipeline found and patched 948 Linux kernel security holes",
+      "summary": "OpenAI describes an autonomous system that hunted privilege-escalation bugs in the Linux kernel, verified each finding was real, and drafted patches — nearly a thousand validated results rather than a pile of plausible-looking guesses.",
+      "why": "The lesson for your agents: the value came from automated validation of every finding, not from raw model cleverness. Copy that pattern.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Privilege escalation vulnerability",
+          "back": "A bug that lets a user or program gain higher access rights than they should have — e.g. a normal user becoming system administrator."
+        },
+        {
+          "front": "Why does agent output need a validation step?",
+          "back": "Models produce plausible-sounding results. A separate check (test, reproduction, verifier) filters real findings from false positives before a human sees them."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What made OpenAI's kernel bug-hunting pipeline credible rather than noisy?",
+          "options": [
+            "Each reported bug was automatically validated before being counted",
+            "The model was fine-tuned specifically on the Linux kernel source",
+            "Every finding was reviewed by a kernel maintainer before publication",
+            "The agent was given write access to the kernel repository"
+          ],
+          "answer": 0,
+          "why": "Automated validation of each candidate finding is what turns a flood of plausible guesses into trustworthy results."
+        }
+      ]
+    },
+    {
+      "id": "63c3d56bc7",
+      "date": "2026-11-05T17:00:00.000Z",
+      "added": "2026-11-05T17:53:45.266Z",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/",
+      "category": "labs",
+      "title": "Gemini Omni 1.2 Flash: 15-second video generation, 30% cheaper",
+      "summary": "Google's fast multimodal model now generates and edits short video clips natively up to 15 seconds, with better frame-to-frame consistency and a 30% price cut over the previous Flash tier.",
+      "why": "Generative video pricing keeps falling fast; worth a reality check if any roadmap item assumes video content is expensive.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "0f7a5ac55b",
+      "date": "2026-11-05T06:24:09.000Z",
+      "added": "2026-11-05T17:53:45.266Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-it-s-swapping-season/",
+      "category": "labs",
+      "title": "Model-swapping season: Kimi K3.1 Pro open weights and new challengers",
+      "summary": "A roundup of a busy week in model releases — Moonshot's Kimi K3.1 Pro shipping open weights, Ricursive's Ripple-65B, and OpenAI's security work — signalling teams increasingly swap models rather than commit to one.",
+      "why": "Useful map of which models your team could realistically swap into Bedrock-style setups without rewriting the whole agent.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "0a437d67f2",
+      "date": "2026-11-04T00:00:00.000Z",
+      "added": "2026-11-05T17:53:45.266Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-images-2-6",
+      "category": "builders",
+      "title": "OpenAI Images 2.6 adds GIFs and finer editing controls via API",
+      "summary": "The image model gets faster generation, animated GIF output, more precise local editing, and new API parameters, available across ChatGPT, Codex and the API.",
+      "why": "If you ever spec product visuals or in-app image features, the editing controls are what make generated images usable in production.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "24432e46bc",
       "date": "2026-11-04T16:30:40.000Z",
