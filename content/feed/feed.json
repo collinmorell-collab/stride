@@ -1,6 +1,232 @@
 {
-  "updated": "2026-11-05T17:53:45.269Z",
+  "updated": "2026-11-06T17:14:49.280Z",
   "items": [
+    {
+      "id": "5beddb2a54",
+      "date": "2026-11-06T16:45:58.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls/",
+      "category": "claude-code",
+      "title": "Run Claude Code as a remote agent inside your AWS account",
+      "summary": "AWS shows how to run Claude Code on Bedrock AgentCore: each task gets an isolated sandbox session in your own account, all model calls go through Bedrock, and output arrives as a pull request to review.",
+      "why": "This is your exact stack (Claude Code + Bedrock). It's the pattern for letting agents do background coding work with guardrails your security team accepts.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "a5"
+      ],
+      "cards": [
+        {
+          "front": "What is a 'remote' or background coding agent?",
+          "back": "Claude Code running on a server in an isolated session instead of your laptop; it works on a task and returns a pull request for humans to review."
+        },
+        {
+          "front": "Why route Claude Code's model calls through Amazon Bedrock?",
+          "back": "Your data and traffic stay inside your AWS account under your IAM, logging and compliance controls instead of going to an external API."
+        },
+        {
+          "front": "What is a pull request (PR)?",
+          "back": "A proposed set of code changes on a branch that someone reviews and approves before it merges into the main codebase."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In this remote Claude Code setup, what is the main benefit of giving each coding task its own isolated session?",
+          "options": [
+            "One task's files, credentials and side effects can't leak into another task's run",
+            "The model answers faster because context is cached between tasks",
+            "Changes merge to the main branch automatically without review",
+            "The agent can use a larger context window than the local CLI"
+          ],
+          "answer": 0,
+          "why": "Isolation is a containment control: each session is sandboxed so failures or compromised runs can't affect other tasks or shared state."
+        }
+      ]
+    },
+    {
+      "id": "df1346203f",
+      "date": "2026-11-06T17:04:01.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.319",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.319 changes how auto mode decides what's safe",
+      "summary": "Auto mode now relies on a server-side safety check instead of the built-in local classifier. If telemetry or feature flags are off, or you're behind an LLM gateway, unverifiable commands get prompted or denied. Bedrock, Vertex and Foundry are unaffected.",
+      "why": "If your team runs Claude Code through a gateway, auto mode may suddenly ask more or refuse; the env var CLAUDE_CODE_AUTO_MODE_SERVER=0 restores old behaviour.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "What does Claude Code's 'auto mode' do?",
+          "back": "It decides which tool calls (file edits, Bash commands) can run without asking you, based on a safety classification of each action."
+        },
+        {
+          "front": "What is an environment variable like CLAUDE_CODE_AUTO_MODE_SERVER=0?",
+          "back": "A setting passed to a program by the shell at startup; here it turns off server-side auto-mode checking and restores the previous behaviour."
+        },
+        {
+          "front": "What is an LLM gateway?",
+          "back": "A company proxy that all model API calls route through, used for cost control, logging and policy — it can change how tools behave."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "After v2.1.319, what happens to auto mode when Claude Code can't reach the server-side safety check?",
+          "options": [
+            "Risky commands are prompted or denied, with no fallback to the local classifier",
+            "It silently falls back to the built-in classifier and keeps auto-approving",
+            "Auto mode is disabled entirely and all tool calls must be typed manually",
+            "It switches the session to Bedrock so the check can run in your account"
+          ],
+          "answer": 0,
+          "why": "The release removed the local-classifier fallback: unverifiable calls are asked about or denied unless you opt out with the env var."
+        }
+      ]
+    },
+    {
+      "id": "7ffe65e37e",
+      "date": "2026-11-06T17:13:13.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/serverless-mcp-server-for-ai-agent-data-lake-access-on-amazon-ecs-fargate/",
+      "category": "builders",
+      "title": "A serverless MCP server that lets agents query a data lake via config, not code",
+      "summary": "AWS walks through an MCP server on ECS Fargate giving agents governed access to enterprise data. Adding a new dataset means dropping in a JSON metadata file rather than writing bespoke integration code per source.",
+      "why": "Shows the config-over-code pattern for scaling agent data access — a useful architecture argument when your team debates how agents reach internal data.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a2",
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b7a89fa9b2",
+      "date": "2026-11-06T17:09:18.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-1/",
+      "category": "builders",
+      "title": "Who is the agent allowed to act for? Identity for AI agents",
+      "summary": "Part 1 of an AWS series on the agent identity problem: service accounts and per-app OAuth don't answer which agent may act for which user. It builds a task agent using Okta Cross App Access plus Bedrock AgentCore Identity.",
+      "why": "Agent permissions are becoming the top blocker for shipping production agents; you'll need this vocabulary in security reviews.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b8bac355d6",
+      "date": "2026-11-06T17:09:23.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/govern-ai-agent-access-with-okta-cross-app-access-and-amazon-bedrock-agentcore-part-2/",
+      "category": "builders",
+      "title": "Scaling agent permissions across an enterprise with a gateway and policies",
+      "summary": "Part 2 makes AgentCore Gateway the single entry point for tools, binds each tool to an agent with Cedar policy rules, adds a second agent on EKS, and traces every allow/deny decision in CloudWatch.",
+      "why": "The 'one front door plus per-tool policy plus audit trail' shape is what your platform team will likely build; worth recognising.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6dde141103",
+      "date": "2026-11-05T21:04:24.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/getting-started-with-web-answer-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "Bedrock's Web Answer replaces your home-grown search-and-cite pipeline",
+      "summary": "A new AgentCore capability returns a synthesized, source-cited answer to a natural-language question in one tool call, removing the need to build search, retrieval, synthesis and citation steps yourself.",
+      "why": "If your agents answer questions from the web, this is build-vs-buy: a managed tool call instead of a RAG pipeline you maintain.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "55950fa4ce",
+      "date": "2026-11-06T16:49:42.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/taxbit-assist-a-grounded-role-aware-ai-agent-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "How Taxbit keeps an enterprise AI assistant accurate and permission-aware",
+      "summary": "Taxbit's in-dashboard assistant grounds every answer in a curated knowledge base with citations, enforces role- and region-based access, and continuously measures answer quality against live production traffic rather than a one-off eval.",
+      "why": "A concrete checklist — grounding, citations, role-aware answers, ongoing eval — for what 'production-grade' means for an AI feature you'd own.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "38bdfb2f8c",
+      "date": "2026-11-06T16:55:05.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-greenlight-financial-built-an-autonomous-soc-solution-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "A tiered multi-agent system that closes 90% of security cases unattended",
+      "summary": "Greenlight Financial's agent handles up to 4,000 monthly security and risk cases with over 90% resolved without a human, using layered agents and episodic memory so the system improves from past cases.",
+      "why": "A rare example with real volume and autonomy numbers — useful benchmark when someone asks what agent automation rates are realistic.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "53c56afbaf",
+      "date": "2026-11-05T09:00:00.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-gpt-6-cyber",
+      "category": "labs",
+      "title": "OpenAI ships a cybersecurity-specialised model, GPT-6 Cyber",
+      "summary": "OpenAI released a model tuned to find exploitable vulnerabilities and propose fixes, trained with constraints meant to keep it operating only within authorised scope rather than attacking arbitrary targets.",
+      "why": "Signals the shift toward domain-specialised frontier models; expect security-review expectations for your agents to rise accordingly.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "1601aee821",
+      "date": "2026-11-06T10:35:21.000Z",
+      "added": "2026-11-06T17:14:49.276Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-inkling-2-small-17a-594b-trained-in-68-hours-on-12t-tokens-beating-muse-spark/",
+      "category": "labs",
+      "title": "Daily AI roundup: a fast, cheap new frontier-class model and AI doing AI research",
+      "summary": "Coverage of Inkling 2 Small, a sparse mixture-of-experts model trained in 68 hours on 12T tokens that beats a larger rival, plus a METR study measuring how much AI contributes to research work at Anthropic.",
+      "why": "Training costs keep collapsing while labs measure AI doing their own R&D — both shape how fast your model options will churn.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "eb6fb01c2c",
       "date": "2026-11-04T18:46:36.000Z",
