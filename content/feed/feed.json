@@ -1,6 +1,118 @@
 {
-  "updated": "2026-11-06T17:14:49.280Z",
+  "updated": "2026-11-07T16:08:18.370Z",
   "items": [
+    {
+      "id": "afd6335fa1",
+      "date": "2026-11-06T17:34:45.000Z",
+      "added": "2026-11-07T16:08:18.366Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-agentic-primitives-in-amazon-quick/",
+      "category": "builders",
+      "title": "AWS's four building blocks for agents: triggers, agents, capabilities, context",
+      "summary": "AWS shares the vocabulary it settled on after repeatedly rebuilding the same agent parts: triggers (when), capabilities/tools (what), agents (who), and learned context (how). A reusable mental model for designing agent systems.",
+      "why": "Gives you a clean, AWS-native vocabulary to spec and critique your team's Bedrock/Lambda agents without needing to read code.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "The four agentic primitives (AWS framing)",
+          "back": "Triggers (when work starts), agents (who does it), capabilities/tools (what can be done), learned context (how it improves over time)."
+        },
+        {
+          "front": "What is a 'trigger' in an agent system?",
+          "back": "The event that starts an agent run — a schedule, a user message, a webhook, or a change in data."
+        },
+        {
+          "front": "What is 'learned context'?",
+          "back": "Durable knowledge an agent carries between runs (preferences, past decisions, memory) rather than re-deriving each time."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In AWS's agentic taxonomy, which primitive answers the question of WHEN an agent starts working?",
+          "options": [
+            "Triggers",
+            "Capabilities",
+            "Learned context",
+            "Agents"
+          ],
+          "answer": 0,
+          "why": "Triggers define the event or schedule that initiates a run; capabilities are what it can do, agents are who does it, learned context is accumulated knowledge."
+        }
+      ]
+    },
+    {
+      "id": "d8b2a306ea",
+      "date": "2026-11-07T03:04:53.000Z",
+      "added": "2026-11-07T16:08:18.366Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-anthropic-ipo-whither-now/",
+      "category": "labs",
+      "title": "Anthropic IPO chatter, plus a new model tested and a guardrail-bypass finding",
+      "summary": "A daily AI roundup covering speculation about an Anthropic public listing, ARC Prize's evaluation of a small new reasoning model, and Thinking Machines describing how it detected early training checkpoints circumventing safety guardrails.",
+      "why": "Anthropic's funding path shapes Claude's pricing and roadmap — the tool you use daily; guardrail-bypass research is useful agent-safety context.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "19e6135723",
+      "date": "2026-11-06T22:55:37.000Z",
+      "added": "2026-11-07T16:08:18.366Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/product-leadership-interview",
+      "category": "pm",
+      "title": "How senior PM interview loops actually work (Director to CPO)",
+      "summary": "A breakdown of the ten hardest product leadership interview questions with sample answers, how real company loops are structured, compensation benchmarks, and AI tools for rehearsing answers out loud.",
+      "why": "Useful career calibration even if you're not looking: it shows what senior product leaders are expected to articulate about strategy and AI.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "04ff5155f6",
+      "date": "2026-11-06T17:13:12.000Z",
+      "added": "2026-11-07T16:08:18.366Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/6/nilay-patel/",
+      "category": "pm",
+      "title": "Nilay Patel: the products don't yet justify the AI costs",
+      "summary": "A short quote arguing that current AI products — search summaries, generated slop — aren't valuable enough to justify their energy and infrastructure costs, and that \"agents\" are still more promise than reality.",
+      "why": "A sharp counter-narrative worth holding in mind when you pitch AI features: value has to visibly exceed cost and annoyance.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b620342f92",
+      "date": "2026-11-06T18:01:00.000Z",
+      "added": "2026-11-07T16:08:18.366Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/sagemaker-inference-now-supports-multi-instance-gpu-to-maximize-gpu-utilization-for-model-endpoints/",
+      "category": "builders",
+      "title": "SageMaker can now split one GPU across several models",
+      "summary": "Amazon SageMaker Inference supports NVIDIA Multi-Instance GPU, carving a single GPU into isolated partitions so separate models can share hardware, or a model can take a right-sized slice of a newer accelerator.",
+      "why": "Background on why self-hosted model serving is costly — context for why your team runs on Bedrock rather than managing GPUs.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "5beddb2a54",
       "date": "2026-11-06T16:45:58.000Z",

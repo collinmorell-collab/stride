@@ -8422,5 +8422,33 @@
   "1601aee821": {
     "source": "latent-space",
     "at": "2026-11-06T17:13:59.930Z"
+  },
+  "19e6135723": {
+    "source": "product-growth",
+    "at": "2026-11-07T16:07:48.516Z"
+  },
+  "bc8f9eac19": {
+    "source": "openai",
+    "at": "2026-11-07T16:07:48.864Z"
+  },
+  "cfd4354afa": {
+    "source": "openai",
+    "at": "2026-11-07T16:07:48.864Z"
+  },
+  "b620342f92": {
+    "source": "aws-ml",
+    "at": "2026-11-07T16:07:50.078Z"
+  },
+  "afd6335fa1": {
+    "source": "aws-ml",
+    "at": "2026-11-07T16:07:50.078Z"
+  },
+  "04ff5155f6": {
+    "source": "simon-willison",
+    "at": "2026-11-07T16:07:50.209Z"
+  },
+  "d8b2a306ea": {
+    "source": "latent-space",
+    "at": "2026-11-07T16:07:50.634Z"
   }
 }
