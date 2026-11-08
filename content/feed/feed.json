@@ -1,6 +1,68 @@
 {
-  "updated": "2026-11-07T16:08:18.370Z",
+  "updated": "2026-11-08T16:31:18.608Z",
   "items": [
+    {
+      "id": "ed44bd78a8",
+      "date": "2026-11-08T13:31:32.000Z",
+      "added": "2026-11-08T16:31:18.603Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier",
+      "category": "pm",
+      "title": "Gemini's product lead on how frontier models actually get built",
+      "summary": "Tulsee Doshi, product head for Google's Gemini, explains how frontier model development works day to day: balancing quantitative evals with subjective 'vibes' testing, and a 60-20-20 split for shipping ahead of where capabilities are today.",
+      "why": "A rare PM-level look inside model building, plus a concrete planning framework you can reuse when roadmapping fast-moving AI features.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Why do model teams use 'vibes' alongside evals?",
+          "back": "Automated evals measure known, scoreable behaviours; hands-on qualitative testing catches tone, usefulness and failure modes that no benchmark captures yet."
+        },
+        {
+          "front": "60-20-20 framework (Tulsee Doshi)",
+          "back": "A rough split of effort between today's known needs, near-term bets, and speculative work aimed at capabilities that don't exist yet — so you ship ahead of the curve."
+        },
+        {
+          "front": "What is a 'frontier model'?",
+          "back": "A model at the current top edge of capability (e.g. Gemini, Claude, GPT-class), built with huge compute and shaped as much by product judgement as by research."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why do frontier model teams rely on qualitative testing in addition to automated evals?",
+          "options": [
+            "Evals score known behaviours but miss tone, nuance and new failure modes",
+            "Evals can only be run after a model is publicly released to users",
+            "Qualitative testing is cheaper than running any automated benchmark suite",
+            "Evals measure inference cost rather than the quality of model outputs"
+          ],
+          "answer": 0,
+          "why": "Benchmarks cover what you already know how to measure; hands-on use surfaces the quality issues and surprises that no existing eval encodes."
+        }
+      ]
+    },
+    {
+      "id": "3880bf849b",
+      "date": "2026-11-07T23:57:46.000Z",
+      "added": "2026-11-08T16:31:18.603Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/7/link-rel-next/",
+      "category": "builders",
+      "title": "A browser quietly pre-loading pages: a small lesson in HTTP headers",
+      "summary": "Simon Willison found Firefox silently prefetching the next page because his site sent a 'link: rel=next' HTTP header, causing unwanted background requests. He's changing the behaviour for HTML pages.",
+      "why": "A tiny, concrete example of how invisible HTTP headers change what browsers do — useful background for reading your own product's web behaviour.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "afd6335fa1",
       "date": "2026-11-06T17:34:45.000Z",
