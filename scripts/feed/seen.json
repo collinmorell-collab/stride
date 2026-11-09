@@ -1,4 +1,8 @@
 {
+  "1393243560": {
+    "source": "claude-code",
+    "at": "2026-11-09T20:28:24.467Z"
+  },
   "2947393216": {
     "source": "lenny-newsletter",
     "at": "2026-09-24T04:00:18.767Z"
@@ -8458,5 +8462,81 @@
   "3880bf849b": {
     "source": "simon-willison",
     "at": "2026-11-08T16:31:00.304Z"
+  },
+  "da0e953953": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-09T20:28:22.651Z"
+  },
+  "03ff3e39f4": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-09T20:28:22.651Z"
+  },
+  "98d5b7ce10": {
+    "source": "one-useful-thing",
+    "at": "2026-11-09T20:28:22.871Z"
+  },
+  "9c331579e2": {
+    "source": "openai",
+    "at": "2026-11-09T20:28:23.446Z"
+  },
+  "932fe34bad": {
+    "source": "openai",
+    "at": "2026-11-09T20:28:23.446Z"
+  },
+  "a739dfdfb1": {
+    "source": "aws-ml",
+    "at": "2026-11-09T20:28:24.616Z"
+  },
+  "e3d821d85e": {
+    "source": "aws-ml",
+    "at": "2026-11-09T20:28:24.616Z"
+  },
+  "95f4f78872": {
+    "source": "aws-ml",
+    "at": "2026-11-09T20:28:24.616Z"
+  },
+  "c075e28975": {
+    "source": "aws-ml",
+    "at": "2026-11-09T20:28:24.616Z"
+  },
+  "8e89c98cf0": {
+    "source": "aws-ml",
+    "at": "2026-11-09T20:28:24.616Z"
+  },
+  "4e28bad938": {
+    "source": "aws-ml",
+    "at": "2026-11-09T20:28:24.616Z"
+  },
+  "5b851a3023": {
+    "source": "simon-willison",
+    "at": "2026-11-09T20:28:24.774Z"
+  },
+  "a92667754b": {
+    "source": "simon-willison",
+    "at": "2026-11-09T20:28:24.774Z"
+  },
+  "9572242cc9": {
+    "source": "simon-willison",
+    "at": "2026-11-09T20:28:24.774Z"
+  },
+  "dadfbd3c32": {
+    "source": "simon-willison",
+    "at": "2026-11-09T20:28:24.774Z"
+  },
+  "5b7b48c647": {
+    "source": "simon-willison",
+    "at": "2026-11-09T20:28:24.774Z"
+  },
+  "efd1a1cf08": {
+    "source": "latent-space",
+    "at": "2026-11-09T20:28:25.229Z"
+  },
+  "b831b808d1": {
+    "source": "latent-space",
+    "at": "2026-11-09T20:28:25.229Z"
+  },
+  "5a84859a13": {
+    "source": "latent-space",
+    "at": "2026-11-09T20:28:25.229Z"
   }
 }

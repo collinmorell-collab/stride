@@ -1,6 +1,227 @@
 {
-  "updated": "2026-11-08T16:31:18.608Z",
+  "updated": "2026-11-09T20:30:05.312Z",
   "items": [
+    {
+      "id": "03ff3e39f4",
+      "date": "2026-11-09T13:04:17.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-this-founder-built-a-better-duolingo",
+      "category": "pm",
+      "title": "How I AI: A founder built his own Duolingo rival with Codex",
+      "summary": "Hackmamba's William Imoh demos a native language-learning app he vibe-coded with Codex, plus a crew of themed Grok bots he uses to run day-to-day company operations.",
+      "why": "A concrete example of a non-team-of-engineers shipping a real app with coding agents — directly transferable to your Claude Code practice.",
+      "score": 9,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "da0e953953",
+      "date": "2026-11-09T16:01:20.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-ai-how-this-founder-built-a",
+      "category": "pm",
+      "title": "How I AI weekly roundup",
+      "summary": "Lenny's How I AI newsletter rounds up this week's episodes on practical AI workflows for builders and operators, headlined by the Codex-built Duolingo alternative.",
+      "why": "Quick scan of the week's AI-workflow episodes lets you pick which ones deserve your walk time.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "98d5b7ce10",
+      "date": "2026-11-09T19:04:26.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "One Useful Thing (Ethan Mollick)",
+      "link": "https://www.oneusefulthing.org/p/fable-52-and-jagged-agi",
+      "category": "labs",
+      "title": "Ethan Mollick on Fable 5.2 and \"jagged AGI\"",
+      "summary": "Mollick tests the new frontier Claude model and argues capability is jagged: expert-level in many areas, oddly weak in others, so you must probe each task rather than assume uniform competence.",
+      "why": "Gives you the mental model and vocabulary for judging which tasks to trust a new model with — core PM judgment.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Jagged frontier (jagged AGI)",
+          "back": "The idea that AI capability is uneven: a model can be expert at hard tasks and fail at seemingly easier, adjacent ones. You must test task by task."
+        },
+        {
+          "front": "How should a PM evaluate a newly released model?",
+          "back": "Run your own representative tasks rather than trusting benchmarks or marketing; capability varies unpredictably across task types."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does the \"jagged frontier\" idea say about frontier AI models?",
+          "options": [
+            "Their skill is uneven across tasks, so they can ace hard work and fail easier work",
+            "Their skill grows steadily with each release across all task types equally",
+            "Their skill depends mainly on context window length rather than training",
+            "Their skill degrades predictably as conversations get longer and longer"
+          ],
+          "answer": 0,
+          "why": "Jaggedness means capability is unevenly distributed across tasks, which is why per-task testing beats general assumptions."
+        }
+      ]
+    },
+    {
+      "id": "e3d821d85e",
+      "date": "2026-11-09T20:04:37.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-fable-5-2-on-aws/",
+      "category": "labs",
+      "title": "Claude Fable 5.2 and Mythos 5.2 land on Amazon Bedrock",
+      "summary": "Anthropic's newest models are available on Bedrock and the Claude platform on AWS, with Fable 5.2 pitched at technical and coding-heavy workloads.",
+      "why": "Your production agents run on Bedrock — a model upgrade here is a real decision about cost, latency and quality for your team.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "1393243560",
+      "date": "2026-11-09T19:22:30.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.321: Fable 5.2 is now the default",
+      "summary": "Claude Code switches its default Fable model to Fable 5.2 with a 1M-token context window and published per-million-token pricing, and adds a --settings flag so remote-control sessions start from a fixed settings file.",
+      "why": "The model behind your daily driver just changed; expect different behaviour, costs and a much bigger context budget.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "What changed by default in Claude Code v2.1.321?",
+          "back": "Fable 5.2 became the default model, with a 1M-token context window and cheaper cached input reads."
+        },
+        {
+          "front": "Why do cache read prices matter in a coding agent?",
+          "back": "Agents re-send the same project context on every turn; cached reads cost far less per token, so long sessions get much cheaper."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Claude Code, why is a lower price for cached input tokens especially valuable?",
+          "options": [
+            "Repeated project context is resent each turn, so caching cuts the bulk of the cost",
+            "Cached tokens let the model write longer answers before hitting an output limit",
+            "Caching stores your edits locally so Git commits are smaller and faster",
+            "Cached tokens skip tool calls, so the agent reads fewer files from disk"
+          ],
+          "answer": 0,
+          "why": "Agent loops resend the same context repeatedly; cheap cache reads cut the dominant cost of long sessions."
+        }
+      ]
+    },
+    {
+      "id": "a739dfdfb1",
+      "date": "2026-11-09T20:13:18.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/single-shot-and-agentic-retrieval-with-amazon-bedrock-managed-knowledge-base/",
+      "category": "builders",
+      "title": "Bedrock Knowledge Bases add single-shot and agentic retrieval modes",
+      "summary": "Amazon Bedrock Managed Knowledge Base can now do plain one-pass RAG or retrieval-only calls alongside multi-step agentic retrieval, with a maxAgentIteration setting to cap how much searching a query triggers.",
+      "why": "A clean lever for tuning cost versus answer quality in RAG features your team ships on Bedrock.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "c075e28975",
+      "date": "2026-11-09T19:05:54.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/pluggable-agentic-ai-framework-a-seven-layer-composable-enterprise-agentic-ai-reference-architecture-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "A seven-layer reference architecture for enterprise AI agents",
+      "summary": "AWS proposes a layered blueprint for moving agents from prototype to production on Bedrock AgentCore, where each layer has a fixed contract so you can replace one technology without rebuilding everything else.",
+      "why": "Gives you a shared vocabulary for architecture conversations with your engineers about your Lambda plus Bedrock agents.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a92667754b",
+      "date": "2026-11-09T04:25:05.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/9/details-summary/",
+      "category": "claude-code",
+      "title": "Simon Willison: collapse your agent's verbose PR descriptions",
+      "summary": "Coding agents write exhaustive pull-request descriptions that bury the point. Willison hides the generated detail inside a collapsible HTML details block and keeps a short human summary on top.",
+      "why": "A tiny habit that keeps agent-generated pull requests readable for reviewers — useful as your team's agent output grows.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a5"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b831b808d1",
+      "date": "2026-11-08T21:41:44.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/cs146s/",
+      "category": "builders",
+      "title": "How Stanford teaches engineering when agents can do the homework",
+      "summary": "Mihail Eric describes redesigning Stanford's AI-native engineering course: students must navigate unfamiliar open-source repos and propose real changes, because one-prompt assignments no longer prove anything.",
+      "why": "Shows which skills survive agents — repo comprehension and judgment — exactly the ones you're trying to build from zero.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a0",
+        "a5"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "efd1a1cf08",
+      "date": "2026-11-09T17:15:53.000Z",
+      "added": "2026-11-09T20:29:02.503Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/handshake/",
+      "category": "labs",
+      "title": "What frontier labs actually buy: inside the expert-data market",
+      "summary": "Latent Space examines Handshake AI's fast rise selling specialized human expert data to frontier labs, with examples from finance, biology and alignment work.",
+      "why": "Explains where model improvements now come from — useful context when judging why models get better at some domains.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "ed44bd78a8",
       "date": "2026-11-08T13:31:32.000Z",
@@ -7059,6 +7280,123 @@
   ],
   "weekly": [
     {
+      "weekOf": "2026-11-09",
+      "created": "2026-11-09T20:30:05.310Z",
+      "headline": "Fable 5.2 becomes Claude Code's default with a million-token window — and the week's best advice is to stop assuming any model is uniformly smart.",
+      "script": "Good morning. Five things this week, and the first one lands right in your daily driver. Claude Code shipped a release where Fable five-point-two is now the default model, with a one million token context window and published per-million-token pricing. Practically: your sessions can hold far more before compacting, behaviour will feel different on familiar tasks, and cost per run changes. Re-check anything your team budgeted on the old numbers. The same models also landed on Bedrock, which is where your production agents live, so this becomes a real upgrade decision, not just a tool update.\n\nSecond, Ethan Mollick tested that new model and reached for a phrase worth stealing: jagged intelligence. Capability is spiky, expert-level in some areas and strangely weak right next door. So don't ask whether the new model is better. Probe it task by task, on your tasks.\n\nThird, Lenny interviewed Tulsee Doshi, product lead for Gemini, on what building a frontier model actually looks like day to day. Two takeaways: teams pair quantitative evals with subjective vibes testing, because neither alone tells you if something is ready, and they plan with a sixty-twenty-twenty split so part of the roadmap deliberately ships ahead of today's capabilities. That's a planning frame you can borrow directly.\n\nFourth, AWS published a pattern for running Claude Code as a remote agent inside your own account on Bedrock AgentCore. Each task gets an isolated sandbox, all model calls route through Bedrock, and the output arrives as a pull request you review. That is literally your stack, with the guardrails a security reviewer will accept.\n\nFifth, Salesforce's Agentforce lead described an AI development lifecycle replacing the old one, with PM, design and engineering roles blurring and hiring bars shifting. Worth twenty minutes for your own positioning.\n\nOne quiet caveat: auto mode now checks safety server-side, so gateway setups may prompt more.",
+      "top5": [
+        {
+          "title": "Claude Code v2.1.321: Fable 5.2 becomes the default model",
+          "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+          "source": "Claude Code releases",
+          "why": "The brain behind your everyday tool just swapped, bringing a 1M-token context window and new per-token pricing you should sanity-check."
+        },
+        {
+          "title": "Ethan Mollick on Fable 5.2 and \"jagged AGI\"",
+          "link": "https://www.oneusefulthing.org/p/fable-52-and-jagged-agi",
+          "source": "One Useful Thing (Ethan Mollick)",
+          "why": "Gives you the vocabulary and the habit — probe task by task — for deciding what to trust the new default model with."
+        },
+        {
+          "title": "Gemini's product lead on how frontier models actually get built",
+          "link": "https://www.lennysnewsletter.com/p/what-it-actually-takes-to-build-frontier",
+          "source": "Lenny's Newsletter",
+          "why": "A rare PM-level view inside model development, with a 60-20-20 roadmap split and the evals-plus-vibes pairing you can reuse this quarter."
+        },
+        {
+          "title": "Run Claude Code as a remote agent inside your AWS account",
+          "link": "https://aws.amazon.com/blogs/machine-learning/extend-claude-code-to-remote-sessions-on-amazon-bedrock-agentcore-with-security-controls/",
+          "source": "AWS Machine Learning Blog",
+          "why": "This is exactly your stack — isolated sandboxes, Bedrock-routed calls, output as a pull request — the pattern to propose for background agent work."
+        },
+        {
+          "title": "How Salesforce runs an AI-native product team",
+          "link": "https://www.news.aakashg.com/p/salesforce-ai-native-product-team",
+          "source": "Product Growth (Aakash Gupta)",
+          "why": "Shows how PM, design and engineering roles blur when agents write the code, and what that means for how you position yourself."
+        }
+      ],
+      "cards": [
+        {
+          "front": "What changed in Claude Code v2.1.321?",
+          "back": "Fable 5.2 became the default model, with a 1M-token context window and published per-million-token pricing, plus a --settings flag so remote-control sessions start from a fixed settings file."
+        },
+        {
+          "front": "\"Jagged AGI\" (Ethan Mollick)",
+          "back": "The idea that a model's capability is uneven: expert-level on many tasks, surprisingly weak on neighbouring ones. Implication: test each task yourself instead of assuming uniform competence from a new release."
+        },
+        {
+          "front": "How do frontier model teams judge readiness (per Gemini's Tulsee Doshi)?",
+          "back": "They combine quantitative evals with subjective \"vibes\" testing, and plan with a 60-20-20 split so part of the roadmap ships ahead of today's capabilities."
+        },
+        {
+          "front": "Claude Code on Bedrock AgentCore: the pattern",
+          "back": "Each task runs in an isolated sandbox session inside your own AWS account, all model calls route through Bedrock, and the agent's work comes back as a pull request for human review."
+        },
+        {
+          "front": "Claude Code auto mode change (v2.1.319)",
+          "back": "Safety decisions moved from a local classifier to a server-side check. With telemetry/flags off or behind an LLM gateway, unverifiable commands get prompted or denied; Bedrock, Vertex and Foundry are unaffected. CLAUDE_CODE_AUTO_MODE_SERVER=0 restores the old behaviour."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does Ethan Mollick's phrase \"jagged AGI\" describe?",
+          "options": [
+            "Capability that is expert-level on some tasks and weak on adjacent ones",
+            "Quality that degrades steadily as a conversation gets longer",
+            "Ability that rises predictably as a model gets more parameters",
+            "Output that varies between runs because of temperature settings"
+          ],
+          "answer": 0,
+          "why": "Jaggedness is about uneven capability across tasks, not drift within a session, scale laws, or sampling randomness — which is why you probe each task before trusting a new model."
+        },
+        {
+          "q": "After Claude Code v2.1.319, where is the decision made about whether an auto-mode command is safe to run?",
+          "options": [
+            "On the server, via a hosted safety check",
+            "Locally, by the built-in classifier",
+            "In the project's CLAUDE.md standing instructions",
+            "In the AWS IAM policy attached to the session"
+          ],
+          "answer": 0,
+          "why": "The release moved the judgement from the local classifier to a server-side check, which is why gateway or telemetry-off setups now see more prompts or denials."
+        },
+        {
+          "q": "In the AWS pattern for running Claude Code as a remote agent, how does the finished work reach the human?",
+          "options": [
+            "As a pull request to review",
+            "As a direct commit to the main branch",
+            "As a summary posted to the team's chat",
+            "As a patch file written to shared storage"
+          ],
+          "answer": 0,
+          "why": "Each task runs in an isolated sandbox in your own account with calls routed through Bedrock, and output lands as a pull request so review stays a human step."
+        }
+      ],
+      "stale": [
+        {
+          "unit": "b0",
+          "note": "\"The model is the brain: Claude Opus, Sonnet or Haiku\" is now incomplete and misleading for Claude Code specifically: as of v2.1.321 Claude Code's default model is Fable 5.2, so Fable belongs in the list of models you'll actually meet."
+        },
+        {
+          "unit": "b0",
+          "note": "The compaction section implicitly assumes a modest context window. Fable 5.2 in Claude Code has a 1M-token context window, so sessions run far longer before compaction kicks in — worth saying the budget depends heavily on the model in use."
+        },
+        {
+          "unit": "b1",
+          "note": "The permissions framing (\"Write, Edit and Bash ask your permission\" / denying just makes Claude try another approach) misses two changes: v2.1.319 moved auto mode's safety judgement to a server-side check, so behind an LLM gateway or with telemetry off, unverifiable commands can be prompted or outright denied (CLAUDE_CODE_AUTO_MODE_SERVER=0 reverts; Bedrock, Vertex and Foundry are unaffected), and v2.1.317 added new consent prompts for cloud scheduled tasks gaining unrequested connectors and for tools sending your account email over the network."
+        },
+        {
+          "unit": "c2",
+          "note": "The tier list calling Fable \"an even more capable, more expensive top tier\" in parentheses is now understated: Fable 5.2 (plus Mythos 5.2) shipped this week, is available on Amazon Bedrock, and is Claude Code's default model — it should be presented as a main tier, not an aside."
+        },
+        {
+          "unit": "c2",
+          "note": "The \"As of September 2026\" price table (Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5) no longer reflects the current lineup: Fable 5.2 now has published per-million-token pricing of its own and is the default in Claude Code, so any cost math based on Sonnet 5 as the daily driver is out of date."
+        }
+      ]
+    },
+    {
       "weekOf": "2026-11-02",
       "created": "2026-11-02T20:01:36.815Z",
       "headline": "Figma's PMs ship a shared AI skill library, Anthropic files to go public, and Gemini 4 Carbon takes the frontier crown",
@@ -7880,29 +8218,29 @@
   ],
   "stale": [
     {
-      "unit": "c2",
-      "note": "The Claude tier list and the \"as of September 2026\" price table name Claude Opus 5 as the top Opus model. This week's Latent Space episode with Anthropic covers the platform engineering behind Opus 5.5, so the current Opus version — and very likely its $5 in / $25 out per MTok pricing line — needs re-checking before the lesson is trusted.",
-      "flagged": "2026-11-02T20:01:36.815Z"
+      "unit": "b0",
+      "note": "\"The model is the brain: Claude Opus, Sonnet or Haiku\" is now incomplete and misleading for Claude Code specifically: as of v2.1.321 Claude Code's default model is Fable 5.2, so Fable belongs in the list of models you'll actually meet.",
+      "flagged": "2026-11-09T20:30:05.310Z"
     },
     {
-      "unit": "c2",
-      "note": "The \"who makes the models\" and benchmarks sections treat the frontier line-up as settled. Google DeepMind announced Gemini 4 Carbon this week, which leads several independent evaluations but is initially restricted to vetted cyber-defence partners rather than generally available — worth adding as an example that 'most capable' and 'available to you' are different things.",
-      "flagged": "2026-11-02T20:01:36.815Z"
-    },
-    {
-      "unit": "c2",
-      "note": "The pricing math example implies you always pay full input price per request. On Bedrock, prompt caching now lets an agent's stable prompt prefix be reused at reduced input cost and latency, so naive tokens-times-price estimates overstate the bill for multi-step agents.",
-      "flagged": "2026-11-02T20:01:36.815Z"
+      "unit": "b0",
+      "note": "The compaction section implicitly assumes a modest context window. Fable 5.2 in Claude Code has a 1M-token context window, so sessions run far longer before compaction kicks in — worth saying the budget depends heavily on the model in use.",
+      "flagged": "2026-11-09T20:30:05.310Z"
     },
     {
       "unit": "b1",
-      "note": "The section says Write, Edit and Bash are guarded by asking your permission. Claude Code 2.1.314 adds a setting that hard-blocks Write, Edit and NotebookEdit from touching files outside your working directories in every permission mode — a guard that applies even when permissions would otherwise allow it.",
-      "flagged": "2026-11-02T20:01:36.815Z"
+      "note": "The permissions framing (\"Write, Edit and Bash ask your permission\" / denying just makes Claude try another approach) misses two changes: v2.1.319 moved auto mode's safety judgement to a server-side check, so behind an LLM gateway or with telemetry off, unverifiable commands can be prompted or outright denied (CLAUDE_CODE_AUTO_MODE_SERVER=0 reverts; Bedrock, Vertex and Foundry are unaffected), and v2.1.317 added new consent prompts for cloud scheduled tasks gaining unrequested connectors and for tools sending your account email over the network.",
+      "flagged": "2026-11-09T20:30:05.310Z"
     },
     {
-      "unit": "c1",
-      "note": "The statelessness section explains that long chats cost more because the whole conversation is resent each time, but no longer reflects that caching of the resent prefix is now a standard mitigation on Bedrock and other APIs.",
-      "flagged": "2026-11-02T20:01:36.815Z"
+      "unit": "c2",
+      "note": "The tier list calling Fable \"an even more capable, more expensive top tier\" in parentheses is now understated: Fable 5.2 (plus Mythos 5.2) shipped this week, is available on Amazon Bedrock, and is Claude Code's default model — it should be presented as a main tier, not an aside.",
+      "flagged": "2026-11-09T20:30:05.310Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The \"As of September 2026\" price table (Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5) no longer reflects the current lineup: Fable 5.2 now has published per-million-token pricing of its own and is the default in Claude Code, so any cost math based on Sonnet 5 as the daily driver is out of date.",
+      "flagged": "2026-11-09T20:30:05.310Z"
     }
   ]
 }
