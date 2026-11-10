@@ -1,6 +1,223 @@
 {
-  "updated": "2026-11-09T20:30:05.312Z",
+  "updated": "2026-11-10T17:31:26.696Z",
   "items": [
+    {
+      "id": "a51a23f384",
+      "date": "2026-11-10T15:04:03.000Z",
+      "added": "2026-11-10T17:31:26.691Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/state-of-the-tech-job-market-late",
+      "category": "pm",
+      "title": "Late-2026 tech job market: PMs up, engineers flat, designers squeezed",
+      "summary": "Lenny's data-driven read on hiring: product management demand is recovering, engineering roles are plateauing as AI absorbs routine coding, design is hit hardest, and the fastest AI hiring is outside pure software.",
+      "why": "You're a PM in an AI-heavy org; this tells you where your leverage and risk sit over the next year.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Why is PM demand holding up while engineering hiring plateaus?",
+          "back": "AI absorbs routine implementation work, so leverage shifts toward deciding what to build, judging quality, and owning outcomes."
+        },
+        {
+          "front": "Where is the biggest AI hiring boom happening?",
+          "back": "Outside classic software roles — AI work is spreading into non-software industries and functions."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "According to the late-2026 job market read, which pattern best describes the shift?",
+          "options": [
+            "PM demand recovering while engineering hiring flattens and design weakens",
+            "Engineering hiring booming while PM roles are being consolidated away",
+            "Design hiring leading growth as AI increases demand for craft",
+            "All functions growing evenly as AI budgets expand across the board"
+          ],
+          "answer": 0,
+          "why": "The report's core finding is PMs winning, engineers plateauing, and designers hurting — not uniform growth."
+        }
+      ]
+    },
+    {
+      "id": "f040ac4e3c",
+      "date": "2026-11-09T20:37:49.000Z",
+      "added": "2026-11-10T17:31:26.692Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/claude-fable-52-review-fast-creative",
+      "category": "labs",
+      "title": "Hands-on review: Claude Fable 5.2",
+      "summary": "Lenny's 25-minute first-look at Anthropic's new Fable 5.2 — what it actually built, where it broke down, and whether it earns a spot in a daily AI workflow.",
+      "why": "You use Claude daily; a practical review tells you whether to switch models and what tasks it handles well.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "b0"
+      ],
+      "cards": [
+        {
+          "front": "Claude Fable 5.2",
+          "back": "Anthropic's newest flagship model (Nov 2026), positioned as faster and stronger at creative and coding work; currently top-ranked on public leaderboards."
+        },
+        {
+          "front": "Why do model reviews matter more than benchmarks for a PM?",
+          "back": "Benchmarks measure narrow tasks; hands-on reviews show failure modes on real, messy work you'd actually assign."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What's the most reliable way for a PM to decide whether a new model belongs in their daily stack?",
+          "options": [
+            "Run your own recurring real tasks through it and compare outputs",
+            "Check its position on a public leaderboard ranking",
+            "Compare its advertised context window against the current model",
+            "Look at the price per million tokens versus the previous version"
+          ],
+          "answer": 0,
+          "why": "Leaderboards, context size and price are inputs, but only your own repeated real tasks reveal the failure modes that matter."
+        }
+      ]
+    },
+    {
+      "id": "c8bf0b8e91",
+      "date": "2026-11-10T05:34:14.000Z",
+      "added": "2026-11-10T17:31:26.692Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/10/prompting-claude-fable-52/",
+      "category": "claude-code",
+      "title": "Telling Claude who owns the code changes how it behaves",
+      "summary": "Anthropic's prompting guide notes Fable 5.2 reacts to code ownership cues: framed as someone else's codebase, it edits cautiously and adds rather than refactors; stated ownership invites bolder changes.",
+      "why": "A one-line framing in your prompt or CLAUDE.md can change how aggressively Claude Code rewrites your team's repo.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "268741d06f",
+      "date": "2026-11-10T06:34:44.000Z",
+      "added": "2026-11-10T17:31:26.692Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo-roadshow-begins/",
+      "category": "labs",
+      "title": "Fable 5.2 retakes the #1 spot as Anthropic's IPO roadshow begins",
+      "summary": "Roundup of Anthropic's simultaneous Fable 5.2 and Mythos 5.2 launch and leaderboard reclaim, plus the open question of how much extended 'thinking' compute is worth paying for per task.",
+      "why": "Reasoning-budget tradeoffs directly affect cost and latency of the agents your company runs in production.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "fcbcd12bc9",
+      "date": "2026-11-10T16:56:36.000Z",
+      "added": "2026-11-10T17:31:26.692Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-tokenomics-data-lake/",
+      "category": "builders",
+      "title": "Seeing inside your Bedrock bill: a token observability data lake",
+      "summary": "AWS walks through centralizing Bedrock invocation logs from many accounts into one queryable table, exposing prompts, token counts, model choice and per-call cost rather than just a monthly total.",
+      "why": "Your agents run on Bedrock; this is the pattern for answering 'which feature is burning our token budget?'",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "3ffbe471ef",
+      "date": "2026-11-10T00:21:34.000Z",
+      "added": "2026-11-10T17:31:26.692Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-skills-and-agents-work-in-aws-quick/",
+      "category": "builders",
+      "title": "How 'skills' and agents fit together in AWS Quick",
+      "summary": "AWS explains encoding repeatable work — status updates, release notes, ticket creation — as reusable skills attached to agents, plus how teams share them via a catalog.",
+      "why": "Skills are becoming the standard unit of reusable agent behavior; the same idea appears in Claude Code.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "fabe838d73",
+      "date": "2026-11-10T07:28:21.000Z",
+      "added": "2026-11-10T17:31:26.692Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/10/muse-ember/",
+      "category": "labs",
+      "title": "Meta ships Muse Ember, a small model built for agent grunt work",
+      "summary": "Meta's entry in the cheap-and-fast tier (alongside Haiku-class models) targets the repetitive work agents do all day: tool calls, routing and short reasoning steps, at low cost.",
+      "why": "Routing cheap steps to small models is the main cost lever in production agents — useful vocabulary for your roadmap.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "85a32fe124",
+      "date": "2026-11-10T00:00:00.000Z",
+      "added": "2026-11-10T17:31:26.692Z",
+      "source": "Anthropic",
+      "link": "https://www.anthropic.com/news/roadshow-launch",
+      "category": "labs",
+      "title": "Anthropic kicks off its IPO roadshow",
+      "summary": "Anthropic has formally started the investor roadshow for a proposed public offering of Class A shares, timed alongside its newest model launch.",
+      "why": "A public Anthropic means more disclosure and more pressure on pricing and roadmap for the tools you depend on.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "d363b026f0",
+      "date": "2026-11-09T23:57:21.000Z",
+      "added": "2026-11-10T17:31:26.692Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+      "category": "claude-code",
+      "title": "Using Claude Code to debug a beeping box room",
+      "summary": "Simon Willison had Claude Code build a small throwaway tool to log and triangulate a mysterious intermittent beep — a good example of disposable software for a one-off real-world problem.",
+      "why": "A concrete model for non-engineers: spin up a quick tool for a one-off problem instead of living with it.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "3588ceed41",
+      "date": "2026-11-10T07:00:00.000Z",
+      "added": "2026-11-10T17:31:26.692Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/ai-effect-on-freelance-work",
+      "category": "pm",
+      "title": "OpenAI and Upwork on how AI is reshaping freelance work",
+      "summary": "Joint research finds demand shifting toward hybrid skill combinations, with AI-related projects commanding bigger budgets and more hours than the tasks AI is displacing.",
+      "why": "Signals which skill combinations hold value — useful for staffing decisions and your own positioning.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "03ff3e39f4",
       "date": "2026-11-09T13:04:17.000Z",

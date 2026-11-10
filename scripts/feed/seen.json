@@ -8538,5 +8538,97 @@
   "5a84859a13": {
     "source": "latent-space",
     "at": "2026-11-09T20:28:25.229Z"
+  },
+  "a51a23f384": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-10T17:30:42.992Z"
+  },
+  "f040ac4e3c": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-10T17:30:42.992Z"
+  },
+  "85a32fe124": {
+    "source": "anthropic",
+    "at": "2026-11-10T17:30:43.556Z"
+  },
+  "46ecb159c1": {
+    "source": "openai",
+    "at": "2026-11-10T17:30:43.768Z"
+  },
+  "01a8528fa1": {
+    "source": "openai",
+    "at": "2026-11-10T17:30:43.768Z"
+  },
+  "3588ceed41": {
+    "source": "openai",
+    "at": "2026-11-10T17:30:43.768Z"
+  },
+  "f37b680abc": {
+    "source": "openai",
+    "at": "2026-11-10T17:30:43.768Z"
+  },
+  "23b94c6976": {
+    "source": "openai",
+    "at": "2026-11-10T17:30:43.769Z"
+  },
+  "c5fffc8a0c": {
+    "source": "google-ai",
+    "at": "2026-11-10T17:30:43.997Z"
+  },
+  "155d33cae7": {
+    "source": "google-ai",
+    "at": "2026-11-10T17:30:43.997Z"
+  },
+  "0b2e1c02de": {
+    "source": "deepmind",
+    "at": "2026-11-10T17:30:44.453Z"
+  },
+  "428ac4b42c": {
+    "source": "deepmind",
+    "at": "2026-11-10T17:30:44.453Z"
+  },
+  "a98763b80c": {
+    "source": "deepmind",
+    "at": "2026-11-10T17:30:44.453Z"
+  },
+  "f7d3d2f1a8": {
+    "source": "claude-code",
+    "at": "2026-11-10T17:30:44.684Z"
+  },
+  "4098b8dc99": {
+    "source": "aws-ml",
+    "at": "2026-11-10T17:30:44.809Z"
+  },
+  "fcbcd12bc9": {
+    "source": "aws-ml",
+    "at": "2026-11-10T17:30:44.809Z"
+  },
+  "3ffbe471ef": {
+    "source": "aws-ml",
+    "at": "2026-11-10T17:30:44.809Z"
+  },
+  "fabe838d73": {
+    "source": "simon-willison",
+    "at": "2026-11-10T17:30:44.957Z"
+  },
+  "c8bf0b8e91": {
+    "source": "simon-willison",
+    "at": "2026-11-10T17:30:44.957Z"
+  },
+  "75546f2ae8": {
+    "source": "simon-willison",
+    "at": "2026-11-10T17:30:44.957Z"
+  },
+  "c93c64172e": {
+    "source": "simon-willison",
+    "at": "2026-11-10T17:30:44.957Z"
+  },
+  "d363b026f0": {
+    "source": "simon-willison",
+    "at": "2026-11-10T17:30:44.957Z"
+  },
+  "268741d06f": {
+    "source": "latent-space",
+    "at": "2026-11-10T17:30:46.336Z"
   }
 }
