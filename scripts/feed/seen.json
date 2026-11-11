@@ -8630,5 +8630,129 @@
   "268741d06f": {
     "source": "latent-space",
     "at": "2026-11-10T17:30:46.336Z"
+  },
+  "0f3a523ea2": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-11T17:43:56.871Z"
+  },
+  "0829365b10": {
+    "source": "product-growth",
+    "at": "2026-11-11T17:43:57.151Z"
+  },
+  "f28f90d289": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.454Z"
+  },
+  "80b38ea7da": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.454Z"
+  },
+  "5ca4dc7b6d": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.454Z"
+  },
+  "4e3e5904c8": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.454Z"
+  },
+  "1ff74ee2cb": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.454Z"
+  },
+  "82be2561b8": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.455Z"
+  },
+  "38616a8c4d": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.455Z"
+  },
+  "f6958f5f3b": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.456Z"
+  },
+  "2d7884f118": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.456Z"
+  },
+  "0ecf91ee2a": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.456Z"
+  },
+  "da2b1f66c8": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.456Z"
+  },
+  "bef8e976ca": {
+    "source": "openai",
+    "at": "2026-11-11T17:43:57.456Z"
+  },
+  "97adab01db": {
+    "source": "google-ai",
+    "at": "2026-11-11T17:43:57.847Z"
+  },
+  "7e65614cc8": {
+    "source": "google-ai",
+    "at": "2026-11-11T17:43:57.847Z"
+  },
+  "ac5a661efb": {
+    "source": "google-ai",
+    "at": "2026-11-11T17:43:57.847Z"
+  },
+  "5b916f1bea": {
+    "source": "deepmind",
+    "at": "2026-11-11T17:43:58.537Z"
+  },
+  "614da7e902": {
+    "source": "aws-ml",
+    "at": "2026-11-11T17:43:58.943Z"
+  },
+  "242a507726": {
+    "source": "aws-ml",
+    "at": "2026-11-11T17:43:58.943Z"
+  },
+  "ab8503eb81": {
+    "source": "aws-ml",
+    "at": "2026-11-11T17:43:58.943Z"
+  },
+  "f8faf1ef9b": {
+    "source": "aws-ml",
+    "at": "2026-11-11T17:43:58.943Z"
+  },
+  "fe4093b62b": {
+    "source": "aws-ml",
+    "at": "2026-11-11T17:43:58.943Z"
+  },
+  "f6c8f80410": {
+    "source": "aws-ml",
+    "at": "2026-11-11T17:43:58.943Z"
+  },
+  "d525bf0742": {
+    "source": "aws-ml",
+    "at": "2026-11-11T17:43:58.943Z"
+  },
+  "a19ce5d70a": {
+    "source": "simon-willison",
+    "at": "2026-11-11T17:43:59.043Z"
+  },
+  "c1fbfe2e3f": {
+    "source": "simon-willison",
+    "at": "2026-11-11T17:43:59.043Z"
+  },
+  "bb789fe00a": {
+    "source": "latent-space",
+    "at": "2026-11-11T17:43:59.375Z"
+  },
+  "6a8ddd1b4c": {
+    "source": "latent-space",
+    "at": "2026-11-11T17:43:59.375Z"
+  },
+  "1b9619ecc4": {
+    "source": "latent-space",
+    "at": "2026-11-11T17:43:59.375Z"
+  },
+  "8f42811d9e": {
+    "source": "latent-space",
+    "at": "2026-11-11T17:43:59.375Z"
   }
 }

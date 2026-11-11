@@ -1,6 +1,201 @@
 {
-  "updated": "2026-11-10T17:31:26.696Z",
+  "updated": "2026-11-11T17:44:41.805Z",
   "items": [
+    {
+      "id": "0f3a523ea2",
+      "date": "2026-11-11T13:04:09.000Z",
+      "added": "2026-11-11T17:44:41.801Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/claude-code-obsidian-my-familys-ai",
+      "category": "claude-code",
+      "title": "Lenny: Running your household on Claude Code + Obsidian",
+      "summary": "Scott Farrar demos a personal \"second brain\" where Claude Code reads and writes plain Markdown notes in Obsidian to track appliances, chase insurance quotes, and push household projects forward.",
+      "why": "A concrete, non-coding template for using Claude Code as a file-based agent — the same pattern works for your PM docs and specs.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Why does Claude Code pair well with Obsidian?",
+          "back": "Obsidian notes are plain Markdown files in a folder, so Claude Code can Read, Edit and search them with its normal file tools — no API or integration needed."
+        },
+        {
+          "front": "What makes a workflow a good fit for a file-based agent?",
+          "back": "Work that lives as text in a folder: notes, specs, trackers. The agent reads context from files and writes results back, leaving a reviewable diff."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why can Claude Code work directly with an Obsidian vault?",
+          "options": [
+            "The vault is plain Markdown files on disk that its file tools can read and edit",
+            "The vault runs a local server that exposes notes through a REST API",
+            "Obsidian ships a built-in model that mirrors notes into Claude's memory",
+            "Markdown notes are stored as embeddings that Claude queries by similarity"
+          ],
+          "answer": 0,
+          "why": "Obsidian stores notes as ordinary .md files in a folder, which is exactly what Claude Code's Read/Edit/Grep tools operate on."
+        }
+      ]
+    },
+    {
+      "id": "f6c8f80410",
+      "date": "2026-11-10T22:35:03.000Z",
+      "added": "2026-11-11T17:44:41.801Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore/",
+      "category": "builders",
+      "title": "How to actually evaluate an AI agent (Bedrock AgentCore playbook)",
+      "summary": "AWS breaks \"is the agent working?\" into separate questions — did it finish the task, stay on topic, leak data, skip steps — and maps each to built-in, DeepEval or AutoEval evaluators at trace, step or session level.",
+      "why": "Your production agents run on Bedrock; this gives you the vocabulary to ask your team how agent quality is measured and regressions caught.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Agent evaluation: what is a \"trace\"?",
+          "back": "The recorded sequence of an agent's steps — prompts, tool calls, and outputs — for one run. Evaluations score traces, not just the final answer."
+        },
+        {
+          "front": "LLM-as-judge evaluator",
+          "back": "Using a model to grade another model's output against criteria (task completion, topic adherence, data leakage). Cheap and scalable, but needs human-checked samples."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why do agent evaluations score the whole trace rather than just the final answer?",
+          "options": [
+            "Because a correct answer can still come from skipped steps or leaked data",
+            "Because final answers are generated after the trace is deleted",
+            "Because traces are cheaper to store than model outputs",
+            "Because only traces can be replayed through a different model"
+          ],
+          "answer": 0,
+          "why": "Agents can reach a plausible answer via wrong or unsafe paths, so step-level behaviour must be evaluated separately from the final output."
+        }
+      ]
+    },
+    {
+      "id": "1b9619ecc4",
+      "date": "2026-11-10T20:05:17.000Z",
+      "added": "2026-11-11T17:44:41.801Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/resend/",
+      "category": "pm",
+      "title": "Designing products for agents, not just humans",
+      "summary": "Resend's Zeno Rocha on \"agent experience\": writing docs so coding agents like Claude Code choose your API, shaping tools agents can call reliably, and where answer-engine optimization stops and AX begins.",
+      "why": "A new PM surface: if agents pick the tools, your docs and APIs are now part of the product's distribution strategy.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "0829365b10",
+      "date": "2026-11-10T23:59:40.000Z",
+      "added": "2026-11-11T17:44:41.801Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/can-saas-survive-the-ai-era",
+      "category": "pm",
+      "title": "Webflow's CEO on how SaaS survives AI",
+      "summary": "Linda Tong lays out three bets she thinks keep software companies defensible as AI commoditizes features, alongside market data on which categories investors still pay a premium for.",
+      "why": "Direct ammunition for strategy conversations about whether your product's moat survives agents building features on demand.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "614da7e902",
+      "date": "2026-11-11T16:05:33.000Z",
+      "added": "2026-11-11T17:44:41.801Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/accelerating-product-development-with-ai-driven-lifecycle-management-ai-pdlc-in-aws-quick/",
+      "category": "pm",
+      "title": "AWS ships a six-agent product development lifecycle",
+      "summary": "A reference design where agents move from scattered customer signals through Discover, Decide, Design and Prototype, with a human approval gate at each stage and a spec handed to a coding agent at the end.",
+      "why": "Shows how vendors imagine automating your job's workflow — worth stealing the gate structure even if you never run the AWS version.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a19ce5d70a",
+      "date": "2026-11-11T15:11:59.000Z",
+      "added": "2026-11-11T17:44:41.801Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/11/anthropic-ipo-roadshow/",
+      "category": "labs",
+      "title": "Anthropic's IPO roadshow reveals how its business runs",
+      "summary": "Simon Willison highlights previously unreleased details from Anthropic's investor video, including co-founder Tom Brown explaining the company's approach to training compute and capacity planning.",
+      "why": "Understanding Anthropic's economics and compute constraints helps you predict pricing, rate limits and roadmap for the tool you use daily.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5ca4dc7b6d",
+      "date": "2026-11-10T10:00:00.000Z",
+      "added": "2026-11-11T17:44:41.801Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-businesses-chatgpt",
+      "category": "pm",
+      "title": "ChatGPT adds business profiles and visibility insights",
+      "summary": "OpenAI launches a way for companies to manage their business information inside ChatGPT, see how they surface in answers, and convert that attention into actions like bookings or purchases.",
+      "why": "Chat assistants are becoming a discovery channel; this is the early infrastructure for optimizing how your product appears in them.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6a8ddd1b4c",
+      "date": "2026-11-11T04:49:48.000Z",
+      "added": "2026-11-11T17:44:41.801Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/codex-work/",
+      "category": "claude-code",
+      "title": "OpenAI's Codex: voice steering and cloud handoffs",
+      "summary": "At the AI Engineer Code Summit, OpenAI showed newer coding-agent patterns — directing Codex by voice, handing long tasks off to cloud runs, and lightweight annotations for steering work.",
+      "why": "Useful contrast to Claude Code's workflow; these delegation patterns usually show up across all coding agents within months.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "f8faf1ef9b",
+      "date": "2026-11-11T01:07:19.000Z",
+      "added": "2026-11-11T17:44:41.801Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-kimi-k3-1-pro-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Kimi K3.1 Pro lands on Amazon Bedrock",
+      "summary": "Moonshot AI's coding-focused model is now callable on Bedrock through OpenAI-compatible and Converse APIs, with explicit prompt caching to cut latency and cost on repeated context.",
+      "why": "More model choice inside the Bedrock stack your agents already use — and prompt caching is a lever on your inference bill.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "a51a23f384",
       "date": "2026-11-10T15:04:03.000Z",
