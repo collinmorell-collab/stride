@@ -1,6 +1,195 @@
 {
-  "updated": "2026-11-11T17:44:41.805Z",
+  "updated": "2026-11-12T17:57:26.749Z",
   "items": [
+    {
+      "id": "8e4104a923",
+      "date": "2026-11-11T18:00:00.000Z",
+      "added": "2026-11-12T17:57:26.746Z",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+      "category": "labs",
+      "title": "Google launches Gemini Decisions API — a third \"decision model\"",
+      "summary": "Google released Gemini Decision 1, a model built to output fast, calibrated choices (with confidence) from text, images and other inputs, rather than long prose. It follows similar decision-model APIs from Jev and OpenAI.",
+      "why": "A new model category you'll be asked about: cheap, confident yes/no calls for routing, moderation and triage inside agent workflows.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "What is a \"decision model\"?",
+          "back": "A model tuned to return a short, structured choice (a label or yes/no) plus a calibrated confidence score, instead of free-form text — fast and cheap for routing, triage or classification steps."
+        },
+        {
+          "front": "What does \"calibrated\" mean for a model's confidence?",
+          "back": "When it says 80% confident, it's right about 80% of the time — so you can set thresholds for auto-approve vs. send to a human."
+        },
+        {
+          "front": "Who now offers decision models?",
+          "back": "Jev (first), OpenAI, and now Google with Gemini Decision 1 via the Gemini Decisions API."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What mainly distinguishes a decision model from a general chat LLM?",
+          "options": [
+            "It returns a structured choice with a calibrated confidence score",
+            "It stores conversation history across sessions automatically",
+            "It retrieves documents from a knowledge base before answering",
+            "It runs only on the provider's own hardware for lower latency"
+          ],
+          "answer": 0,
+          "why": "Decision models are optimised for short, confidence-scored outputs used in routing and classification, not long generated prose."
+        }
+      ]
+    },
+    {
+      "id": "19d3c2e19d",
+      "date": "2026-11-12T15:38:47.000Z",
+      "added": "2026-11-12T17:57:26.746Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/from-prototype-to-production-engineering-agents-with-agent-dlc/",
+      "category": "builders",
+      "title": "AWS on why agents stall between demo and production",
+      "summary": "AWS argues agents break normal CI/CD because they're non-deterministic, open-ended and stateful. It proposes \"Agent DLC\": one lifecycle with two loops and an explicit quality bar, plus a case where an average score hid a real coverage gap.",
+      "why": "This is the eval and release discipline your team needs for Lambda+Bedrock agents — and it's PM work, not just engineering work.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Why can't you ship an agent like normal software?",
+          "back": "Same input can give different outputs, tasks are open-ended, and state carries across steps — so pass/fail unit tests aren't enough; you need eval sets plus judged quality standards."
+        },
+        {
+          "front": "Why can an aggregate eval score mislead you?",
+          "back": "A good average can hide whole categories of failure (a coverage gap). You need per-scenario breakdowns, not one headline number."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why do traditional CI/CD test suites fall short for AI agents?",
+          "options": [
+            "Agent outputs vary run to run, so fixed pass/fail assertions don't capture quality",
+            "Agents are deployed as containers, which CI/CD pipelines cannot build",
+            "Agent code changes too rarely for continuous integration to be useful",
+            "Agents run in the cloud, so tests cannot be executed before release"
+          ],
+          "answer": 0,
+          "why": "Non-determinism, open-ended tasks and carried state mean you need graded evaluations against an explicit standard, not binary assertions."
+        }
+      ]
+    },
+    {
+      "id": "eb6d3e48fc",
+      "date": "2026-11-12T05:08:20.000Z",
+      "added": "2026-11-12T17:57:26.746Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/jev-revolution/",
+      "category": "builders",
+      "title": "What engineers are actually building with \"System One\" models",
+      "summary": "Recap from AI Engineer Code Summit: Jev's creator urged developers to automate everything with fast \"System One\" models, and companies like Glean showed how they slot these quick-reflex models into existing products.",
+      "why": "Shows the emerging pattern of pairing fast cheap models for reflex steps with slower reasoning models — useful framing for your roadmap.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "8983976445",
+      "date": "2026-11-11T23:35:47.000Z",
+      "added": "2026-11-12T17:57:26.746Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/openai-codex-on-amazon-bedrock/",
+      "category": "claude-code",
+      "title": "Running OpenAI Codex on Amazon Bedrock: the enterprise rollout guide",
+      "summary": "AWS walks through deploying Codex to developers with Bedrock as the model backend, focusing on access control, governance and cost decisions that platform, security and finance teams must agree on before rollout.",
+      "why": "Mirrors the questions your org faces when standardising coding agents on Bedrock — useful ammunition for tool-choice debates.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b5708027eb",
+      "date": "2026-11-11T23:13:16.000Z",
+      "added": "2026-11-12T17:57:26.746Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-web-search-api-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "Bedrock AgentCore adds a one-call Web Search API",
+      "summary": "AWS now offers web search as a single signed API call from the AWS SDK or CLI — no gateway or extra resources to set up — intended for use inside agent loops and data pipelines.",
+      "why": "Grounding agents in live web results is now a small change on your existing AWS stack instead of a new integration project.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "04245104e0",
+      "date": "2026-11-11T22:26:40.000Z",
+      "added": "2026-11-12T17:57:26.746Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/icymi-what-landed-for-ai-builders-in-october-2026/",
+      "category": "builders",
+      "title": "Everything new in Bedrock and AgentCore in October 2026",
+      "summary": "A recap of Bedrock, AgentCore and Strands updates: new models for different task types, reliability and grounding improvements for agents, and clearer cost reporting for teams running AI in production.",
+      "why": "Fastest way to catch up on the platform your production agents actually run on, including cost visibility you can take to finance.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "de687054f0",
+      "date": "2026-11-12T15:42:21.000Z",
+      "added": "2026-11-12T17:57:26.746Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-composable-interoperable-multi-agent-systems-with-a2a-on-aws/",
+      "category": "builders",
+      "title": "Agent-to-agent (A2A) protocol: agents from different teams talking",
+      "summary": "Demo of an orchestrator agent on one framework calling a separate agent on Bedrock AgentCore via the A2A protocol, with authenticated two-way calls and neither side depending on the other's framework or SDK.",
+      "why": "Explains how agents owned by different teams or vendors interoperate — a question you'll face when your agent needs someone else's.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "02f705171a",
+      "date": "2026-11-11T21:18:30.000Z",
+      "added": "2026-11-12T17:57:26.746Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/11/aws-emulator/",
+      "category": "builders",
+      "title": "AWS ships an official local emulator — mostly written by agents",
+      "summary": "AWS released aws-emulator, letting developers test against local versions of AWS services without paid API calls. Notably, it was built in Rust largely by AI agents: nearly 30,000 commits in three weeks.",
+      "why": "Cheaper testing for your Lambda/Bedrock work, plus a striking data point on agents producing real production codebases.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "0f3a523ea2",
       "date": "2026-11-11T13:04:09.000Z",
