@@ -1,6 +1,187 @@
 {
-  "updated": "2026-11-12T17:57:26.749Z",
+  "updated": "2026-11-13T17:32:28.439Z",
   "items": [
+    {
+      "id": "1e1f91e95e",
+      "date": "2026-11-12T22:12:13.000Z",
+      "added": "2026-11-13T17:32:28.434Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.323",
+      "category": "claude-code",
+      "title": "Claude Code adds experimental \"Code Mode\"",
+      "summary": "New opt-in mode lets Claude call its tools by writing JavaScript instead of issuing one tool call at a time, which can cut token use and speed up multi-step work. Plugins can now declare a required Claude Code version.",
+      "why": "You use Claude Code daily; Code Mode changes how it executes work and can make long tasks cheaper and faster.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "What is Claude Code's Code Mode?",
+          "back": "An experimental opt-in setting where Claude writes JavaScript that calls its tools programmatically, instead of making separate individual tool calls."
+        },
+        {
+          "front": "Why can Code Mode be cheaper?",
+          "back": "Looping and filtering happen inside the script, so fewer intermediate results pass through the model's context as tokens."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Claude Code's new Code Mode, how does the model use its tools?",
+          "options": [
+            "It writes JavaScript code that invokes the tools programmatically",
+            "It issues one structured tool call per step as usual",
+            "It delegates every tool call to a separate subagent",
+            "It asks you to approve each tool call in the terminal"
+          ],
+          "answer": 0,
+          "why": "Code Mode has Claude write JavaScript that calls tools, reducing round trips and context usage versus one-call-at-a-time execution."
+        }
+      ]
+    },
+    {
+      "id": "355689f1d7",
+      "date": "2026-11-12T18:43:19.000Z",
+      "added": "2026-11-13T17:32:28.434Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/optimizing-cost-per-task-and-proving-agent-roi-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "How to calculate the real cost per task of a Bedrock agent",
+      "summary": "AWS argues per-token price is misleading: retries, reasoning tokens, repeated context and tool loops dominate. It shows how to compute cost per completed task, cut it with caching and routing, and prove ROI with human baselines and holdouts.",
+      "why": "Your agents run on Bedrock; this gives you a defensible cost-and-ROI story for leadership instead of raw token prices.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Cost per task vs cost per token",
+          "back": "Cost per task counts every token a finished job consumes — retries, reasoning, re-sent context, tool loops — so it reflects real spend far better than list token price."
+        },
+        {
+          "front": "Prompt caching",
+          "back": "Reusing a stored copy of repeated context (system prompt, docs) across calls at a reduced rate, lowering input token cost on multi-turn agents."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why can two models with the same per-token price differ sharply in cost per completed task?",
+          "options": [
+            "They differ in retries, reasoning tokens and tool-loop length per task",
+            "Bedrock charges a separate hourly fee for each hosted model",
+            "Output tokens are always billed at the same rate as input tokens",
+            "Cost per task is fixed by the region the model runs in"
+          ],
+          "answer": 0,
+          "why": "Total tokens consumed to finish a job — including retries, reasoning and repeated context — drive real cost, not the headline per-token rate."
+        }
+      ]
+    },
+    {
+      "id": "5bf4951adb",
+      "date": "2026-11-13T15:00:00.000Z",
+      "added": "2026-11-13T17:32:28.434Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-chatgpt-wallet",
+      "category": "labs",
+      "title": "OpenAI launches ChatGPT Wallet for agent purchases",
+      "summary": "OpenAI added a wallet so agents inside ChatGPT Work, Codex and dots can actually buy things, with explicit user approval and normal card protections behind each transaction.",
+      "why": "Agentic commerce is becoming real; expect checkout, approval and trust flows to become product design questions you'll face.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "4bad5afe01",
+      "date": "2026-11-12T18:00:50.000Z",
+      "added": "2026-11-13T17:32:28.434Z",
+      "source": "Google DeepMind",
+      "link": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
+      "category": "labs",
+      "title": "Google ships Gemini 4 Hydrogen, its cheap frontier-family model",
+      "summary": "Hydrogen is the low-cost member of the Gemini 4 family, priced surprisingly close to larger siblings, and is already rolling into Google Search globally for more visual, intuitive answers.",
+      "why": "Cheap-but-capable models reshape routing decisions and cost ceilings for any agent you spec, including ones on Bedrock.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "332da1c688",
+      "date": "2026-11-12T20:51:55.000Z",
+      "added": "2026-11-13T17:32:28.434Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/four-amazon-bedrock-inference-choices-that-affect-cost/",
+      "category": "builders",
+      "title": "Four Bedrock request settings that quietly drive your bill",
+      "summary": "Cache duration, service tier, reasoning effort and maxTokens each change how many tokens Bedrock processes and at what rate. AWS shows how they tested each knob and how to verify the savings yourself.",
+      "why": "Concrete levers you can ask your engineers about when agent costs climb despite prompt tuning.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "66bdd92f8e",
+      "date": "2026-11-12T17:59:59.000Z",
+      "added": "2026-11-13T17:32:28.434Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime/",
+      "category": "builders",
+      "title": "Next-gen Bedrock AgentCore runtime for long-running agents",
+      "summary": "AWS updated its managed agent runtime with hardware-isolated sessions, faster cold starts, more compute, usage-based billing and isolation extended to your data — aimed at agents that run for hours on a user's behalf.",
+      "why": "A possible upgrade path beyond Lambda for your company's production agents when tasks outgrow short function runtimes.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "39f1058231",
+      "date": "2026-11-13T09:04:13.000Z",
+      "added": "2026-11-13T17:32:28.434Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-jensen-huang-resigns-after-33-years-leading-nvidia/",
+      "category": "labs",
+      "title": "Jensen Huang steps down as NVIDIA CEO after 33 years",
+      "summary": "CFO Colette Kress takes over as interim chief executive. Commentary focuses on what the handover means for NVIDIA's roadmap, AI hardware supply and US leadership in open models.",
+      "why": "Compute supply shapes model prices and availability; leadership change at NVIDIA is background context for every AI roadmap.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "5b0f73df89",
+      "date": "2026-11-12T20:00:00.000Z",
+      "added": "2026-11-13T17:32:28.434Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/business/customer-stories/amplitude",
+      "category": "pm",
+      "title": "Amplitude's agent that picks what to build, then ships it",
+      "summary": "Amplitude's \"Wave\" agent spots product opportunities from usage data, hands work to coding agents, and measures impact — compressing improvement cycles to a day or two.",
+      "why": "A concrete template for how PM work itself gets automated: detect, ship, measure, with humans steering.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "8e4104a923",
       "date": "2026-11-11T18:00:00.000Z",
