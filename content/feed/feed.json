@@ -1,6 +1,167 @@
 {
-  "updated": "2026-11-13T17:32:28.439Z",
+  "updated": "2026-11-14T16:24:48.632Z",
   "items": [
+    {
+      "id": "2a5926714d",
+      "date": "2026-11-13T23:56:59.000Z",
+      "added": "2026-11-14T16:24:48.629Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/ai-customer-research",
+      "category": "pm",
+      "title": "Build a customer-research agent in Claude Code (with an eval loop)",
+      "summary": "A walkthrough for PMs: use Claude Code to build an agent that spots churned/drop-off customers and emails them, plus the evaluation loop that keeps its outputs safe. A free GitHub repo accompanies it.",
+      "why": "You already live in Claude Code; this shows a PM-shaped agent you can copy, and the eval habit that separates demos from production.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Eval loop (for an AI agent)",
+          "back": "A repeatable set of test cases plus scoring of the agent's outputs, run after every change, so you catch regressions before customers do."
+        },
+        {
+          "front": "Why build an agent inside Claude Code rather than from scratch?",
+          "back": "Claude Code already gives you file access, Bash, and tool calls, so you can prototype an agent's logic and data wiring without building infrastructure first."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main purpose of adding an eval loop to a customer-outreach agent?",
+          "options": [
+            "To measure output quality against test cases so changes don't silently degrade it",
+            "To reduce token spend by sending shorter prompts on each agent run",
+            "To let the model fine-tune itself on the emails it previously sent",
+            "To route each request to the cheapest model that can handle the task"
+          ],
+          "answer": 0,
+          "why": "Evals are structured quality checks over known cases; cost routing and fine-tuning are separate concerns."
+        }
+      ]
+    },
+    {
+      "id": "3880f24cce",
+      "date": "2026-11-13T22:30:12.000Z",
+      "added": "2026-11-14T16:24:48.629Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/route-coding-agent-requests-to-the-right-model-on-amazon-bedrock-with-nvidia-nemo-switchyard/",
+      "category": "builders",
+      "title": "Bedrock model routing: measure cost per solved task, not price per token",
+      "summary": "AWS shows deploying a routing layer (LiteLLM plus NVIDIA's NeMo Switchyard plugin) in front of Bedrock so coding-agent requests go to cheap or strong models as needed, benchmarked against single-model baselines.",
+      "why": "Your agents run on Bedrock; 'cost per solved task' is the metric to bring to budget conversations instead of token price.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Cost per solved task",
+          "back": "Total spend divided by tasks actually completed correctly. A cheap model that retries or fails can cost more than an expensive one that succeeds first time."
+        },
+        {
+          "front": "Model router",
+          "back": "A layer in front of several models that picks which one handles each request, based on difficulty, cost or latency rules."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why can a model with a lower price per token end up more expensive in an agent system?",
+          "options": [
+            "It may fail or retry more, raising the total cost of each completed task",
+            "It charges separately for input tokens as well as output tokens",
+            "It runs on fewer AWS regions, so network transfer fees are higher",
+            "It uses a larger context window, which multiplies the per-token rate"
+          ],
+          "answer": 0,
+          "why": "Agents loop until success, so failure and retry rates, not sticker price, drive real cost per solved task."
+        }
+      ]
+    },
+    {
+      "id": "3578b3def0",
+      "date": "2026-11-13T20:40:01.000Z",
+      "added": "2026-11-14T16:24:48.629Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.325",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.325: clearer policy-block errors and notebook tips",
+      "summary": "This release patches a security flaw in how compressed responses are decoded, adds a hint in VS Code terminals to re-run a notebook cell after Claude edits it, and tells you to use /rewind when org policy blocks a request.",
+      "why": "If your company policy blocks a Claude Code request, the error now tells you how to recover instead of leaving you stuck.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "29d2212010",
+      "date": "2026-11-13T22:02:39.000Z",
+      "added": "2026-11-14T16:24:48.629Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/architecture-patterns-for-fast-session-startup-on-amazon-bedrock-agentcore-runtime/",
+      "category": "builders",
+      "title": "Faster agent cold starts on Bedrock AgentCore runtime V2",
+      "summary": "AgentCore runtime V2 snapshots an initialised environment and restores it per session, so startup no longer scales with image size. The post covers measuring session start time and four patterns for moving work off the first request.",
+      "why": "Cold-start latency is the most common complaint about Lambda-style agents; these patterns give you concrete fixes to ask your engineers about.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "16c76fa53e",
+      "date": "2026-11-13T18:44:02.000Z",
+      "added": "2026-11-14T16:24:48.629Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/cost-attribution-and-controls-for-ai-developer-and-productivity-tools-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Tracing Bedrock AI spend back to individual users",
+      "summary": "Bedrock can attribute every inference call to the IAM identity that made it, with no extra instrumentation. AWS shows how to build per-user cost reports and enforce usage limits for AI coding and productivity tools.",
+      "why": "Useful if you need to justify or cap what your team's AI tooling costs on Bedrock, per person rather than in one blob.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a8b10f8e66",
+      "date": "2026-11-13T18:01:15.000Z",
+      "added": "2026-11-14T16:24:48.629Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-a-model-improvement-flywheel-with-amazon-sagemaker-hyperpod-data-capture/",
+      "category": "builders",
+      "title": "The model improvement flywheel: capture production traffic, find blind spots, retrain",
+      "summary": "An AWS end-to-end example logs a support router's real inputs and outputs to storage, queries them to find a category the model handles badly, fine-tunes on that data, and measures the improvement.",
+      "why": "The general pattern — log real traffic, mine failures, improve, re-measure — is how any AI feature you own should get better over time.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a480e3b592",
+      "date": "2026-11-14T08:31:02.000Z",
+      "added": "2026-11-14T16:24:48.629Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-the-no-ai-slop-manifesto/",
+      "category": "pm",
+      "title": "Practitioners publish a 'no AI slop' manifesto",
+      "summary": "Speakers from the AI Engineer conference set out shared standards for resisting low-effort AI-generated output, covering where human review and taste should stay mandatory in AI-assisted work.",
+      "why": "Quality bars for AI output are becoming an explicit product decision; this gives you vocabulary for that debate with your team.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "1e1f91e95e",
       "date": "2026-11-12T22:12:13.000Z",
