@@ -1,6 +1,80 @@
 {
-  "updated": "2026-11-14T16:24:48.632Z",
+  "updated": "2026-11-15T16:50:42.427Z",
   "items": [
+    {
+      "id": "5f5faf4419",
+      "date": "2026-11-15T13:31:28.000Z",
+      "added": "2026-11-15T16:50:42.424Z",
+      "source": "Lenny's Podcast",
+      "link": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
+      "category": "pm",
+      "title": "How Meta's Muse became the fastest-growing AI consumer app",
+      "summary": "Mona Sarantakos, VP of Product at Meta Superintelligence Labs, gives her first interview on building Muse: from a weekend hardware prototype to the #1 App Store app, and how the team shipped so fast.",
+      "why": "A rare inside look at AI consumer product decisions and speed — directly useful for how you scope and ship AI features.",
+      "score": 9,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "ac661c1b0b",
+      "date": "2026-11-14T21:15:46.000Z",
+      "added": "2026-11-15T16:50:42.424Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/community-wisdom-when-you-become",
+      "category": "pm",
+      "title": "When you become the bottleneck for your AI agents (plus the PULL framework)",
+      "summary": "Lenny's community Q&A on avoiding being the human bottleneck when running AI agents, a PULL framework for PM prioritization, product growth vs. growth marketing roles, and raising user feedback response rates.",
+      "why": "You run Claude Code daily; the bottleneck advice targets exactly the review-every-output trap that caps your throughput.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0"
+      ],
+      "cards": [
+        {
+          "front": "What does 'becoming the bottleneck for your AI agents' mean?",
+          "back": "You queue work to agents faster than you can review it, so your own approval step — not the model — limits output. Fix with batching, clearer upfront specs, and automated checks."
+        },
+        {
+          "front": "Product growth vs. growth marketing",
+          "back": "Product growth changes the product itself (onboarding, activation, loops); growth marketing drives acquisition through channels, spend and messaging."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "You delegate more tasks to AI agents but your shipping speed stays flat. What is the most likely cause?",
+          "options": [
+            "Your serial review and approval of every agent output has become the limiting step",
+            "The model's context window is too small to hold all of the tasks at once",
+            "Agents cannot run more than one tool call per request without approval",
+            "Delegating more tasks always reduces per-task quality in a fixed ratio"
+          ],
+          "answer": 0,
+          "why": "Throughput is capped by the slowest step; when generation is cheap, the human review queue becomes the bottleneck."
+        }
+      ]
+    },
+    {
+      "id": "2059ff8340",
+      "date": "2026-11-14T23:59:28.000Z",
+      "added": "2026-11-15T16:50:42.424Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+      "category": "builders",
+      "title": "Why 'OpenAI-compatible endpoint' keeps showing up everywhere",
+      "summary": "A small Datasette plugin release adds support for OpenAI-compatible endpoints, letting it talk to any LLM host that speaks that API shape — local models, Bedrock proxies or other vendors.",
+      "why": "Explains a term you'll hit when wiring Bedrock models into tools: the API format has become a de facto standard.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2",
+        "a1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "2a5926714d",
       "date": "2026-11-13T23:56:59.000Z",
