@@ -1,6 +1,216 @@
 {
-  "updated": "2026-11-15T16:50:42.427Z",
+  "updated": "2026-11-16T20:04:01.424Z",
   "items": [
+    {
+      "id": "bda65706b0",
+      "date": "2026-11-16T13:04:09.000Z",
+      "added": "2026-11-16T20:02:35.436Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-fight-token-fraud-as-a-solo",
+      "category": "pm",
+      "title": "A solo founder on losing money to token fraud — and the six attack patterns to defend against",
+      "summary": "How I AI episode: a founder lost tens of thousands of dollars to people abusing AI token credits, walks through six abuse patterns, the defenses he added, and why he scrapped free trials entirely.",
+      "why": "If your agents bill per token, abuse is a product problem, not just infra. These patterns shape your pricing, trials and limits.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Token fraud",
+          "back": "Abusing an AI product's free or cheap credits (fake accounts, resold API access, automated scripts) so the provider pays real model costs with no revenue."
+        },
+        {
+          "front": "Why kill free trials in an AI product?",
+          "back": "Unlike SaaS, each trial user burns real inference spend; abusers scale it. Credit caps, payment verification or paid trials cap the downside."
+        },
+        {
+          "front": "Cheapest first defenses against credit abuse",
+          "back": "Rate limits per user/IP, payment-method verification, per-account spend caps, anomaly alerts on usage spikes, and blocking automated signups."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why is unlimited free usage riskier for an AI product than for a classic SaaS product?",
+          "options": [
+            "Each request costs the provider real inference money, so abuse directly drains margin",
+            "Each signup requires manual onboarding, so abuse increases support headcount",
+            "Each account consumes a paid third-party license, so abuse breaches vendor terms",
+            "Each session stores large user files, so abuse mainly inflates storage bills"
+          ],
+          "answer": 0,
+          "why": "LLM calls have a hard variable cost per token, so free usage converts straight into cash burn rather than mostly-fixed hosting costs."
+        }
+      ]
+    },
+    {
+      "id": "6dd50b81f3",
+      "date": "2026-11-16T16:02:55.000Z",
+      "added": "2026-11-16T20:02:35.436Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-ai-fable-52-review-how-i-fight",
+      "category": "pm",
+      "title": "How I AI weekly: Claude Fable 5.2 review and building a family OS with Claude Code",
+      "summary": "Lenny's How I AI roundup covers a hands-on review of the new Claude Fable 5.2 model, the token-fraud founder episode, and someone using Claude Code to run household logistics as a personal operating system.",
+      "why": "Quick survey of what practitioners actually do with new models and Claude Code — directly transferable to your daily workflow.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b4b282d7c9",
+      "date": "2026-11-16T15:48:01.000Z",
+      "added": "2026-11-16T20:02:35.436Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/best-practices-for-writing-denied-topics-in-amazon-bedrock-guardrails/",
+      "category": "builders",
+      "title": "Writing Bedrock Guardrails 'denied topics' that block the right things",
+      "summary": "AWS shares eight practices for phrasing denied topics in Bedrock Guardrails. Because matching is by meaning, not keywords, vague wording silently blocks legitimate user requests; precise scoping and examples reduce false blocks.",
+      "why": "Guardrail wording is a product decision you can own on your Bedrock stack — sloppy phrasing quietly breaks real user journeys.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "Guardrails (Amazon Bedrock)",
+          "back": "A policy layer around a model that filters inputs/outputs: denied topics, blocked words, PII redaction, and harmful-content filters."
+        },
+        {
+          "front": "Denied topic",
+          "back": "A plain-language description of a subject the model must refuse. Bedrock matches it semantically, so over-broad descriptions block adjacent, legitimate requests."
+        },
+        {
+          "front": "False positive in a guardrail",
+          "back": "A safe, in-scope user request that gets blocked because the topic description was too broad or ambiguous."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A denied topic in Bedrock Guardrails is matched against user input mainly by…",
+          "options": [
+            "The meaning of the topic description, so wording breadth controls what gets blocked",
+            "An exact list of banned keywords, so you must enumerate every risky phrase",
+            "A regex pattern you supply, so escaping characters determines match accuracy",
+            "A fine-tuned copy of the base model, so retraining is needed after each edit"
+          ],
+          "answer": 0,
+          "why": "Denied topics use semantic matching on a natural-language description, which is why over-broad phrasing blocks legitimate adjacent requests."
+        }
+      ]
+    },
+    {
+      "id": "30ad33ef29",
+      "date": "2026-11-16T15:42:41.000Z",
+      "added": "2026-11-16T20:02:35.436Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/use-prompt-caching-with-open-weight-models-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Prompt caching for open-weight models on Bedrock cuts cost and latency",
+      "summary": "Bedrock now supports implicit and explicit prompt caching for open-weight models, letting repeated long context (system prompts, docs, tool definitions) be reused instead of reprocessed on every request. Demonstrated inside a coding-agent session.",
+      "why": "Agents resend huge context constantly; caching is one of the simplest levers to cut your Lambda+Bedrock bill and response times.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "8eb1dc82e0",
+      "date": "2026-11-16T16:12:16.000Z",
+      "added": "2026-11-16T20:02:35.436Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/get-answers-from-tables-with-tabular-search-in-amazon-bedrock-managed-knowledge-base/",
+      "category": "builders",
+      "title": "Bedrock Knowledge Bases can now answer questions over spreadsheets",
+      "summary": "Tabular search lets Bedrock Managed Knowledge Base retrieve from CSV and Excel files, looking up values and computing across rows, then blending that with text documents to answer multi-step analytical questions.",
+      "why": "Removes a common RAG gap: your agents can finally reason over the spreadsheets business teams actually keep data in.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "e978453296",
+      "date": "2026-11-16T18:16:07.000Z",
+      "added": "2026-11-16T20:02:35.436Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-moengage-built-agentic-customer-engagement-on-amazon-bedrock-agentcore/",
+      "category": "builders",
+      "title": "Turning existing product APIs into MCP tools for customer-facing agents",
+      "summary": "MoEngage wrapped its marketing platform APIs as MCP tools on Bedrock AgentCore so users can draft and adjust campaigns conversationally, with per-tenant data isolation. A reusable pattern for agent-ifying an existing SaaS product.",
+      "why": "The clearest template for how a product team exposes its existing APIs to agents without rebuilding the platform.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "3c73163e13",
+      "date": "2026-11-16T15:46:28.000Z",
+      "added": "2026-11-16T20:02:35.436Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/customize-answers-per-tenant-in-amazon-bedrock-managed-knowledge-base/",
+      "category": "builders",
+      "title": "Per-tenant answer customization on a shared knowledge base",
+      "summary": "Bedrock retrieval instructions let one shared knowledge base behave differently per customer: tone, format, retrieval scope and answer policy, with metadata filters and IAM tags keeping tenant data separate and rollouts staged.",
+      "why": "If you sell one AI feature to many customers, this is how you give each a tailored experience without duplicating infrastructure.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "cfcc7acb02",
+      "date": "2026-11-16T06:00:00.000Z",
+      "added": "2026-11-16T20:02:35.436Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare",
+      "category": "labs",
+      "title": "OpenAI pushes computer-use agents into clinical workflows",
+      "summary": "ChatGPT for Healthcare adds agents that operate existing healthcare software through the interface, plus improved clinical answers and plugins — a bet that agents clicking legacy UIs beats waiting for API integrations.",
+      "why": "Signals where agent products are heading: UI-driving agents as the integration path into regulated, API-poor enterprise systems.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "87d7014c15",
+      "date": "2026-11-15T22:00:01.000Z",
+      "added": "2026-11-16T20:02:35.436Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/step-toward-defining-the-standard-model",
+      "category": "labs",
+      "title": "OpenAI says GPT-6 Astra helped produce a detailed physics proof",
+      "summary": "OpenAI describes a frontier model assisting researchers in turning an idea about defining the Standard Model on a lattice into a worked proof — a marker of how far model reasoning on novel problems has moved.",
+      "why": "A useful datapoint on frontier reasoning capability, which sets expectations for what your agents may soon handle.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "5f5faf4419",
       "date": "2026-11-15T13:31:28.000Z",
@@ -8297,6 +8507,135 @@
   ],
   "weekly": [
     {
+      "weekOf": "2026-11-16",
+      "created": "2026-11-16T20:04:01.420Z",
+      "headline": "Claude Code's default brain swapped to Fable 5.2 — and the rest of the week was about proving your agents are worth what they cost.",
+      "script": "Five things this week, and the first one is sitting in your terminal already.\n\nOne: Claude Code's release 2.1.321 makes Fable five point two the default model, with a one-million-token context window and freshly published per-million-token pricing. Practically, that means fewer of those mid-session summarisations that make Claude forget what you agreed an hour ago, but also a different personality. Treat your first week with it as a test, not a given, and re-check your CLAUDE dot M-D instructions still steer it the way you want.\n\nTwo: Ethan Mollick's read on that model is the mental model to carry. He calls capability jagged: expert-level at many things, oddly weak at neighbouring things, with no clean line between them. So probe task by task rather than assuming a new model is uniformly better. Lenny also posted a twenty-five minute hands-on review if you want someone else's scars first.\n\nThree: Claude Code added an experimental Code Mode. Instead of issuing one tool call at a time, Claude writes a little JavaScript program that orchestrates its own tools. On long multi-step work that can mean fewer tokens and less waiting. It's opt-in, so try it on something low stakes.\n\nFour: AWS published the argument you need for budget season. Price per token is misleading, because retries, reasoning tokens, repeated context and tool loops multiply what a single finished task actually costs. The metric is cost per completed task, and you lower it with prompt caching and model routing, then prove value against a human baseline or a holdout group.\n\nFive: there's now a proper agent evaluation playbook on Bedrock. It splits the vague question, is the agent working, into specific ones: did it finish, did it stay on topic, did it leak data, did it skip steps. That's your vocabulary for release decisions.\n\nAnd a footnote: Lenny's job-market data says PM demand is recovering while engineering flattens. Good week to be you.",
+      "top5": [
+        {
+          "title": "Claude Code now defaults to Fable 5.2, with a 1M-token context window",
+          "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.321",
+          "source": "Claude Code releases",
+          "why": "The model behind the tool you use every day just changed, so expect different behaviour, different costs and far more room before context gets compacted."
+        },
+        {
+          "title": "Ethan Mollick on Fable 5.2 and \"jagged AGI\"",
+          "link": "https://www.oneusefulthing.org/p/fable-52-and-jagged-agi",
+          "source": "One Useful Thing (Ethan Mollick)",
+          "why": "Gives you the judgement framework for a new model: capability is uneven, so test task by task instead of assuming a blanket upgrade."
+        },
+        {
+          "title": "Claude Code adds experimental \"Code Mode\"",
+          "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.323",
+          "source": "Claude Code releases",
+          "why": "Letting Claude write code that drives its own tools, instead of one call at a time, can make your long multi-step sessions meaningfully cheaper and faster."
+        },
+        {
+          "title": "How to calculate the real cost per task of a Bedrock agent",
+          "link": "https://aws.amazon.com/blogs/machine-learning/optimizing-cost-per-task-and-proving-agent-roi-on-amazon-bedrock/",
+          "source": "AWS Machine Learning Blog",
+          "why": "Swaps token price for cost per completed task and gives you a defensible ROI story for the Lambda-plus-Bedrock agents your company runs."
+        },
+        {
+          "title": "The agent evaluation playbook on Bedrock AgentCore",
+          "link": "https://aws.amazon.com/blogs/machine-learning/the-agent-evaluation-playbook-built-in-deepeval-and-autoeval-on-agentcore/",
+          "source": "AWS Machine Learning Blog",
+          "why": "Turns \"is the agent working?\" into specific, checkable questions you can demand answers to before any agent release."
+        }
+      ],
+      "cards": [
+        {
+          "front": "What changed in Claude Code v2.1.321?",
+          "back": "Fable 5.2 became the default model, bringing a 1M-token context window and published per-million-token pricing. A --settings flag was also added so remote sessions start from a fixed settings file."
+        },
+        {
+          "front": "\"Jagged AGI\" (Ethan Mollick)",
+          "back": "The idea that a frontier model's ability is uneven: expert-level on many tasks, surprisingly weak on adjacent ones, with no obvious boundary. Implication: probe each task yourself rather than assuming uniform competence."
+        },
+        {
+          "front": "Claude Code \"Code Mode\"",
+          "back": "An opt-in mode where Claude writes JavaScript that calls its tools programmatically, instead of issuing one tool call per turn. Can cut token use and speed up long multi-step tasks."
+        },
+        {
+          "front": "Cost per completed task",
+          "back": "The real unit cost of an agent: total tokens across retries, reasoning, repeated context and tool loops divided by tasks actually finished. Lowered via prompt caching and model routing; ROI proven against human baselines or holdouts."
+        },
+        {
+          "front": "How to evaluate an agent (AgentCore playbook)",
+          "back": "Split \"is it working?\" into separate checks — task completion, staying on topic, data leakage, skipped steps — and run them at trace, step or session level using built-in, DeepEval or AutoEval evaluators."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does Claude Code's new experimental \"Code Mode\" actually change?",
+          "options": [
+            "Claude writes a short program that calls its tools, instead of one tool call per turn",
+            "Claude routes simple steps to a cheaper model and hard steps to a stronger one",
+            "Claude caches the system prompt so repeated context isn't reprocessed each request",
+            "Claude hands long-running tasks to a cloud session that continues after you close it"
+          ],
+          "answer": 0,
+          "why": "Code Mode lets the model orchestrate its own tools by writing JavaScript, which can reduce tokens and speed up multi-step work. The others describe routing, prompt caching and cloud hand-off — real techniques, but different ones."
+        },
+        {
+          "q": "Why does AWS argue that price per million tokens understates what an agent really costs?",
+          "options": [
+            "Because output tokens are billed at a higher rate than input tokens on every model",
+            "Because retries, reasoning tokens, repeated context and tool loops multiply tokens per finished task",
+            "Because managed agent runtimes bill for session time on top of the tokens consumed",
+            "Because cached context is still charged at the full published per-token rate"
+          ],
+          "answer": 1,
+          "why": "The argument is about volume, not rate: one completed task can take many model calls, so cost per completed task is the honest metric. The other options are plausible billing details but not the point being made."
+        },
+        {
+          "q": "According to Ethan Mollick's \"jagged AGI\" framing, what should you conclude about a newly released frontier model?",
+          "options": [
+            "Its quality degrades predictably as the conversation fills the context window",
+            "Its benchmark scores reliably predict how it will perform on your own workflows",
+            "Its strengths and weaknesses are uneven, so each task needs testing separately",
+            "Its answers improve steadily as you raise the reasoning effort setting"
+          ],
+          "answer": 2,
+          "why": "Jagged means capability is expert-level in some areas and oddly weak in neighbouring ones, so you probe per task rather than assuming a uniform upgrade."
+        }
+      ],
+      "stale": [
+        {
+          "unit": "b0",
+          "note": "\"The model is the brain: Claude Opus, Sonnet or Haiku\" is now out of date — Claude Code v2.1.321 ships Fable 5.2 as its default model, so the default brain is a Fable-tier model, not Sonnet/Opus."
+        },
+        {
+          "unit": "b0",
+          "note": "The context-window and compaction lesson should mention that Claude Code's default Fable 5.2 now has a 1M-token context window, so compaction kicks in far later than the lesson implies."
+        },
+        {
+          "unit": "b0",
+          "note": "The slash-command list (/clear, /model, /help) is missing /rewind, which v2.1.325 now explicitly points you to when an org policy blocks a request."
+        },
+        {
+          "unit": "b1",
+          "note": "The tool-call section describes Claude issuing one structured tool call at a time. Claude Code v2.1.323 added an opt-in \"Code Mode\" where Claude instead writes JavaScript to call its tools, which changes what you see scrolling by and reduces token use."
+        },
+        {
+          "unit": "c2",
+          "note": "The tier list is outdated: Fable is no longer just a parenthetical top tier — Fable 5.2 launched alongside Mythos 5.2, is the default in Claude Code, is available on AWS Bedrock, and reclaimed the #1 leaderboard spot."
+        },
+        {
+          "unit": "c2",
+          "note": "The \"As of September 2026\" price table (Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5) predates the Fable 5.2 / Mythos 5.2 launch, which came with its own published per-million-token pricing — the table needs refreshing and a Fable row."
+        },
+        {
+          "unit": "c2",
+          "note": "The 'same Claude models in several places' line should be refreshed: Fable 5.2 and Mythos 5.2 are already on Amazon Bedrock, and Bedrock also now hosts third-party models like Kimi K3.1 Pro via an OpenAI-compatible API."
+        },
+        {
+          "unit": "c1",
+          "note": "The section on what models output assumes text/reasoning models only; a new category shipped this week (Google's Gemini Decision 1, following similar APIs from Jev and OpenAI) that returns fast, calibrated decisions with confidence rather than prose — worth adding so the unit isn't incomplete."
+        }
+      ]
+    },
+    {
       "weekOf": "2026-11-09",
       "created": "2026-11-09T20:30:05.310Z",
       "headline": "Fable 5.2 becomes Claude Code's default with a million-token window — and the week's best advice is to stop assuming any model is uniformly smart.",
@@ -9118,146 +9457,48 @@
           "note": "The 'closed vs open weights / Bedrock is a front door' framing misses this week's development: neutral routing layers (OpenRouter, acquired by Stripe for $7B) are now a mainstream third option for accessing many models through one interface."
         }
       ]
-    },
-    {
-      "weekOf": "2026-09-21",
-      "created": "2026-09-24T04:01:47.514Z",
-      "headline": "A frontier release week (Opus 5.5, GPT-6 Sol and Luna) plus a price war — and evals become the PM skill that matters",
-      "script": "Big week. Two things collided: new frontier models, and a fresh push on how we actually judge them.\n\nStart with evals. Lenny's newsletter published a piece on advanced evals, and the key idea is error discovery: before you write a single scoring criterion, you go hunting for the failure modes you don't know your product has. Most teams invert this — they invent metrics first and end up measuring imaginary problems. For you, shipping agents, this is the line between a demo that impresses and something that survives real users.\n\nSecond, Simon Willison rounded up a chaotic release week. Anthropic's Claude Opus 5.5 and OpenAI's GPT-6 Sol and Luna landed within a day of each other, Grok 4.7 alongside them, and frontier prices dropped roughly forty to fifty percent. That means your cost assumptions for your Bedrock agents are stale. Re-run the math this week; things you priced out as too expensive may now be affordable.\n\nThird, and conveniently: Opus 5.5 is already live on Amazon Bedrock. That's your exact stack — Lambda plus Bedrock — so testing it in a production agent is a config change, not a migration.\n\nFourth, Lenny ran blind head-to-head tests of Opus 5.5 versus GPT-6 Sol across six task types: writing, frontend prototypes, long-running agentic tasks, SVGs, coding and video editing. The lesson isn't which model won; it's the method. Pick models per task from your own blind tests, not from benchmark press releases.\n\nFifth, AWS published a guide to evaluating skill-equipped agents using Strands Evals with Bedrock AgentCore. It measures whether your agent picked the right skill and followed instructions — not just whether the answer sounded fluent. That's the native tooling twin of Lenny's evals piece.\n\nOne bonus: Warp's CEO described an AI factory turning Slack and Linear tickets into two thousand pull requests a month. Worth stealing the operating model for Bitbucket.",
-      "top5": [
-        {
-          "title": "Advanced evals: finding the AI failures you don't know about",
-          "link": "https://www.lennysnewsletter.com/p/advanced-evals-how-to-find-and-fix",
-          "source": "Lenny's Newsletter",
-          "why": "Error discovery comes before eval criteria — skip it and your metrics measure problems you invented rather than the ones your agents actually have."
-        },
-        {
-          "title": "Claude Opus 5.5, GPT-6 Sol and Luna land — plus a 40-50% price war",
-          "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
-          "source": "Simon Willison",
-          "why": "Three frontier releases in a week and prices down roughly half means your Bedrock unit economics need recalculating now."
-        },
-        {
-          "title": "Claude Opus 5.5 is live on Amazon Bedrock",
-          "link": "https://aws.amazon.com/blogs/machine-learning/claude-opus-5-5-is-now-available-on-aws/",
-          "source": "AWS Machine Learning Blog",
-          "why": "It's already in your Lambda-plus-Bedrock stack, so trying the new flagship on a long-running agent is a config change, not a project."
-        },
-        {
-          "title": "Blind taste test: Opus 5.5 vs GPT-6 Sol across six task types",
-          "link": "https://www.lennysnewsletter.com/p/opus-55-vs-gpt-6-sol-which-model",
-          "source": "Lenny's Newsletter",
-          "why": "Copy the method: blind, task-by-task comparisons beat benchmark claims when you're choosing which model powers which agent."
-        },
-        {
-          "title": "Testing whether your agent picked the right skill, not just sounded good",
-          "link": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
-          "source": "AWS Machine Learning Blog",
-          "why": "This is the Bedrock-native way to turn the eval theory into instrumentation your team can actually run on the agents you already ship."
-        }
-      ],
-      "cards": [
-        {
-          "front": "Error discovery (in AI evals)",
-          "back": "The step before writing eval criteria: systematically hunting for failure modes you didn't know your AI product had, so your metrics score real problems instead of guessed ones. Most teams skip it and write criteria first."
-        },
-        {
-          "front": "What shipped in the big release week (per Simon Willison)",
-          "back": "Anthropic's Claude Opus 5.5 and OpenAI's GPT-6 Sol and Luna arrived within about a day of each other, with Grok 4.7 alongside — and frontier prices were cut roughly 40–50%."
-        },
-        {
-          "front": "Why the price cuts matter for a Bedrock team",
-          "back": "Per-token costs drive agent unit economics. A ~40–50% frontier price drop changes which workloads are affordable, so cost models, routing rules and 'too expensive' decisions should be re-run."
-        },
-        {
-          "front": "Blind head-to-head model testing",
-          "back": "Lenny compared Opus 5.5 and GPT-6 Sol blind across six task types (writing, frontend prototypes, long agentic runs, SVGs, coding, video editing). Takeaway: choose models per task from your own blind tests, not benchmarks."
-        },
-        {
-          "front": "Strands Evals + Bedrock AgentCore Evaluations",
-          "back": "AWS tooling for judging agents on whether they selected the correct skill and followed instructions — because a fluent-sounding answer doesn't prove the right procedure was used."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "According to this week's Lenny piece on advanced evals, what should happen before you write eval criteria?",
-          "options": [
-            "Error discovery — surfacing failure modes you don't yet know about",
-            "Pick a benchmark like SWE-bench and track it",
-            "Fine-tune the model on your own data",
-            "Run an A/B test on pricing"
-          ],
-          "answer": 0,
-          "why": "Criteria written before discovery tend to measure imagined problems; discovery grounds them in real observed failures."
-        },
-        {
-          "q": "What happened to frontier model pricing during this release week?",
-          "options": [
-            "Prices rose about 20% due to demand",
-            "Prices were cut roughly 40–50%",
-            "Pricing moved from per-token to per-seat",
-            "Pricing was unchanged"
-          ],
-          "answer": 1,
-          "why": "Simon Willison's roundup notes sharp cuts of about 40–50% alongside the Opus 5.5 and GPT-6 launches."
-        },
-        {
-          "q": "What do Strands Evals with Bedrock AgentCore Evaluations primarily measure?",
-          "options": [
-            "How fluent and well-written the agent's response is",
-            "Token cost per request",
-            "Whether the agent chose the right skill and followed instructions",
-            "How fast the model returns its first token"
-          ],
-          "answer": 2,
-          "why": "The point is that fluency isn't proof of correct procedure, so the evals target skill selection and instruction-following."
-        }
-      ],
-      "stale": [
-        {
-          "unit": "c2",
-          "note": "The pricing table ('As of September 2026: Claude Opus 5 $5 in / $25 out, Sonnet 5 $2/$10, Haiku 4.5 $1/$5') and the worked example are now unreliable: this week's releases came with frontier price cuts of roughly 40–50%, so the numbers and the resulting $0.014 sample calculation should be re-checked against current Anthropic and Bedrock rate cards."
-        },
-        {
-          "unit": "c2",
-          "note": "The tier list treats Claude Opus 5 as the current top Opus. Claude Opus 5.5 has now shipped and is the current flagship agentic-coding model — and it is already available on AWS Bedrock, which the same section mentions as your front door."
-        },
-        {
-          "unit": "c2",
-          "note": "'Who makes the models' is behind on the frontier lineup: OpenAI has released GPT-6 in two variants (Sol and Luna) and xAI has shipped Grok 4.7, so 'OpenAI (GPT)' and the passing mention of xAI need refreshing with current version names."
-        },
-        {
-          "unit": "b0",
-          "note": "The model list in 'Claude Code = a model + a harness' should name the current generation (Opus 5.5 rather than a generic/older Opus), since model choice inside Claude Code changed this week."
-        }
-      ]
     }
   ],
   "stale": [
     {
       "unit": "b0",
-      "note": "\"The model is the brain: Claude Opus, Sonnet or Haiku\" is now incomplete and misleading for Claude Code specifically: as of v2.1.321 Claude Code's default model is Fable 5.2, so Fable belongs in the list of models you'll actually meet.",
-      "flagged": "2026-11-09T20:30:05.310Z"
+      "note": "\"The model is the brain: Claude Opus, Sonnet or Haiku\" is now out of date — Claude Code v2.1.321 ships Fable 5.2 as its default model, so the default brain is a Fable-tier model, not Sonnet/Opus.",
+      "flagged": "2026-11-16T20:04:01.420Z"
     },
     {
       "unit": "b0",
-      "note": "The compaction section implicitly assumes a modest context window. Fable 5.2 in Claude Code has a 1M-token context window, so sessions run far longer before compaction kicks in — worth saying the budget depends heavily on the model in use.",
-      "flagged": "2026-11-09T20:30:05.310Z"
+      "note": "The context-window and compaction lesson should mention that Claude Code's default Fable 5.2 now has a 1M-token context window, so compaction kicks in far later than the lesson implies.",
+      "flagged": "2026-11-16T20:04:01.420Z"
+    },
+    {
+      "unit": "b0",
+      "note": "The slash-command list (/clear, /model, /help) is missing /rewind, which v2.1.325 now explicitly points you to when an org policy blocks a request.",
+      "flagged": "2026-11-16T20:04:01.420Z"
     },
     {
       "unit": "b1",
-      "note": "The permissions framing (\"Write, Edit and Bash ask your permission\" / denying just makes Claude try another approach) misses two changes: v2.1.319 moved auto mode's safety judgement to a server-side check, so behind an LLM gateway or with telemetry off, unverifiable commands can be prompted or outright denied (CLAUDE_CODE_AUTO_MODE_SERVER=0 reverts; Bedrock, Vertex and Foundry are unaffected), and v2.1.317 added new consent prompts for cloud scheduled tasks gaining unrequested connectors and for tools sending your account email over the network.",
-      "flagged": "2026-11-09T20:30:05.310Z"
+      "note": "The tool-call section describes Claude issuing one structured tool call at a time. Claude Code v2.1.323 added an opt-in \"Code Mode\" where Claude instead writes JavaScript to call its tools, which changes what you see scrolling by and reduces token use.",
+      "flagged": "2026-11-16T20:04:01.420Z"
     },
     {
       "unit": "c2",
-      "note": "The tier list calling Fable \"an even more capable, more expensive top tier\" in parentheses is now understated: Fable 5.2 (plus Mythos 5.2) shipped this week, is available on Amazon Bedrock, and is Claude Code's default model — it should be presented as a main tier, not an aside.",
-      "flagged": "2026-11-09T20:30:05.310Z"
+      "note": "The tier list is outdated: Fable is no longer just a parenthetical top tier — Fable 5.2 launched alongside Mythos 5.2, is the default in Claude Code, is available on AWS Bedrock, and reclaimed the #1 leaderboard spot.",
+      "flagged": "2026-11-16T20:04:01.420Z"
     },
     {
       "unit": "c2",
-      "note": "The \"As of September 2026\" price table (Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5) no longer reflects the current lineup: Fable 5.2 now has published per-million-token pricing of its own and is the default in Claude Code, so any cost math based on Sonnet 5 as the daily driver is out of date.",
-      "flagged": "2026-11-09T20:30:05.310Z"
+      "note": "The \"As of September 2026\" price table (Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5) predates the Fable 5.2 / Mythos 5.2 launch, which came with its own published per-million-token pricing — the table needs refreshing and a Fable row.",
+      "flagged": "2026-11-16T20:04:01.420Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The 'same Claude models in several places' line should be refreshed: Fable 5.2 and Mythos 5.2 are already on Amazon Bedrock, and Bedrock also now hosts third-party models like Kimi K3.1 Pro via an OpenAI-compatible API.",
+      "flagged": "2026-11-16T20:04:01.420Z"
+    },
+    {
+      "unit": "c1",
+      "note": "The section on what models output assumes text/reasoning models only; a new category shipped this week (Google's Gemini Decision 1, following similar APIs from Jev and OpenAI) that returns fast, calibrated decisions with confidence rather than prose — worth adding so the unit isn't incomplete.",
+      "flagged": "2026-11-16T20:04:01.420Z"
     }
   ]
 }
