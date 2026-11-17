@@ -1,6 +1,202 @@
 {
-  "updated": "2026-11-16T20:04:01.424Z",
+  "updated": "2026-11-17T18:58:34.666Z",
   "items": [
+    {
+      "id": "549a77347d",
+      "date": "2026-11-17T17:45:00.000Z",
+      "added": "2026-11-17T18:58:34.661Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+      "category": "labs",
+      "title": "OpenAI ships GPT-6.2 \"Astra\" and \"Sol\"",
+      "summary": "OpenAI released two new GPT-6.2 variants aimed at professional output quality, coding and computer use, with better efficiency at lower price, rolling out in ChatGPT Work, Codex and the API.",
+      "why": "Model landscape moves fast; knowing what the new frontier models do well helps you argue cost/quality tradeoffs against your Bedrock-hosted options.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "What are GPT-6.2 Astra and Sol?",
+          "back": "Two new OpenAI model variants (Nov 2026) focused on professional-quality outputs, coding and computer use, offered at lower cost across ChatGPT Work, Codex and the API."
+        },
+        {
+          "front": "What does \"computer use\" mean for a model?",
+          "back": "The model can operate a computer interface directly — reading the screen, clicking, typing — instead of only returning text, which enables agents that drive real apps."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What capability does \"computer use\" describe in a frontier model release?",
+          "options": [
+            "The model can control a UI by viewing the screen and clicking or typing",
+            "The model is trained on a larger corpus of source code repositories",
+            "The model runs locally on a laptop without any network connection",
+            "The model remembers prior conversations across separate user sessions"
+          ],
+          "answer": 0,
+          "why": "Computer use means the model operates a graphical interface directly; the others describe training data, local inference and memory."
+        }
+      ]
+    },
+    {
+      "id": "76ed8af592",
+      "date": "2026-11-17T15:57:09.000Z",
+      "added": "2026-11-17T18:58:34.661Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-arisglobal-scaled-generative-ai-inference-on-amazon-bedrock/",
+      "category": "builders",
+      "title": "Prompt caching on Bedrock cut one company's inference bill ~40%",
+      "summary": "ArisGlobal restructured prompts so the long shared instruction prefix was cached rather than per-document content, halving effective input token cost and cutting monthly Bedrock spend about 40% while scaling more tenants.",
+      "why": "Your agents run on Bedrock; prompt structure is a lever you can specify as a PM to cut cost without changing the model.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Prompt caching",
+          "back": "Reusing a previously processed, unchanging prompt prefix (system instructions, shared docs) so the provider charges less and responds faster for repeated calls."
+        },
+        {
+          "front": "Why put stable content first in a prompt?",
+          "back": "Caching works on a shared prefix. If variable text comes first, the cache never matches, so you pay full input cost every call."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "To benefit most from prompt caching, how should a prompt be structured?",
+          "options": [
+            "Stable shared instructions first, variable per-request content last",
+            "Variable per-request content first, stable instructions at the end",
+            "All content compressed into one short paragraph per request",
+            "Instructions split evenly between the system and user messages"
+          ],
+          "answer": 0,
+          "why": "Caching matches on an unchanged prefix, so the fixed part must come first for later variable content to still hit the cache."
+        }
+      ]
+    },
+    {
+      "id": "328f5dc06a",
+      "date": "2026-11-16T22:11:05.000Z",
+      "added": "2026-11-17T18:58:34.661Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.326",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.326: Code Mode works with agent teams",
+      "summary": "Code Mode can now be enabled alongside agent teams, and sessions with teams on start in Code Mode. Also adds startup warnings when tool-permission flags contain malformed rules, plus clearer explanation messages.",
+      "why": "You use Claude Code daily — team sessions behave differently now, and bad --allowedTools entries will finally warn you instead of silently failing.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6d0c766d05",
+      "date": "2026-11-16T21:53:46.000Z",
+      "added": "2026-11-17T18:58:34.661Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/taxonomy-of-multi-agent-design-patterns-anti-patterns-and-lessons-from-manufacturing/",
+      "category": "builders",
+      "title": "A taxonomy of multi-agent patterns and anti-patterns",
+      "summary": "AWS argues multi-agent coordination is a distributed-systems problem, not a model problem, offering patterns, anti-patterns and a decision framework for when more than one agent is actually justified.",
+      "why": "Useful vocabulary for pushing back when your team proposes a multi-agent architecture that a single well-scoped agent could handle.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a6060461ca",
+      "date": "2026-11-16T22:43:30.000Z",
+      "added": "2026-11-17T18:58:34.661Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/build-memory-aware-ai-agents-with-agentic-retrieve-on-amazon-bedrock-managed-knowledge-base/",
+      "category": "builders",
+      "title": "Bedrock knowledge bases get built-in agent memory",
+      "summary": "Amazon Bedrock Managed Knowledge Base now combines stored conversations and extracted facts with retrieval in a single call, with per-user document permissions and private memory for multi-user assistants.",
+      "why": "Memory and per-user access control are the two hardest production asks for your agents; AWS now handles both natively on your stack.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7dd7996048",
+      "date": "2026-11-17T18:02:02.000Z",
+      "added": "2026-11-17T18:58:34.661Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/35-premium-tools-free-for-a-yearnow",
+      "category": "pm",
+      "title": "Lenny's subscriber tool bundle adds OpenRouter and LangChain",
+      "summary": "Lenny's Newsletter refreshed its subscriber perk list to 35 tools free for a year, now including OpenRouter, LangChain, Sentry and others — roughly $40k in claimed value.",
+      "why": "OpenRouter and LangChain are exactly the tools for your learn-to-build goal, and a free year removes the cost of experimenting.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "357d085ae0",
+      "date": "2026-11-17T17:00:00.000Z",
+      "added": "2026-11-17T18:58:34.661Z",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/",
+      "category": "labs",
+      "title": "Gemini Tasks goes free and digs deeper into Workspace",
+      "summary": "Google made Tasks in Gemini free in six countries and added Workspace integration so the assistant can carry out multi-step work on your behalf, starting in the US.",
+      "why": "Background agents in mainstream productivity suites set user expectations your own product's agent features will be measured against.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "b696311f95",
+      "date": "2026-11-17T16:56:31.000Z",
+      "added": "2026-11-17T18:58:34.661Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/responsible-ai-for-agentic-ai-a-phased-roadmap-for-platform-and-application-teams/",
+      "category": "builders",
+      "title": "A phased roadmap for governing agentic AI",
+      "summary": "AWS lays out three phases — governance foundation, pilot deployment, then evaluation and hardening — mapping responsible-AI pillars to each, with guidance on when to revisit earlier stages.",
+      "why": "Gives you a defensible sequence for agent governance conversations with legal and security before production launch.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "bc9f08d1d0",
+      "date": "2026-11-17T09:24:56.000Z",
+      "added": "2026-11-17T18:58:34.661Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-perplexity-hits-a-1b-revenue-run-rate-up-4x-in-2026/",
+      "category": "pm",
+      "title": "Perplexity reaches a $1B revenue run rate",
+      "summary": "Daily AI roundup notes Perplexity quadrupled to a $1B annualized run rate in 2026, alongside new monitoring APIs and agent \"teammate\" features from other players.",
+      "why": "A useful benchmark when you need current numbers on how fast AI-native products are actually monetizing.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "bda65706b0",
       "date": "2026-11-16T13:04:09.000Z",
