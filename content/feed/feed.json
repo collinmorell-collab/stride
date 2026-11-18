@@ -1,6 +1,229 @@
 {
-  "updated": "2026-11-17T18:58:34.666Z",
+  "updated": "2026-11-18T18:41:55.648Z",
   "items": [
+    {
+      "id": "2a139dc941",
+      "date": "2026-11-17T22:38:52.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/17/gpt62-astra-and-sol/",
+      "category": "labs",
+      "title": "OpenAI ships GPT-6.2 Astra and Sol",
+      "summary": "OpenAI released two new models: Astra, a frontier tier aimed at hard, long-running work, and Sol, a cheaper everyday workhorse. Both are in the API, with large price cuts versus the previous frontier tier.",
+      "why": "Your model choices shift again: a premium tier for hard reasoning, a cheap tier for routine agent steps. Routing between them is now a cost lever.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "GPT-6.2 Astra vs Sol",
+          "back": "Astra = frontier tier for hardest tasks, pricier; Sol = efficient, lower-cost model meant for everyday/high-volume work."
+        },
+        {
+          "front": "Why do labs ship two tiers at once?",
+          "back": "So teams route easy steps to the cheap model and reserve the expensive one for hard reasoning — the main cost lever in agent systems."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In OpenAI's new lineup, what is the intended role of GPT-6.2 Sol?",
+          "options": [
+            "The efficient everyday model for routine, high-volume work",
+            "The frontier model reserved for the hardest reasoning tasks",
+            "An embedding model used for search and retrieval",
+            "A safety classifier that screens model outputs"
+          ],
+          "answer": 0,
+          "why": "Sol is positioned as the cheaper, versatile workhorse; Astra is the frontier tier for hard projects."
+        }
+      ]
+    },
+    {
+      "id": "f48c5c5257",
+      "date": "2026-11-17T21:14:55.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/cut-generative-ai-costs-code-for-rules-models-for-judgment/",
+      "category": "builders",
+      "title": "AWS: use plain code for rules, models only for judgment",
+      "summary": "AWS argues the biggest generative-AI cost lever is deciding whether a step needs a model at all. It maps each workflow step to deterministic code, a tightly constrained model call, or a right-sized Bedrock model.",
+      "why": "Directly applicable to your Lambda + Bedrock agents: most cost and latency blowups come from calling a model where ordinary logic would do.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Biggest cost lever in a GenAI system",
+          "back": "Whether you call a model at all. Deterministic rules in code are free, instant and repeatable; save model calls for genuine judgment."
+        },
+        {
+          "front": "\"Constrained decision call\"",
+          "back": "A tiny model call with a fixed, narrow output (e.g. pick one of five labels) instead of open-ended generation — cheaper and easier to validate."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "According to the AWS guidance, which workflow step is the best candidate for deterministic code instead of a model call?",
+          "options": [
+            "Validating that an input matches a known format or rule",
+            "Summarising a long customer complaint into two lines",
+            "Deciding the tone to use when replying to a user",
+            "Extracting intent from a vague free-text request"
+          ],
+          "answer": 0,
+          "why": "Rule-checkable, unambiguous steps belong in code; model calls should be reserved for genuine judgment or language understanding."
+        }
+      ]
+    },
+    {
+      "id": "7e538726ff",
+      "date": "2026-11-17T22:44:51.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/reducing-token-costs-and-latency-in-amazon-bedrock-agentcore-json-workloads/",
+      "category": "builders",
+      "title": "Cutting token cost and latency for big JSON in Bedrock agents",
+      "summary": "Three stackable techniques for agents handling multi-megabyte JSON: push large artifacts to S3 and pass references, page results on demand, and compact repetitive keys. Reported up to 71% fewer tokens and 80% lower latency.",
+      "why": "Your agents run on Bedrock; fat JSON tool responses are a common, invisible cause of slow, expensive agent turns.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "a2",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "acdaad578a",
+      "date": "2026-11-17T22:52:29.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/17/external-sandboxes-for-coding-agents/",
+      "category": "claude-code",
+      "title": "Why coding agents increasingly run in external sandboxes",
+      "summary": "A write-up on isolating agent-executed code outside your machine, so a mistake or a prompt-injection attack can't delete files or exfiltrate credentials. Sandboxing is becoming the default posture for agents that run commands.",
+      "why": "You run Claude Code daily with Bash access; understanding sandbox boundaries is how you judge what an agent can actually break.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "b1",
+        "a3"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "53f2a14376",
+      "date": "2026-11-18T08:00:00.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/inside-the-codex-sandbox",
+      "category": "claude-code",
+      "title": "How Codex sandboxes commands on your machine",
+      "summary": "OpenAI explains how its coding agent restricts filesystem and network access when running commands locally, across macOS, Linux and Windows, and which limits the user controls.",
+      "why": "A clear mental model of agent permissions that transfers straight to how you reason about Claude Code's approvals.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b1",
+        "a3"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "1560056f3e",
+      "date": "2026-11-17T23:17:45.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.327",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.327: safer GitHub install and MCP secrets",
+      "summary": "This release adds a confirmation step before /install-github-app modifies a repo, lets you pipe MCP server JSON in from stdin so tokens stay out of your shell history, and flags when a resumed session can't load older messages.",
+      "why": "Two of these you'll notice: fewer surprise repo changes, and a safer way to add MCP servers that hold API tokens.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "a5"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "628eed619e",
+      "date": "2026-11-18T15:58:27.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/18/daniel-stenberg/",
+      "category": "builders",
+      "title": "curl's maintainer on AI agents rewriting 185k lines of C in Rust",
+      "summary": "Daniel Stenberg notes that while agents produced 340k lines of Rust from 185k lines of C over three weeks, the real project shipped 300+ commits and 200 bugfixes the rewrite never absorbed. Generated code drifts from a living codebase.",
+      "why": "A sober counterweight to AI-rewrite hype: volume of generated code isn't progress if it can't keep up with maintenance.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a82294d2c7",
+      "date": "2026-11-17T20:31:04.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/govern-and-discover-records-with-common-metadata-in-aws-agent-registry/",
+      "category": "pm",
+      "title": "AWS Agent Registry adds custom metadata for governance",
+      "summary": "Admins can define required, typed fields that every registered agent, MCP server and skill must carry, then use them for approval workflows and discovery — a shared catalogue of what AI components exist in an org.",
+      "why": "As your company's agent count grows, someone must answer \"what agents exist and who approved them\". This is the AWS-native answer.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7c2289051b",
+      "date": "2026-11-18T10:19:04.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-gpt-6-2-astra-the-2-frontier-model-is-better-and-20-600-cheaper-but-has-mixed-reviews-6-2-sol/",
+      "category": "labs",
+      "title": "Early reactions to GPT-6.2: cheaper, but mixed reviews on Astra",
+      "summary": "A newsletter roundup says the new frontier model lands 20–600% cheaper on benchmark runs but testers disagree on how it feels to work with; the cheaper Sol tier looks like the practical default for most workloads.",
+      "why": "Benchmark wins don't equal daily usability. Useful framing before you push your team toward any new default model.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "c6c361c53b",
+      "date": "2026-11-17T08:00:00.000Z",
+      "added": "2026-11-18T18:41:55.645Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/introducing-chatgpt-for-sales",
+      "category": "pm",
+      "title": "ChatGPT adds a Sales plugin and 30+ partner integrations",
+      "summary": "OpenAI is pushing ChatGPT into workflow territory: researching prospects, drafting pitches and writing back to CRM systems through a growing plugin ecosystem.",
+      "why": "A signal that assistants are moving from chat into systems of record — the same competitive pressure your product features will face.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "549a77347d",
       "date": "2026-11-17T17:45:00.000Z",
