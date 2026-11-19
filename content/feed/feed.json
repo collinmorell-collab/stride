@@ -1,6 +1,205 @@
 {
-  "updated": "2026-11-18T18:41:55.648Z",
+  "updated": "2026-11-19T18:54:10.911Z",
   "items": [
+    {
+      "id": "0c3c8b23c6",
+      "date": "2026-11-18T21:35:43.000Z",
+      "added": "2026-11-19T18:54:10.906Z",
+      "source": "Google DeepMind",
+      "link": "https://deepmind.google/blog/introducing-gemini-4-neon/",
+      "category": "labs",
+      "title": "Google ships Gemini 4 Neon, its new mid-tier model",
+      "summary": "Google released Gemini 4 Neon, a mid-tier Gemini 4 model reported to score around 61 on independent intelligence rankings, putting Google's cheaper tier close to top-end competitors from Anthropic and OpenAI.",
+      "why": "Your model shortlist just changed: a cheap tier that performs near frontier level shifts cost/quality tradeoffs for any agent you spec.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Gemini 4 Neon",
+          "back": "Google's mid-tier Gemini 4 model (Nov 2026), priced below the flagship but scoring near frontier models on general intelligence benchmarks."
+        },
+        {
+          "front": "Why do labs ship model 'tiers'?",
+          "back": "Same family, different size/cost/latency. Bigger tiers reason better; smaller tiers are cheaper and faster for high-volume or simple agent steps."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "A vendor releases a 'mid-tier' version of its flagship model. What should you expect?",
+          "options": [
+            "Lower price per token and faster responses, with some loss on hard reasoning tasks",
+            "Identical quality to the flagship, with a shorter context window only",
+            "Higher price per token but guaranteed accuracy on complex reasoning",
+            "Same speed and price, but restricted to text-only inputs"
+          ],
+          "answer": 0,
+          "why": "Mid-tier models trade some reasoning quality for lower cost and latency; that is the core tradeoff when picking a tier."
+        }
+      ]
+    },
+    {
+      "id": "249cf944c1",
+      "date": "2026-11-19T01:14:04.000Z",
+      "added": "2026-11-19T18:54:10.906Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.328",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.328: auto mode now works on Bedrock",
+      "summary": "Claude Code's auto permission mode now covers Opus 4.6 and Sonnet 4.6 running through Amazon Bedrock and other gateways, and becomes the starting mode for interactive sessions. MCP tool hooks can now block actions when they fail.",
+      "why": "Your company runs on Bedrock, so this changes how your daily sessions start and how much Claude does without asking you.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Permission mode (Claude Code)",
+          "back": "The setting that decides which tool actions (edits, Bash commands) Claude runs on its own versus pauses to ask you about."
+        },
+        {
+          "front": "Hook with onFailure: block",
+          "back": "A hook that, if its check fails, stops the action from happening — now available for MCP tool calls, not just commands and HTTP hooks."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does Claude Code's permission mode control?",
+          "options": [
+            "Which tool actions run automatically versus needing your approval",
+            "Which model version the session routes requests to",
+            "How many tokens the session can spend before stopping",
+            "Which files in the repo Claude is allowed to read"
+          ],
+          "answer": 0,
+          "why": "Permission mode governs autonomy over tool calls like Edit and Bash; model choice, budgets and file scope are separate settings."
+        }
+      ]
+    },
+    {
+      "id": "32f6f88176",
+      "date": "2026-11-18T21:48:19.000Z",
+      "added": "2026-11-19T18:54:10.906Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-airbnb-uses-cost-per-task-to-operate-coding-agents-on-amazon-bedrock/",
+      "category": "pm",
+      "title": "Airbnb manages coding agents with a 'cost per task' metric",
+      "summary": "Airbnb evaluates coding agents on real engineering tasks and tracks cost per completed task through Bedrock observability to pick models, explaining why production spend often diverges from eval results and how they watch latency and quotas.",
+      "why": "A concrete, borrowable metric for governing agent spend on the exact stack your team uses — evals plus Bedrock observability.",
+      "score": 9,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "a2b7f42905",
+      "date": "2026-11-19T18:48:55.000Z",
+      "added": "2026-11-19T18:54:10.906Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/optimize-ai-economics-on-amazon-bedrock-with-accentures-sequenced-approach/",
+      "category": "builders",
+      "title": "Six levers for cutting agent token spend on Bedrock",
+      "summary": "Accenture lays out a sequenced playbook for reducing Bedrock token costs — things like routing to smaller models, caching, prompt trimming and batching — noting total spend keeps rising even as per-token prices fall.",
+      "why": "Directly applicable to your Lambda + Bedrock agents, and gives you vocabulary to challenge cost assumptions in roadmap discussions.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "57728669e0",
+      "date": "2026-11-19T18:00:00.000Z",
+      "added": "2026-11-19T18:54:10.906Z",
+      "source": "Google AI",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/gemini-api-tool-retrieval/",
+      "category": "builders",
+      "title": "Gemini API adds tool retrieval for agents with many tools",
+      "summary": "Google previewed Tool Retrieval: instead of stuffing hundreds of tool definitions into every prompt, the API fetches only the relevant ones per request, cutting tokens and reducing tool-selection confusion.",
+      "why": "Explains a real scaling limit of agents: too many tools degrade accuracy and cost. Useful when scoping your own agent's toolset.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "909b75797c",
+      "date": "2026-11-18T00:00:00.000Z",
+      "added": "2026-11-19T18:54:10.906Z",
+      "source": "Anthropic",
+      "link": "https://www.anthropic.com/news/anthropic-prices-initial-public-offering",
+      "category": "labs",
+      "title": "Anthropic prices its IPO",
+      "summary": "Anthropic priced its initial public offering of Class A shares, reportedly at $83 per share — a milestone that puts the maker of Claude under public-market reporting and pressure.",
+      "why": "Your main AI vendor is now public: expect more disclosure, more pricing scrutiny, and faster commercial moves on Claude products.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "9fa731b0ef",
+      "date": "2026-11-18T08:00:00.000Z",
+      "added": "2026-11-19T18:54:10.906Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/research-acceleration-jagged-frontier",
+      "category": "labs",
+      "title": "OpenAI measures where coding agents actually speed up work",
+      "summary": "OpenAI published data on how much its coding agents accelerate internal research, describing a 'jagged frontier' — big gains on some task types, little or none on others — and what that implies about self-improving AI.",
+      "why": "Good ammunition for realistic team expectations: agent productivity gains are uneven by task, not a flat percentage.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "fa8035bde7",
+      "date": "2026-11-18T22:31:04.000Z",
+      "added": "2026-11-19T18:54:10.906Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-sagemaker-jumpstart-model-leaderboard/",
+      "category": "builders",
+      "title": "SageMaker adds a leaderboard comparing 70+ models",
+      "summary": "AWS launched a model leaderboard inside SageMaker Studio comparing foundation models on quality, speed and cost, plus guidance on how AWS benchmarks them and how to move from a shortlist to deployment.",
+      "why": "A structured way to argue model choices with your engineers instead of relying on vendor marketing or vibes.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "6687f7be62",
+      "date": "2026-11-19T08:00:00.000Z",
+      "added": "2026-11-19T18:54:10.906Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+      "category": "builders",
+      "title": "OpenAI's 'Performance Factory': agents that hunt slowdowns",
+      "summary": "OpenAI describes an internal system where Codex-powered workflows continuously detect and fix performance regressions in ChatGPT — an example of agents embedded in ongoing operations rather than one-off coding help.",
+      "why": "A concrete pattern for agent products: continuous background workflows on a measurable metric, not chat-based assistance.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "2a139dc941",
       "date": "2026-11-17T22:38:52.000Z",
