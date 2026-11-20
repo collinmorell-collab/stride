@@ -1,6 +1,210 @@
 {
-  "updated": "2026-11-19T18:54:10.911Z",
+  "updated": "2026-11-20T18:22:56.762Z",
   "items": [
+    {
+      "id": "f32d5bea8a",
+      "date": "2026-11-20T02:49:57.000Z",
+      "added": "2026-11-20T18:22:56.757Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/",
+      "category": "pm",
+      "title": "Token fraud: how AI product builders get drained by abusive users",
+      "summary": "Claire Vo of ChatPRD describes attackers exploiting generous AI plans — reselling access, scripted abuse, stolen cards — turning LLM token costs into real losses, and the guardrails (rate limits, abuse detection, usage caps) builders now need.",
+      "why": "If you ship an AI feature, inference cost is a fraud surface. Pricing and abuse controls are product decisions you'll own.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Token fraud",
+          "back": "Abuse of an AI product's generous usage limits (resold accounts, scripts, stolen cards) so the vendor pays large LLM inference bills for fake or unauthorized usage."
+        },
+        {
+          "front": "Why AI products are more fraud-exposed than normal SaaS",
+          "back": "Each request has real marginal cost (tokens), so abuse directly burns cash instead of just using spare server capacity."
+        },
+        {
+          "front": "Three common defenses",
+          "back": "Per-user rate limits and usage caps, anomaly/abuse detection on usage patterns, and stronger payment/identity verification at signup."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does usage abuse hurt an AI SaaS product more than a traditional SaaS product?",
+          "options": [
+            "Every request carries a real marginal inference cost, so abuse burns cash directly",
+            "AI products legally must refund any usage flagged as fraudulent by the model",
+            "Model providers charge a flat monthly fee that rises after each new signup",
+            "LLM APIs block the whole account permanently when unusual traffic appears"
+          ],
+          "answer": 0,
+          "why": "Traditional SaaS has near-zero marginal cost per request; LLM calls are billed per token, so abusive usage is a direct cash loss."
+        }
+      ]
+    },
+    {
+      "id": "576cfc788a",
+      "date": "2026-11-19T20:01:06.000Z",
+      "added": "2026-11-20T18:22:56.757Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-harness-adds-strands-harness-defaults-built-in-tools-and-lifecycle-hooks/",
+      "category": "builders",
+      "title": "Bedrock AgentCore now runs on the open-source Strands harness",
+      "summary": "AWS rebuilt its AgentCore agent harness on Strands, adding sensible defaults, a recommended model, automatic prompt caching, proactive context management, built-in tools, and lifecycle hooks for deterministic allow/deny checks inside the agent loop.",
+      "why": "Your production agents run on Bedrock; these defaults and hooks are the cheapest way to cut cost and add guardrails.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "Agent harness",
+          "back": "The runtime scaffolding around a model that manages the loop: prompts, tool calls, memory/context, retries — your agent's 'engine', separate from the model itself."
+        },
+        {
+          "front": "Lifecycle hook (agents)",
+          "back": "Code that runs at a fixed point in the agent loop (e.g. before a tool call) to deterministically allow or deny an action — a guardrail that doesn't rely on the model behaving."
+        },
+        {
+          "front": "Prompt caching",
+          "back": "Reusing the already-processed part of a repeated prompt prefix so repeat calls are cheaper and faster."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does a lifecycle hook add to an agent that prompting alone cannot?",
+          "options": [
+            "A deterministic allow/deny check at a fixed point in the agent loop",
+            "A larger context window so the agent can read more documents",
+            "A cheaper model tier selected automatically for each tool call",
+            "A guarantee that the agent's final answer is factually correct"
+          ],
+          "answer": 0,
+          "why": "Hooks are plain code running at defined points, so the check always executes, unlike instructions the model may ignore."
+        }
+      ]
+    },
+    {
+      "id": "eb90ee40f0",
+      "date": "2026-11-20T03:01:38.000Z",
+      "added": "2026-11-20T18:22:56.757Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/design-sense",
+      "category": "pm",
+      "title": "A design crash course for PMs (and how to brief AI to design well)",
+      "summary": "Aakash Gupta distils the twelve fundamentals design students learn first — hierarchy, spacing, type, contrast — plus five drills to train your eye and prompts for getting decent UI out of AI tools.",
+      "why": "Cheap AI UI generation makes taste the bottleneck; a vocabulary for critique makes your feedback to designers and to Claude far sharper.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "cae2fd7a9c",
+      "date": "2026-11-20T07:12:24.000Z",
+      "added": "2026-11-20T18:22:56.757Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-anthropic-successfully-completes-largest-ipo-in-history-valued-at-1-5t/",
+      "category": "labs",
+      "title": "Anthropic IPO closes at a ~$1.5T valuation; Google opens Genie 4",
+      "summary": "Anthropic completed the largest IPO on record, pricing at $83 and closing its first day near $97. Google also opened its Genie 4 world model to developers, broadening access to interactive generative environments.",
+      "why": "Your main work tool now has public-company incentives: expect pricing, enterprise and roadmap shifts you should plan around.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "9166064c2f",
+      "date": "2026-11-19T22:14:41.000Z",
+      "added": "2026-11-20T18:22:56.757Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.329",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.329: clearer hook warnings and a richer /tasks view",
+      "summary": "The trust dialog now shows where a folder's hooks are declared, non-interactive hosts warn when managed-settings hooks fail to load, and /tasks lists scheduled tasks, /loop wakeups, the goal and conversation forks, with x to stop one.",
+      "why": "Fewer silent surprises from repo-level hooks, and /tasks finally shows everything running in your session.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "53258ed2c5",
+      "date": "2026-11-19T23:58:21.000Z",
+      "added": "2026-11-20T18:22:56.757Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/linear-scaling/",
+      "category": "pm",
+      "title": "Linear's COO on scaling to $100M ARR with agents writing half the tickets",
+      "summary": "Cristina Cordova explains Linear's go-to-market: over half of tickets drafted by agents, meaningful internal AI budgets, and growth to $100M ARR without SDRs or forward-deployed engineers.",
+      "why": "A concrete picture of AI changing internal PM and GTM workflows, not just the product — useful benchmarks for your own team.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "28154b6180",
+      "date": "2026-11-19T22:20:23.000Z",
+      "added": "2026-11-20T18:22:56.757Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-the-bmw-group-governs-hundreds-of-agents-across-thousands-of-developers/",
+      "category": "builders",
+      "title": "How BMW governs hundreds of internal AI agents",
+      "summary": "BMW shares the patterns its R&D org uses to run agents at scale: registries and ownership, standard guardrails and approvals, evaluation and monitoring, so compliance doesn't block teams from shipping quickly.",
+      "why": "A reusable governance template for the moment your company has more agents than anyone can track.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "4257f147f1",
+      "date": "2026-11-19T23:02:16.000Z",
+      "added": "2026-11-20T18:22:56.757Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/enable-ai-agents-to-pay-for-aws-marketplace-x402-products-with-amazon-bedrock-agentcore-payments/",
+      "category": "builders",
+      "title": "Bedrock agents can now buy and pay for tools on AWS Marketplace",
+      "summary": "AgentCore payments supports x402-enabled Marketplace products, letting an agent discover an API or dataset, pay per request in USD on the AWS bill, and use it — no crypto wallets or separate API keys.",
+      "why": "Agent-initiated spending is arriving on your stack; worth thinking now about budget limits and approval design.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "9e188d65b5",
+      "date": "2026-11-20T16:30:48.000Z",
+      "added": "2026-11-20T18:22:56.757Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/20/levent-alpoge/",
+      "category": "labs",
+      "title": "Mathematician claims a Claude-assisted proof of the Riemann Hypothesis",
+      "summary": "Levent Alpöge published a paper claiming he and Claude proved the Riemann Hypothesis and its generalised form, with formalised arguments. Unverified by the maths community, but a notable marker of AI-assisted research claims.",
+      "why": "Useful calibration on where model-assisted reasoning now sits — and on treating big AI claims as unverified until peers check.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "0c3c8b23c6",
       "date": "2026-11-18T21:35:43.000Z",
