@@ -1,6 +1,188 @@
 {
-  "updated": "2026-11-20T18:22:56.762Z",
+  "updated": "2026-11-21T17:09:39.880Z",
   "items": [
+    {
+      "id": "046340afda",
+      "date": "2026-11-21T16:49:56.000Z",
+      "added": "2026-11-21T17:09:39.875Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/community-wisdom-handling-context",
+      "category": "pm",
+      "title": "Lenny community: juggling multiple agents, critiquing AI designs, de-slopping AI writing",
+      "summary": "Practitioner advice on managing context switching when running several AI agents at once, giving useful feedback on AI-generated designs, prompting AI to sound less robotic, and why PMs stay quiet about their real work.",
+      "why": "Directly upgrades your daily Claude Code habits and gives language for reviewing AI output as a non-engineer PM.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0"
+      ],
+      "cards": [
+        {
+          "front": "Why is running multiple AI agents mentally expensive?",
+          "back": "Each agent needs its own context in your head; switching costs attention. Batch reviews, keep one 'main' task, and give agents narrow, well-scoped briefs."
+        },
+        {
+          "front": "Quickest way to make AI writing sound less like AI",
+          "back": "Give it your own voice samples, ban stock phrasing, demand concrete specifics, and shorten — generic structure and hedging are the main tells."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What's the most effective way to cut the cost of context switching between several coding agents?",
+          "options": [
+            "Give each agent a narrow, clearly scoped task and review results in batches",
+            "Run all agents on the same file so their outputs stay consistent",
+            "Increase the model's context window so it remembers more of the project",
+            "Ask each agent to summarize the others' work before starting its own"
+          ],
+          "answer": 0,
+          "why": "The cost is in your attention, not the model's memory; narrow scopes plus batched review limits how much state you must hold."
+        }
+      ]
+    },
+    {
+      "id": "7873807506",
+      "date": "2026-11-20T22:34:58.000Z",
+      "added": "2026-11-21T17:09:39.875Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/ai-agents-ship-to-production",
+      "category": "builders",
+      "title": "Inside one team's agent-driven shipping pipeline (AI review → 1% rollout)",
+      "summary": "TinyFish's CPO walks through how the team ships with AI agents: automated code review, staged testing, and a 1% production rollout, during a stretch where users tripled in under a month.",
+      "why": "A concrete template for production-grade agent workflows and safe rollouts you can borrow for your own team.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "a0",
+        "a5"
+      ],
+      "cards": [
+        {
+          "front": "What is a 1% rollout?",
+          "back": "Releasing a change to 1% of users first, watching metrics and errors, then widening. Limits blast radius of bad AI-written or AI-reviewed code."
+        },
+        {
+          "front": "AI code review in a shipping pipeline",
+          "back": "An agent reviews every pull request before humans, catching obvious bugs and style issues so human review focuses on product and architecture risk."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why do teams send AI-assisted changes to 1% of users before a full release?",
+          "options": [
+            "To limit the number of users affected if the change misbehaves",
+            "To let the model retrain on the first batch of user feedback",
+            "To reduce the cost of inference during the release window",
+            "To avoid needing a code review step before merging"
+          ],
+          "answer": 0,
+          "why": "Progressive rollout is about containing blast radius and observing real metrics, not about model training or cost."
+        }
+      ]
+    },
+    {
+      "id": "7ce40af713",
+      "date": "2026-11-20T22:32:56.000Z",
+      "added": "2026-11-21T17:09:39.875Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.330",
+      "category": "claude-code",
+      "title": "Claude Code v2.1.330: enterprise sign-in and built-in chart drawing",
+      "summary": "New release adds login tied to organizations managed in Anthropic's Enterprise Admin Console (applying org settings and gateway/cloud provider automatically) plus 'easel', a built-in mod that renders charts on request and for MCP metrics.",
+      "why": "If your company moves to enterprise-managed Claude Code, your settings and model routing may change; charts help you read agent metrics.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "3416f4aff6",
+      "date": "2026-11-20T20:37:31.000Z",
+      "added": "2026-11-21T17:09:39.875Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/how-standard-bank-group-automates-ai-risk-assessment-for-generative-ai/",
+      "category": "builders",
+      "title": "Automating AI risk reviews with LLM-as-a-judge on Bedrock",
+      "summary": "A bank built an in-house assessment that scores each generative AI use case against external standards and internal policy using an LLM as evaluator on Bedrock, producing traceable evidence for approval committees.",
+      "why": "Your stack is Bedrock; LLM-as-a-judge is a reusable pattern for evaluating agents and for governance paperwork PMs usually own.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "fc9e0792ab",
+      "date": "2026-11-20T20:22:00.000Z",
+      "added": "2026-11-21T17:09:39.875Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/announcing-amazon-textract-insights-verifiable-generative-ai-for-documents/",
+      "category": "builders",
+      "title": "Amazon Textract Insights: describe the fields, get grounded document data",
+      "summary": "New Textract capability extracts structured data from documents using natural-language field descriptions, no training needed, returning confidence scores and page-level grounding so each value can be traced back to its source.",
+      "why": "A ready-made building block for document-heavy agent features on AWS, with the citation/confidence hooks reviewers demand.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "3ea993db7e",
+      "date": "2026-11-20T10:00:00.000Z",
+      "added": "2026-11-21T17:09:39.875Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/combatting-adversarial-distillation",
+      "category": "labs",
+      "title": "OpenAI on stopping rivals from copying its models",
+      "summary": "OpenAI describes defenses against adversarial distillation — competitors querying a frontier model to train a cheaper clone — spanning training choices, API safeguards, abuse detection, and enforcement.",
+      "why": "Explains why frontier APIs add rate limits and output restrictions, and how the model landscape's cheap clones actually appear.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "790fce6927",
+      "date": "2026-11-20T21:18:41.000Z",
+      "added": "2026-11-21T17:09:39.875Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/formal-verification/",
+      "category": "builders",
+      "title": "Formal verification as an answer to AI-generated 'slop' code",
+      "summary": "Latent Space argues mathematical proof tools like Lean, long a specialist niche, are becoming automatable with AI — offering a way to actually verify that machine-written software is correct rather than just plausible.",
+      "why": "Frames the core risk of agent-written code — plausible but wrong — and the emerging class of tools meant to fix it.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "15d139ec7c",
+      "date": "2026-11-21T01:06:42.000Z",
+      "added": "2026-11-21T17:09:39.875Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/new-in-aws-quick-more-capable-flows-an-updated-web-experience-and-agents-that-work-together/",
+      "category": "pm",
+      "title": "AWS Quick update: multi-agent answers and business-process flows",
+      "summary": "AWS's work AI workspace adds chat-built business process flows, a redesigned web app for triaging your day, answers assembled from several agents at once, and connectors to sources like Amplitude and Meta ads.",
+      "why": "A live example of multi-agent orchestration and data connectors in a product PM-facing tool, on the cloud you already use.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "f32d5bea8a",
       "date": "2026-11-20T02:49:57.000Z",
