@@ -1,6 +1,77 @@
 {
-  "updated": "2026-11-21T17:09:39.880Z",
+  "updated": "2026-11-22T17:38:58.164Z",
   "items": [
+    {
+      "id": "62d043f2c9",
+      "date": "2026-11-22T13:31:53.000Z",
+      "added": "2026-11-22T17:38:58.158Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/first-principles-what-it-takes-to",
+      "category": "pm",
+      "title": "Sherif Mansour: what makes a great PM in the AI era",
+      "summary": "Lenny interviews Atlassian veteran Sherif Mansour on why product managers are thriving rather than disappearing with AI: the edge of 'artist' PMs with taste and craft, and why junior PMs now punch above their weight.",
+      "why": "This is the clearest current framing of how your PM role changes with AI, and what skills to double down on.",
+      "score": 10,
+      "mustKnow": true,
+      "related": [],
+      "cards": [
+        {
+          "front": "'Artist PM' advantage (Sherif Mansour)",
+          "back": "When AI makes execution cheap, the differentiator is taste, judgment and craft in deciding what to build — not process management."
+        },
+        {
+          "front": "Why juniors can be a secret weapon in the AI era",
+          "back": "They adopt AI tools without old habits to unlearn, so they often out-produce seniors on execution-heavy work."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is Mansour's core argument about PMs and AI?",
+          "options": [
+            "AI raises the value of taste and judgment about what to build",
+            "AI makes PM roles redundant as engineers specify their own work",
+            "AI mainly helps PMs by automating stakeholder communication",
+            "AI shifts PM value toward managing larger delivery processes"
+          ],
+          "answer": 0,
+          "why": "His point is that when building gets cheap, deciding what's worth building — craft and taste — becomes the scarce skill."
+        }
+      ]
+    },
+    {
+      "id": "d63c6404d4",
+      "date": "2026-11-20T03:01:57.000Z",
+      "added": "2026-11-22T17:38:58.158Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/20/llm-gemini/",
+      "category": "labs",
+      "title": "Gemini 4 variants expose different 'reasoning effort' levels",
+      "summary": "A small tooling update reveals that Google's Gemini 4 family differs by tier: one variant supports low/medium/high reasoning settings, while two others add an extra 'xhigh' level for harder problems.",
+      "why": "Reasoning-effort dials are now a standard model knob; knowing them helps you trade cost against quality in your agents.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "ab3af887f6",
+      "date": "2026-11-22T01:59:13.000Z",
+      "added": "2026-11-22T17:38:58.158Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/meta-ads-is-now-available-in-aws-quick/",
+      "category": "builders",
+      "title": "AWS Quick adds a natural-language connector for Meta ads",
+      "summary": "AWS's Quick tool gains a Meta ads connector, letting marketers create, manage and analyse campaigns in plain language and blend ad data with other sources into dashboards, docs and automated workflows.",
+      "why": "A concrete example of the agent-plus-connector pattern on AWS, the same stack your production agents already run on.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "046340afda",
       "date": "2026-11-21T16:49:56.000Z",

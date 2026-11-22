@@ -10982,5 +10982,21 @@
   "790fce6927": {
     "source": "latent-space",
     "at": "2026-11-21T17:09:05.445Z"
+  },
+  "62d043f2c9": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-22T17:38:35.216Z"
+  },
+  "ab3af887f6": {
+    "source": "aws-ml",
+    "at": "2026-11-22T17:38:36.909Z"
+  },
+  "0ceef4b235": {
+    "source": "simon-willison",
+    "at": "2026-11-22T17:38:37.016Z"
+  },
+  "d63c6404d4": {
+    "source": "simon-willison",
+    "at": "2026-11-22T17:38:37.016Z"
   }
 }
