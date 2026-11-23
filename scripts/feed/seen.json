@@ -10998,5 +10998,45 @@
   "d63c6404d4": {
     "source": "simon-willison",
     "at": "2026-11-22T17:38:37.016Z"
+  },
+  "0fa181a123": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-23T21:54:57.556Z"
+  },
+  "eb28781016": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-23T21:54:57.556Z"
+  },
+  "f8a4e02f42": {
+    "source": "openai",
+    "at": "2026-11-23T21:54:58.112Z"
+  },
+  "680b35173b": {
+    "source": "openai",
+    "at": "2026-11-23T21:54:58.112Z"
+  },
+  "de5cd1a6d5": {
+    "source": "openai",
+    "at": "2026-11-23T21:54:58.112Z"
+  },
+  "c5903c8754": {
+    "source": "google-ai",
+    "at": "2026-11-23T21:54:58.291Z"
+  },
+  "9dddeb89e4": {
+    "source": "deepmind",
+    "at": "2026-11-23T21:54:58.446Z"
+  },
+  "800aeca2d3": {
+    "source": "claude-code",
+    "at": "2026-11-23T21:54:58.951Z"
+  },
+  "ca7cd22c6e": {
+    "source": "simon-willison",
+    "at": "2026-11-23T21:54:59.099Z"
+  },
+  "9b4a55165b": {
+    "source": "simon-willison",
+    "at": "2026-11-23T21:54:59.099Z"
   }
 }

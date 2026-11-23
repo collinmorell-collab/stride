@@ -1,6 +1,156 @@
 {
-  "updated": "2026-11-22T17:38:58.164Z",
+  "updated": "2026-11-23T21:57:12.599Z",
   "items": [
+    {
+      "id": "eb28781016",
+      "date": "2026-11-23T13:04:43.000Z",
+      "added": "2026-11-23T21:55:26.927Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/openclaw-for-executives-automate",
+      "category": "pm",
+      "title": "How a CTO runs a personal AI \"Jarvis\" to kill every 1% annoyance",
+      "summary": "Innovaccer's CTO demos a persistent OpenClaw agent on a home Mac Mini that handles small recurring chores — inbox triage, scheduling, research — showing how execs can delegate micro-annoyances to an always-on assistant.",
+      "why": "A concrete, copyable pattern for turning your daily Claude Code habit into a persistent personal agent that removes recurring PM busywork.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [
+        {
+          "front": "What is the \"1% annoyance\" pattern?",
+          "back": "Automating tiny recurring frictions (triage, reminders, lookups) with an always-on agent rather than chasing one big automation project."
+        },
+        {
+          "front": "Why run a personal agent on an always-on machine?",
+          "back": "It can react to events and run scheduled jobs without you opening a laptop session — persistence, not just chat."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What's the main advantage of a persistent, always-on personal agent over a chat session?",
+          "options": [
+            "It can run on schedules and react to events without you starting it",
+            "It uses a larger model with a bigger context window",
+            "It never hallucinates because it stores conversation memory",
+            "It avoids API costs by running inference locally for free"
+          ],
+          "answer": 0,
+          "why": "Persistence means triggers and schedules; model size, accuracy and cost are separate concerns."
+        }
+      ]
+    },
+    {
+      "id": "0fa181a123",
+      "date": "2026-11-23T16:01:48.000Z",
+      "added": "2026-11-23T21:55:26.927Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/how-i-ai-openclaw-for-executives",
+      "category": "pm",
+      "title": "Lenny's weekly How I AI roundup",
+      "summary": "The newsletter edition rounding up this week's How I AI episodes, centered on the executive OpenClaw automation walkthrough plus other practitioner AI workflow demos.",
+      "why": "Fast scan of real practitioner AI workflows from the podcast network you already follow — useful for spotting patterns to copy.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "800aeca2d3",
+      "date": "2026-11-23T21:34:41.000Z",
+      "added": "2026-11-23T21:55:26.927Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.331",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.331 brings Code Mode to Amazon Bedrock sessions",
+      "summary": "This release enables Code Mode in terminal sessions running on Amazon Bedrock, Google's Agent Platform, Microsoft Foundry and Claude Platform on AWS, plus enterprise gateway group-mapping and an API connectivity diagnostics section.",
+      "why": "Your company runs agents on AWS Bedrock — this directly unlocks Code Mode for Bedrock-backed Claude Code sessions on your team.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "What is Amazon Bedrock?",
+          "back": "AWS's managed service for calling foundation models (including Claude) via API, so Claude Code can run against your company's AWS account."
+        },
+        {
+          "front": "What changed in Claude Code 2.1.331 for Bedrock users?",
+          "back": "Code Mode now works in terminal sessions on Bedrock (and other enterprise platforms), plus new API connectivity diagnostics."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "Why does Bedrock support in Claude Code matter for an enterprise team?",
+          "options": [
+            "Model calls run through the company's own AWS account and controls",
+            "It removes the need for an internet connection when coding",
+            "It lets Claude Code edit files without asking for permission",
+            "It replaces Git so branches are managed by AWS instead"
+          ],
+          "answer": 0,
+          "why": "Bedrock routes model usage through your AWS account, which governs billing, data handling and access — not networking, permissions or version control."
+        }
+      ]
+    },
+    {
+      "id": "de5cd1a6d5",
+      "date": "2026-11-22T00:00:00.000Z",
+      "added": "2026-11-23T21:55:26.927Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/perplexity-and-intelligence",
+      "category": "labs",
+      "title": "Perplexity as a measure of model progress",
+      "summary": "OpenAI explains perplexity — how well a model predicts the next token — as a progress metric, and argues it could anchor a shared vocabulary for evaluating new model capabilities.",
+      "why": "A clean zero-to-one explainer of a core LLM metric, so you can read model announcements and evals with less hand-waving.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "680b35173b",
+      "date": "2026-11-23T08:00:00.000Z",
+      "added": "2026-11-23T21:55:26.927Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/business/customer-stories/richpanel-ai-customer-support",
+      "category": "builders",
+      "title": "Support agents built from tool use plus written procedures",
+      "summary": "A support vendor reports automating half of ticket volume by splitting work across models: stronger ones for tool calls and procedure-following, a cheaper conversational one for customer-facing replies.",
+      "why": "The model-routing pattern — reasoning model for tools, cheap model for chat — is directly reusable in your own agent designs.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "b1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "c5903c8754",
+      "date": "2026-11-23T17:00:00.000Z",
+      "added": "2026-11-23T21:55:26.927Z",
+      "source": "Google AI",
+      "link": "https://blog.google/products-and-platforms/products/search/google-search-personal-intelligence-apps/",
+      "category": "pm",
+      "title": "Google Search starts using your Drive, Wallet and Gemini history",
+      "summary": "Google is letting users opt in to connect personal data sources so AI Mode in Search can tailor answers, pushing personalization and consent design further into mainstream search.",
+      "why": "A mainstream example of permissioned personal context in AI products — relevant framing for consent and data UX in your own roadmap.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "62d043f2c9",
       "date": "2026-11-22T13:31:53.000Z",
@@ -9347,240 +9497,122 @@
       ],
       "cards": [],
       "quiz": []
-    },
-    {
-      "id": "eb58386549",
-      "date": "2026-09-24T08:12:59.000Z",
-      "added": "2026-09-24T14:40:10.325Z",
-      "source": "Latent Space",
-      "link": "https://www.latent.space/p/ainews-meta-connect-2026-muse-glasses",
-      "category": "labs",
-      "title": "Meta Connect 2026: Muse smart glasses and new voice/video AI",
-      "summary": "Meta's annual event unveiled its Muse glasses line plus upgrades to voice and video AI features and a product called Charm, signalling a push toward always-on, multimodal assistants on wearable hardware.",
-      "why": "Multimodal, always-on assistants are the next interface shift — useful context when you think about where your own AI products could live.",
-      "score": 6,
-      "mustKnow": false,
-      "related": [
-        "c2"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "2947393216",
-      "date": "2026-09-22T12:45:14.000Z",
-      "added": "2026-09-24T04:00:57.973Z",
-      "source": "Lenny's Newsletter",
-      "link": "https://www.lennysnewsletter.com/p/advanced-evals-how-to-find-and-fix",
-      "category": "pm",
-      "title": "Advanced evals: finding the AI failures you don't know about",
-      "summary": "Lenny's newsletter walks through error discovery — systematically surfacing hidden failure modes in an AI product before writing eval criteria, so your metrics measure real problems instead of imagined ones.",
-      "why": "You ship agents; evals are the PM skill that separates demo-grade from production-grade. Error discovery is the step most teams skip.",
-      "score": 10,
-      "mustKnow": true,
-      "related": [
-        "b0",
-        "c1"
-      ],
-      "cards": [
-        {
-          "front": "Error discovery (in AI evals)",
-          "back": "Reading real outputs/traces to find actual failure modes first, then turning those into eval criteria — instead of guessing metrics up front."
-        },
-        {
-          "front": "Why not start with a metric?",
-          "back": "Predefined metrics miss failure modes you haven't imagined; you optimize for what you measured, not what breaks."
-        },
-        {
-          "front": "Who should do error discovery?",
-          "back": "A domain expert or PM who can judge 'good' — it's judgment work, not just engineering."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "According to the eval workflow, what should come first?",
-          "options": [
-            "Pick a scoring metric and benchmark",
-            "Look at real outputs to discover failure modes",
-            "Fine-tune the model",
-            "Add more tools to the agent"
-          ],
-          "answer": 1,
-          "why": "Error discovery precedes criteria: you can only measure failures you've actually found."
-        }
-      ]
-    },
-    {
-      "id": "f526d76790",
-      "date": "2026-09-22T23:46:41.000Z",
-      "added": "2026-09-24T04:00:57.973Z",
-      "source": "Simon Willison",
-      "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
-      "category": "labs",
-      "title": "Claude Opus 5.5, GPT-6 Sol and Luna land — plus a 40-50% price war",
-      "summary": "Simon Willison rounds up a chaotic release week: Anthropic's Opus 5.5 and OpenAI's GPT-6 Sol/Luna arrive within a day of each other, alongside Grok 4.7, with frontier prices cut sharply.",
-      "why": "Your model choice and unit economics just changed. Worth re-running cost assumptions for your Bedrock agents this week.",
-      "score": 9,
-      "mustKnow": true,
-      "related": [
-        "a1",
-        "a2"
-      ],
-      "cards": [
-        {
-          "front": "What changed in the frontier model lineup this week?",
-          "back": "Claude Opus 5.5, GPT-6 Sol and Luna, and Grok 4.7 all shipped within ~48 hours, with price cuts of roughly 40-50%."
-        },
-        {
-          "front": "Why do model price cuts matter to a PM?",
-          "back": "They change per-request cost, so features that were too expensive (bigger context, more agent steps, more retries) can become viable."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "What was the main commercial story alongside the Opus 5.5 and GPT-6 launches?",
-          "options": [
-            "Frontier model prices dropped roughly 40-50%",
-            "Open weights were discontinued",
-            "API rate limits were removed",
-            "All labs moved to per-seat pricing"
-          ],
-          "answer": 0,
-          "why": "Competing releases triggered a price war, reshaping cost models for agent products."
-        }
-      ]
-    },
-    {
-      "id": "201957d3ce",
-      "date": "2026-09-21T12:04:11.000Z",
-      "added": "2026-09-24T04:00:57.973Z",
-      "source": "Lenny's Newsletter",
-      "link": "https://www.lennysnewsletter.com/p/how-warp-ships-2000-prs-a-month-with",
-      "category": "builders",
-      "title": "Warp's 'AI factory': 2,000 PRs a month from Slack and Linear tickets",
-      "summary": "Warp's CEO explains a pipeline that turns requests from Slack, Linear and GitHub into tested, tracked pull requests run by cloud agents — and how the team measures and improves that pipeline over time.",
-      "why": "A concrete operating model for agentic delivery you could adapt to your Bitbucket workflow, plus the metrics to judge whether it works.",
-      "score": 9,
-      "mustKnow": false,
-      "related": [
-        "c2",
-        "b1"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "f0c4809f60",
-      "date": "2026-09-22T23:12:49.000Z",
-      "added": "2026-09-24T04:00:57.973Z",
-      "source": "Lenny's Newsletter",
-      "link": "https://www.lennysnewsletter.com/p/opus-55-vs-gpt-6-sol-which-model",
-      "category": "labs",
-      "title": "Blind taste test: Opus 5.5 vs GPT-6 Sol across six task types",
-      "summary": "Lenny runs blind head-to-head evaluations on writing, frontend prototypes, long-running agentic tasks, SVGs, coding and video editing, showing where each model actually wins rather than trusting benchmark claims.",
-      "why": "A repeatable way to pick models by task instead of by hype — and a template for your own blind evals at work.",
-      "score": 8,
-      "mustKnow": false,
-      "related": [
-        "a2",
-        "b0"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "48b6ca0f88",
-      "date": "2026-09-22T19:06:40.000Z",
-      "added": "2026-09-24T04:00:57.973Z",
-      "source": "Lenny's Newsletter",
-      "link": "https://www.lennysnewsletter.com/p/i-left-claude-for-months-opus-55",
-      "category": "labs",
-      "title": "Why Opus 5.5 won back a user who'd quit Claude",
-      "summary": "A practitioner who abandoned Claude for months explains the specific tasks — frontend work, SVGs, long agentic runs — where Opus 5.5 now earns a place back in their tool stack.",
-      "why": "Practical signal on where Opus 5.5 is genuinely better, useful when defending your Claude Code habits to a mixed-tool team.",
-      "score": 8,
-      "mustKnow": false,
-      "related": [
-        "a2"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "11bd1be78b",
-      "date": "2026-09-22T17:28:01.000Z",
-      "added": "2026-09-24T04:00:57.973Z",
-      "source": "AWS Machine Learning Blog",
-      "link": "https://aws.amazon.com/blogs/machine-learning/claude-opus-5-5-is-now-available-on-aws/",
-      "category": "builders",
-      "title": "Claude Opus 5.5 is live on Amazon Bedrock",
-      "summary": "Anthropic's most capable agentic-coding model is now available on Bedrock and Claude Platform on AWS, with guidance on when to use it for long-running tasks and how to start calling it.",
-      "why": "This is your company's exact stack — Lambda plus Bedrock — so it's the fastest path to test Opus 5.5 in production agents.",
-      "score": 8,
-      "mustKnow": false,
-      "related": [
-        "c1",
-        "c2"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "5387aa5d97",
-      "date": "2026-09-22T17:18:13.000Z",
-      "added": "2026-09-24T04:00:57.973Z",
-      "source": "AWS Machine Learning Blog",
-      "link": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
-      "category": "builders",
-      "title": "Testing whether your agent picked the right skill, not just sounded good",
-      "summary": "AWS shows how to use Strands Evals with Bedrock AgentCore Evaluations to measure skill selection and instruction-following in agents, since a fluent answer doesn't prove correct procedure was followed.",
-      "why": "The Bedrock-native counterpart to Lenny's evals piece — concrete tooling for evaluating the agents your team already runs.",
-      "score": 7,
-      "mustKnow": false,
-      "related": [
-        "c1"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "154febf0aa",
-      "date": "2026-09-21T15:03:51.000Z",
-      "added": "2026-09-24T04:00:57.973Z",
-      "source": "Lenny's Newsletter",
-      "link": "https://www.lennysnewsletter.com/p/how-i-ai-metas-muse-review-how-warp",
-      "category": "pm",
-      "title": "How I AI weekly: Meta's Muse reviewed, plus the Warp factory episode",
-      "summary": "The week's How I AI roundup pairs a hands-on review of Meta's Muse with the Warp AI-factory conversation, aimed at PMs wanting to see real AI workflows rather than product announcements.",
-      "why": "Short, workflow-focused listens that fit your walk and show how other PMs actually use these tools day to day.",
-      "score": 7,
-      "mustKnow": false,
-      "related": [
-        "a0"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "57339196ea",
-      "date": "2026-09-23T19:19:15.000Z",
-      "added": "2026-09-24T04:00:57.973Z",
-      "source": "Claude Code releases",
-      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.281",
-      "category": "claude-code",
-      "title": "Claude Code v2.1.281: enterprise Bedrock and desktop policy controls",
-      "summary": "This release adds gateway support for newer Claude Desktop keys with policies like blocking reads outside working directories, and lets the gateway assume an IAM role via STS to call Bedrock in another AWS account.",
-      "why": "If your org routes Claude Code through Bedrock, cross-account IAM role support is the flag your platform team will care about.",
-      "score": 6,
-      "mustKnow": false,
-      "related": [
-        "b1"
-      ],
-      "cards": [],
-      "quiz": []
     }
   ],
   "weekly": [
+    {
+      "weekOf": "2026-11-23",
+      "created": "2026-11-23T21:57:12.596Z",
+      "headline": "Your Bedrock stack and your model shortlist both moved this week — and Lenny says the PM job is getting more valuable, not less",
+      "script": "Good morning. Five things this week, starting with the one about you.\n\nLenny interviewed Atlassian veteran Sherif Mansour on why product managers are thriving in the AI era rather than disappearing. His argument: when anyone can generate a spec, a mock or a prototype, the scarce thing is taste and craft — the artist PM who knows which version is actually good. He also notes junior PMs are punching above their weight, because the cost of trying things has collapsed. Worth internalising before your next performance conversation.\n\nSecond, the model landscape shifted twice. OpenAI shipped GPT six point two in two flavours: Astra, a premium tier for hard, long-running work, and Sol, a cheaper everyday workhorse, both with big price cuts. Google answered with Gemini four Neon, a mid-tier model scoring near frontier level. The practical takeaway for you is routing: expensive model for judgment-heavy steps, cheap model for routine ones.\n\nThird, Claude Code's auto permission mode now works through Amazon Bedrock, and it's the starting mode for interactive sessions. Since your company runs on Bedrock, your daily sessions now begin doing more without asking you. A later release also brought Code Mode to Bedrock sessions. Know what auto mode will and won't do before you let it run.\n\nFourth, and this pairs beautifully: AWS published guidance that the biggest generative AI cost lever isn't picking a cheaper model, it's deciding whether a step needs a model at all. Deterministic rules go in ordinary code; only genuine judgment goes to Bedrock. That's a question you can ask in any design review without writing a line of code.\n\nFifth, token fraud. Claire Vo of ChatPRD describes attackers draining AI products through generous plans, resold access and stolen cards. If you ship an AI feature, inference cost is a fraud surface, and rate limits and usage caps are your decisions, not engineering's.",
+      "top5": [
+        {
+          "title": "Sherif Mansour: what makes a great PM in the AI era",
+          "link": "https://www.lennysnewsletter.com/p/first-principles-what-it-takes-to",
+          "source": "Lenny's Newsletter",
+          "why": "The clearest current articulation of where your value as a PM moves when generation gets cheap: taste, craft and judgment."
+        },
+        {
+          "title": "OpenAI ships GPT-6.2 \"Astra\" and \"Sol\"",
+          "link": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+          "source": "OpenAI",
+          "why": "A new premium tier plus a cheap workhorse at lower prices resets the cost-versus-quality maths for every agent you spec."
+        },
+        {
+          "title": "Claude Code 2.1.328: auto mode now works on Bedrock",
+          "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.328",
+          "source": "Claude Code releases",
+          "why": "Your company runs on Bedrock, so your daily sessions now start in auto mode and do more before asking your permission."
+        },
+        {
+          "title": "AWS: use plain code for rules, models only for judgment",
+          "link": "https://aws.amazon.com/blogs/machine-learning/cut-generative-ai-costs-code-for-rules-models-for-judgment/",
+          "source": "AWS Machine Learning Blog",
+          "why": "The highest-leverage cost question on your Lambda plus Bedrock stack, and one you can ask without any engineering background."
+        },
+        {
+          "title": "Token fraud: how AI product builders get drained by abusive users",
+          "link": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/",
+          "source": "Simon Willison",
+          "why": "Inference spend is now a fraud surface, and the guardrails — caps, rate limits, abuse detection — are product decisions you own."
+        }
+      ],
+      "cards": [
+        {
+          "front": "Sherif Mansour's core claim about PMs in the AI era",
+          "back": "PMs aren't being replaced — the differentiator shifts to 'artist' PMs with taste and craft. When generating specs, mocks and prototypes is nearly free, judging which output is good becomes the scarce skill. Junior PMs now punch above their weight because experimentation is cheap."
+        },
+        {
+          "front": "GPT-6.2 Astra vs Sol",
+          "back": "OpenAI's two new tiers: Astra is the frontier model for hard, long-running reasoning and coding; Sol is the cheaper everyday workhorse. Both shipped in the API with significant price cuts versus the previous frontier tier. Early reviews praise the price but are mixed on how Astra feels to use."
+        },
+        {
+          "front": "Claude Code 'auto' permission mode on Bedrock",
+          "back": "Auto mode lets Claude Code take routine actions without prompting you for each one. From v2.1.328 it covers Opus 4.6 and Sonnet 4.6 running through Amazon Bedrock and other gateways, and it is now the starting mode for interactive sessions. MCP tool hooks can block actions when they fail."
+        },
+        {
+          "front": "'Code for rules, models for judgment' (AWS cost guidance)",
+          "back": "The biggest generative-AI cost lever is deciding whether a step needs a model at all. Map each workflow step to one of three: deterministic ordinary code for fixed rules, a tightly constrained model call, or a right-sized Bedrock model for genuine judgment. Most cost and latency blowups come from calling a model where plain logic would do."
+        },
+        {
+          "front": "Token fraud",
+          "back": "Attackers exploit generous AI plans — reselling account access, scripted abuse, stolen cards — so the product pays real inference costs with no revenue. Described by Claire Vo of ChatPRD. Defences are product decisions: usage caps, rate limits, abuse detection and pricing design."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "In Claude Code, what does the 'auto' permission mode actually change?",
+          "options": [
+            "Claude carries out routine actions without asking you to approve each one",
+            "Claude picks the cheapest available model for each step of the task",
+            "Claude compacts the conversation automatically when context fills up",
+            "Claude retries any tool call that fails before reporting an error"
+          ],
+          "answer": 0,
+          "why": "Auto mode is about permissions: Claude proceeds with actions rather than prompting for each approval. It now covers Bedrock-backed sessions and is the default starting mode. Model choice, compaction and retries are separate mechanisms."
+        },
+        {
+          "q": "Following AWS's cost guidance, which step in an agent workflow is the best candidate for plain code instead of a model call?",
+          "options": [
+            "Checking whether an order total is above the refund approval threshold",
+            "Summarising a customer's free-text complaint into a short handover note",
+            "Deciding how apologetic the tone of a reply to an angry user should be",
+            "Grouping ambiguous product feedback into themes that nobody defined yet"
+          ],
+          "answer": 0,
+          "why": "A fixed numeric threshold is a deterministic rule, so ordinary code is cheaper, faster and more reliable. Summarising, tone and open-ended theming all need genuine judgment, which is what you pay a model for."
+        },
+        {
+          "q": "What is the mechanism behind 'token fraud' as described this week?",
+          "options": [
+            "Abusive users exploit generous plans so inference costs exceed revenue",
+            "Rivals query a frontier API repeatedly to train a cheaper copycat model",
+            "Attackers inject hidden text into documents to hijack an agent's actions",
+            "Large JSON tool responses silently inflate the token count of each turn"
+          ],
+          "answer": 0,
+          "why": "Token fraud is an economics problem: resold access, scripted abuse and stolen cards mean you pay inference costs for users who never pay you. Option two is adversarial distillation, option three is prompt injection, option four is a token-efficiency issue — all real, but different."
+        }
+      ],
+      "stale": [
+        {
+          "unit": "b1",
+          "note": "The lesson says Write, Edit and Bash 'are the ones that ask your permission'. As of Claude Code v2.1.328, auto permission mode is the starting mode for interactive sessions and now works through Amazon Bedrock and other gateways with Opus 4.6 and Sonnet 4.6 — so by default Claude may perform many of these actions without a per-action prompt. The lesson should explain auto mode and how to check which mode a session started in."
+        },
+        {
+          "unit": "b0",
+          "note": "The harness description predates Code Mode. Claude Code v2.1.326 lets Code Mode run alongside agent teams, and v2.1.331 enables Code Mode for sessions running on Amazon Bedrock, Google's Agent Platform, Microsoft Foundry and Claude Platform on AWS — relevant since the reader's company is on Bedrock. Recent releases also added enterprise sign-in via the Anthropic Enterprise Admin Console, which applies org settings and the cloud provider/gateway automatically, so 'your settings' may no longer be purely local."
+        },
+        {
+          "unit": "c1",
+          "note": "The line 'Many apps let you set an effort level' now understates the detail: Google's Gemini 4 family exposes low/medium/high on one variant and an additional 'xhigh' level on two others, so effort is a tiered, model-specific dial rather than a single uniform setting."
+        },
+        {
+          "unit": "c2",
+          "note": "The pricing table is explicitly dated September 2026 and should be re-checked. This week OpenAI shipped GPT-6.2 Astra (frontier) and Sol (cheap workhorse) with large price cuts versus the previous frontier tier, and Google shipped Gemini 4 Neon, a mid-tier model reported near frontier-level scores — so the implied gap between 'cheap tier' and 'frontier tier' quality in the tiers lesson is narrower than written. Also worth noting: Anthropic has now completed an IPO, so the 'who makes the models' framing of labs as private frontier labs needs updating."
+        }
+      ]
+    },
     {
       "weekOf": "2026-11-16",
       "created": "2026-11-16T20:04:01.420Z",
@@ -10415,165 +10447,28 @@
           "note": "Two tool details changed: WebFetch can now be switched off entirely via an environment variable (v2.1.285), and Read deny rules now also apply to @-mentioned files and hold inside compound shell commands (v2.1.289) — worth adding to the permissions discussion, which currently implies permission rules only cover Write, Edit and Bash."
         }
       ]
-    },
-    {
-      "weekOf": "2026-09-28",
-      "created": "2026-09-28T18:00:35.163Z",
-      "headline": "Frontier week: Opus 5.5 and GPT-6 land with 40-50% price cuts, Stripe pays $7B for a model router, and evals become the PM skill to own.",
-      "script": "Big week. Start with the models: Anthropic's Opus 5.5 and OpenAI's GPT-6 Sol and Luna shipped within about a day of each other, Grok 4.7 too, and frontier prices were cut roughly forty to fifty percent. Two takeaways for you. First, your cost assumptions for your Bedrock agents are now wrong in your favour, so it's worth re-running the per-million-token math before your next roadmap conversation. Second, Opus 5.5 is already live on Bedrock, so testing it is a config change, not a project. Lenny even ran blind head-to-head tests and found the winner depends on the task, which is a good habit to steal: judge by your own tasks, not benchmark charts.\n\nSecond story: Stripe bought OpenRouter for seven billion dollars. OpenRouter is a routing layer that sits between your app and dozens of models, so you can swap providers without rewriting anything. When a payments giant pays that much for a switchboard, it's telling you that optionality between models is where infrastructure value is concentrating, and that locking yourself to one provider is now a real product risk.\n\nThird: Lenny's piece on advanced evals. The key idea is error discovery. Before you write any scoring criteria, go hunting through real outputs for failure modes you didn't know existed, otherwise your metrics measure imaginary problems. That's the step most teams skip, and it's the line between demo-grade and production-grade.\n\nFourth, straight onto your stack: AWS published a pattern where one central agent reaches data owned by other teams' AWS accounts, with each team exposing its data as an MCP server and AgentCore Gateway handling cross-account auth and per-user permissions. That's the answer to \"how does our agent query their data safely.\"\n\nFifth, Zapier's AI fluency rubric grades every employee from unacceptable to transformative. Use it as a yardstick, and push your team from chatting to redesigning workflows. Bonus listen: Molly Graham on why handing work to an agent feels nothing like handing it to a person.",
-      "top5": [
-        {
-          "title": "Claude Opus 5.5, GPT-6 Sol and Luna land — plus a 40-50% price war",
-          "link": "https://simonwillison.net/2026/Sep/22/opus-and-sol-and-luna/",
-          "source": "Simon Willison",
-          "why": "Two frontier releases in one day plus sharp price cuts means your model default and your Bedrock unit economics both need a re-check this week."
-        },
-        {
-          "title": "Stripe buys OpenRouter for $7B: why model routing became valuable",
-          "link": "https://www.latent.space/p/openrouter",
-          "source": "Latent Space",
-          "why": "A routing layer lets you swap models without rewrites, and Stripe's price tag tells you provider optionality is now strategic, not a nice-to-have."
-        },
-        {
-          "title": "Advanced evals: finding the AI failures you don't know about",
-          "link": "https://www.lennysnewsletter.com/p/advanced-evals-how-to-find-and-fix",
-          "source": "Lenny's Newsletter",
-          "why": "Error discovery — hunting real failure modes before writing eval criteria — is the PM skill that separates a demo from a production agent."
-        },
-        {
-          "title": "Multi-account AI agents on Bedrock AgentCore Gateway with MCP",
-          "link": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
-          "source": "AWS Machine Learning Blog",
-          "why": "This is the standard pattern on your exact stack for letting one agent safely query data owned by other teams' AWS accounts."
-        },
-        {
-          "title": "Zapier's AI fluency rubric: how every employee gets graded on AI use",
-          "link": "https://www.news.aakashg.com/p/zapier-ai-fluency-rubric-for-pms",
-          "source": "Product Growth (Aakash Gupta)",
-          "why": "It gives you a concrete ladder from 'unacceptable' to 'transformative' and the language to push your team from chatting to rewiring workflows."
-        }
-      ],
-      "cards": [
-        {
-          "front": "What changed in frontier models this week?",
-          "back": "Anthropic's Claude Opus 5.5 and OpenAI's GPT-6 (Sol and Luna) shipped within about a day of each other, alongside Grok 4.7, with frontier prices cut roughly 40-50%. Opus 5.5 is already available on Amazon Bedrock."
-        },
-        {
-          "front": "What is a model router (e.g. OpenRouter)?",
-          "back": "A neutral layer between your app and many model providers: one interface, and you can swap or fall back across models without rewriting your app. Stripe acquired OpenRouter for $7B, signalling that provider optionality is where infra value sits."
-        },
-        {
-          "front": "What is 'error discovery' in evals?",
-          "back": "The step before writing eval criteria: systematically dig through real outputs to surface failure modes you didn't know existed, so your metrics score actual problems instead of imagined ones. Most teams skip it."
-        },
-        {
-          "front": "How does one agent safely read data owned by other teams on AWS?",
-          "back": "Pattern from AWS: a central account runs the agent; each other account exposes its data as an MCP server; Bedrock AgentCore Gateway handles cross-account authentication and per-user permissions."
-        },
-        {
-          "front": "Zapier's AI fluency rubric",
-          "back": "An internal scale rating every employee from 'unacceptable' to 'transformative' on AI use. For PMs, higher levels mean delegating whole workflows, building internal tools, and redesigning team process around agents — not just using chat."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "What is the main benefit of putting a model router in front of your AI product?",
-          "options": [
-            "You can switch or fall back between providers without rewriting the application",
-            "You get a cheaper price per token than calling the provider's API directly",
-            "You remove the need to run your own evaluations on each model version",
-            "You keep the conversation history so the model no longer has to be re-sent"
-          ],
-          "answer": 0,
-          "why": "A router is a neutral interface across many models, so swapping providers becomes configuration rather than a rewrite. It doesn't replace evals, doesn't inherently discount tokens, and doesn't change the stateless nature of models."
-        },
-        {
-          "q": "In an eval programme, what is 'error discovery' meant to produce?",
-          "options": [
-            "A list of real failure modes found in actual outputs, before criteria are written",
-            "A benchmark score that can be compared against published model leaderboards",
-            "A scoring rubric derived from the product requirements document",
-            "A fallback chain of models to use when the primary model is unavailable"
-          ],
-          "answer": 0,
-          "why": "Error discovery comes first: you surface the failures you didn't know about, then write eval criteria against them, so your metrics measure real problems rather than assumed ones."
-        },
-        {
-          "q": "In the AWS multi-account agent pattern, what job does AgentCore Gateway do?",
-          "options": [
-            "Handles cross-account access and per-user permissions to remote MCP servers",
-            "Copies each team's data into the central account so the agent can query it",
-            "Fine-tunes a separate model per account to specialise on that team's data",
-            "Caches tool results across accounts to reduce per-token inference costs"
-          ],
-          "answer": 0,
-          "why": "Each team keeps its data and exposes it as an MCP server; the Gateway is the controlled front door, handling cross-account auth and per-user permissions rather than moving or retraining anything."
-        }
-      ],
-      "stale": [
-        {
-          "unit": "c2",
-          "note": "The pricing table ('As of September 2026: Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5') is now out of date: frontier prices were cut by roughly 40-50% this week. The worked example (2k in / 1k out on Sonnet 5 = $0.014) needs recalculating at the new rates."
-        },
-        {
-          "unit": "c2",
-          "note": "The Claude tier list implies Opus 5 is the top current coding/reasoning model. Claude Opus 5.5 has now shipped and is already available on Amazon Bedrock and Claude Platform on AWS, so Opus 5.5 is the current flagship to name."
-        },
-        {
-          "unit": "c2",
-          "note": "The frontier-lab examples are behind: OpenAI's current generation is GPT-6 (Sol and Luna variants), xAI shipped Grok 4.7, and Google shipped Gemini 3.8 Live with a real-time avatar. Worth refreshing the model names used as examples."
-        },
-        {
-          "unit": "c2",
-          "note": "'Claude Code lets you switch model and effort (try /model)' is no longer universally true: Claude Code 2.1.283 added a managed admin setting that can restrict Claude Code to exact model versions, so in a locked-down company the model picker may be limited."
-        },
-        {
-          "unit": "c2",
-          "note": "The 'closed vs open weights / Bedrock is a front door' framing misses this week's development: neutral routing layers (OpenRouter, acquired by Stripe for $7B) are now a mainstream third option for accessing many models through one interface."
-        }
-      ]
     }
   ],
   "stale": [
     {
-      "unit": "b0",
-      "note": "\"The model is the brain: Claude Opus, Sonnet or Haiku\" is now out of date — Claude Code v2.1.321 ships Fable 5.2 as its default model, so the default brain is a Fable-tier model, not Sonnet/Opus.",
-      "flagged": "2026-11-16T20:04:01.420Z"
-    },
-    {
-      "unit": "b0",
-      "note": "The context-window and compaction lesson should mention that Claude Code's default Fable 5.2 now has a 1M-token context window, so compaction kicks in far later than the lesson implies.",
-      "flagged": "2026-11-16T20:04:01.420Z"
-    },
-    {
-      "unit": "b0",
-      "note": "The slash-command list (/clear, /model, /help) is missing /rewind, which v2.1.325 now explicitly points you to when an org policy blocks a request.",
-      "flagged": "2026-11-16T20:04:01.420Z"
-    },
-    {
       "unit": "b1",
-      "note": "The tool-call section describes Claude issuing one structured tool call at a time. Claude Code v2.1.323 added an opt-in \"Code Mode\" where Claude instead writes JavaScript to call its tools, which changes what you see scrolling by and reduces token use.",
-      "flagged": "2026-11-16T20:04:01.420Z"
+      "note": "The lesson says Write, Edit and Bash 'are the ones that ask your permission'. As of Claude Code v2.1.328, auto permission mode is the starting mode for interactive sessions and now works through Amazon Bedrock and other gateways with Opus 4.6 and Sonnet 4.6 — so by default Claude may perform many of these actions without a per-action prompt. The lesson should explain auto mode and how to check which mode a session started in.",
+      "flagged": "2026-11-23T21:57:12.596Z"
     },
     {
-      "unit": "c2",
-      "note": "The tier list is outdated: Fable is no longer just a parenthetical top tier — Fable 5.2 launched alongside Mythos 5.2, is the default in Claude Code, is available on AWS Bedrock, and reclaimed the #1 leaderboard spot.",
-      "flagged": "2026-11-16T20:04:01.420Z"
-    },
-    {
-      "unit": "c2",
-      "note": "The \"As of September 2026\" price table (Opus 5 $5/$25, Sonnet 5 $2/$10, Haiku 4.5 $1/$5) predates the Fable 5.2 / Mythos 5.2 launch, which came with its own published per-million-token pricing — the table needs refreshing and a Fable row.",
-      "flagged": "2026-11-16T20:04:01.420Z"
-    },
-    {
-      "unit": "c2",
-      "note": "The 'same Claude models in several places' line should be refreshed: Fable 5.2 and Mythos 5.2 are already on Amazon Bedrock, and Bedrock also now hosts third-party models like Kimi K3.1 Pro via an OpenAI-compatible API.",
-      "flagged": "2026-11-16T20:04:01.420Z"
+      "unit": "b0",
+      "note": "The harness description predates Code Mode. Claude Code v2.1.326 lets Code Mode run alongside agent teams, and v2.1.331 enables Code Mode for sessions running on Amazon Bedrock, Google's Agent Platform, Microsoft Foundry and Claude Platform on AWS — relevant since the reader's company is on Bedrock. Recent releases also added enterprise sign-in via the Anthropic Enterprise Admin Console, which applies org settings and the cloud provider/gateway automatically, so 'your settings' may no longer be purely local.",
+      "flagged": "2026-11-23T21:57:12.596Z"
     },
     {
       "unit": "c1",
-      "note": "The section on what models output assumes text/reasoning models only; a new category shipped this week (Google's Gemini Decision 1, following similar APIs from Jev and OpenAI) that returns fast, calibrated decisions with confidence rather than prose — worth adding so the unit isn't incomplete.",
-      "flagged": "2026-11-16T20:04:01.420Z"
+      "note": "The line 'Many apps let you set an effort level' now understates the detail: Google's Gemini 4 family exposes low/medium/high on one variant and an additional 'xhigh' level on two others, so effort is a tiered, model-specific dial rather than a single uniform setting.",
+      "flagged": "2026-11-23T21:57:12.596Z"
+    },
+    {
+      "unit": "c2",
+      "note": "The pricing table is explicitly dated September 2026 and should be re-checked. This week OpenAI shipped GPT-6.2 Astra (frontier) and Sol (cheap workhorse) with large price cuts versus the previous frontier tier, and Google shipped Gemini 4 Neon, a mid-tier model reported near frontier-level scores — so the implied gap between 'cheap tier' and 'frontier tier' quality in the tiers lesson is narrower than written. Also worth noting: Anthropic has now completed an IPO, so the 'who makes the models' framing of labs as private frontier labs needs updating.",
+      "flagged": "2026-11-23T21:57:12.596Z"
     }
   ]
 }
