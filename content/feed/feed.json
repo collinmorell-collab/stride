@@ -1,6 +1,160 @@
 {
-  "updated": "2026-11-23T21:57:12.599Z",
+  "updated": "2026-11-24T20:30:55.605Z",
   "items": [
+    {
+      "id": "61a808acae",
+      "date": "2026-11-24T00:34:06.000Z",
+      "added": "2026-11-24T20:30:55.601Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/practical-ai-evals",
+      "category": "pm",
+      "title": "A PM's 4-step guide to building AI evals",
+      "summary": "An ex-Google/Amazon/Meta AI PM lays out a practical, four-step process for evaluating AI features: define what good looks like, build a test set, score outputs, and iterate — demoed in Microsoft Foundry.",
+      "why": "Evals are the core PM skill for shipping AI agents; without them you're guessing whether your Bedrock agents actually got better.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "What is an \"eval\" in AI product work?",
+          "back": "A repeatable test set plus scoring method that measures whether a model or agent's outputs meet your quality bar, so changes can be compared objectively."
+        },
+        {
+          "front": "Why can't you judge an AI feature by vibes alone?",
+          "back": "LLM outputs vary run to run; a fixed test set with scoring catches regressions and proves improvements that spot-checking hides."
+        },
+        {
+          "front": "Who typically owns evals on a product team?",
+          "back": "The PM usually defines quality criteria and the test cases; engineers wire up the scoring harness."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main purpose of an eval suite for an AI feature?",
+          "options": [
+            "To measure output quality against fixed cases so changes can be compared",
+            "To reduce the token cost of each model call in production",
+            "To convert user prompts into structured JSON before sending them",
+            "To route requests to the cheapest available model provider"
+          ],
+          "answer": 0,
+          "why": "Evals are about measuring quality consistently; cost control, formatting and routing are separate concerns."
+        }
+      ]
+    },
+    {
+      "id": "25e97c2ec0",
+      "date": "2026-11-24T05:01:14.000Z",
+      "added": "2026-11-24T20:30:55.601Z",
+      "source": "AWS Machine Learning Blog",
+      "link": "https://aws.amazon.com/blogs/machine-learning/introducing-the-amazon-bedrock-trusted-access-api-with-anthropics-enterprise-frontier-safeguards-and-enterprise-data-controls/",
+      "category": "builders",
+      "title": "AWS Bedrock adds a Trusted Access API with new Claude data controls",
+      "summary": "Bedrock now has one API to discover and enroll in model-provider programs. First two, in public preview: Anthropic's Enterprise Frontier Safeguards and Enterprise Data Controls, giving enterprises more say over how their data is handled with Claude.",
+      "why": "Your production agents run on Bedrock + Claude; these controls are the kind of thing legal and security will ask you about.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Amazon Bedrock",
+          "back": "AWS's managed service for calling foundation models (Claude, others) via one API, with enterprise security, logging and no infrastructure to run."
+        },
+        {
+          "front": "Bedrock Trusted Access API",
+          "back": "A single place to discover, request and enrol in model-provider programs — starting with Anthropic's Enterprise Frontier Safeguards and Enterprise Data Controls."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does the new Bedrock Trusted Access API let an enterprise team do?",
+          "options": [
+            "Enrol in model-provider programs such as Anthropic's data controls",
+            "Fine-tune Claude models on private data inside a VPC",
+            "Automatically pick the cheapest model for each incoming request",
+            "Stream agent logs from Lambda into a managed dashboard"
+          ],
+          "answer": 0,
+          "why": "It's an enrolment/discovery layer for provider programs, not fine-tuning, routing or observability."
+        }
+      ]
+    },
+    {
+      "id": "efc98a45d9",
+      "date": "2026-11-23T23:40:49.000Z",
+      "added": "2026-11-24T20:30:55.601Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/23/glm-54/",
+      "category": "labs",
+      "title": "Z.ai's GLM-5.4 debuts a \"loop transformer\" architecture",
+      "summary": "Chinese lab Z.ai released GLM-5.4, its first coding model built on a looped transformer: instead of each layer running once, a block of layers is re-run several times, trading extra compute for more reasoning depth.",
+      "why": "A rare architecture change worth knowing: it explains why some models now spend more compute per token to think harder.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c1",
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7582e6965e",
+      "date": "2026-11-24T04:14:16.000Z",
+      "added": "2026-11-24T20:30:55.601Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-jensen-is-back-and-openai-shows-its-pretraining-curve-joined-by-microsoft/",
+      "category": "labs",
+      "title": "Nvidia reinstates Jensen Huang; OpenAI publishes its pretraining curve",
+      "summary": "AI news roundup: Nvidia brings its founder back, and OpenAI publishes internal training loss curves while floating the idea of an industry-wide shared limit on training compute, with Microsoft backing.",
+      "why": "Two signals about where frontier model progress and industry governance are heading — useful context for roadmap bets.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7a6462e387",
+      "date": "2026-11-24T00:00:00.000Z",
+      "added": "2026-11-24T20:30:55.601Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/business/customer-stories/ifood",
+      "category": "builders",
+      "title": "How iFood runs coding agents across 15,000 repositories",
+      "summary": "Food delivery giant iFood describes scaling AI coding agents org-wide across thousands of repos — covering standards, guardrails and rollout patterns rather than individual developer tricks.",
+      "why": "The clearest public playbook for taking coding agents from personal tool to team-wide practice, which is your next step at work.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "a5",
+        "b0"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "c808d58c8e",
+      "date": "2026-11-24T16:53:59.000Z",
+      "added": "2026-11-24T20:30:55.601Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/24/astra-historical-mystery/",
+      "category": "labs",
+      "title": "A historian uses GPT-6.2 to crack an anonymous 1800s document",
+      "summary": "History professor Mark Humphries shows a frontier model autonomously identifying the author of an anonymous nineteenth-century document from minimal prompting — a concrete look at agentic research quality in a messy, real domain.",
+      "why": "A grounded benchmark for what today's agents can do unsupervised on open-ended research tasks, not just coding.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "eb28781016",
       "date": "2026-11-23T13:04:43.000Z",
@@ -9356,140 +9510,6 @@
       "title": "Qwen3-TTS voice cloning now deployable on SageMaker",
       "summary": "AWS shows how to run the open Qwen3-TTS text-to-speech model as a managed real-time endpoint, cloning a speaker's voice from a short clip and preserving that voice across different languages.",
       "why": "Shows how quickly open voice models are becoming deployable on your own AWS stack — and the consent questions that follow.",
-      "score": 6,
-      "mustKnow": false,
-      "related": [
-        "c2"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "8b06c9e402",
-      "date": "2026-09-24T22:05:37.000Z",
-      "added": "2026-09-25T15:02:19.342Z",
-      "source": "Product Growth (Aakash Gupta)",
-      "link": "https://www.news.aakashg.com/p/zapier-ai-fluency-rubric-for-pms",
-      "category": "pm",
-      "title": "Zapier's AI fluency rubric: how every employee gets graded on AI use",
-      "summary": "Zapier's CEO shares the internal rubric rating staff from 'unacceptable' to 'transformative' on AI use, plus concrete behaviours PMs show at each level: delegating whole workflows, building internal tools, and rewiring team process around agents.",
-      "why": "It gives you a concrete yardstick for your own AI fluency and language to push your team from 'uses chat' to 'redesigns workflows'.",
-      "score": 9,
-      "mustKnow": true,
-      "related": [
-        "b0"
-      ],
-      "cards": [
-        {
-          "front": "What is an 'AI fluency rubric'?",
-          "back": "A company-wide scale rating how deeply an employee uses AI — from avoiding it, to occasional chat use, to delegating full workflows and building tools that change how the team works."
-        },
-        {
-          "front": "What separates 'transformative' AI use from 'adequate' use?",
-          "back": "Adequate = faster at existing tasks. Transformative = rebuilding the workflow itself, e.g. agents doing multi-step work and internally built tools others adopt."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "In Zapier's AI fluency framing, what best distinguishes a top-rated ('transformative') employee?",
-          "options": [
-            "They redesign workflows so agents handle whole multi-step jobs others adopt",
-            "They use an AI assistant daily to draft documents and summarise meetings",
-            "They have tried every major frontier model and can compare their strengths",
-            "They can write detailed prompts with examples, roles and output formats"
-          ],
-          "answer": 0,
-          "why": "The rubric rewards changing how work happens, not personal speed-ups or tool familiarity."
-        }
-      ]
-    },
-    {
-      "id": "2e76615d1e",
-      "date": "2026-09-24T16:12:47.000Z",
-      "added": "2026-09-25T15:02:19.343Z",
-      "source": "AWS Machine Learning Blog",
-      "link": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
-      "category": "builders",
-      "title": "Multi-account AI agents on Bedrock AgentCore Gateway with MCP",
-      "summary": "AWS walks through an architecture where a central account runs an agent that reaches data in other teams' AWS accounts, each exposing its data as an MCP server, with cross-account auth and per-user permissions via AgentCore Gateway.",
-      "why": "This is your stack: Bedrock plus agents. It shows the standard pattern for letting one agent safely query data owned by other teams.",
-      "score": 8,
-      "mustKnow": true,
-      "related": [
-        "b0",
-        "a1"
-      ],
-      "cards": [
-        {
-          "front": "MCP (Model Context Protocol)",
-          "back": "An open standard letting an AI agent connect to external tools and data sources through a consistent interface, so each system exposes its capabilities as an 'MCP server'."
-        },
-        {
-          "front": "What does Bedrock AgentCore Gateway do?",
-          "back": "It sits between an agent and many tool/data endpoints, handling discovery, authentication and fine-grained authorization — including across separate AWS accounts."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "Why expose each team's data as an MCP server instead of copying it into the agent's account?",
-          "options": [
-            "Data stays owned and governed by its team while the agent queries it through one interface",
-            "MCP servers compress data so the model can fit more of it in context",
-            "It removes the need for authentication because MCP traffic is internal to AWS",
-            "It lets the agent run without a foundation model when answering data questions"
-          ],
-          "answer": 0,
-          "why": "The pattern's point is federated access with per-account ownership and fine-grained authorization, not compression or skipping auth."
-        }
-      ]
-    },
-    {
-      "id": "e7107d9a76",
-      "date": "2026-09-24T16:20:39.000Z",
-      "added": "2026-09-25T15:02:19.343Z",
-      "source": "Google DeepMind",
-      "link": "https://deepmind.google/blog/introducing-gemini-38-live-with-live-avatar/",
-      "category": "labs",
-      "title": "Google ships Gemini 3.8 Live with a real-time video avatar",
-      "summary": "DeepMind's latest Live model adds a speaking on-screen avatar to low-latency voice and video conversation, pushing real-time multimodal interaction further into mainstream assistant products.",
-      "why": "Real-time voice/avatar interfaces are becoming a product surface you may be asked about; useful for tracking where the model landscape is heading.",
-      "score": 7,
-      "mustKnow": false,
-      "related": [
-        "c2"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "cd3a2bc67e",
-      "date": "2026-09-24T18:38:05.000Z",
-      "added": "2026-09-25T15:02:19.343Z",
-      "source": "Claude Code releases",
-      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.282",
-      "category": "claude-code",
-      "title": "Claude Code 2.1.282: readable prose width and telemetry warnings",
-      "summary": "New maxProseWidth setting stops Claude's text stretching across very wide terminals while tables and code still use full width. Startup, /status and claude doctor now flag telemetry settings in project config that were ignored or disabled.",
-      "why": "Small comfort win on a wide screen, and the telemetry notices explain surprise warnings if your company's repo config sets those variables.",
-      "score": 7,
-      "mustKnow": false,
-      "related": [
-        "b0",
-        "a3"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "6c1df0eaae",
-      "date": "2026-09-25T01:30:57.000Z",
-      "added": "2026-09-25T15:02:19.343Z",
-      "source": "Latent Space",
-      "link": "https://www.latent.space/p/runway",
-      "category": "labs",
-      "title": "How Runway steers a real-time generative world",
-      "summary": "Runway's world model generates video and audio on the fly, using persistent context plus timed action prompts so users can direct an interactive scene as it plays rather than rendering a fixed clip.",
-      "why": "A glimpse of prompting as continuous steering rather than one-shot requests — a UX pattern likely to spread to agent products.",
       "score": 6,
       "mustKnow": false,
       "related": [
