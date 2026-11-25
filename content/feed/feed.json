@@ -1,6 +1,140 @@
 {
-  "updated": "2026-11-24T20:30:55.605Z",
+  "updated": "2026-11-25T19:48:11.216Z",
   "items": [
+    {
+      "id": "f7effe0849",
+      "date": "2026-11-25T13:04:21.000Z",
+      "added": "2026-11-25T19:48:11.211Z",
+      "source": "Lenny's Newsletter",
+      "link": "https://www.lennysnewsletter.com/p/gemini-4-neon-beat-gpt-62-and-claude",
+      "category": "pm",
+      "title": "Lenny's late-2026 AI benchmark: Gemini 4 Neon takes the crown",
+      "summary": "Lenny runs 25 real PM-style tasks across frontier models. Gemini 4 Neon comes out on top, Opus 5.5 is the least annoying everyday driver, and GPT-6.2 underwhelms relative to hype.",
+      "why": "You pick tools daily. A practitioner's task-based comparison beats leaderboards for deciding which model to reach for at work.",
+      "score": 10,
+      "mustKnow": true,
+      "related": [
+        "c2"
+      ],
+      "cards": [
+        {
+          "front": "Why is a personal task benchmark more useful to a PM than a public leaderboard?",
+          "back": "Leaderboards test generic academic tasks; a personal bench tests the work you actually do, so it predicts real daily usefulness."
+        },
+        {
+          "front": "\"Daily driver\" model",
+          "back": "The model you default to for most work because it's reliable and low-friction, even if another model scores higher on specific benchmarks."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What is the main limitation of ranking models by public benchmark scores?",
+          "options": [
+            "Benchmark tasks often don't resemble your actual day-to-day work",
+            "Benchmarks are only ever run by the model vendors themselves",
+            "Benchmark scores change only when a model is fully retrained",
+            "Benchmarks measure speed and cost rather than output quality"
+          ],
+          "answer": 0,
+          "why": "Public benchmarks test generic tasks; fit for your own workflows is what determines which model is actually useful to you."
+        }
+      ]
+    },
+    {
+      "id": "8caf928054",
+      "date": "2026-11-24T23:02:07.000Z",
+      "added": "2026-11-25T19:48:11.211Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/24/llm-inflection-points/",
+      "category": "builders",
+      "title": "Simon Willison: three inflection points that changed coding agents this year",
+      "summary": "A keynote write-up arguing the past year saw three step-changes in LLM and coding-agent capability, with practical consequences for how people now build software with agents rather than prompts.",
+      "why": "Gives you a clear mental model of why agentic tools like Claude Code work now, and what changed under the hood.",
+      "score": 9,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "c1"
+      ],
+      "cards": [
+        {
+          "front": "Coding agent (vs. plain LLM chat)",
+          "back": "A model running in a loop with tools (read files, edit, run commands) so it can act on a codebase, check results, and retry — not just emit text."
+        },
+        {
+          "front": "Why does tool use plus long context change what agents can do?",
+          "back": "The model can gather real evidence from your repo and environment instead of guessing, then verify its own work by running it."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What most distinguishes a coding agent from a chat LLM answering a coding question?",
+          "options": [
+            "It runs in a loop with tools, acting and checking its own results",
+            "It is trained only on source code rather than general web text",
+            "It keeps a permanent memory of every project it has ever seen",
+            "It responds faster because it skips the reasoning phase"
+          ],
+          "answer": 0,
+          "why": "Agents are models plus a tool-use loop: read, edit, run, observe, retry — which is why they can finish real tasks."
+        }
+      ]
+    },
+    {
+      "id": "054ddac7c8",
+      "date": "2026-11-25T04:29:07.000Z",
+      "added": "2026-11-25T19:48:11.211Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab/",
+      "category": "labs",
+      "title": "Gemini 4 Neon puts Google DeepMind back at the frontier",
+      "summary": "Coverage of Gemini 4 Neon's launch: it tops rival frontier models on LiveBench and cuts runtime substantially on an independent coding benchmark, signalling Google is competitive again at the top tier.",
+      "why": "Model landscape shifts affect which APIs your team considers — useful context even though you're on Bedrock.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "15aa96a954",
+      "date": "2026-11-25T01:32:14.000Z",
+      "added": "2026-11-25T19:48:11.211Z",
+      "source": "Claude Code releases",
+      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.332",
+      "category": "claude-code",
+      "title": "Claude Code 2.1.332: skills can now come from MCP servers",
+      "summary": "MCP servers can now ship skills, shown as server:skill in the slash menu. A new hook can block shell commands that a skill tries to run as it loads, plus an \"always allow\" option.",
+      "why": "Changes what shows up in your slash menu and gives your team a safety gate on what skills are allowed to execute.",
+      "score": 8,
+      "mustKnow": false,
+      "related": [
+        "b0",
+        "b1"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "3c6728c1bf",
+      "date": "2026-11-24T13:00:00.000Z",
+      "added": "2026-11-25T19:48:11.211Z",
+      "source": "OpenAI",
+      "link": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+      "category": "labs",
+      "title": "OpenAI claims GPT-6 can design working proteins",
+      "summary": "OpenAI reports its GPT-6 models designed protein structures and sequences through reasoning and code, with lab tests showing binding evidence against five targets — a general model doing specialist science work.",
+      "why": "A signal that general models increasingly beat narrow domain tools — relevant when deciding whether to buy specialised AI or build on frontier models.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "61a808acae",
       "date": "2026-11-24T00:34:06.000Z",
@@ -9367,154 +9501,6 @@
       "score": 7,
       "mustKnow": false,
       "related": [],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "30b26e0786",
-      "date": "2026-09-25T23:14:41.000Z",
-      "added": "2026-09-26T14:11:30.502Z",
-      "source": "Latent Space",
-      "link": "https://www.latent.space/p/openrouter",
-      "category": "labs",
-      "title": "Stripe buys OpenRouter for $7B: why model routing became valuable",
-      "summary": "A podcast with OpenRouter's founder on how the model landscape exploded from two frontier labs to dozens, and why a neutral router that lets apps swap between models became a $7B acquisition for Stripe.",
-      "why": "You pick models for agents; routing layers let you swap providers without rewrites, and Stripe's bet signals where AI infrastructure value is concentrating.",
-      "score": 8,
-      "mustKnow": true,
-      "related": [
-        "c2"
-      ],
-      "cards": [
-        {
-          "front": "What is an LLM router (e.g. OpenRouter)?",
-          "back": "A service sitting between your app and many model providers, exposing one API so you can switch or fall back between models without changing code."
-        },
-        {
-          "front": "Why does multi-model routing matter for production agents?",
-          "back": "It reduces vendor lock-in, enables cost/quality tradeoffs per task, and provides failover when one provider is slow or down."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "What does a service like OpenRouter primarily provide?",
-          "options": [
-            "One API that routes requests across many model providers",
-            "A fine-tuning service that customises open-weight models",
-            "A vector database for storing document embeddings",
-            "A framework for orchestrating multi-step agent workflows"
-          ],
-          "answer": 0,
-          "why": "OpenRouter is an aggregation/routing layer giving a single interface to dozens of models, not a training, storage, or orchestration tool."
-        }
-      ]
-    },
-    {
-      "id": "cf46b237d6",
-      "date": "2026-09-25T16:15:22.000Z",
-      "added": "2026-09-26T14:11:30.502Z",
-      "source": "AWS Machine Learning Blog",
-      "link": "https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/",
-      "category": "builders",
-      "title": "Five techniques for QA-ing LLM output in production on Bedrock",
-      "summary": "An AWS write-up on keeping LLM answers reliable at scale: orchestrating pipelines adaptively, failing over across accounts and models, evaluating responses while they stream, combining several evaluation signals, and verifying numerical accuracy.",
-      "why": "Your agents run on Bedrock; these are concrete, reusable patterns for evaluation and failover you can put on a roadmap.",
-      "score": 8,
-      "mustKnow": true,
-      "related": [],
-      "cards": [
-        {
-          "front": "Multi-model failover",
-          "back": "Routing a request to a backup model (or account/region) when the primary is rate-limited, erroring, or too slow — key for production reliability."
-        },
-        {
-          "front": "Streaming evaluation",
-          "back": "Checking an LLM's output for errors as tokens are generated, so bad answers can be caught or stopped before the user sees the whole response."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "Why would an AI team add cross-account, multi-model failover to a Bedrock service?",
-          "options": [
-            "To keep serving users when the primary model hits limits or errors",
-            "To lower token costs by compressing prompts before sending them",
-            "To fine-tune the model on customer data without leaving the account",
-            "To cache identical prompts so repeat answers return instantly"
-          ],
-          "answer": 0,
-          "why": "Failover is a reliability pattern: a backup model/account takes over when the primary is throttled or failing. The others are cost or training techniques."
-        }
-      ]
-    },
-    {
-      "id": "414ec5ebf0",
-      "date": "2026-09-24T23:31:08.000Z",
-      "added": "2026-09-26T14:11:30.502Z",
-      "source": "Simon Willison",
-      "link": "https://simonwillison.net/2026/Sep/24/harder/",
-      "category": "claude-code",
-      "title": "Simon Willison: coding agents make engineering harder, not easier",
-      "summary": "A short but pointed note arguing that coding agents raise the ceiling of what's possible while demanding more discipline and knowledge from the person driving them — not less.",
-      "why": "A useful counterweight when planning AI-assisted delivery: expect review, testing and judgement costs to rise, not vanish.",
-      "score": 7,
-      "mustKnow": false,
-      "related": [
-        "b0"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "5bff2e7c4a",
-      "date": "2026-09-25T17:22:01.000Z",
-      "added": "2026-09-26T14:11:30.502Z",
-      "source": "Simon Willison",
-      "link": "https://simonwillison.net/2026/Sep/25/john-gruber/",
-      "category": "builders",
-      "title": "Meta's Muse gives every user their own cloud Linux machine",
-      "summary": "Commentary on Meta's new Muse product: each user gets a persistent Linux virtual machine in Meta's cloud, wrapped in consumer-grade easy installation — a notable example of hiding heavy infrastructure behind simple packaging.",
-      "why": "Good product lesson: the differentiator isn't the VM, it's making serious compute feel like installing an app.",
-      "score": 6,
-      "mustKnow": false,
-      "related": [
-        "a0"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "698a7c41cd",
-      "date": "2026-09-25T21:50:12.000Z",
-      "added": "2026-09-26T14:11:30.502Z",
-      "source": "Claude Code releases",
-      "link": "https://github.com/anthropics/claude-code/releases/tag/v2.1.283",
-      "category": "claude-code",
-      "title": "Claude Code 2.1.283: tighter admin control over which models you can use",
-      "summary": "This release adds a managed setting where admins can restrict Claude Code to exact model versions, plus an opt-in header that lets corporate LLM gateways group all requests belonging to a single user prompt.",
-      "why": "If your company locks model versions, you may suddenly lose access to newer ones — worth knowing before blaming the tool.",
-      "score": 6,
-      "mustKnow": false,
-      "related": [
-        "b0"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "f34eefd443",
-      "date": "2026-09-25T16:09:46.000Z",
-      "added": "2026-09-26T14:11:30.502Z",
-      "source": "AWS Machine Learning Blog",
-      "link": "https://aws.amazon.com/blogs/machine-learning/deploying-real-time-personalized-speech-with-qwen3-tts-on-amazon-sagemaker-ai/",
-      "category": "labs",
-      "title": "Qwen3-TTS voice cloning now deployable on SageMaker",
-      "summary": "AWS shows how to run the open Qwen3-TTS text-to-speech model as a managed real-time endpoint, cloning a speaker's voice from a short clip and preserving that voice across different languages.",
-      "why": "Shows how quickly open voice models are becoming deployable on your own AWS stack — and the consent questions that follow.",
-      "score": 6,
-      "mustKnow": false,
-      "related": [
-        "c2"
-      ],
       "cards": [],
       "quiz": []
     }

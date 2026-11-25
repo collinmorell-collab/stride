@@ -11090,5 +11090,33 @@
   "7582e6965e": {
     "source": "latent-space",
     "at": "2026-11-24T20:30:23.280Z"
+  },
+  "f7effe0849": {
+    "source": "lenny-newsletter",
+    "at": "2026-11-25T19:47:37.278Z"
+  },
+  "3c6728c1bf": {
+    "source": "openai",
+    "at": "2026-11-25T19:47:37.741Z"
+  },
+  "99b93f3e10": {
+    "source": "openai",
+    "at": "2026-11-25T19:47:37.741Z"
+  },
+  "dd94f7af62": {
+    "source": "deepmind",
+    "at": "2026-11-25T19:47:38.187Z"
+  },
+  "15aa96a954": {
+    "source": "claude-code",
+    "at": "2026-11-25T19:47:38.486Z"
+  },
+  "8caf928054": {
+    "source": "simon-willison",
+    "at": "2026-11-25T19:47:38.718Z"
+  },
+  "054ddac7c8": {
+    "source": "latent-space",
+    "at": "2026-11-25T19:47:39.384Z"
   }
 }
