@@ -1,6 +1,112 @@
 {
-  "updated": "2026-11-25T19:48:11.216Z",
+  "updated": "2026-11-26T19:26:31.432Z",
   "items": [
+    {
+      "id": "730d9ef195",
+      "date": "2026-11-26T00:11:53.000Z",
+      "added": "2026-11-26T19:26:31.428Z",
+      "source": "Product Growth (Aakash Gupta)",
+      "link": "https://www.news.aakashg.com/p/pod-transcripts-github",
+      "category": "pm",
+      "title": "A full podcast archive you can query with Claude Code (plus an MCP server)",
+      "summary": "Aakash Gupta published every Growth Podcast transcript as free files on GitHub and added an MCP server, so you can point Claude Code at hundreds of PM interviews and ask questions, with a build contest attached.",
+      "why": "A concrete, no-code way to practice MCP and Claude Code on a repo of PM wisdom you'd actually want to search.",
+      "score": 8,
+      "mustKnow": true,
+      "related": [
+        "b0",
+        "a5"
+      ],
+      "cards": [
+        {
+          "front": "MCP (Model Context Protocol)",
+          "back": "An open standard that lets an AI assistant connect to external tools and data sources through a small 'server', instead of you pasting content in manually."
+        },
+        {
+          "front": "Why clone a transcript repo locally for Claude Code?",
+          "back": "Claude Code reads files on your machine, so a local copy of the transcripts becomes searchable context you can query, summarise and cite."
+        }
+      ],
+      "quiz": [
+        {
+          "q": "What does adding an MCP server for a podcast archive actually give you?",
+          "options": [
+            "A standard connection so your AI assistant can fetch the transcripts itself",
+            "A fine-tuned model trained on all of the podcast episodes",
+            "A larger context window for whatever model you are using",
+            "A faster inference endpoint for summarising long documents"
+          ],
+          "answer": 0,
+          "why": "MCP is a connection standard for tools and data; it doesn't train models, enlarge context windows or speed up inference."
+        }
+      ]
+    },
+    {
+      "id": "bb9905a025",
+      "date": "2026-11-25T22:28:01.000Z",
+      "added": "2026-11-26T19:26:31.428Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/the_revolution_vs_the_renaissance_thariq_shihipar_openai/",
+      "category": "pm",
+      "title": "When software gets cheap: the 'revolution vs renaissance' framing",
+      "summary": "An OpenAI engineer argues two futures coexist: AI lets you mass-produce disposable software, and it frees time to polish one thing until it feels right. Demoed by live-editing a game while playing it.",
+      "why": "A useful frame for deciding where your team spends craft time once building the first version becomes nearly free.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "316e60a88e",
+      "date": "2026-11-26T15:09:31.000Z",
+      "added": "2026-11-26T19:26:31.428Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
+      "category": "pm",
+      "title": "The 'everything sounds like Claude' problem",
+      "summary": "A widely shared complaint that AI assistance is flattening individual voice: videos, talks and emails increasingly share the same cadence and structure, making credentialed work feel generic.",
+      "why": "Relevant to how you write specs, posts and customer comms — default AI voice is now a recognisable, slightly discrediting signal.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "e9eadcd028",
+      "date": "2026-11-25T22:23:41.000Z",
+      "added": "2026-11-26T19:26:31.428Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them/",
+      "category": "labs",
+      "title": "AI models are now producing math proofs faster than people can check them",
+      "summary": "A roundup of frontier models cracking open problems and improving bounds in areas like matrix multiplication, with commentary that this is a step change in genuine reasoning rather than isolated stunts.",
+      "why": "A clear signal of where reasoning models are heading, useful context when judging claims about what agents can plan and verify.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
+    {
+      "id": "7822140280",
+      "date": "2026-11-26T05:08:46.000Z",
+      "added": "2026-11-26T19:26:31.428Z",
+      "source": "Simon Willison",
+      "link": "https://simonwillison.net/2026/Nov/26/hn-50651685/",
+      "category": "pm",
+      "title": "NYT tells photographers not to update Photoshop because of new AI features",
+      "summary": "A newsroom is blocking a software upgrade because embedded generative features risk undetectable edits to journalistic images — a reminder that default-on AI can break a customer's trust requirements.",
+      "why": "A sharp product lesson: shipping AI features by default can make your tool unusable for whole regulated or trust-sensitive segments.",
+      "score": 6,
+      "mustKnow": false,
+      "related": [],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "f7effe0849",
       "date": "2026-11-25T13:04:21.000Z",
@@ -9446,59 +9552,6 @@
       "summary": "Simon Willison notes that Amazon S3's per-gigabyte price has stayed flat for around ten years despite falling hardware costs, prompting discussion of cloud storage economics and competitors.",
       "why": "Cheap useful context on cloud cost assumptions when you plan AI features that store logs, documents or model artefacts on AWS.",
       "score": 6,
-      "mustKnow": false,
-      "related": [],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "821f7322b5",
-      "date": "2026-09-27T12:32:18.000Z",
-      "added": "2026-09-27T15:00:41.079Z",
-      "source": "Lenny's Newsletter",
-      "link": "https://www.lennysnewsletter.com/p/the-grief-loneliness-and-burnout",
-      "category": "pm",
-      "title": "Molly Graham on burnout, grief, and delegating work to AI instead of people",
-      "summary": "Molly Graham updates her classic \"give away your Legos\" career advice for the AI era, discussing industry-wide grief, loneliness and burnout, and why handing work to an agent feels nothing like handing it to a teammate.",
-      "why": "You delegate to Claude Code daily; this reframes what that does to your role, your team's morale and your own career growth.",
-      "score": 9,
-      "mustKnow": true,
-      "related": [],
-      "cards": [
-        {
-          "front": "\"Give away your Legos\" (Molly Graham)",
-          "back": "As a company scales, you must hand off work you love to others; the discomfort is normal and necessary for growth."
-        },
-        {
-          "front": "Why is delegating to an AI agent different from delegating to a person?",
-          "back": "No one grows on the receiving end — you lose the mentoring, trust-building and team capacity that human handoffs create, while keeping the loss of the work itself."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "What is the core point of Molly Graham's \"give away your Legos\" advice?",
-          "options": [
-            "Handing off work you enjoy is painful but necessary as the org scales",
-            "Keeping ownership of your best projects protects your career growth",
-            "Delegating only low-value tasks keeps your team motivated over time",
-            "Rebuilding your role from scratch each year prevents professional burnout"
-          ],
-          "answer": 0,
-          "why": "The metaphor is about the discomfort of surrendering work you love so a growing company can scale."
-        }
-      ]
-    },
-    {
-      "id": "c9c09c16a0",
-      "date": "2026-09-26T17:54:02.000Z",
-      "added": "2026-09-27T15:00:41.079Z",
-      "source": "Lenny's Newsletter",
-      "link": "https://www.lennysnewsletter.com/p/community-wisdom-ai-doomerism-speeding",
-      "category": "pm",
-      "title": "Community Wisdom: AI doomerism, faster discovery in big orgs, and checking engineers' answers as a new PM",
-      "summary": "Reader Q&A roundup from Lenny's community covering how to handle AI anxiety, speeding up product discovery inside large organizations, sanity-checking engineering estimates without a technical background, and where analytics actually pays off.",
-      "why": "The thread on verifying engineering answers as a non-technical PM maps directly onto your goal of building technical confidence.",
-      "score": 7,
       "mustKnow": false,
       "related": [],
       "cards": [],
