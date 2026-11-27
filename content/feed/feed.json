@@ -1,6 +1,24 @@
 {
-  "updated": "2026-11-26T19:26:31.432Z",
+  "updated": "2026-11-27T19:22:13.217Z",
   "items": [
+    {
+      "id": "d9534e56c2",
+      "date": "2026-11-26T23:02:48.000Z",
+      "added": "2026-11-27T19:22:13.212Z",
+      "source": "Latent Space",
+      "link": "https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/",
+      "category": "builders",
+      "title": "How Clay Builds Go-To-Market Agents (Latent Space interview)",
+      "summary": "Clay's AI lead explains how cheap LLM research can enrich and qualify every company, why exposing a model picker confuses users, and how they design agent infrastructure for sales and marketing workflows.",
+      "why": "A concrete look at productizing agents: cost math, hiding model choice from users, and workflow design you can reuse in your own agent features.",
+      "score": 7,
+      "mustKnow": false,
+      "related": [
+        "c2"
+      ],
+      "cards": [],
+      "quiz": []
+    },
     {
       "id": "730d9ef195",
       "date": "2026-11-26T00:11:53.000Z",
@@ -9409,151 +9427,6 @@
       "related": [
         "c2"
       ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "c426a07aa4",
-      "date": "2026-09-28T15:03:13.000Z",
-      "added": "2026-09-28T17:59:25.225Z",
-      "source": "Lenny's Newsletter",
-      "link": "https://www.lennysnewsletter.com/p/how-i-ai-jev-for-beginners-i-left",
-      "category": "pm",
-      "title": "Lenny's How I AI roundup: Opus 5.5 vs GPT-6, and Jev for beginners",
-      "summary": "Weekly roundup from Lenny's How I AI network: a beginner guide to Jev, a creator explaining why Opus 5.5 pulled them back from a rival model, and a head-to-head Opus 5.5 vs GPT-6 benchmark.",
-      "why": "Your main source for how PMs actually pick and switch models; frontier comparisons directly affect which model you default to in Claude Code.",
-      "score": 9,
-      "mustKnow": true,
-      "related": [
-        "c2"
-      ],
-      "cards": [
-        {
-          "front": "Why do practitioners re-benchmark models after each release?",
-          "back": "Frontier models leapfrog each other; a model that lost on your task six months ago may now win, so default choices should be re-tested, not assumed."
-        },
-        {
-          "front": "What is a 'head-to-head bench' in these roundups?",
-          "back": "Running the same real tasks through two models and comparing output quality, speed and cost — more useful for PMs than public leaderboard scores."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "Why is a self-run head-to-head test on your own tasks usually more useful than a public leaderboard score?",
-          "options": [
-            "It reflects your actual prompts, data and quality bar, which leaderboards don't capture",
-            "It uses more test cases than the benchmarks vendors publish",
-            "It measures the model's parameter count more accurately than vendors do",
-            "It removes the effect of temperature settings on the results"
-          ],
-          "answer": 0,
-          "why": "Leaderboards average over generic tasks; relevance to your workflow is what decides which model to default to."
-        }
-      ]
-    },
-    {
-      "id": "5588418545",
-      "date": "2026-09-27T23:54:15.000Z",
-      "added": "2026-09-28T17:59:25.225Z",
-      "source": "Simon Willison",
-      "link": "https://simonwillison.net/2026/Sep/27/2026-in-llms-so-far/",
-      "category": "labs",
-      "title": "Simon Willison's annotated review of what changed in LLMs during 2026",
-      "summary": "Conference keynote walking chronologically through the year's model releases, agent trends and shifts in how people build with LLMs, with annotated slides and notes rather than hype.",
-      "why": "The fastest single catch-up on the model landscape — ideal for filling gaps before you argue for a model or agent choice at work.",
-      "score": 9,
-      "mustKnow": true,
-      "related": [
-        "c2",
-        "c1"
-      ],
-      "cards": [
-        {
-          "front": "Why track LLM releases chronologically rather than by vendor?",
-          "back": "It shows how capabilities (long context, agentic tool use, cheap small models) diffused across all labs, so you can judge trends instead of marketing claims."
-        },
-        {
-          "front": "What is an 'agentic' model in 2026 terms?",
-          "back": "A model trained and tuned to plan, call tools repeatedly and work over long sessions, not just answer a single prompt."
-        }
-      ],
-      "quiz": [
-        {
-          "q": "What distinguishes an 'agentic' model from a standard chat model?",
-          "options": [
-            "It is optimised for multi-step planning and repeated tool calls over a task",
-            "It is trained on more languages so it answers in the user's locale",
-            "It stores past chats permanently so it never needs context re-sent",
-            "It runs on the client device instead of in the provider's cloud"
-          ],
-          "answer": 0,
-          "why": "Agentic tuning targets long-horizon tool use and planning, which is why such models power coding agents."
-        }
-      ]
-    },
-    {
-      "id": "631e24e3f2",
-      "date": "2026-09-28T12:03:04.000Z",
-      "added": "2026-09-28T17:59:25.225Z",
-      "source": "Lenny's Newsletter",
-      "link": "https://www.lennysnewsletter.com/p/jev-for-beginners-how-to-use-it-and",
-      "category": "builders",
-      "title": "Using Jev to get typed, structured outputs as a cheap classification layer",
-      "summary": "A 26-minute walkthrough of Jev, which returns type-safe structured values instead of free text — presented as a fast, cheap classification step inside pipelines, with three shipped example projects.",
-      "why": "Structured output instead of parsing text is the key pattern for reliable production agents — exactly what your Lambda+Bedrock services need.",
-      "score": 8,
-      "mustKnow": false,
-      "related": [
-        "a2"
-      ],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "5b4f6fe726",
-      "date": "2026-09-28T15:56:32.000Z",
-      "added": "2026-09-28T17:59:25.225Z",
-      "source": "AWS Machine Learning Blog",
-      "link": "https://aws.amazon.com/blogs/machine-learning/implementing-synthetic-monitoring-using-amazon-nova-act/",
-      "category": "builders",
-      "title": "Agent-driven monitoring with Amazon Nova Act and Bedrock AgentCore",
-      "summary": "AWS shows an architecture where an agent performs user-journey checks instead of brittle scripted UI tests, using Nova Act plus Bedrock AgentCore, including patterns for resilience and a sample implementation.",
-      "why": "Runs on your exact stack (Bedrock) and shows a production agent pattern plus AgentCore, the managed runtime you may end up owning.",
-      "score": 8,
-      "mustKnow": false,
-      "related": [],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "00e0e3a4ad",
-      "date": "2026-09-28T04:01:30.000Z",
-      "added": "2026-09-28T17:59:25.225Z",
-      "source": "Simon Willison",
-      "link": "https://simonwillison.net/2026/Sep/28/muse-ai-agent/",
-      "category": "builders",
-      "title": "An AI agent auto-replied 'I'm here!' when its owner wasn't — a failure worth studying",
-      "summary": "A quoted transcript where a personal AI assistant admits its automatic reply misled a real person during a pickup, causing a negative rating — a concrete example of autonomous agents acting without confirmation.",
-      "why": "A vivid, shareable illustration of why agents acting on your behalf need human confirmation gates before irreversible, real-world actions.",
-      "score": 7,
-      "mustKnow": false,
-      "related": [],
-      "cards": [],
-      "quiz": []
-    },
-    {
-      "id": "4cfa73e20d",
-      "date": "2026-09-27T23:09:19.000Z",
-      "added": "2026-09-28T17:59:25.225Z",
-      "source": "Simon Willison",
-      "link": "https://simonwillison.net/2026/Sep/27/hn-49871741/",
-      "category": "builders",
-      "title": "S3 storage prices haven't dropped in a decade",
-      "summary": "Simon Willison notes that Amazon S3's per-gigabyte price has stayed flat for around ten years despite falling hardware costs, prompting discussion of cloud storage economics and competitors.",
-      "why": "Cheap useful context on cloud cost assumptions when you plan AI features that store logs, documents or model artefacts on AWS.",
-      "score": 6,
-      "mustKnow": false,
-      "related": [],
       "cards": [],
       "quiz": []
     }
